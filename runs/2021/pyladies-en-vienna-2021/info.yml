@@ -2,6 +2,7 @@ title: Beginners course PyLadies Vienna
 subtitle: Online - autumn 2021 - Tuesdays
 place: online # mozna primo odkaz na gather?
 time: 18:00 - 20:00
+timezone: Europe/Prague
 default_time:
   start: '18:00'
   end: '20:00'
@@ -136,7 +137,7 @@ plan:
   - +merge
 
 - base: pyglet
-  date: 2020-05-21
+  date: 2021-12-21
   materials:
   - +merge
 
