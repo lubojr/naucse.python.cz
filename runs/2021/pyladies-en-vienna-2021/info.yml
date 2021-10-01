@@ -23,6 +23,7 @@ plan:
 
 - title: Installations
   slug: install_home
+  serial: 0
   materials:
   - lesson: beginners-en/install_vienna
   - lesson: beginners-en/install-editor
