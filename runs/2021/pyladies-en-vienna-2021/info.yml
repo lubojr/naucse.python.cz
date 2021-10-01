@@ -2,7 +2,7 @@ title: Beginners course PyLadies Vienna
 subtitle: Online - autumn 2021 - Tuesdays
 place: Online at https://gather.town/app/qIDiPnyj0uW2ay4K/PyLadies 
 time: 18:00 - 20:00
-timezone: Europe/Prague
+timezone: Europe/Vienna
 default_time:
   start: '18:00'
   end: '20:00'
@@ -20,6 +20,13 @@ vars:
   pyladies: true
   coach-present: true
 plan:
+
+- title: Installations
+  slug: install_home
+  materials:
+  - lesson: beginners-en/install_vienna
+  - lesson: beginners-en/install-editor
+
 - title: Install check
   slug: install
   date: 2021-10-05

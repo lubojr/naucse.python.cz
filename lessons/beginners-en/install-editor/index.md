@@ -42,11 +42,12 @@ we just want to use some of their built-in tricks:
 
 ## Choosing and setting up an editor
 
-We recommend using *Atom* for now.
+We recommend using *VSCode* for now.
 
+* [VSCode]({{ subpage_url('vscode') }})
 * [Atom]({{ subpage_url('atom') }}) 
 
-You will already have some editor on Linux (but you can always download Atom).
+You will already have some editor on Linux (but you can always download VScode).
 Just try to type into your command line `gedit` or `kate`, and if an editor 
 opens, that's your default Linux editor.
 
