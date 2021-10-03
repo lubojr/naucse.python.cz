@@ -2,15 +2,12 @@
 
 Let's see if we installed Python successfully!
 
-First check if your virtual environment is active. You should see `(myenv)`
-in the beginning of your command line. If you don't see it, try doing `conda activate <your virtuale environment name>`
-
-If it's there, we can now start Python (specifically, the Python console).
+First open your terminal and we can now start Python (specifically, the Python console).
 To do that, just write `python`:
 
 
 ``` plain
-(myenv)$ python
+$ python
 Python 3.8.1 (default, Dec 24 2019, 17:02:07) 
 [GCC 9.2.1 20191008] on linux
 Type "help", "copyright", "credits" or "license" for more information.
@@ -82,16 +79,11 @@ If you got this far, congratulations! You have installed Python and it works. Yo
 
 <div class="highlight"><pre>
 <span class="gp">&gt;&gt;&gt;</span> exit()
-<span class="gp">(myenv)$</span>
+<span class="gp">$</span>
 </pre></div>
 
-The greater-than signs `>>>` change back to `(myenv)` followed by `$` or `>`. This tells you that you're back on the system prompt. Now commands like `whoami` and `cd` work again, but Python commands like `1 + 2` won't work. You can re-activate the Python prompt anytime you want by simply typing `python` - as long as you have the virtual environment active! 
+The greater-than signs `>>>` change back to `$` or `>`. This tells you that you're back on the system prompt. Now commands like `whoami` and `cd` work again, but Python commands like `1 + 2` won't work. You can re-activate the Python prompt anytime you want by simply typing `python`  
 
-To quit the virtual environment, type `deactivate` or `source deactivate`  (for Linux and Mac) -- this time without parentheses.
-
-```console
-(myenv)$ deactivate
-```
 
 The terminal can be closed by typing `exit`.
 
@@ -100,4 +92,4 @@ $ exit
 ```
 
 As an exercise, try to run the Python console again - open the command prompt 
-(the terminal), then activate the virtual environment, and finally run Python.
+(the terminal), and finally run Python.

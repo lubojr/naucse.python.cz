@@ -202,7 +202,7 @@ test
 We don't want to leave a mess, so let's remove everything we did until that point.
 
 But you can't delete the folder in which you currently are.
-First, we need to get back to the Desktop. We can't use `cd Desctop` because in the current
+First, we need to get back to the Desktop. We can't use `cd Desktop` because in the current
 folder, there is no Desktop.
 So we have to go to the *parent directory* which contains the folder that you are
 currently in.
@@ -333,8 +333,7 @@ Try for example - `firefox`, `notepad`, `safari`, or `gedit`.
 If it's not working, ask your coach and they might help you to find an example command that works.
 {%- endif %}
 
-We will use commands/programs like `python` and `git` a lot. We will install them
-in a while.
+We will use commands/programs like `python` and `git` a lot. 
 <!--- XXX: this assumes installation is after intro to cmdline -->
 
 
