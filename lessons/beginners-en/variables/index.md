@@ -17,7 +17,7 @@ So let's say that our square has a side length of <var>a</var> = 356 cm.
 
 
 Print the result with `print()`.
-Save the program into the file <code>~/pyladies/02/sqare.py</code>
+Save the program into the file <code>~/pyladies/02/square.py</code>
 and run it; this is what it should print:
 
 ```
@@ -181,7 +181,7 @@ It serves as the prompt for the user, so use it to ask for any needed info.
 The final code might look like this:
 
 ```python
-# This program computes the perimeter and the area of a sqare
+# This program computes the perimeter and the area of a square
 
 side = float(input('Enter the side of a square in centimeters: '))
 print("The perimeter of a square with a side of", side,"cm is ", side * 4,"cm.")

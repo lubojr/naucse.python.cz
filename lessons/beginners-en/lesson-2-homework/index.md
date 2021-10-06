@@ -37,3 +37,13 @@ Try out these exercises at home. These are just examples. Try to find some more 
 - Which one of `shorterEdge`, `shorter_edge` is a more correct name for a variable? Why? Try searching for *PEP 8 variable names*. What's a PEP 8?
 - Try to write a program that calculates the surface and volume of a cube with edge = 2852 cm.
 - Now change the program so that the user can enter the edge value.
+- Save the following code into trial.py and run more times. What is it doing? 
+```python
+from random import randrange 
+number = randrange(3) 
+print(number) 
+```
+- Combine code above with your previous code for a game ‘rock, paper, scissors’ the way that pc_choice is:
+  - 'rock' if number is 0 
+  - 'scissors' if number is 1
+  - Else is 'paper' 

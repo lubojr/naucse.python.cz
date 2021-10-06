@@ -45,7 +45,7 @@ and check that the filename is really `hello.py` and not, for example, `hello.py
 
 ## Executing Your Program
 
-Open the command line and activate the virtual environment.
+Open the command line.
 Change to the `~/pyladies/02` directory and issue the following command:
 
 ```console
@@ -64,9 +64,6 @@ After you run `python hello.py` you should see the program responding with `Hell
 
 If it does not work, make sure that:
 
-* You have activated the virtual environment.
-  (You should see the `(venv)` in your command line prompt. If you do not see it, 
-  use the `activate` or `source activate` command that you have used in a [previous lession]({{ lesson_url('beginners-en/install') }}).)
 * You are in the correct directory: `~/pyladies/02`
   (you need to replace `~/pyladies` with the directory that you have created previously).
 * The `hello.py` file contains the correct command, including quotes and parentheses.

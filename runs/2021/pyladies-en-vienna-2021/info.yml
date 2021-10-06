@@ -41,12 +41,13 @@ plan:
 - title: First Program, Print
   slug: hello
   date: 2021-10-12
-  # materials:
-  # - lesson: beginners-en/hello-world
-  # - lesson: beginners-en/print
-  # - lesson: beginners-en/variables
-  # - lesson: beginners-en/lesson-2-homework
-  #   type: homework
+  materials:
+  - lesson: beginners-en/hello-world
+  - lesson: beginners-en/print
+  - lesson: beginners-en/variables
+  - lesson: beginners-en/comparisons
+  - lesson: beginners-en/lesson-2-homework
+    type: homework
 
 - title: Functions, Modules, Loops
   slug: loops
