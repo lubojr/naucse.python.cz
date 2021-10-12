@@ -5,7 +5,7 @@ Try out these exercises at home. These are just examples. Try to find some more 
 
 - Which Python version are you using?
 - What is the type of an error that occurs when:
-  - You are quoring only one side of a string? (*SyntaxError*)
+  - You are quoting only one side of a string? (*SyntaxError*)
   - You are trying to subtract a number from a string?
   - You divide by zero?
   - You try to use a variable that does not exist?
