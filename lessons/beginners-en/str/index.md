@@ -348,34 +348,3 @@ between characters, it makes it easier to understand:
                       ╰───────────╯
                       'PyLadies'[-3:] == 'ies'
 ```
-
-
-## Exercise 
-
-Try to write a function `change(string, position, character)`.
-
-This function returns a string which inserts the given character into the given
-position. The rest is the same as the original `string`.
-For example:
-
-```python
-change('doctor', 2, 'g') == 'dogtor'
-change('slice', 1, 'p') == 'spice'
-```
-
-Keep in mind that you can't change a string.
-You can only create a new one and put together
-pieces from the old one.
-
-{% filter solution %}
-```python
-def change(string, position, character):
-    """This function inserts the given character into the given position.
-    
-    Returns a new string which has the given character in the given
-    position. The rest is the same as the original string.
-    """
-
-    return string[:position] + character + string[position + 1:]
-```
-{% endfilter %}
