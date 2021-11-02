@@ -1,5 +1,5 @@
 # Functions
-In the previous [lesson]({{ lesson_url('beginners/functions') }}) 
+In the previous [lesson]({{ lesson_url('beginners-en/functions') }}) 
 we were working with functions that were written by someone else - they are
 already built-in in Python.
 
@@ -17,11 +17,11 @@ It's not hard:
 
 
 ```python
-def  find_perimeter( width ,  height ): 
+def find_perimeter(width, height): 
     "Returns the rectangle's perimeter of the given sides" 
     return  2 * (width  +  height)
 
-print ( find_perimeter(4 ,  2))
+print (find_perimeter(4 ,  2))
 
 ```
 
@@ -44,8 +44,8 @@ A function can return a value with the `return` command.
 
 
 ```python
-def  print_score(name, score): 
-    print (name, 'score is', score) 
+def print_score(name, score): 
+    print(name, 'score is', score) 
     if score > 1000:
         print('World record!') 
     elif score > 100: 
@@ -59,7 +59,6 @@ def  print_score(name, score):
 
 print_score('Your', 256) 
 print_score('Denis', 5)
-
 ```
 
 When you call a function, the arguments you write in parentheses
@@ -73,7 +72,7 @@ imagine that, internally, it assigns the values like this:
 name = 'Your'
 score = 256
 
-print (name, 'score is', score) 
+print(name, 'score is', score) 
 if score > 1000:
     ... #etc.
         
@@ -149,8 +148,8 @@ A function that *returns* its result can be used as part of other calculations:
 
 
 ```python
-def elliptical_cylinder(a, b, hight):
-    return ellipse(a, b) * hight
+def elliptical_cylinder(a, b, height):
+    return ellipse(a, b) * height
 
 print(elliptical_cylinder(3, 5, 3))
 ```

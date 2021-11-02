@@ -71,4 +71,4 @@ Do not forget to check the status of the game after every turn.
 
 ## Step 6 - Optional
 Can you think of better strategy for your computer? 
-Let us know your ideas or try to programm them directly.
+Let us know your ideas or try to program them directly.
