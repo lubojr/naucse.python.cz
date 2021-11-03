@@ -90,11 +90,20 @@ plan:
 - title: GIT
   slug: git
   date: 2021-11-09
-  # materials: # TODO GIT IS ALSO IN 2021-12-07 
-  # - +merge
-  # - title: Homework (PDF)
-  #   url: http://ptc-garage.eu/pyladies-en/homework/5-handout.pdf
-  #   type: homework
+  materials:
+   - lesson: git-en/install
+   - lesson: git-en/basics
+   - lesson: git-en/github
+   - lesson: git-en/branching
+   - title: Extensive Git cheatsheet
+     url: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
+     type: cheatsheet
+   - title: Have you just made a git mess?
+     url: http://justinhileman.info/article/git-pretty/git-pretty.png
+     type: cheatsheet
+   - title: Learn git branching in an interactive way
+     url: https://learngitbranching.js.org/
+     type: cheatsheet
 
 - title: Lists
   slug: list

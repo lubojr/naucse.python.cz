@@ -4,18 +4,12 @@ There is another program that we will install and that will later let us coopera
 and develop programs together with other people. It's called Git.
 Let's install it and set it up.
 
-The installation procedure is different for different operating systems, so choose yours.
+The installation procedure is different for various operating systems, so choose yours.
 
 
 ## Linux
 
 In Linux, we can install it with one command:
-
-**Fedora, RHEL**:
-
-```console
-$ sudo dnf install git git gui nano
-```
 
 **Ubuntu, Debian**:
 
@@ -24,7 +18,7 @@ $ sudo apt-get install git git-gui nano
 ```
 
 If you are using some other distribution we expect that you already know
-how to install programs. Go ahead and install *git*, *gitk*, *git gui* and *nano*.
+how to install programs. Go ahead and install *git*, *git gui* and *nano*.
 
 After you have installed git, choose your Git editor.
 If you do not like Vim (or you do not know what it is)
@@ -92,8 +86,8 @@ At the command prompt, enter the following commands, but change the
 name and address to yours:
 
 ```console
-$ git config --global user.name "Adéla Novotná"
-$ git config --global user.email adela.novotna@example.com
+$ git config --global user.name "Jane Berry"
+$ git config --global user.email jane.berry@example.com
 ```
 
 You can of course use a nickname or even

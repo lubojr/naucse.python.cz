@@ -22,8 +22,14 @@ there is no indication of how individual versions differ.
 A relatively large project wouldn't be manageable with this approach.
 
 Therefore, programmers tend to use more powerful tools
-dubbed *version control system* (VCS).
+called *version control system* (VCS).
 Currently, the most popular one is Git, and we'll learn more about it in this lesson.
+
+Real programs are rarely created by a single person.
+Two heads are better than one, so it's better to work on a project in a team.
+
+Each team member needs to be able to share their progress with others.
+Git can be used exactly for that: you can set up a *shared repository* online that your team members will synchronize with.
 
 > [note]
 > We will rely on the command line.
@@ -37,7 +43,7 @@ Currently, the most popular one is Git, and we'll learn more about it in this le
 ## Installation
 
 The process of installing Git is described 
-[here]({{ lesson_url('git/install') }}).
+[here]({{ lesson_url('git-en/install') }}).
 If you have skipped the lesson before, you might want to get back to it now.
 
 
@@ -372,13 +378,22 @@ Date:   Mon Mar 20 14:51:34 2017 +0100
 ```
 
 ## Diagram
-The diagram below visualizes what each command demonstrated thus far does exactly,
-and how the changes move from “not staged” to “commited”.
+These two diagrams below visualize what each command demonstrated thus far does exactly,
+and how the changes move from “not staged” to “commited” and back in case of need.
+
+Diagram showing the process of viewing and committing changes.
+{{ figure(
+    img=static('diagram.png'),
+    alt="Diagram showing the process of viewing and committing changes"
+) }}
+
+Diagram showing the process of committing and resetting changes.
 
 {{ figure(
-    img=static('diagram.svg'),
-    alt="Diagram showing the process of committing changes"
+    img=static('diagram2.png'),
+    alt="Diagram showing the process of committing and resetting changes"
 ) }}
+
 
 ## Log
 
@@ -427,30 +442,6 @@ Finally, exit by pressing <kbd>q</kbd>.
 To see all details about any commit,
 execute `git show 5ff0b`, replacing `5ff0b`
 with the first few characters of the <span class="yellow">Git commit ID</span>.
-
-## gitk
-
-The command line can convey all sorts of information,
-but not always in a clear way.
-A graphical application called *gitk* offers a more intuitive look
-at the history of your repository;
-you can start it using the command `gitk --all`:
-
-```console
-$ gitk --all
-```
-
-{{ figure(
-    img=static('gitk.png'),
-    alt="Graphical application Gitk",
-) }}
-
-
-The application doesn't look very appealing (almost as if
-it has been designed by programmers who emphasise substance over form),
-but it will suit our needs.
-Get familiar with it first, then close it, commit a few more sets of changes
-and finally explore them using `git log` and `gitk --all`.
 
 ## Conclusion
 
