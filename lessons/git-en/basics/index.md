@@ -78,11 +78,11 @@ nothing to commit (create/copy files and use "git add" to track)
 ```
 
 *“On branch master”* refers to so-called branches, we'll get back to that later.
-*“Initial commit”* means that there is no revision stored yet.
+*“Initial commit”* means that there is no commit stored yet.
 And *“nothing to commit”* says that there are no files to be saved and versioned in the directory.
 
 
-## First revision
+## First commit
 
 Try adding something to Git now!
 
@@ -135,14 +135,14 @@ Let's create our first commit:
 
 ```ansi
 ␛[36m$␛[0m git commit
-[master (root-commit) 1a009f4] First revision
+[master (root-commit) 1a009f4] First commit
  1 file changed, 6 insertions(+)
  create mode 100644 poem.txt
 ```
 
 After entering this command, an editor opens where you can write a short description 
 of this commit, briefly summarizing what changes have been made.
-This is referred to as a *commit message*. For now, a simple `First revision` will do.
+This is referred to as a *commit message*. For now, a simple `First commit` will do.
 You can ignore the existing lines starting with `#`, these are just for your information.
 Git will ignore them as well. Finally, save the file and close the editor.
 
@@ -190,7 +190,7 @@ Execute `git show`:
 Author: Adéla Novotná <adela.novotna@example.cz>
 Date:   Mon Mar 20 14:51:34 2017 +0100
 
-    First revision
+    First commit
 
 ␛[1mdiff --git a/poem.txt b/poem.txt␛[m
 ␛[1mnew file mode 100644␛[m
@@ -230,7 +230,7 @@ containing the <span class="green">text in green</span> has been added.
 > It will have to be entered for any new window that you open.
 
 
-## Second revision
+## Second commit
 
 Make a small change in your poem; replace one word,
 change punctuation, or add a new verse.
@@ -343,7 +343,7 @@ to demonstrate git diff.)
 > E.g. "change string X and add loop Y"
 > might be better to commit as two separate revisions.
 
-Finally, use `git commit` to create your second revision,
+Finally, use `git commit` to create your second commit,
 and then check it using `git show`:
 
 ```ansi
@@ -397,7 +397,7 @@ Diagram showing the process of committing and resetting changes.
 
 ## Log
 
-Now that we have created our first few revisions in the repository,
+Now that we have created our first few commits in the repository,
 let's demonstrate more commands that will help us understand
 the whole history of our Git repository.
 The first command is <code>git log</code>.
@@ -418,7 +418,7 @@ Date:   Mon Mar 20 14:51:34 2017 +0100
 Author: Adéla Novotná <adela.novotna@example.cz>
 Date:   Mon Mar 20 14:51:34 2017 +0100
 
-    First revision
+    First commit
 ```
 
 <code>git log</code> prints all commits starting from the newest one and going

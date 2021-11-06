@@ -1,192 +1,170 @@
-# Větvení v Gitu
+# Branching in GIT
 
-Takže, Git už znáš!
-Teď to začne být trošičku složitější :)
+So, now you know Git!
+We will dive into something a bit more complex now :)
 
-Programáto{{ gnd('ři', 'rky', both='ři') }} občas potřebují pracovat na dvou
-věcech zároveň.
-V projektu do práce se objeví se chyba,
-která musí být opravená
-ještě dnes, tak programátor{{ gnd('', 'ka') }} opustí, co zrovna dělá,
-vrátí se k nějaké „stabilní” verzi, opraví chybu
-a odešle ji zákazníkům.
-A pak se vrátí k tomu, co dělal{{a}} předtím – jen ještě
-musí zakomponovat opravu chyby i do verze, na které
-pracuje dlouhodobě.
+Programmers sometimes need to work on two or even more projects at the same time.
+Let's imagine that a severe mistake is found and needs to be fixed as soon as possible (meaning now was already late :) )
+So the programmer has to leave what he is currently working on and goes back to
+a "stable" version, fixes the error and ships it to the customers to remove their anger or despair.
+After this, she goes back to the original project. But before that, she should also 
+incorporate the fix of the error into the version she is currrently working on.
 
-Git na to má takzvané *větve* (angl. *branches*).
-Na jedné „větvi” se pracuje, ale je možné se přepnout do
-jiné (třeba starší) větve, udělat pár změn
-a pak se zase přepnout do nové větve a
-pokračovat dál nebo sloučit změny.
+Git has so called *branches* exactly for this purpose.
+On a single "branch" you can work, but you can switch to another (even older) branch,
+do some changes and then change back to new branch and continue,
+or *merge* the changes.
 
-Větvení využijeme i při spolupráci více lidí – každý
-dělá na vlastní větvi a když přijde čas,
-tak se různé změny sloučí dohromady.
+Branching comes handy also when more people are working on a same project - 
+everyone is working on his/her own branch and when the time comes,
+all changes are combined (merged) together.
 
-Podívej se, jaké máš větve ve svém repozitáři.
-K tomu slouží příkaz `git branch`:
+You can check what branches you have in your repository.
+For that, we have a command `git branch`:
 
 ```ansi
 ␛[36m$␛[0m git branch
-* ␛[32mmaster␛[m
+* ␛[32mmain␛[m
 ```
+We should have only one and it is called `main` or `master`.
+– it is a traditionally name of "backbone" branch for the project
+- In the last two years there was a commonly accepted default branch name change from *master* to *main*, so in older project you can still find *master* branches, while GitHub by default already creates *main* branch.
 
-Je tam jenom jedna a jmenuje se `master`
-– to je tradičně jméno „hlavní” větve.
+To create a new branch, you will again use command `git branch`.
+You will just add a name of the branch as an argument as well.
+So if you want to add the name of the author to the poem,
+you can name the branch `adding-author`.
 
-K vytvoření nové větve znovu použiješ
-`git branch`, jen tomu příkazu dáš navíc
-jméno nové větve.
-Třeba budeš chtít k básničce doplnit jméno autora,
-tak větev pojmenuješ `doplneni-autora`.
 
 ```ansi
-␛[36m$␛[0m git branch doplneni-autora
+␛[36m$␛[0m git branch adding-author
 ␛[36m$␛[0m git branch
-  doplneni-autora␛[m
-* ␛[32mmaster␛[m
+  adding-author␛[m
+* ␛[32mmain␛[m
 ```
 
-Tenhle příkaz sice udělal novou větev,
-ale nepřepnul do ní.
-Hvězdička ve výstupu z `git branch` ukazuje,
-že stále pracuješ v `master`.
-Na přepnutí budeš potřebovat další příkaz:
+This command created a new branch, but it does not switch into it yet.
+The asterisk symbol in the output of `git branch` is showing, on which branch you are working.
+In this case, it is still `main`.
+To switch between branches, you need another command:
+
 
 ```ansi
-␛[36m$␛[0m git checkout doplneni-autora
-Switched to branch 'doplneni-autora'
+␛[36m$␛[0m git checkout adding-author
+Switched to branch 'adding-author'
 ␛[36m$␛[0m git branch
-* ␛[32mdoplneni-autora␛[m
-  master␛[m
+* ␛[32madding-author␛[m
+  main␛[m
 ```
 
-Tak. Teď jsi „ve” větvi `doplneni-autora`.
-Doplň nějaké jméno do souboru `basnicka.txt`,
-a pomocí `git add` a `git commit` udělej novou revizi.
-Pak koukni na `gitk --all`, jak to vypadá:
+So, now you are "in" branch `adding-author`
+Add some author name into your file `poem.txt`.
+And with the help of `git add` and `git commit` perform new commit.
+Perfect!
+You can check how it looks using `git show`, `git status` or `git log`.
 
-{{ figure(
-    img=static('branch1.png'),
-    alt="Výstup programu `gitk` s větví doplneni-autora",
-) }}
+Let's leave the adding the author of the poem for a moment.
+Go back to branch `main` and create a branch called
+`adding-name` from it.
+Then switch to this new branch.
 
-Aktuální větev – `doplneni-autora` – je
-zvýrazněná tučně a starší `master` je stále
-na původní revizi.
-
-Opusťme teď na chvíli práci na doplňování autora.
-Vrať se do větve `master` a vytvoř z ní
-větev `doplneni-jmena`.
-Pak se na tuhle novou větev přepni.
 
 ```ansi
-␛[36m$␛[0m git checkout master
-Switched to branch 'master'
-␛[36m$␛[0m git branch doplneni-jmena
-␛[36m$␛[0m git checkout doplneni-jmena
-Switched to branch 'doplneni-jmena'
+␛[36m$␛[0m git checkout main
+Switched to branch 'main'
+␛[36m$␛[0m git branch adding-name
+␛[36m$␛[0m git checkout adding-name
+Switched to branch 'adding-name'
 ␛[36m$␛[0m git branch
-  doplneni-autora␛[m
-* ␛[32mdoplneni-jmena␛[m
-  master␛[m
+  adding-author␛[m
+* ␛[32madding-name␛[m
+  main␛[m
 ```
 
-Doplň do souboru jméno básně a pomocí
-`git add`, `git commit` ulož revizi.
-Všechno zkontroluj přes `gitk --all`.
+Add the name of the poem to the file and by using commands `git add`, `git commit` save the commit.
+Again, check everything using `git show`, `git status` or `git log`
 
-{{ figure(
-    img=static('branches.png'),
-    alt="Výstup programu `gitk` s větvemi doplneni-autora a doplneni-nazvu",
-) }}
+This is a simple example how you can solve the situation from the introduction:
+Leaving work in progress, switch to "stable" version `main` and
+start working in a completely different project part.
 
+You can switch between the versions as you want to,
+but it is always a good habbit to do a new commit:
+(`git commit`) and with help of `git status` confirm, 
+that everything is where it is supposed to be.
 
-Takhle nějak se dá postupovat v situaci popsané v úvodu:
-opuštění rozpracované verze, přechod na „stabilní”
-verzi `master` a začátek práce v jiné
-části projektu.
+Collaboration of multiple people on same project works on the exactly same principle:
+There is a common base (`main`) and every member
+is working on his/her own branch until all expected changes are there.
 
-Mezi jednotlivými větvemi se dá podle libosti přepínat,
-jen je vždycky dobré před přepnutím udělat novou revizi
-(`git commit`) a pomocí `git status` zkontrolovat, jestli je všechno
-uložené v Gitu.
+When a certain branch is ready, it can be incorporated back into `main`.
+Let's see how to do it!
 
-Na stejném principu funguje i spolupráce několika lidí
-na jednom projektu: je nějaký společný základ
-(`master`) a každý dělá na vlastní větvi, dokud není se svými změnami spokojený.
+## Merging
 
-A až je některá větev hotová, může se začlenit
-zpátky do `master`. Podívejme se jak na to.
+It would make no sense to split the history of a project,
+if there would be no way how to merge it back together.
+Luckily for us, merging in git is quite easy. Do not trust people who tell you otherwise.
+You will be the professional to impress others with your git skills.
 
+Switch back to `main`
+and use commit `git merge` with a name of branch you want to merge.
+This commit will merge branch you want into `main`.
 
-## Sloučení
-
-Nedávalo by smysl historii projektu rozdvojovat,
-kdyby pak jednotlivé větve nešly zase sloučit dohromady.
-Naštěstí je v Gitu slučování poměrně jednoduché.
-
-Přepni se zpátky na `master`
-a použij příkaz `git merge`, který
-sloučí jinou větev s tou aktuální.
-Příkazu musíš dát jméno větve, kterou chceš sloučit.
 
 ```ansi
-␛[36m$␛[0m git checkout master
-Switched to branch 'master'
-␛[36m$␛[0m git merge doplneni-jmena
+␛[36m$␛[0m git checkout main
+Switched to branch 'main'
+␛[36m$␛[0m git merge adding-name
 Updating e929fb0..c982a81
 Fast-forward
- basnicka.txt | 6 ␛[32m+++++␛[m␛[31m-␛[m
+ poem.txt | 6 ␛[32m+++++␛[m␛[31m-␛[m
  1 file changed, 5 insertions(+), 1 deletion(-)
 ```
 
-Sloučeno! Ono „`Fast-forward`” znamená, že
-vlastně nebylo co slučovat – jen se do větve
-`master` přidaly nové změny.
-Zkontroluj v `gitk --all`, jak to vypadá.
+Merged! This „`Fast-forward`” means, that there was nothing to actually 
+"merge" - we just added new changes from another branch into the branch `main`.
+You can check how it looks using `git log` or `git status`.
 
-A pak zkus sloučit i druhou větev: `git merge doplneni-autora`.
-Tady to bude složitější: Může se stát, že změny nepůjdou
-automaticky sloučit a ve výstupu se objeví hláška
-`merge conflict` (slučovací konflikt).
-V tom případě se na soubor podívej v editoru: objeví
-se v něm obsah z obou konfliktních verzí,
-společně se značkami, které upozorňují na místo
-kde konflikt nastal.
-Soubor uprav ho tak, jak by měl vypadat, ulož a zadej
+And now try to merge the second branch too - 
+`git merge adding-author`.
+Here it might be more complicated: It can happen that changes can't be 
+automatically merged together and in the command line we will see output as
+`merge conflict`. The reason for it is that git can not in this case 
+safely know "which way to merge to be 100% correct".
+A common example is if two commits in different branches edit the same line of code.
+You will probably know which way is correct but git usually can not, as there can be three options:
+Keep just changes from the first commit, keep just the changes from the second commit or make custom changes (which usually means use both changes but adapt the code a bit).
+
+How to solve it?
+Open the file in editor and you should see a content of both versions
+marked with signs (">>>" usually) which points to the exact location where conflict happened.
+Change the file to look like it should (also remove the signs), save it and do a commit
 `git commit`.
- 
-Ať nastal konflikt nebo ne, vytvoří se „slučovací revize“
-(angl. *merge commit*), které – jako každé revizi – můžeš dát popisek.
+
+Whether there was a conflict or not, there will be a special *merge commit*
 
 ```ansi
-␛[36m$␛[0m git merge doplneni-autora
-Auto-merging basnicka.txt
+␛[36m$␛[0m git merge adding-author
+Auto-merging poem.txt
 Merge made by the 'recursive' strategy.
- basnicka.txt | 2 ␛[32m++␛[m
+ poem.txt | 2 ␛[32m++␛[m
  1 file changed, 2 insertions(+)
 ```
 
-Povedlo se?
+Everything worked?
 
-{{ figure(
-    img=static('merge.png'),
-    alt="Výstup programu `gitk` s větvemi doplneni-autora a doplneni-nazvu sloučenými do master",
-) }}
-
-Pokud ano, můžeš staré větve vymazat – všechny jejich
-změny jsou v `master` a nemá na nich cenu
-pracovat dál.
+If yes, you can delete old branches - all their changes are inside the `main`
+and there is usually no reason to continue work on them. You can always create a new branch later again.
 
 ```ansi
-␛[36m$␛[0m git branch -d doplneni-autora
-Deleted branch doplneni-autora (was 0e213cd).
-␛[36m$␛[0m git branch -d doplneni-jmena
-Deleted branch doplneni-jmena (was c982a81).
+␛[36m$␛[0m git branch -d adding-author
+Deleted branch adding-author (was 0e213cd).
+␛[36m$␛[0m git branch -d adding-name
+Deleted branch adding-name (was c982a81).
 ␛[36m$␛[0m git branch
-* ␛[32mmaster␛[m
+* ␛[32mmain␛[m
 ```
 
-Gratuluji, už umíš větvení a slučování!
+Congratulations, now you are able to use branches and merge them.
+This brings you further on your adventure in getting to know git as a programming collaboration tool.
