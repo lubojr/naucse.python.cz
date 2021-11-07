@@ -25,7 +25,7 @@ If you do not like Vim (or you do not know what it is)
 enter this command to choose a more user-friendly editor called Nano:
 
 ```console
-$ git config - global core.editor nano
+$ git config --global core.editor nano
 ```
 
 Continue with the general [settings](#config) below.
@@ -47,9 +47,9 @@ If you have a terminal window open, close it, and open a new one.
 In the new command line, enter:
 
 ```console
-> git config - global core.editor notepad
+> git config --global core.editor notepad
 > git config --global format.commitMessageColumns 80
-> git config - global gui.encoding utf-8
+> git config --global gui.encoding utf-8
 ```
 
 Now go to [Settings](#config) below.
@@ -70,7 +70,7 @@ even if you installed for example Atom during the installation of the editor).
 You do that with this command:
 
 ```console
-$ git config - global core.editor nano
+$ git config --global core.editor nano
 ```
 
 Continue with the general settings:
@@ -117,8 +117,8 @@ $ git config --global color.ui true
 >
 > ```console
 > $ git config --global --list
-> user.name=Adéla Novotná
-> user.email=adela.novotna@example.com
+> user.name=Jane Berry
+> user.email=jane.berry@example.com
 > ```
 
 And that's all! You have installed Git. Congratulations!

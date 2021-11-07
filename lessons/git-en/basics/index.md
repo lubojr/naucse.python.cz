@@ -381,13 +381,14 @@ Date:   Mon Mar 20 14:51:34 2017 +0100
 These two diagrams below visualize what each command demonstrated thus far does exactly,
 and how the changes move from “not staged” to “commited” and back in case of need.
 
-Diagram showing the process of viewing and committing changes.
+Diagram showing the process of viewing and committing changes:
+
 {{ figure(
     img=static('diagram.png'),
     alt="Diagram showing the process of viewing and committing changes"
 ) }}
 
-Diagram showing the process of committing and resetting changes.
+Diagram showing the process of committing and resetting changes:
 
 {{ figure(
     img=static('diagram2.png'),
