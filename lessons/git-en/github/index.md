@@ -58,3 +58,7 @@ You might be wondering what that *origin* word means in the command above. What 
 > Git is an example where copying a random "smart answer" from *stackoverflow* without understanding the situation is not always a good idea - both when you work alone and even more when you collaborate with other people.
 
 If you want to remove the necessity to insert your email and password on each push you can use ssh keys to confirm to GitHub that it is really you pushing the changes - more info and a guide how to do it can be found here: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+Additionally you can use a so called *personal access token* instead of your password for using git in your terminal (but you will still use the password to login in to the website). Sometimes **GitHub** even forces you to create it. You can find more information how to create and maintain such a token here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token.
+
+Have fun with **Git**!

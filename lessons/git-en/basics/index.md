@@ -16,7 +16,7 @@ Here's an example:
     alt="Versioning interface in Dropbox"
 ) }}
 
-Unfortunatelly, you can only see different versions of a *single file*.
+Unfortunately, you can only see different versions of a *single file*.
 Also, it's hard to tell which version you might want to restore since
 there is no indication of how individual versions differ.
 A relatively large project wouldn't be manageable with this approach.
@@ -107,7 +107,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-We need to make Git track each new file explicitely.
+We need to make Git track each new file explicitly.
 Let's do that for the file with your poem:
 
 ```ansi

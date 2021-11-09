@@ -49,7 +49,7 @@ The manifesto lists the following four freedoms (taken from
 to the public, so that the whole community benefits.</li>
 </ol>
 
-Today, many open-source projects are available freely on the Internet for anone to use them.
+Today, many open-source projects are available freely on the Internet for anyone to use them.
 Their availability is governed by one of the licenses that guarantee these fundamental freedoms.
 
 Not all these projects were created using Python (and for now,
@@ -57,7 +57,7 @@ it might be difficult for you to understand those that were).
 Not all are hosted using Git.
 Neither are all of a high quality; anyone can publish any piece of their own work,
 so the Internet is filled with unfinished projects, abandoned ideas and failed experiments.
-Unfortunatelly, not all authors are friendly either.
+Unfortunately, not all authors are friendly either.
 
 On the other hand, open-source applications have their benefits too:
 not only can they help others to learn how to create them,
