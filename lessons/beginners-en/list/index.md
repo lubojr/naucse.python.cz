@@ -51,7 +51,7 @@ print(list)
 
 ## Selection from lists
 
-Yo already know the most basic operation with lists, 
+You already know the most basic operation with lists, 
 the `for` loop.
 The second most important operation is picking
 individual elements.
@@ -64,7 +64,25 @@ print(numbers[2])
 ```
 
 We use square brackets to access subsets.
-[Strings Chart] ({{lesson_url ('beginners-en/str')}} # slicing-diagram)
+
+```plain
+  ╭───┬───┬───┬───┬───┬───┬───┬───╮
+  │ P │ y │ L │ a │ d │ i │ e │ s │
+  ├───┼───┼───┼───┼───┼───┼───┼───┤
+  │   │   │   │   │   │   │   │   │
+  0   1   2   3   4   5   6   7   8
+ -8  -7  -6  -5  -4  -3  -2  -1
+
+  ╰───────────────╯
+  'PyLadies'[:4] == 'PyLa'
+
+          ╰───────────────╯
+        'PyLadies'[2:6] == 'Ladi'
+
+                      ╰───────────╯
+                      'PyLadies'[-3:] == 'ies'
+```
+
 shows you how to write the numbers when you want parts of the list:
 
 ```python
@@ -73,9 +91,9 @@ print(numbers[2:-3])
 
 ## Changing lists
 
-An important feature of lists, that neither numbers nor strings
+An important feature of lists is that neither numbers nor strings
 (nor `True`/`False`/`None`) have, is
-that lists can be changed.
+that lists can be changed (they are mutable).
 
 Numbers can't be changed - if you have `a = 3` and
 you write `a = a + 1`, the number `3` will not change.
