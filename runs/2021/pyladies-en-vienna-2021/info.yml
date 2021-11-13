@@ -108,7 +108,9 @@ plan:
 - title: Lists
   slug: list
   date: 2021-11-16
-  # materials:
+  materials:
+   - lesson: beginners-en/list
+   - lesson: beginners-en/tuple
   # - +merge
   # - title: Homework (PDF)
   #   url: http://ptc-garage.eu/pyladies-en/homework/7-handout.pdf
