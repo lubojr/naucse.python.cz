@@ -207,29 +207,29 @@ else :
 
 
 ```python
-pc_choise = 'rock'
-user_choise = input('rock, paper, or scissors?')
+pc_choice = 'rock'
+user_choice = input('rock, paper, or scissors?')
 
-if user_choise == 'rock':
-    if pc_choise == 'rock':
+if user_choice == 'rock':
+    if pc_choice == 'rock':
         print('Draw.')
-    elif pc_choise == 'scissors':
+    elif pc_choice == 'scissors':
         print ('You win!')
-    elif pc_choise == 'paper':
+    elif pc_choice == 'paper':
         print ('Computer won!')
-elif user_choise == 'scissors':
-    if pc_choise == 'rock':
+elif user_choice == 'scissors':
+    if pc_choice == 'rock':
         print('Computer won!')
-    elif pc_choise == 'scissors':
+    elif pc_choice == 'scissors':
         print('Draw.')
-    elif pc_choise == 'paper':
+    elif pc_choice == 'paper':
         print('You win!')
-elif user_choise == 'paper':
-    if pc_choise == 'rock':
+elif user_choice == 'paper':
+    if pc_choice == 'rock':
         print('You win!')
-    elif pc_choise == 'scissors':
+    elif pc_choice == 'scissors':
         print('Computer won!')
-    elif pc_choise == 'paper':
+    elif pc_choice == 'paper':
         print('Draw.')
 else:
     print('I do not understand.')
