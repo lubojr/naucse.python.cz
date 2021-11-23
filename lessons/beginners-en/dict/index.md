@@ -148,7 +148,7 @@ len: length
 > `keys()`, `values()` and `items()` return special objects
 > which can be used in `for` loops (we say that those objects are "iterable"),
 > and they behave as a set.
-> This is well described in the [documentation](https://docs.python.org/3.0/library/stdtypes.html#dictionary-view-objects)
+> This is well described in the [documentation](https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects)
 
 In a `for` loop, you can't add keys to dictionary nor delete them:
 
@@ -301,5 +301,5 @@ If you would like to know all the tricks
 about dictionaries you can look at (and also print) this [cheatsheet](https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_dictionaries.pdf).
 
 A complete description can be found here in the
-Python [documentation](https://docs.python.org/3.0/library/stdtypes.html#mapping-types-dict).
+Python [documentation](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict).
 
