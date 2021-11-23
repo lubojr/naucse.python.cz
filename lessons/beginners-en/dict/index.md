@@ -78,10 +78,12 @@ Other examples are dictionaries with properties of food, or word translations.
 
 ```python
 phones = {
-    'Mary': '153 85283',
-    'Theresa': '237 26505',
-    'Paul': '385 11223',
-    'Michael': '491 88047',
+    'Tyna': '153 85283',
+    'Lubo': '237 26505',
+    'Andreea': '385 11223',
+    'Fabian': '491 88047',
+    'Vitoria': '491 88047',
+    'Oliwia': '491 88047',
 }
 
 colours = {
@@ -94,6 +96,15 @@ colours = {
     'carrot': 'orange',
 }
 ```
+
+Update Lubo's number to be the same as Fabian's as they now temporarily share phones
+
+{% filter solution %}
+```python
+phones["Lubo"] = phones["Fabian"]
+print(phones)
+```
+{% endfilter %}
 
 ## Iteration
 
@@ -129,6 +140,8 @@ dict: dictionary
 len: length
 ```
 
+
+
 > [note]
 > There is also the method `keys()` which return just keys.
 >
@@ -148,6 +161,30 @@ RuntimeError: dictionary changed size during iteration
 ```
 
 But you can change values for already existing keys.
+
+Update the `phones` dictionary so that all numbers contain '+43' prefix
+
+{% filter solution %}
+```python
+for person in phones:
+    phones[person] = f'+43{phones[person]}'
+print(phones)
+```
+{% endfilter %}
+
+
+Using a for loop, ensure that following `keys` are deleted from the dictionary `phones`.
+keys_to_delete = ['Lubo', 'Tyna', 'Oliwia']
+
+{% filter solution %}
+```python
+for to_delete in keys_to_delete:
+    # need to check if is present - can not delete a key which does not exist in dictionary
+    if to_delete in phones:
+        del phones[to_delete]
+print(phones)
+```
+{% endfilter %}
 
 
 ## How to create a dictionary
@@ -195,6 +232,67 @@ print(func_descript['len'])
 > Be aware that in this case, keys have to have "pythonic" names –- 
 > they must follow the same rules as other Python variables.
 > For example, the following strings can't be keys: `"def"` or `"propan-butan"`.
+
+
+
+We have this dictionary of computer access information of two users and another lookup table with cities information.
+```python
+users = {
+  'aeinstein': {
+    'first': 'albert',
+    'last': 'einstein',
+    'location': 'princeton',
+    'email': 'albgenious1@princeton.org',
+  },
+  'mcurie': {
+    'first': 'marie',
+    'last': 'curie',
+    'location': 'paris',
+  },
+}
+ 
+cities = {
+  'paris': {
+    'country': 'France',
+    'population': 2161,
+  },
+  'london': {
+    'country': 'Great Britain',
+    'population': 8960,
+  },
+  'princeton': {
+    'country': 'United States of America',
+    'population': 28,
+  }
+}
+```
+Print out following information about each user of they have it:
+His/her 'username', 'full name' (first and last with first letter capitalized), 'email', 'city' they live in and 'country' they live in
+
+{% filter solution %}
+```python
+for username, properties in users.items():
+    fullname = f'{properties["first"][0].upper()}{ properties["first"][1:]} {properties["last"][0].upper()}{ properties["last"][1:]}'
+    # or properties["first"].capitalize()
+    if "email" in properties:
+        email = properties["email"]
+    else:
+        email = None
+    city = properties["location"]
+    if properties["location"] in cities:
+        country = cities[properties["location"]]["country"]
+    else:
+        country = None
+    print(f'''
+    User with username: "{username}"
+    is named: "{fullname}",
+    has email: "{email}",
+    lives in "{city}",
+    which is located in "{country}"
+    ''')
+```
+{% endfilter %}
+
 
 
 ## And that's all for now
