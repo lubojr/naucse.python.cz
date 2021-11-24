@@ -1,6 +1,6 @@
 # Dictionaries
 
-Another basic data type which we will instroduce is the
+Another basic data type which we will introduce is the
 *dictionary*, or short, `dict`.
 
 Similar to lists, dictionaries contain values.
@@ -190,7 +190,7 @@ print(phones)
 ## How to create a dictionary
 
 Dictionaries can be created in two ways.
-The first way uses square brackets `[]`.
+The first way uses curly brackets `{}`.
 The other way is by using the keyword `dict`.
 This works similar to `strings`, `integer` or `list`, so it will
 convert some specific objects to a dictionary.
