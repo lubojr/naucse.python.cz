@@ -132,7 +132,10 @@ plan:
 - title: Recap session
   slug: recap1
   date: 2021-11-30
-  # materials:
+  materials:
+   - title: Recap session materials (PDF)
+     url: https://drive.google.com/file/d/16k2-sXhoyJaiXw8-3q0n8vVFmo1yZoyR/view?usp=sharing
+     type: homework
   # - lesson: beginners-en/exceptions
   # - lesson: beginners-en/modules
   # - lesson: beginners-en/testing
