@@ -17,7 +17,7 @@ instead of testing their programs manually.
 *Automated tests* are functions that check that the program works correctly.
 You can execute the tests anytime and verify that the code works.
 The main benefit is that you can change the code in the future
-and let the tests verify that the change does not break existing functionalitye.
+and let the tests verify that the change does not break existing functionality.
 
 
 ## Installing the pytest library
@@ -29,12 +29,11 @@ but you can install them to your Python environment and use them.
 
 The library for testing in Python is called `unittest`.
 It is quite difficult to use this library so we will use a better one.
-We will install the library `pytest` which is easy to use and very popular.
+We will install the library `pytest` which is faster, easier to use and very popular.
 
 You install libraries into your active virtual environment.
 We have learned how to create and activate a virtual environment
-in the lesson about [Python installation]({{ lesson_url('beginners/install') }}).
-Make sure that you have activated a virtual environment.
+in the lesson about [Python installation]({{ lesson_url('beginners-en/install') }}).
 
 Submit the following command. (It is a command-line command, 
 just as `cd` or `mkdir`; do not enter it into the Python console.)
@@ -65,7 +64,7 @@ just as `cd` or `mkdir`; do not enter it into the Python console.)
 
 ## Writing tests
 
-We will show testing thtough a very simple example.
+We will show testing through a very simple example.
 There is a function `add` that can add two numbers.
 There is another function that tests if the 
 `add` function returns correct results for specific numbers.
@@ -172,8 +171,7 @@ This can make your work harder sometimes. Let's look at a more complex project: 
 > If you do not have the 1D tic-tac-toe program, the following sections are only theoretical.
 {% endif -%}
 > If you study at home, complete the 1D tic-tac-toe lesson before continuing.
-> The homework assignment is in [PyLadies projects](http://pyladies.cz/v1/s004-strings/handout/handout4.pdf)
-> on page 2.  (the English translation is at [one-dimensional tic-tac-toe](../tictactoe))..
+> The task description is at [one-dimensional tic-tac-toe](../tictactoe))..
 
 The structure of your 1D tic-tac-toe code could look like this:
 
@@ -211,7 +209,7 @@ If you import this module, Python executes all commands in it
 from top to bottom.
 
 The first command, `import`, makes some functions and variables available.
-Imports do not usually have any side-effects.
+Imports usually do not have any side-effects.
 
 The definitions of functions (`def` statements and everything in them) 
 just define the functions (but they do not execute the functions).
