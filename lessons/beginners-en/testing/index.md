@@ -31,22 +31,16 @@ The library for testing in Python is called `unittest`.
 It is quite difficult to use this library so we will use a better one.
 We will install the library `pytest` which is faster, easier to use and very popular.
 
-You install libraries into your active virtual environment.
-We have learned how to create and activate a virtual environment
-in the lesson about [Python installation]({{ lesson_url('beginners-en/install') }}).
-
 Submit the following command. (It is a command-line command, 
 just as `cd` or `mkdir`; do not enter it into the Python console.)
 
 ```console
-(venv)$ python -m pip install pytest
+$ python -m pip install pytest
 ```
 
 > [note] What does Pip do?
 > `python -m pip` calls Python and tells it to execute the
 > `pip` module. This module can install and uninstall libraries. 
-> (Similarly, when you created a virtual environment, you used the
-> command `python -m venv` – the `venv` module can create virtual environments.)
 > And the arguments `install pytest` tell Pip to install `pytest`.
 >
 > You can display the help for the Pip module using the command
