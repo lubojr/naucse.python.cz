@@ -1,6 +1,6 @@
 # Exceptions
 
-We have already talked about [error messages]({{ lesson_url('beginners/print') }}): 
+We have already talked about [error messages]({{ lesson_url('beginners-en/print') }}): 
 Python complains, tells us where the error (line) is, and terminates the program.
 But there is much more that we can learn about error messages (a.k.a *exceptions*).
 
@@ -36,10 +36,10 @@ ZeroDivisionError: division by zero
 You notice that every function call that led to the error is listed here.
 The actuall error is probably somewhere near that function call.
 In our case it's easy. We shouldn't call `in_func` with argument `0`.
-Or, the `in_function` must be written to handle the case that the divisor can be `0`
-and it should do something else than try to devide by zero.
+Or the `in_function` must be written to handle the case that the divisor can be `0`
+and it should do something else than try to divide by zero.
 
-Python can't know where the error is that needs to be fixed, so it shows
+Python can't know where the original error is that needs to be fixed, so it shows
 you everything in the error message.
 This will be very useful in more complex programs.
 
@@ -96,7 +96,7 @@ In the following function, the `int` function can
 fail when something other than a
 number is given to it. It needs to be prepared for
 that kind of situation with a `try/except` block. (You also
-commonly hear this called a `try/catch` block -- mostly in other
+commonly hear this called a `try/catch` block - mostly in other
 programming languages).
 
 ```python
@@ -196,7 +196,7 @@ finally:
 
 ## Task
 
-Let's add exception handling to our calculator (or to 1-D ticktactoe, if you have it)  
+Let's add exception handling to our original square size calculator (or to 1-D ticktactoe, if you have it)  
 if the user doesn't enter a number in the input.
 
 
