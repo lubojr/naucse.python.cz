@@ -159,12 +159,12 @@ plan:
   # - title: Interactive git
   #   url: http://www.ndpsoftware.com/git-cheatsheet.html
   #   type: cheatsheet
-
-- title: Working with files and CLI
+- title: Working with Files and CLI
   slug: files_cli
   date: 2021-12-14
   materials:
    - lesson: beginners-en/files
+   - lesson: beginners-en/argparse
 
 - title: Classes
   slug: classes
