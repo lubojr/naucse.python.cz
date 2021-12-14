@@ -108,3 +108,11 @@ print(args.extreme_universe)
 
 ```
 This has been a short introduction into working with CLI.
+
+A small exercise is prepared for you to straighten up your understanding of CLI and practice a bit.
+
+Task:
+
+Write a small text file, naming as you like and then write a simple CLI program, which will take `input file` argument and an `output file` argument and perform some kind of operation on the text of the file. For example changing the peom text to Capital letters or replacing certain letters with numbers etc.
+
+Add some `optional` command line parameters of your choice and add one boolean `flag` parameter.
