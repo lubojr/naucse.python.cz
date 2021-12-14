@@ -26,7 +26,7 @@ Save the file.
 
 [`utf-8`]: https://en.wikipedia.org/wiki/UTF-8
 
-Write this program:
+Let's create a following code:
 
 ```python
 poem_file = open('poem.txt', encoding='utf-8')
@@ -138,7 +138,7 @@ it can also be a database connection.
 ## The `with` statement
 
 Because the `try/finally` block is quite verbose, 
-there is a better way in Python. It's the `with` statement:
+there is a better way in Python. It's the `with` statement, that we have not seen before:
 
 ```python
 def initial_character():
@@ -157,7 +157,7 @@ It checks if the correct exception has occurred
 after the block ends.
 In our case, the file is closed when the block ends
 no matter what has happened.
-The file is closed in all cases --  
+The file is closed in all cases
 if the `with` block ends with success, 
 or with an exception, or if we're jumping out of it.
 
@@ -205,14 +205,14 @@ with open('second-poem.txt', mode='w', encoding='utf-8') as poem_file:
     print('Is beating', 2+2, "o'clock", file=poem_file)
 ```
 
-## Writing and reading json data
+## Writing and reading JSON data
 
-JSON can be stored into .txt files as well. It it sone in similar way, we just need to import json library before.
+`JSON` can be stored into `.txt` files as well. It it done in a similar way, we just need to import the `json` library.
 
-If we want to store our data form dictionary into the file, only thing we need to do:
+If we want to store our data from a dictionary into the file, we can use following code:
 
 ```python
-data= {
+data = {
     "name": "Anna",
     "city": "Brno",
     "languages": ["Czech", "English", "Python"],
@@ -234,7 +234,6 @@ with open('json_data.txt') as json_file:
 print(data)
 ```
 
-For other data formats like csv or excel, you need to install external libraries.   
-For working and reading with tabular data it is easiest to use pandas library.
-
-
+In order to read or write `csv` using the inbuilt `csv` library.
+For other data formats like `Excel` files, you need to install external libraries.
+For working with tabular data it is the easiest to use `pandas` library.
