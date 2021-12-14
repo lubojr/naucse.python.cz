@@ -141,6 +141,7 @@ plan:
 - title: Testing
   slug: testing
   date: 2021-12-07
+
   materials:
    - lesson: beginners-en/exceptions
    - lesson: beginners-en/modules
@@ -159,11 +160,11 @@ plan:
   #   url: http://www.ndpsoftware.com/git-cheatsheet.html
   #   type: cheatsheet
 
-- title: Graphics
-  slug: graphics
+- title: Working with files and CLI
+  slug: files_cli
   date: 2021-12-14
-  # materials:
-  # - +merge
+  materials:
+   - lesson: beginners-en/files
 
 - title: Classes
   slug: classes

@@ -204,3 +204,37 @@ with open('second-poem.txt', mode='w', encoding='utf-8') as poem_file:
     print('Our old chiming clock', file=poem_file)
     print('Is beating', 2+2, "o'clock", file=poem_file)
 ```
+
+## Writing and reading json data
+
+JSON can be stored into .txt files as well. It it sone in similar way, we just need to import json library before.
+
+If we want to store our data form dictionary into the file, only thing we need to do:
+
+```python
+data= {
+    "name": "Anna",
+    "city": "Brno",
+    "languages": ["Czech", "English", "Python"],
+    "age": 26
+}
+
+import json
+
+with open('json_data.txt', mode='w', encoding='utf-8') as json_file:
+    json.dump(data, json_file)
+```
+
+```python
+import json
+
+with open('json_data.txt') as json_file:
+    data = json.load(json_file)
+
+print(data)
+```
+
+For other data formats like csv or excel, you need to install external libraries.   
+For working and reading with tabular data it is easiest to use pandas library.
+
+
