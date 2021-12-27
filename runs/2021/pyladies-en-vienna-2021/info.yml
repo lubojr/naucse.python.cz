@@ -171,6 +171,7 @@ plan:
   date: 2022-01-11
   materials:
   - lesson: beginners-en/class
+  - lesson: beginners-en/inheritance
 
 - title: Final Project
   slug: final_project
