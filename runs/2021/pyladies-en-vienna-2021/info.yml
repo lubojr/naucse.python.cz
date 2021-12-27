@@ -169,8 +169,8 @@ plan:
 - title: Classes
   slug: classes
   date: 2022-01-11
-  # materials:
-  # - +merge
+  materials:
+  - lesson: beginners-en/class
 
 - title: Final Project
   slug: final_project
