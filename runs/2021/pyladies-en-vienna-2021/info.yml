@@ -176,13 +176,15 @@ plan:
 - title: Final Project
   slug: final_project
   date: 2022-01-18
-  # materials:
-  # - +merge
+  materials:
+  - title: Final project (PDF)
+    url: https://drive.google.com/file/d/1gJ4FdvmMwKSRr5D5k-idkvYoIs588HU-/view
+    type: homework
 
 - title: Final Project II.
   date: 2022-01-25
   slug: final_project2
-  # materials:
-  #   - title: Final Project II.
-  #     url: null
-  #     type: special
+  materials:
+  - title: What next (PDF)
+    url: https://drive.google.com/file/d/1XhugMdOcAJGi1_KqMUid-V88irdVlCcZ/view
+    type: homework
