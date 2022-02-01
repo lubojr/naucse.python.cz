@@ -25,7 +25,8 @@ If you don't want to remember them just install plug-in which will always
 notice you if you violate some.
 
 Firstly we will have to install special library which takes care of this.
-Write into your command line:
+If you have never worked with command line before, you can skip the linter installation and we can go through it at the actual course.
+Otherwise write into your command line:
 
 ```console
 $ python -m pip install flake8
