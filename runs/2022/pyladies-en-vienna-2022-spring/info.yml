@@ -31,12 +31,12 @@ plan:
 - title: Introduction, installation check
   slug: install
   date: 2022-02-08
-  # materials:
-  # - lesson: beginners-en/introduction
-  # - lesson: beginners-en/cmdline
-  # - lesson: beginners-en/first-steps
-  # - lesson: beginners-en/lesson-1-homework
-  #   type: homework
+  materials:
+  - lesson: beginners-en/introduction
+  - lesson: beginners-en/cmdline
+  - lesson: beginners-en/first-steps
+  - lesson: beginners-en/lesson-1-homework
+    type: homework
 
 - title: First Program, Print
   slug: hello

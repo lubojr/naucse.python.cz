@@ -43,6 +43,21 @@ When you have troubles, there are two ways how to proceed.
 - If you think that your trouble is general and solving it might help others, simly ask directly in the main room.
 - If it is more related to your personal set up in the computer, or you do not feel comfortable sharing your screen with everyone, raise your hand (on the bottom panel, next to your name is hand emoji symbol) and leave the teaching room to one of the numbered private spaces. One of our choaches will follow you there and help you.
 
+## Requirements for completion
+
+To successfully finish the course and acquire a completion certificate, there are several conditions:
+
+- Submit all homeworks (do not need to be 100% correct!)
+- Submit two projects: one during the course and one final project
+- Submit 3 course feedbacks
+- Attendance on 70% of all lectures (don't worry, we are flexible on this point)
+
+
+## Homeworks
+
+It is preferred by us that all homeworks are done via Google Collab, an online Python coding notebook interface with sharing options.
+You can find our tutorial here: [Google Collab Tutorial](//drive.google.com/file/d/1KPlvbwGpIe8HQVkancKk6wuTwhV5VkRc/view).
+This tool will allow us to provide better feedback.
 
 ## What to do after this course?
 
