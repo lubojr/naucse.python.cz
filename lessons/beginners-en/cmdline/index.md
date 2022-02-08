@@ -230,12 +230,12 @@ For that purpose, use `rm` or `rmdir`
 > The command line does not have a Recycle Bin or an Undo button! Everything will be deleted for good.
 > Every time, make sure that you are deleting the right folder.
 
-In Unix, you have to write `rmdir -rv` (minus,`r`, `v`). The parameter deletes everything
+In Unix, you have to write `rm -rv` (minus,`r`, `v`). The parameter deletes everything
 (`r` - *recursive*) inside the folder, and it prints info telling you (`v` - *verbose*) 
 what the command is doing.
 
 In Windows, you also have to add a switch to the `rm` command to delete everything inside a
-directory. Here, the switch is `/S` (forward slash, `S`).
+directory. Here, the switch is `/S` (forward slash, `S`). `rmdir` deletes an empty directory.
 
 {% call sidebyside() %}
 $ pwd
