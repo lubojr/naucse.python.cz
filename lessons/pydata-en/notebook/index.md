@@ -1,231 +1,231 @@
 # Jupyter Notebook intro
 
-Jupyter Notebook je webový editor sloužící k vytváření komplexních dokumentů,
-které mohou mimo strukturovaného textu a obrázků obsahovat také
-kód ([nejen v Pythonu](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels)),
-grafy, matematické vzorce (LaTeX) a další interaktivní prvky.
+Jupyter Notebook is a web editor used to create complex documents,
+which may include structured text and images as well
+code ([not only in Python] (https://github.com/jupyter/jupyter/wiki/Jupyter-kernels)),
+graphs, mathematical formulas (LaTeX) and other interactive elements.
 
-Z jiného pohledu se jedná o velmi praktickou konzoli pro Python, kde je veškerá
-historie uložena a dá se k ní vrátit nebo ji změnit, a tím ovlivnit zbytek
-výpočtů.
+From another point of view, this is a very practical console for Python, where everything is
+history is saved and can be returned or changed, affecting the rest
+calculations.
 
-Jupyter Notebook se hodí všude tam, kde potřebuješ ihned vidět výsledky
-své práce či postupovat krok za krokem, předat někomu komplexní program spolu
-s vizualizacemi a výsledky, připravit si prezentaci či datovou analýzu atp.
+Jupyter Notebook is suitable wherever you need to see the results immediately
+your work or proceed step by step, pass someone a comprehensive program together
+with visualizations and results, prepare a presentation or data analysis, etc.
 
-## Spuštění
+## Launch
 
-Po úspěšné instalaci lze Jupyter Notebook spustit v aktivním virtuálním prostředí
-jednoduchým příkazem:
+After successful installation, Jupyter Notebook can be run in an active virtual environment
+with a simple command:
 
-```shell
-(venv)$ jupyter notebook
-```
+`` `shell
+(venv) $ jupyter notebook
+`` `
 
-Pokud ti tento příkaz nefunguje, vyzkoušej následující:
+If this command doesn't work for you, try the following:
 
-```shell
-(venv)$ python -m notebook
-```
+`` `shell
+(venv) $ python -m notebook
+`` `
 
-Po spuštění Notebooku se automaticky spustí i webový prohlížeč, ve kterém se
-ti editor zobrazí.
+When you start the Notebook, the web browser in which you start will also start automatically
+the editor will display.
 
-> Notebook pracuje vždy v té složce, ve které byl spuštěn, proto je rozumné
-přejít před jeho spuštěním do složky, ve které chceš mít výsledné dokumenty
-uloženy.
+> The notebook always works in the folder in which it was started, so it is reasonable
+go to the folder in which you want the resulting documents before running it
+saved.
 
-![Notebook UI](static/jupyter_notebook_home.png)
+! [Notebook UI] (static / jupyter_notebook_home.png)
 
-Na první obrazovce vidíš obsah složky, ve které je Notebook spuštěn. Jakmile
-budeš mít nějaké dokumenty vytvořeny, objeví se zde a budeš se k nim moci vrátit
-a pokračovat v práci.
+On the first screen you see the contents of the folder in which the Notebook is running. once
+you will have some documents created, they will appear here and you will be able to return to them
+and continue working.
 
-Nový dokument vytvoříš tak, že si vpravo nahoře klikneš na `New` > `Python 3`.
-Touto volbou vybereš Python 3 jako jazyk, který budeš v rámci dokumentu používat.
-Notebook jich zvládne daleko více, a tak si na své přijdou úplně všichni.
+To create a new document, click on `New`>` Python 3` at the top right.
+This option selects Python 3 as the language you will use within the document.
+The laptop can handle many more, so everyone will get their money's worth.
 
-## Uživatelské rozhraní
+## The user interface
 
-![Notebook UI](static/jupyter_notebook_new.png)
+! [Notebook UI] (static / jupyter_notebook_new.png)
 
-Notebook nemá nijak složité rozhraní. Na prvním řádku najdeš informaci o názvu
-dokumentu a posledním uložení, pod tím pak ovládací prvky a hlavní nabídku.
-Ještě kousek níže pak prázdnou buňku čekající na první obsah.
+The laptop does not have a complicated interface. On the first line you will find information about the name
+document and the last save, then the controls and the main menu.
+A little lower then an empty cell waiting for the first content.
 
-Vpravo vedle nápisu „Python 3“ je malé, ale užitečné kolečko. Pokud nám během práce
-zčerná, znamená to, že je Python zaneprázdněn vykonáváním našich příkazů a je
-třeba počkat, až jejich provádění dokončí, anebo, pokud jsi například omylem
-vytvořil nekonečný cyklus, že je třeba Python (neboli kernel) restartovat.
+To the right of "Python 3" is a small but useful wheel. If at work
+black, it means that Python is busy executing our commands and is
+you have to wait for them to finish, or if you're wrong, for example
+created an infinite loop that requires Python (or kernel) to be restarted.
 
-## Základní použití
+## Basic use
 
-Jako první krok si nový dokument přejmenuj. Klikni na prvním řádku na nápis
-„Untitled“ a zvol si nějaké smysluplné jméno.
+As a first step, rename the new document. Click on the inscription on the first line
+"Untitled" and choose a meaningful name.
 
-Teď zkus do první buňky napsat nějaký příkaz v Pythonu a stisknout klávesovou
-zkratku `Shift` + `Enter`.
+Now try to type a command in Python in the first cell and press the keyboard key
+shortcut `Shift` +` Enter`.
 
-> Do jedné buňky lze zapsat libovolně velký kus kódu i s prázdnými řádky, proto
-se k jeho spuštění musí místo pouhého Enteru použít klávesová zkratka.
-Smysluplnější je ale dělit kód po menších částech, aby se dal lépe kontrolovat.
+> An arbitrarily large piece of code can be written in one cell, even with empty lines, therefore
+a keyboard shortcut must be used instead of just Enter to run it.
+However, it makes more sense to divide the code into smaller parts so that it can be better controlled.
 
-![první příkaz](static/first_command.png)
+! [first command] (static / first_command.png)
 
-Podobně můžeš pokračovat i dále. Vždy do buňky vložíš nějaký kód a pak jej
-spustíš. Pokud buňka obsahuje nějaký výstup nebo něco vrací, ukáže se výsledek
-po spuštění buňky hned pod ní. Pro výstup to ale platí, jen pokud je na posledním
-řádku buňky, zatímco `print` může být v buňce kdekoli.
+You can continue in the same way. You always enter a code in a cell and then it
+you run. If the cell contains any output or returns something, the result is displayed
+after starting the cell just below it. However, this only applies to the output if it is on the last one
+cell line, while `print` can be anywhere in the cell.
 
-![ukázka výstupů](static/outputs.png)
+! [sample outputs] (static / outputs.png)
 
-Funguje to jako klasický program, takže záleží na pořadí v jakém se jednotlivé
-buňky provedly. Musíš například nejdříve uložit nějaký obsah do proměnné, než ji
-budeš moci použít. Tohle pravidlo je důležité mít na paměti, protože buňky
-v Notebooku se dají spouštět nezávisle na sobě v libovolném pořadí. V jakém
-pořadí k jejich spuštění došlo, se dá zjistit z čísel, která se po spuštění
-objeví  v hranatých závorkách vlevo od buňky. Pokud se po spuštění místo čísla objeví `*`, znamená to, že
-Python pracuje a na výsledek si budeme muset chvilku počkat.
+It works like a classic program, so it depends on the order in which the individual
+cells performed. For example, you must first store some content in a variable before it can
+you will be able to use. This rule is important to keep in mind because cells
+v The notebook can be started independently of each other in any order. In what
+The order in which they started can be determined from the numbers that occur after starting
+appears in square brackets to the left of the cell. If `*` appears instead of a number after startup, it means that
+Python is working and we will have to wait a while for the result.
 
-Takhle to může vypadat, pokud se správné pořadí nedodrží:
+This is what it might look like if the correct order is not followed:
 
-![špatné pořadí spuštění buňek](static/wrong_order.png)
+! [wrong cell startup order] (static / wrong_order.png)
 
-> I když to není nutnost, bývá zvykem psát dokumenty v Notebooku tak, aby se
-buňky daly spustit v pořadí, ve kterém jdou za sebou. Když jej pak někomu pošleš,
-bude si moci snadno spustit tvůj kód kousek po kousku a sledovat, co se v něm
-děje. Mimoto je v hlavní nabídce i možnost `Kernel` > `Restart & Run All`, která
-restartuje Python a následně spustí všechny buňky v dokumentu.
+> Although it is not a necessity, it is customary to write documents in a notebook in order to
+the cells let them run in the order in which they follow each other. Then if you send it to someone,
+You will be able to easily run your code bit by bit and keep track of what's in it
+going on. In addition, the main menu also has the option `Kernel`>` Restart & Run All`, which
+restarts Python and then starts all cells in the document.
 
-Všimni si, jak buňky mění barvu. Pokud je okraj buňky zelený, je možné ji
-editovat a pomocí šipek se pohybovat v kódu, který obsahuje. Pokud je modrý, dá
-se šipkami přecházet mezi jednotlivými buňkami. Z modrého do zeleného režimu
-se dostaneme klávesou `Enter`, případně kliknutím do buňky. Naopak ze zeleného
-do modrého režimu pomocí klávesy `Esc`.
+Notice how the cells change color. If the edge of the cell is green, it is possible
+edit and use the arrows to move through the code it contains. If it's blue, it will
+with arrows to move between cells. From blue to green mode
+we get to the `Enter` key, or by clicking in the cell. On the contrary, from the green
+to blue mode using the `Esc` key.
 
-Pro ovládání Notebooku je dobré se naučit klávesové zkratky, které práci s ním
-usnadní a zrychlí. Jejich seznam je možné zobrazit pomocí klávesy `h`.
+To control your laptop it is good to learn the keyboard shortcuts that work with it
+make it easier and faster. Their list can be displayed using the `h` key.
 
-> Klávesové zkratky se používají v modrém režimu, jinak bychom místo
-speciálních akcí psali jednotlivé znaky do buněk.
+> Keyboard shortcuts are used in blue mode, otherwise we would instead
+special events wrote individual characters into cells.
 
-Mezi ty nejdůležitější patří:
+Among the most important are:
 
-* `h` zobrazí nápovědu
-* `a` vloží novou buňku nad aktuální
-* `b` vloží buňku pod aktuální
-* `x` vyjme buňku
-* `c` kopíruje buňku
-* `v` vloží kopírovanou nebo vyjmutou buňku pod aktuální
-* `Shift` + `v` vloží kopírovanou nebo vyjmutou buňku nad aktuální
-* `Ctrl` + `s` uloží dokument
-* `m` přepne buňku z pythonového kódu na text
+* `h` displays help
+* `a` inserts a new cell above the current one
+* `b` inserts a cell below the current one
+* `x` extracts the cell
+* `c` copies the cell
+* `v` inserts a kick or cut cell below the current one
+* `Shift` +` v` pastes the copied or cut cell above the current one
+* `Ctrl` +` s` saves the document
+* `m` switches a cell from python code to text
 
-**Nejdůležitější klávesová zkratka** je hned ta první - `h` - s její pomocí
-se totiž velice rychle dostanete k seznamu všech ostatních.
+** The most important keyboard shortcut ** is the first - `h` - with its help
+you will get to the list of everyone else very quickly.
 
-## Typy obsahu
+## Content types
 
-Základním typem buňky je buňka s kódem, která umí úplně vše, co z Pythonu
-už znáš.
+The basic cell type is a code cell that can do everything from Python
+you already know.
 
-![příklady v Pythonu](static/python_example.png)
+! [Python examples] (static / python_example.png)
 
 ### Text
 
-Stiskem klávesy `m` (v modrém režimu) můžeme buňku přepnout z režimu pythonového
-kódu do režimu textu, který nám umožní dokumenty obohatit o spoustu různého obsahu.
-Že je buňka v textovém režimu, poznáme podle toho, že nalevo od ní už nebude modré
-označení `In [ ]`. Zatímco u buňek s Pythonem se nám po spuštění programu výsledek
-vypíše pod buňku, textová buňka se po spuštění pouze vykreslí ve formě textu.
+By pressing the `m` key (in blue mode) we can switch the cell from python mode
+code to text mode, which allows us to enrich documents with a lot of different content.
+We know that the cell is in text mode by the fact that it will no longer be blue to the left of it
+`In []`. While for cells with Python we get the result after running the program
+prints below the cell, the text cell is only rendered as text when started.
 
 ### Markdown
 
-Obyčejný text by sám o sobě nebyl tak zajímavý a k přehlednosti nepřispěje o nic
-více než obyčejný komentář. Proto máme možnost jej formátovat a do jisté míry
-tak upravit jeho vzhled, ale hlavně strukturu. K formátování se používá
-značkovací jazyk [Markdown](https://cs.wikipedia.org/wiki/Markdown). Markdown
-umožňuje formátovat text pomocí obyčejných znaků.
+An ordinary text would not be so interesting in itself and will not contribute to clarity
+more than just a comment. Therefore, we have the ability to format it and to some extent
+so adjust its appearance, but mainly its structure. Used for formatting
+Markdown language (https://en.wikipedia.org/wiki/Markdown). Markdown
+allows you to format text using plain characters.
 
-Například:
+For example:
 
-* Text začínající `#` se po spuštění buňky stane automaticky nadpisem první
-úrovně. `##` pak udělají druhou úroveň atd.
-* Když text uvodíme hvězdičkami – `*třeba takto*` – bude napsán *kurzivou*.
-Dvojice hvězdiček na každé straně pak udělá text **tučný**.
-* Když bude několik řádků začínat hvězdičkou, stane se z nich seznam s odrážkami.
-Když na začátku použijeme čísla, bude seznam číslovaný.
-* Odkazy vypadají takto: `[text odkazu](cesta či URL adresa)` – do hranatých
-závorek na začátek se napíše text odkazu a do kulatých závorek pak cesta k cíli
-či URL adresa.
-* Obrázky vypadají téměř stejně jako odkazy, jen mají na začátku před první
-hranatou závorkou vykřičník: `![logo pythonu](static/python_logo.png)`
+* Text beginning with `#` will automatically become the first heading when the cell is started
+levels. `##` then they do the second level, etc.
+* If we introduce the text with asterisks - `* for example *` - it will be written * in italics *.
+A pair of asterisks on each side will then make the text ** bold **.
+* When several lines start with an asterisk, they become a bulleted list.
+When we use numbers at the beginning, the list will be numbered.
+* Links look like this: `[link text] (path or URL)` - to square
+the text of the link is written in parentheses at the beginning and the path to the destination in parentheses
+or URL.
+* Images look almost the same as links, only they have at the beginning before the first
+exclamation mark: `! [python logo] (static / python_logo.png)`
 
-Tímto způsobem jednoduše formátovaný text by mohl vypadat následovně:
+Simply formatted text in this way could look like this:
 
-![markdown source](static/markdown_source.png)
+! [markdown source] (static / markdown_source.png)
 
-Výsledek takového formátování pak může po spuštění buněk vypadat například
-takto:
+The result of such formatting can then look like, for example, cell startup
+thus:
 
-![markdown](static/markdown.png)
+! [markdown] (static / markdown.png)
 
-### Matematické vzorce
+### Mathematical formulas
 
-Pokud znáš notaci matematických formulí, která se používá v jazyce LaTeX, můžeš
-ji používat i v textu v notebooku. Latexovou formuli stačí začít a ukončit
-pomocí `$` (případně `$$`).
+If you know the notation of mathematical formulas that is used in LaTeX, you can
+use it in text on laptop as well. Just start and end the latex formula
+using `$` (or `$$`).
 
-Příklady několika zápisů:
+Examples of several entries:
 
-![latex examples](static/latex_examples.png)
+! [latex examples] (static / latex_examples.png)
 
-Budeš-li vzorce potřebovat a tato notace je pro tebe nová, není třeba se učit
-vše kolem jazyka LaTeX, stačí ti jednoduchá pravidla pro zápis matematických
-vzorců. Pomůže ti např. [tato nápověda](https://cs.wikipedia.org/wiki/N%C3%A1pov%C4%9Bda:Matematick%C3%A9_vzorce) z české wikipedie.
+If you need formulas and this notation is new to you, there is no need to learn
+everything about LaTeX, you just need simple rules for writing math
+formulas. For example, [this help] (https://cs.wikipedia.org/wiki/N%C3%A1pov%C4%9Bda:Matematick%C3%A9_vzorce) from Czech wikipedia will help you.
 
-## Další užitečné funkce
+## Other useful features
 
-Notebook má celou řadu vymožeností, které nám ulehčí práci s ním.
+The notebook has a number of conveniences that make it easier for us to work with it.
 
-### Nápověda
+### Help
 
-Když za název funkce (místo kulatých závorek) nebo modulu napíšeš otazník
-(např.: `print?`), objeví se ti po spuštění takové buňky nápověda. Ta je navíc
-zobrazena mimo hlavní dokument, a tak nepřekáží v další práci a může zůstat
-otevřená déle.
+When you type a question mark after the name of a function (instead of parentheses) or a module
+(eg: `print?`), a help will appear after running such a cell. That's extra
+displayed outside the main document, so it does not interfere with further work and may remain
+open longer.
 
-Kratší nápovědu (tzv. dokumentační řetězec) je možné zobrazit během psaní kódu pomocí
-klávesové zkratky `Shift` + `Tab`. Ta zobrazí dokumentační řetězec dané funkce
-v malé bublině u aktivní buňky.
+Shorter help (so-called documentation string) can be displayed while writing code using
+keyboard shortcuts `Shift` +` Tab`. This displays the documentation string of the function
+in a small bubble near the active cell.
 
-### Speciální příkazy
+### Special commands
 
-Příkazy začínající znakem procenta mají v notebooku speciální význam. Například
-`%time` dokáže změřit a zobrazit, jak dlouho trvalo vykonání kódu napsaného na řádku bezprostředně za tímto příkazem.
+Commands beginning with a percent sign have a special meaning in a laptop. For example
+`% time` can measure and display how long it took to execute the code written on the line immediately following this command.
 
-Speciální příkazy začínající dvěma procenty (např.: `%%time`) pak mají efekt na celou
-buňku místo jednoho řádku.
+Special commands starting with two percent (eg: `%% time`) then have an effect on the whole
+cell instead of one row.
 
-Seznam všech speciálních příkazů lze získat pomocí `%lsmagic`.
+A list of all special commands can be obtained with `% lsmagic`.
 
-### Příkazy z příkazové řádky
+### Command line commands
 
-V buňkách notebooku je možné velmi snadno spouštět i příkazy z příkazové řádky.
-Příkaz ke spuštění v příkazové řádce místo Pythonu stačí začít znakem vykřičníku
-(např.: `!whoami`)
+It is also very easy to run commands from the command line in laptop cells.
+Instead of running Python, just start with a command line
+(eg: `! whoami`)
 
-## Pokračování
+## Continued
 
-Notebook toho umí opravdu hodně a také v něm budou napsány i materiály pro
-následující kapitoly, což nám umožní prokládat teorii praktickými
-příklady i s grafy a obrázky a zájemcům si vyzkoušet s příklady experimentovat.
+The notebook can do a lot of that and it will also write materials for it
+the following chapters, which will allow us to put the theory into practice
+examples also with graphs and pictures and those interested to try out with experiments.
 
-> Veškeré zdrojové kódy lekcí a připravená data jsou k dispozici v
-[GIT repozitáři](https://github.com/PyDataCZ/naucse.python.cz/tree/master/lessons/pydata).
-Odtud je možné stáhnout si notebooky jednotlivých lekcí a dle libosti experimentovat.
+> All lesson source codes and prepared data are available in
+[GIT repositories] (https://github.com/PyDataCZ/naucse.python.cz/tree/master/lessons/pydata).
+From here it is possible to download notebooks of individual lessons and experiment as you wish.
 
-Nicméně na vývoj klasických aplikací a obecně pro projekty se složitější strukturou je stále 
-lepší kód rozdělit do modulů a editovat ho ve vhodném textovém editoru.
-Častou praxí je nejdříve v interaktivním prostředí notebooku rychle poskládat funkční
-prototyp a následně jej přetvořit v klasickou aplikaci.
+However, the development of classic applications and in general for projects with a more complex structure is still
+better divide the code into modules and edit it in a suitable text editor.
+It is common practice to first quickly assemble a functional in an interactive laptop environment
+prototype and then transform it into a classic application.
