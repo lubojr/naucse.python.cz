@@ -1,6 +1,7 @@
 title: Beginners course PyLadies Vienna
 subtitle: Online - spring 2022 - Tuesdays
-place: Online at https://gather.town/app/rK34ahbfoOPBPZfy/PyLadies_beginners_spring
+place: | 
+  Online at https://gather.town/app/rK34ahbfoOPBPZfy/PyLadies_beginners_spring
 time: 18:00 - 20:00
 timezone: Europe/Vienna
 default_time:
@@ -10,10 +11,12 @@ description: |
     Learn Python from the beginning. No previous knowledge required!
 long_description: |
     <br>
-    Here you can find all materials for the PyLadies Vienna Beginners Course.
-    All lectures are for complete beginners.
-    Instructions are for Linux, Windows and macOS.
+    Here you can find all materials for the PyLadies Vienna Beginners Python Course.
+    All lectures are for complete beginners. Instructions are for Linux, Windows and macOS.
+    <br>
     If you have any questions, feel free to contact us on pyladies.vienna@gmail.com
+    <br>
+    Our online events are proudly sponspored by Gather.
 derives: pyladies-en
 vars:
   user-gender: f
