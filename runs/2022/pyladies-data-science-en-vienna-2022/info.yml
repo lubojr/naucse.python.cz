@@ -1,0 +1,101 @@
+title: Data Course PyLadies
+subtitle: Online - spring 2022 Thursdays
+time: 18:00–20:00
+timezone: Europe/Vienna
+default_time:
+  start: '18:00'
+  end: '20:00'
+place: | 
+  Online at https://gather.town/app/rK34ahbfoOPBPZfy/PyLadies_beginners_spring
+description: Úvod do získávání, manipulace a analýzy dat, základy strojového učení.
+long_description: |
+    Here you can find all materials for the PyLadies Vienna Data Science Python Course.
+    All lectures are for people with already basic experience of Python and its data structures (lists, dictionaries etc).
+    <br>
+    If you have any questions, feel free to contact us on pyladies.vienna@gmail.com
+    Our online events are proudly sponspored by Gather.
+vars:
+  user-gender: f
+  pyladies: true
+  coach-present: true
+
+plan:
+- title: "Představení, Jupyter notebook, základy pandas"
+  slug: eda1
+  date: 2021-09-23
+  materials:
+  - lesson: pydata-en/install
+  - lesson: pydata-en/notebook
+  - lesson: pydata-en/pandas_core
+
+- title: "Datové typy a základy vizualizace v pandas"
+  slug: eda2
+  date: 2021-09-30
+  materials:
+  - lesson: pydata-en/pandas_types
+  - lesson: pydata-en/visualization_basics
+
+- title: "Explorativní datová analýza a statistika jedné proměnné"
+  slug: eda3
+  date: 2021-10-07
+  materials:
+  - lesson: pydata-en/eda-univariate-timeseries
+
+- title: "Explorativní datová analýza a více zdrojů / proměnných"
+  slug: eda4
+  date: 2021-10-14
+  materials:
+  - lesson: pydata-en/pandas_correlations
+
+- title: "Explorativní datová analýza a pokročilejší manipulace"
+  slug: eda5
+  date: 2021-10-21
+  materials:
+  - lesson: pydata-en/pandas_groupby
+
+- title: "Opakovací hodina (bez materiálů)"
+  slug: opakovani
+  date: 2021-11-03
+
+- title: Strojové učení - úvod, regrese
+  slug: ml1
+  date: 2021-11-11
+  materials:
+  - lesson: pydata-en/intro_regression
+  - lesson: pydata-en/regression_exercises
+  - lesson: pydata-en/regression_metrics
+  - lesson: pydata-en/regression_resume
+
+- title: Strojové učení - knihovna scikit-learn, celkové workflow
+  slug: ml2
+  date: 2021-11-18
+  materials:
+  - lesson: pydata-en/scikitlearn_api
+  - lesson: pydata-en/homework_revisited
+  - lesson: pydata-en/scikitlearn_resume
+
+- title: Strojové učení - klasifikace
+  slug: ml3
+  date: 2021-11-25
+  materials:
+  - lesson: pydata-en/intro_classification
+  - lesson: pydata-en/classification_metrics
+  - lesson: pydata-en/classification_resume
+
+- title: Analýza hlavních komponent (PCA)
+  slug: pca
+  date: 2021-12-02
+  materials:
+  - lesson: pydata-en/pca
+
+- title: Interaktivní vizualizace a aplikace
+  slug: dashboards
+  date: 2021-12-09
+  materials:
+  - lesson: pydata-en/dashboards
+  - lesson: pydata-en/dashboards-2
+
+- title: "Svátky klidu a konce kurzu"
+  slug: konec
+  serial: null
+  date: 2021-12-24
