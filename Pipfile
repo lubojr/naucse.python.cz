@@ -9,7 +9,7 @@ serve = "python -m naucse serve"
 freeze = "python -m naucse freeze"
 
 [packages]
-naucse = {git = "https://github.com/lubojr/naucse.git", editable = true, ref = "d8a1c8f821c1f0d2d2b24b9a0f3866f3e1441d36"}
+naucse = {git = "https://github.com/lubojr/naucse.git", editable = true, ref = "9632ce83d75cfd207356381d5cc3b2af7d6eae2d"}
 naucse-render = {git = "https://github.com/lubojr/naucse_render.git", editable = true, ref = "f7b93eb979f119a02f8a532892c8ef381e01477f"}
 pygments-pytest = "*"
 
