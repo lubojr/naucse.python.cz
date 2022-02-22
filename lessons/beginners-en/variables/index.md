@@ -28,7 +28,7 @@ The area of a square with a side of 356 cm is 126736 cm2
 The result should be computed by Python so don't write the
 numbers 1424 and 126736 into your code. <br>
 If you don't know what to do, look into your program <code>printing.py</code>
-from the lesson about [`print`]({{ lesson_url('beginners/print') }}),
+from the lesson about [`print`]({{ lesson_url('beginners-en/print') }}),
 where one of the lines does a similar thing.
 
 {% filter solution %}

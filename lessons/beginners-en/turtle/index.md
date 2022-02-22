@@ -70,7 +70,7 @@ Create a file <code>~/pyladies/03/drawing.py</code>.
 
 > [note]
 > The directory <code>~/pyladies</code> can have a different name on your laptop
-> – see [Python installation]({{ lesson_url('beginners/install') }}).
+> – see [Python installation]({{ lesson_url('beginners-en/install') }}).
 
 You can have a different name for your file, just don't use `turtle.py`.
 
