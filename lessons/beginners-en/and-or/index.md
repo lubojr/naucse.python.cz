@@ -70,4 +70,4 @@ else:
 >
 > The variables `happy` and `rich` won't be set, and later when they are needed, the program will end with an error.
 >
-> We will learn how to handle errors [next time]({{ lesson_url('beginners/exceptions') }}).
+> We will learn how to handle errors [next time]({{ lesson_url('beginners-en/exceptions') }}).

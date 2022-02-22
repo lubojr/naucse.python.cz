@@ -91,7 +91,7 @@ operations composed of multiple expressions.
 For example the expression `3 + 8` will add up `3` and `8`.
 
 We will focus on expressions and their values more in
-the lesson about [variables]({{ lesson_url('beginners/variables') }}).
+the lesson about [variables]({{ lesson_url('beginners-en/variables') }}).
 
 > [style-note] Typography
 >

@@ -7,17 +7,17 @@ needs different installation commands.
 
 ## Python 3
 
-First chech in your [command line]({{ lesson_url('beginners/cmdline') }})
+First check in your [command line]({{ lesson_url('beginners-en/cmdline') }})
 if you don't already have python3 installed:
 
 ```console
 $ python3 --version
 ```
-If there will appear "Python" and version number (e. g. `Python 3.5.2`)
-and the version is higher than 3.4 you are done here so continue with
+If there will appear "Python" and version number (e. g. `Python 3.8.2`)
+and the version is higher than 3.6 you are done here so continue with
 other section [`tkinter` check](#check-tkinter).
 
-If there will be "Python" and version lower than 3.3, ask coach.
+If there will be "Python" and version lower than 3.6, ask coach.
 
 If `bash: python3: command not found` or something similar will appear
 you will have to install Python3.

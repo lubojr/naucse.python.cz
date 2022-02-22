@@ -4,7 +4,7 @@ Install [Homebrew](http://brew.sh) which makes app and modules installtation
 much easier,
 
 
-Enter this command in the [command line]({{ lesson_url('beginners/cmdline') }}):
+Enter this command in the [command line]({{ lesson_url('beginners-en/cmdline') }}):
 
 ```console
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

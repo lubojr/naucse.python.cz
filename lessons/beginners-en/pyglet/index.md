@@ -164,7 +164,7 @@ function gets one argument containing what the user wrote.
 
 Notice that when we register our function
 we are __not__ writing parentheses, although we 
-[once]({{ lesson_url('beginners/functions') }}) said
+[once]({{ lesson_url('beginners-en/functions') }}) said
 that functions have to be called that way.
 Do you remember this example? Maybe you found it weird back then.
 
