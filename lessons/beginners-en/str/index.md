@@ -63,6 +63,8 @@ How are you?'''
 ```
 
 Programmers also use three quotes to document their functions.
+It is called a `docstring` (documentation string).
+You do not need to worry about how to define a function, the next lecture will be aimed directly at this topic.
 
 ```python
 def multiply(a, b):
@@ -74,6 +76,8 @@ def multiply(a, b):
     return a * b
 ```
 
+However you can use the inbuilt `help()` function on any function to see its `"docstring"`.
+In order to leave the newly opened help window, press `q` as `quit`. 
 
 Now we will have a look at how to work with strings.
 
