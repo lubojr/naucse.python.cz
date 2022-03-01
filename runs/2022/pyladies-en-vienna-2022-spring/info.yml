@@ -66,21 +66,21 @@ plan:
 - title: While, Strings
   date: 2022-03-01
   slug: strings
-  # materials:
-  #  - lesson: beginners-en/while
-  #  - lesson: beginners-en/str
-  #  - title: Homework (PDF)
-  #    url: https://drive.google.com/file/d/13PoSaf2T6jeRjV6zKxAZo1LRVR1aof02/view?usp=sharing
-  #    type: homework
+  materials:
+   - lesson: beginners-en/while
+   - lesson: beginners-en/str
+   - title: Homework (PDF)
+     url: https://drive.google.com/file/d/1AcNw1AfYDL9Iqi149cZfOLG3YqJFk2E_
+     type: homework
 
 - title: Custom functions
   date: 2022-03-08
   slug: custom_func
-  # materials:
-  #  - lesson: beginners-en/def
-  #  - title: Functions cheatsheet
-  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_functions.pdf
-  #    type: cheatsheet
+  materials:
+   - lesson: beginners-en/def
+   - title: Functions cheatsheet
+     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_functions.pdf
+     type: cheatsheet
   #  - lesson: beginners-en/tictactoe
 
 - title: GIT
