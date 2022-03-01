@@ -189,7 +189,7 @@ To do that, we will need another Python feature: methods.
 
 *Methods* are like functions - we can call something with them.
 Unlike a function, a method is tied to some *object* (value).
-It is called by writing a colon and a method name just after the object.
+It is called by writing a `dot` and a method name just after the object.
 And then, of course, parentheses, which may contain arguments.
 
 The String methods `upper()` and `lower()` change the case.
