@@ -178,8 +178,8 @@ def ellipse(a, b):
     return pi * a * b
     
 #print and input are "outside" the reusable function!
-x = input('Enter length of 1st axis: ')
-y = input('Enter length of 2nd axis: ')
+x = float(input('Enter length of 1st axis: '))
+y = float(input('Enter length of 2nd axis: '))
 print('The ellipsis area is', ellipse(x, y),'cm2.')
 ```
 
