@@ -1,0 +1,73 @@
+title: Data Course PyLadies
+subtitle: Online - spring 2022 - Thursdays
+time: 18:00–20:00
+timezone: Europe/Vienna
+default_time:
+  start: '18:00'
+  end: '20:00'
+place: | 
+  Online at https://gather.town/app/rK34ahbfoOPBPZfy/PyLadies_beginners_spring
+description: Introduction to data handling, analysis and machine learning techniques.
+long_description: |
+    Here you can find all materials for the PyLadies Vienna Data Science Python Course.
+    All lectures are for people with already basic experience of Python and its data structures (lists, dictionaries).
+    <br>
+    If you have any questions, feel free to contact us on pyladies.vienna@gmail.com
+    Our online events are proudly sponspored by Gather.
+vars:
+  user-gender: f
+  pyladies: true
+  coach-present: true
+
+plan:
+- title: "Installations, working with git"
+  slug: ds0
+  serial: 0
+
+- title: "Introduction, Basics of Pandas"
+  slug: ds1
+  date: 2022-04-07
+
+- title: "Data types and basics of visualization"
+  slug: ds2
+  date: 2022-04-14
+
+- title: "Data cleaning"
+  slug: ds3
+  date: 2022-04-21
+
+- title: "Exploratory data analysis (EDA)"
+  slug: ds4
+  date: 2022-04-28
+
+- title: "Merging and joining"
+  slug: ds5
+  date: 2022-05-05
+
+- title: "Advanced exploratory data analysis (EDA+)"
+  slug: ds6
+  date: 2022-05-12
+
+- title: "Data analysis and multiple variables + recap session"
+  slug: ds7
+  date: 2022-05-19
+
+- title: "Machine learning - Introduction to regression"
+  slug: ds8
+  date: 2022-05-26
+
+- title: "Machine learning - Classification"
+  slug: ds9
+  date: 2022-06-02
+
+- title: "Introduction to Natural language processing (NLP)"
+  slug: ds10
+  date: 2022-06-09
+
+- title: "SQL and Databases"
+  slug: ds11
+  date: 2022-06-16
+
+- title: "Streamlit project - Interactive visualisations"
+  slug: ds12
+  date: 2022-06-23
