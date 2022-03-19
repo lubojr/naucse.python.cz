@@ -388,15 +388,6 @@ Diagram showing the process of viewing and committing changes:
     alt="Diagram showing the process of viewing and committing changes"
 ) }}
 
-Diagram showing the process of committing and resetting changes:
-
-{{ figure(
-    img=static('diagram2.png'),
-    alt="Diagram showing the process of committing and resetting changes"
-) }}
-
-
-## Log
 
 Now that we have created our first few commits in the repository,
 let's demonstrate more commands that will help us understand

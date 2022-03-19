@@ -11,11 +11,16 @@ Additionally GitHub serves as a kind of programmer *social networking platform* 
 - opening and merging of *Pull Requests* to allow random bygoes from the internet jungle improve or extend your code
 - Adding informative *Changelogs* as a place to inform users of your software about *breaking changes*
 
-
 ## Using GitHub
 To create a new repository on GitHub, you need to create an account. In case you do not have one yet, go to https://github.com/signup.
-Afterwards registering and confirming your email, log in and go to the GitHub home page. You can find the “New repository” option under the “+” sign next to your profile picture, in the top right corner of the navbar.
+Afterwards registering and confirming your email, log in and go to the GitHub home page.
+Another step is creating so called *personal access token* for using git in your terminal (but you will still use the password to login in to the website).
+You can find more information how to create and maintain such a token here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token.
+Take note of the created Personal Access Token (Windows GitHub GUI allows you to save the Token - input it just once).
 
+And now we are READY to create our first GitHub repository:
+
+You can find the `“New repository”` option under the `“+”` sign next to your profile picture, in the top right corner of the navbar.
 
 After clicking the button, GitHub will ask you to name your repository and provide a brief description. You do not need to add *.gitignore* or *README* file yet.
 
@@ -57,8 +62,6 @@ You might be wondering what that *origin* word means in the command above. What 
 > 
 > Git is an example where copying a random "smart answer" from *stackoverflow* without understanding the situation is not always a good idea - both when you work alone and even more when you collaborate with other people.
 
-If you want to remove the necessity to insert your email and password on each push you can use ssh keys to confirm to GitHub that it is really you pushing the changes - more info and a guide how to do it can be found here: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+If you want to remove the necessity to insert the personal access token on each push you can use ssh keys to confirm to GitHub that it is really you pushing the changes - more info and a guide how to do it can be found here: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
-Additionally you can use a so called *personal access token* instead of your password for using git in your terminal (but you will still use the password to login in to the website). Sometimes **GitHub** even forces you to create it. You can find more information how to create and maintain such a token here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token.
-
-Have fun with **Git**!
+Have fun with **Git** and **GitHub**!
