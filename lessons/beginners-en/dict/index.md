@@ -44,7 +44,7 @@ KeyError: 'age'
 You can change the values of keys:
 
 ```pycon
->>> me['numbers'] = [3, 7, 42]
+>>> me['numbers'] = [20, 8, 42]
 >>> me
 {'name': 'Marketa', 'city': 'Prague', 'numbers': [20, 8, 42]}
 ```
@@ -210,7 +210,7 @@ print(colour_riped['apple'])
 ```
 
 We can also convert a list which contains tuples with *pairs* 
-(which work as ke and value) into a dictionary:
+(which work as *key* and *value*) into a dictionary:
 
 ```python
 data = [(1, 'one'), (2, 'two'), (3, 'three')]

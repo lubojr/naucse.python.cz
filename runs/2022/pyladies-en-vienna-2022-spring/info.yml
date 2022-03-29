@@ -101,6 +101,7 @@ plan:
      url: http://justinhileman.info/article/git-pretty/git-pretty.png
      type: cheatsheet
    - lesson: beginners-en/tictactoe
+     type: homework
 
 - title: Lists
   slug: list
