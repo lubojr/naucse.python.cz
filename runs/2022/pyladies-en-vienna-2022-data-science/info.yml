@@ -23,6 +23,19 @@ plan:
 - title: "Installations, working with git"
   slug: ds0
   serial: 0
+  materials:
+  - lesson: beginners-en/install_vienna
+  - lesson: beginners-en/install-editor
+  - lesson: git-en/install
+  - lesson: git-en/basics
+  - lesson: git-en/github
+  - lesson: git-en/branching
+  - title: Extensive Git cheatsheet
+    url: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
+    type: cheatsheet
+  - title: Have you just made a git mess?
+    url: http://justinhileman.info/article/git-pretty/git-pretty.png
+    type: cheatsheet
 
 - title: "Introduction, Basics of Pandas"
   slug: ds1
