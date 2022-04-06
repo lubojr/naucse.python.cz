@@ -138,13 +138,13 @@ plan:
 - title: Testing
   slug: testing
   date: 2022-04-12
-  # materials:
-  #  - lesson: beginners-en/exceptions
-  #  - lesson: beginners-en/modules
-  #  - lesson: beginners-en/testing
-  #  - title: Exceptions cheatsheet
-  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
-  #    type: cheatsheet
+  materials:
+   - lesson: beginners-en/exceptions
+   - lesson: beginners-en/modules
+   - lesson: beginners-en/testing
+   - title: Exceptions cheatsheet
+     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
+     type: cheatsheet
 - title: Working with Files and CLI
   slug: files_cli
   date: 2022-04-19

@@ -39,48 +39,48 @@ plan:
 
 - title: "Introduction, Basics of Pandas"
   slug: ds1
-  date: 2022-04-07
+  date: 2022-04-14
 
 - title: "Data types and basics of visualization"
   slug: ds2
-  date: 2022-04-14
+  date: 2022-04-21
 
 - title: "Data cleaning"
   slug: ds3
-  date: 2022-04-21
+  date: 2022-04-28
 
 - title: "Exploratory data analysis (EDA)"
   slug: ds4
-  date: 2022-04-28
+  date: 2022-05-05
 
 - title: "Merging and joining"
   slug: ds5
-  date: 2022-05-05
+  date: 2022-05-12
 
 - title: "Advanced exploratory data analysis (EDA+)"
   slug: ds6
-  date: 2022-05-12
+  date: 2022-05-19
 
 - title: "Data analysis and multiple variables + recap session"
   slug: ds7
-  date: 2022-05-19
+  date: 2022-05-26
 
 - title: "Machine learning - Introduction to regression"
   slug: ds8
-  date: 2022-05-26
+  date: 2022-06-02
 
 - title: "Machine learning - Classification"
   slug: ds9
-  date: 2022-06-02
+  date: 2022-06-09
 
 - title: "Introduction to Natural language processing (NLP)"
   slug: ds10
-  date: 2022-06-09
+  date: 2022-06-16
 
 - title: "SQL and Databases"
   slug: ds11
-  date: 2022-06-16
+  date: 2022-06-23
 
 - title: "Streamlit project - Interactive visualisations"
   slug: ds12
-  date: 2022-06-23
+  date: 2022-06-30
