@@ -146,6 +146,38 @@ so the test can call the tested function.
 
 The test should pass again.
 
+Let's now try to add two different tests for a function for computing perimeter of
+rectangle from [custom functions]({{ lesson_url('beginners-en/functions') }})
+
+```python
+def find_perimeter(width, height): 
+    "Returns the rectangle's perimeter of the given sides" 
+    return  2 * (width  +  height)
+```
+
+{% filter solution %}
+
+Possible tests examples:
+
+```python
+def test_find_perimeter_1():
+    """
+    Tests of positive integer values
+    as input
+    """
+    res = find_perimeter(4, 5)
+    assert res == 18
+
+def test_find_perimeter_empty():
+    """
+    Tests if function can handle input
+    where one of sides is 0
+    """
+    res = find_perimeter(0, 3)
+    assert res == 0
+```
+
+{% endfilter %}
 
 ## Executable modules
 
@@ -289,3 +321,27 @@ def test_move_failure():
     with pytest.raises(ValueError):
         tic_tac_toe.computer_move('oxoxoxoxoxoxoxoxoxox')
 ```
+
+Let's now try to edit the function for getting a perimeter of rectangle
+so that it raises a ValueError if any of the sides is smaller or equal to zero.
+Add a test for the new functionality. [custom functions]({{ lesson_url('beginners-en/functions') }})
+
+{% filter solution %}
+
+```python
+import pytest
+def find_perimeter(width, height): 
+    "Returns the rectangle's perimeter of the given sides" 
+    if width < 0 or height < 0:
+        raise ValueError('Input can be only positive number.')
+    return  2 * (width  +  height)
+
+def testfind_perimeter_exception_negative():
+    """
+    Tests of negative integer values
+    as input
+    """
+    with pytest.raises(ValueError):
+        find_perimeter(-3, 5)
+```
+{% endfilter %}
