@@ -13,13 +13,13 @@ Additionally there is quite commonly used `click` library, which you would need 
 and uses a decorator syntax, that we have not seen yet, so we have decided not to delve into it.
 
 You can find the official documentation on:
-[argparse]: https://docs.python.org/3/library/argparse.html
-[sys.argv]: https://docs.python.org/3/library/sys.html#sys.argv
-[optparse]: https://docs.python.org/3/library/optparse.html
-[getopt]: https://docs.python.org/3/library/getopt.html
+[argparse](https://docs.python.org/3/library/argparse.html)
+[sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
+[optparse](https://docs.python.org/3/library/optparse.html)
+[getopt](https://docs.python.org/3/library/getopt.html)
 
 And a quite handy tutorial going through most of functionalities, you could ever encounter:
-[argparse-tutorial]: https://docs.python.org/3/howto/argparse.html
+[argparse-tutorial](https://docs.python.org/3/howto/argparse.html)
 
 Here's how to easily create Python command line application with switches:
 
@@ -107,12 +107,34 @@ args = parser.parse_args()
 print(args.extreme_universe)
 
 ```
+
+If you use more options with two hyphens, you need to access the values from the `args`
+object via the first option, as in this example:
+
+```python
+parser.add_argument('-n', '--name', '--firstname' help='a name to repeat', required=True)
+hello(args.count, args.name, args.indent)
+```
+
+```console
+# both work
+python hello.py --name PyLady --count 5
+python hello.py --firstname PyLady --count 5
+```
+
 This has been a short introduction into working with CLI.
 
 A small exercise is prepared for you to straighten up your understanding of CLI and practice a bit.
 
-Task:
+## Task
 
-Write a small text file, naming as you like and then write a simple CLI program, which will take `input file` argument and an `output file` argument and perform some kind of operation on the text of the file. For example changing the peom text to Capital letters or replacing certain letters with numbers etc.
+Write a small text file in your editor, naming as it you like and then write a simple CLI program, which will take `input file` argument and an `output file` argument
+
+The code will `read` the `input file`, perform some kind of operation on the text content of the file and `write` the content to the `output file`.
+
+An example would be: changing the text to Capital letters or replacing certain letters with numbers etc.
 
 Add some `optional` command line parameters of your choice and add one boolean `flag` parameter.
+
+Please **note**! that opening a file in a `w` mode replaces all contents of that file!!
+Try to use the CLI you have built.

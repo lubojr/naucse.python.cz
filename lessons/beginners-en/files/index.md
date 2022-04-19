@@ -234,6 +234,8 @@ with open('json_data.txt') as json_file:
 print(data)
 ```
 
-In order to read or write `csv` using the inbuilt `csv` library.
+In order to read or write `csv` you can use the inbuilt `csv` library.
+
 For other data formats like `Excel` files, you need to install external libraries.
-For working with tabular data it is the easiest to use `pandas` library.
+
+For working with tabular data it is the easiest to use `pandas` library - which also needs to be installed extra.
