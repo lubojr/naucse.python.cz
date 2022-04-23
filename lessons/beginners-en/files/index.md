@@ -48,13 +48,13 @@ of the file at once and returns it as a string.
 We will cover `close()`, the function that closes the open file, later.
 
 
-## Iteration over files
+## Iteration over contents of files
 
 You can use open files with the `for` statement. 
 It's similar as with strings or ranges.
 `for i in range` provides consecutive numbers. 
 `for c in 'abcd'` provides single string characters. 
-`for line in poem_file` provides individual lines read from the file into the `line` variable.
+`for line in poem_file:` provides individual lines read from the file into the `line` variable.
 
 For example, we can indent the poem to make it stand out of the text.
 

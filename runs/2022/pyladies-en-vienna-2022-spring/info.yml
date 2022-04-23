@@ -159,7 +159,9 @@ plan:
 - title: Classes
   slug: classes
   date: 2022-04-26
-  # materials:
+  materials:
+   - lesson: beginners-en/class
+   - lesson: beginners-en/inheritance
 
 - title: Final Project
   slug: final_project
