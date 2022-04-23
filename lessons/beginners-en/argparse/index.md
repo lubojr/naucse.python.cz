@@ -5,7 +5,28 @@ The `argparse` library is used to create a command line interface - CLI.
 Primarily this means program argument processing. It is a part of the standard library, so you do not need to
 install anything extra.
 
-## Command line arguments
+## Command line interface
+
+... is one of ways how to interact with or control a program (or Python script) as a user - **interface** with it
+from inside the computer itself where it is installed (not over the internet).
+That user can be you as a creator of code and someone else you give access to it.
+
+
+The behavior of a program usually is varying - it depends on the instructions 
+you give to it.
+
+Adding command line arguments to a program enables terminal magic using `find` command like this:
+
+```console
+find . -type f -name "*.txt" -empty -mtime 30
+```
+
+Which searches current directory for empty files with .txt suffix and a modification date older than 30 days.
+The find command internally has a lot of switches controlling its
+behavior while filtering the folder(s) is is searching through
+based on user given parameters of the search.
+
+### Examples of libraries & argparse
 
 Quite many tools for processing arguments from the CLI are also present in the standard Python:
 [sys.argv], [optparse], [getopt].
@@ -128,13 +149,15 @@ A small exercise is prepared for you to straighten up your understanding of CLI 
 
 ## Task
 
-Write a small text file in your editor, naming as it you like and then write a simple CLI program, which will take `input file` argument and an `output file` argument
+- Write a new text file in your editor, naming as it you like, save it.
 
-The code will `read` the `input file`, perform some kind of operation on the text content of the file and `write` the content to the `output file`.
+- Create a simple CLI Python program, which will accept **input_file** argument and an **output_file** arguments.
 
-An example would be: changing the text to Capital letters or replacing certain letters with numbers etc.
+- The Python code should **read** the **input_file**, perform some kind of operation on the text content of the file and **write** the content to the **output_file**.
 
-Add some `optional` command line parameters of your choice and add one boolean `flag` parameter.
+- Some example of the operation to perform would be: changing the text to Capital letters or replacing certain letters with numbers etc.
+
+- Add some **optional** command line parameters of your choice and add one boolean **flag** parameter.
 
 Please **note**! that opening a file in a `w` mode replaces all contents of that file!!
 Try to use the CLI you have built.
