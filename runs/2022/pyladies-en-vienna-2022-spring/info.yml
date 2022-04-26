@@ -168,7 +168,10 @@ plan:
 - title: Final Project
   slug: final_project
   date: 2022-05-03
-  # materials:
+  materials:
+   - title: Homework (PDF)
+     url: https://drive.google.com/file/d/1gJ4FdvmMwKSRr5D5k-idkvYoIs588HU-/view
+     type: homework
 
 - title: Final Project II.
   date: 2022-05-10
