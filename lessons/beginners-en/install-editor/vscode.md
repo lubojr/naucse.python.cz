@@ -12,8 +12,7 @@ Indentation and colouring, how we want it, works only with files with `.py`
 extension.
 
 So it's better if you save your file as early as possible.
-
-## Code style - not a mandatory step
+<!-- ## Code style - not a mandatory step
 
 There is just one thing missing in VSCode by default: plug-in for checking
 code style
@@ -37,6 +36,6 @@ Open the Command Palette (Ctrl+Shift+P) and select the Python: Select Linter com
 This ask you to install required packages or choose from previously installed. 
 Choose previously installed flake8 if possible.
 
-If you have any troubles with this step, feel free to reach to us.
+If you have any troubles with this step, feel free to reach to us. -->
 
 {% endblock %}

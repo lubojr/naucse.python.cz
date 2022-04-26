@@ -1,4 +1,4 @@
-# Instalace {% block name_gen %} editoru {{ var('editor_name') }} {% endblock %}
+# Installation {% block name_gen %} editor {{ var('editor_name') }} {% endblock %}
 
 
 {% block install %}
