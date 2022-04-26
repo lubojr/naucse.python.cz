@@ -1,0 +1,180 @@
+title: Beginners course PyLadies Vienna for Ukraine
+subtitle: Online - spring 2022 - Mondays + Thursdays
+place: | 
+  Online at https://gather.town/app/rK34ahbfoOPBPZfy/PyLadies_beginners_spring
+time: 15:00 - 17:00
+timezone: Europe/Vienna
+default_time:
+  start: '15:00'
+  end: '17:00'
+description: |
+    Learn Python from the beginning. No previous knowledge required!
+long_description: |
+    <br>
+    Here you can find all materials for the PyLadies Vienna Beginners for Ukraine Python Course.
+    All lectures are for complete beginners and taught in English. 
+    Instructions are for Linux, Windows and macOS.
+    <br>
+    If you have any questions, feel free to contact us on pyladies.vienna@gmail.com
+    <br>
+    Our online events are proudly sponspored by <a href="//gather.town"><img src="//drive.google.com/uc?export=view&id=1ly1uHYyNgXHUwCu9J97Tk0i727jOT8Vx" style="width:80px;"/></a>
+    <br>
+    This course is sponsored by <a href="//eox.at"><img src="//eox.at/EOX_Logo.svg" style="width:100px;height:25px;"/></a> as a supportive action for Ukrainian refugees.
+    <br>
+derives: pyladies-en
+vars:
+  user-gender: f
+  pyladies: true
+  coach-present: true
+plan:
+
+- title: Installations
+  slug: install_home
+  serial: 0
+  materials:
+  - lesson: beginners-en/install_vienna
+  - lesson: beginners-en/install-editor
+
+- title: Introduction, installation check
+  slug: install
+  date: 2022-05-16
+  materials:
+  - lesson: beginners-en/introduction
+  - lesson: beginners-en/cmdline
+  - lesson: beginners-en/first-steps
+  # - lesson: beginners-en/lesson-1-homework
+  #   type: homework
+
+- title: First Program, Print
+  slug: hello
+  date: 2022-05-19
+  # materials:
+  # - lesson: beginners-en/hello-world
+  # - lesson: beginners-en/print
+  # - lesson: beginners-en/variables
+  # - lesson: beginners-en/comparisons
+  # - lesson: beginners-en/lesson-2-homework
+  #   type: homework
+
+- title: Functions, Modules, Loops
+  slug: loops
+  date: 2022-05-23
+  # materials:
+  #  - lesson: beginners-en/and-or
+  #  - lesson: beginners-en/functions
+  #  - lesson: beginners-en/turtle
+  #  - title: Homework (PDF)
+  #    url: https://drive.google.com/file/d/1hP2MIYzKFvWqNfPbRr_36qBLxjHEXwM9
+  #    type: homework
+
+- title: While, Strings
+  date: 2022-05-26
+  slug: strings
+  # materials:
+  #  - lesson: beginners-en/while
+  #  - lesson: beginners-en/str
+  #  - title: Homework (PDF)
+  #    url: https://drive.google.com/file/d/1AcNw1AfYDL9Iqi149cZfOLG3YqJFk2E_
+  #    type: homework
+
+- title: Custom functions
+  date: 2022-05-30
+  slug: custom_func
+  # materials:
+  #  - lesson: beginners-en/def
+  #  - title: Functions cheatsheet
+  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_functions.pdf
+  #    type: cheatsheet
+  #  - title: Homework (PDF)
+  #    url: https://drive.google.com/file/d/1_NKMGKy6X8HwIvoYp0ew5gCckezIVwBB
+  #    type: homework
+
+- title: GIT
+  slug: git
+  date: 2022-06-02
+  # materials:
+  #  - lesson: git-en/install
+  #  - lesson: git-en/basics
+  #  - lesson: git-en/github
+  #  - lesson: git-en/branching
+  #  - title: Extensive Git cheatsheet
+  #    url: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
+  #    type: cheatsheet
+  #  - title: Have you just made a git mess?
+  #    url: http://justinhileman.info/article/git-pretty/git-pretty.png
+  #    type: cheatsheet
+  #  - lesson: beginners-en/tictactoe
+  #    type: homework
+
+- title: Lists
+  slug: list
+  date: 2022-06-09
+  # materials:
+  #  - lesson: beginners-en/list
+  #  - lesson: beginners-en/tuple
+  #  - title: Homework (PDF)
+  #    url: https://drive.google.com/file/d/1tFemjjefHWY2R5Rbh0TF4L6hFAZ5Fe3p/view?usp=sharing
+  #    type: homework
+
+
+- title: Dictionaries
+  slug: dict
+  date: 2022-06-13
+  # materials:
+  #  - lesson: beginners-en/dict
+  #  - lesson: beginners-en/json
+  #  - title: Dicts
+  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_dictionaries.pdf
+  #    type: cheatsheet
+  #  - title: Homework (PDF)
+  #    url: https://drive.google.com/file/d/1sJhOmCTC1wspG6um4KRNJvtpUib3L2x7/view?usp=sharing
+  #    type: homework
+
+- title: Recap session
+  slug: recap1
+  date: 2022-06-16
+  # materials:
+  #  - title: Recap session materials (PDF)
+  #    url: https://drive.google.com/file/d/16k2-sXhoyJaiXw8-3q0n8vVFmo1yZoyR/view?usp=sharing
+  #    type: homework
+
+- title: Testing
+  slug: testing
+  date: 2022-06-20
+  # materials:
+  #  - lesson: beginners-en/exceptions
+  #  - lesson: beginners-en/modules
+  #  - lesson: beginners-en/testing
+  #  - title: Exceptions cheatsheet
+  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
+  #    type: cheatsheet
+  #  - title: Homework (PDF)
+  #    url: https://drive.google.com/file/d/1Xkd0k3iCV1I7I5YhJc4eiANlQZXOo1yQ/view
+  #    type: homework
+
+- title: Working with Files and CLI
+  slug: files_cli
+  date: 2022-06-23
+  # materials:
+  #  - lesson: beginners-en/files
+  #  - lesson: beginners-en/argparse
+
+- title: Classes
+  slug: classes
+  date: 2022-06-27
+  # materials:
+  #  - lesson: beginners-en/class
+  #  - lesson: beginners-en/inheritance
+
+- title: Final Project
+  slug: final_project
+  date: 2022-06-30
+  # materials:
+
+- title: Final Project II.
+  date: 2022-07-04
+  slug: final_project2
+  # materials:
+  #   - title: Final Project II.
+  #     url: null
+  #     type: special
