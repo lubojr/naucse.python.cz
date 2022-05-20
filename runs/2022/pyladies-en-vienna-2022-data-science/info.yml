@@ -55,22 +55,37 @@ plan:
 - title: "Data cleaning"
   slug: ds3
   date: 2022-04-28
+  materials:
+  - title: "Lecture materials on PyLadies Vienna GitHub"
+    url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/03
 
 - title: "Exploratory data analysis (EDA)"
   slug: ds4
   date: 2022-05-05
+  materials:
+  - title: "Lecture materials on PyLadies Vienna GitHub"
+    url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/04
 
 - title: "Merging and joining"
   slug: ds5
   date: 2022-05-12
+  materials:
+  - title: "Lecture materials on PyLadies Vienna GitHub"
+    url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/05
 
 - title: "Advanced exploratory data analysis (EDA+)"
   slug: ds6
   date: 2022-05-19
+  materials:
+  - title: "Lecture materials on PyLadies Vienna GitHub"
+    url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/06
 
 - title: "Data analysis and multiple variables + recap session"
   slug: ds7
   date: 2022-05-26
+  materials:
+  - title: "Lecture materials on PyLadies Vienna GitHub"
+    url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/07
 
 - title: "Machine learning - Introduction to regression"
   slug: ds8

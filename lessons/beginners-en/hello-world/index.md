@@ -56,8 +56,6 @@ $ python hello.py
 > You have learned about the command line in 
 > a [previous lesson](../../beginners-en/cmdline/) which shows how to change the current directory 
 > using the `cd` command.
-> Remember to activate your virtual environment, similarly as in lesson about
-> [Python installation](../../beginners-en/install/).
 
 
 After you run `python hello.py` you should see the program responding with `Hello world!`.

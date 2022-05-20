@@ -178,7 +178,9 @@ We will explain the details later, for now, just remember these:
 The text inside the parentheses can be tailored according to your needs.
 It serves as the prompt for the user, so use it to ask for any needed info.
 
-The final code might look like this:
+And now try to put it all together: Ask user for a side of a square and use the variable as an input to the computation.
+
+{% filter solution %}
 
 ```python
 # This program computes the perimeter and the area of a square
@@ -187,3 +189,5 @@ side = float(input('Enter the side of a square in centimeters: '))
 print("The perimeter of a square with a side of", side,"cm is ", side * 4,"cm.")
 print("The area of a square with a side of", side,"cm is", side * side, "cm2.")
 ```
+
+{% endfilter %}
