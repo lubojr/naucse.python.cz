@@ -59,13 +59,13 @@ plan:
 - title: Functions, Modules, Loops
   slug: loops
   date: 2022-05-23
-  # materials:
-  #  - lesson: beginners-en/and-or
-  #  - lesson: beginners-en/functions
-  #  - lesson: beginners-en/turtle
-  #  - title: Homework (PDF)
-  #    url: https://drive.google.com/file/d/1hP2MIYzKFvWqNfPbRr_36qBLxjHEXwM9
-  #    type: homework
+  materials:
+   - lesson: beginners-en/and-or
+   - lesson: beginners-en/functions
+   - lesson: beginners-en/turtle
+   - title: Homework (PDF)
+     url: https://drive.google.com/file/d/1hP2MIYzKFvWqNfPbRr_36qBLxjHEXwM9
+     type: homework
 
 - title: While, Strings
   date: 2022-05-26
