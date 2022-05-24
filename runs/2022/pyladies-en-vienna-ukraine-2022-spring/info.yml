@@ -64,15 +64,15 @@ plan:
    - lesson: beginners-en/functions
    - lesson: beginners-en/turtle
    - title: Homework (PDF)
-     url: https://drive.google.com/file/d/1hP2MIYzKFvWqNfPbRr_36qBLxjHEXwM9
+     url: https://drive.google.com/file/d/1w-hD2Yi5osGOr1dv0DjIvWC3euTb-JQS
      type: homework
 
 - title: While, Strings
   date: 2022-05-26
   slug: strings
-  # materials:
-  #  - lesson: beginners-en/while
-  #  - lesson: beginners-en/str
+  materials:
+   - lesson: beginners-en/while
+   - lesson: beginners-en/str
   #  - title: Homework (PDF)
   #    url: https://drive.google.com/file/d/1AcNw1AfYDL9Iqi149cZfOLG3YqJFk2E_
   #    type: homework
