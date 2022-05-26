@@ -208,11 +208,15 @@ It's the same as with `if` - it applies only to
 commands that are indented below.
 
 The command `for x in range(n):` repeats the commands below <var>n</var> times
-and it increments the variable `x` gradually from 0 to n-1.
+and it increments the variable `x` gradually from <var>0 to n-1</var>.
 
 The command `for x in a, b, c, d, ...:` repeats the commands below;
-it increments the variable `x` gradually to <var>a</var>, <var>b</var>,
+it changes the variable `x` gradually to <var>a</var>, <var>b</var>,
 <var>c</var> <var>d</var>, ...
+
+In computer programming, a loop is a sequence of instructions that is continually repeated until a condition is reached.
+Very powerful concept allowing you to significantly reduce duplication of commands.
+
 {% endfilter %}
 
 ### Overwriting variables
@@ -307,6 +311,15 @@ for i in range(20):
 exitonclick()
 ```
 {% endfilter %}
+
+>[note] Loop variable Naming
+>Always use a meaningful loop variable name, like **for index_tab_browser in range(3, 18): close_tab_in_browser(index_tab_browser) ** not just i, j, x, y etc.
+>When using meaningful names:
+> - the code is more understandable to colleagues reading your code,
+> - it's easier to find errors in the loop logic
+> - text searches for the variable name return relevant pieces of code operating on the same data are more reliable
+>
+> There is one exception - when it's a single-level loop and the variable has no meaning other than "the number of times I've been through this loop", in which case `i` can be used.
 
 ### Three squares
 

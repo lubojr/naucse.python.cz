@@ -29,7 +29,7 @@ How does it work?
 
 You *define* a function with the command `def`. Right after that
 you have to write name of the function, parentheses (which may contain 
-*arguments*) and then, of course, a colon. 
+*arguments*) and then, of course, a *colon*. 
 
 We have already said that after a colon, everything that 
 belongs to (in our case) the function must be indented. 
@@ -37,7 +37,7 @@ The indented code is called *function body* and it contains
 the commands that the function performs. 
 In the body you can use various commands including `if`, `loop`, etc.
 
-The body can start with a *documentation comment* which describes what
+The body can start with a *documentation comment* or so called *docstring* which describes what
 the function is doing.
 
 A function can return a value with the `return` command.
