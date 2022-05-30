@@ -1,11 +1,12 @@
 # Git
 
 There is another program that we will install and that will later let us cooperate
-and develop programs together with other people. It's called Git.
+and develop programs together with other people. It's called [Git](https://git-scm.com/).
 Let's install it and set it up.
 
-The installation procedure is different for various operating systems, so choose yours.
+On some operating systems, for convenience, we shall also install [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager)
 
+The installation procedure is different for various operating systems, so choose yours.
 
 ## Linux
 
@@ -28,6 +29,16 @@ enter this command to choose a more user-friendly editor called Nano:
 $ git config --global core.editor nano
 ```
 
+After this step, please install the [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) by downloading gcmcore-linux.(version).deb package from https://github.com/GitCredentialManager/git-credential-manager/releases/latest.
+
+After that install and configure with commands:
+
+```console
+$ sudo dpkg -i <path-to-package>
+$ git-credential-manager-core configure
+$ git config --global credential.credentialStore secretservice
+```
+
 Continue with the general [settings](#config) below.
 
 
@@ -39,7 +50,8 @@ When installing, select these options:
 * Run Git from the Windows Command Prompt
 * Checkout Windows-style, commit Unix-style line endings
 
-Do not change any other options.
+Do not change any other options, they can be left as default.
+Please ensure that **Git Credential Manager Core** option is ["checked"](https://github.com/GitCredentialManager/git-credential-manager#windows), to install the extra tool by default with Git installation.
 
 Then set your Git editor.
 If you have a terminal window open, close it, and open a new one.
@@ -71,6 +83,16 @@ You do that with this command:
 
 ```console
 $ git config --global core.editor nano
+```
+
+After this step, please install the [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) by downloading gcmcore-linux.(version).deb package from https://github.com/GitCredentialManager/git-credential-manager/releases/latest.
+
+After that install and configure with commands:
+
+```console
+$ brew tap microsoft/git
+$ brew install --cask git-credential-manager-core
+$ git config --global credential.credentialStore secretservice
 ```
 
 Continue with the general settings:

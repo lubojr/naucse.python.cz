@@ -86,7 +86,7 @@ And *“nothing to commit”* says that there are no files to be saved and versi
 
 Try adding something to Git now!
 
-Create a new file `poem.txt` and write a short poem inside.
+Using your code editor create a new file `poem.txt` and write/copy a short poem inside.
 It should span at least five lines so that we have enough to work with.
 Then, try executing `git status` again: Git reports that there is a new
 file in the directory and that it isn't managed by Git yet.
@@ -130,7 +130,7 @@ Changes to be committed:
 ```
 
 The lines in green (“changes to be committed”)
-will be included in the next batch of changes (a *commit*) that you will create.
+will be included in the next batch of changes (a `commit`) that you will create.
 Let's create our first commit:
 
 ```ansi
@@ -167,7 +167,7 @@ Git will ignore them as well. Finally, save the file and close the editor.
 > In that case, first press
 > <kbd>Esc</kbd>, then type `:q!` (colon, lower letter Q, exclamation mark)
 > and confirm by pressing <kbd>Enter</kbd>.
-> Then set up Git corrently and try `git commit` again.
+> Then set up Git correctly and try `git commit` again.
 
 
 Try reporting on the repository again:
