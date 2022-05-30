@@ -173,11 +173,11 @@ or if it contains a certain substring.
     <tr>
         <td><code>x&nbsp;not&nbsp;in&nbsp;r</code></td>
         <td>The opposite of <code>x in r</code></td>
-        <td><code>'eye' not in 'PyLadies</code></td>
+        <td><code>'eye' not in 'PyLadies'</code></td>
     </tr>
 </table>
 
-Python is case sensitive, so `ladies in PyLadies`
+Python is case sensitive, so `'ladies' in 'PyLadies'`
 is `False`. If you want to do a case insensitive test,
 you would have to change the case of both strings 
 (both to lower, or both to upper) and then do `x in y`.

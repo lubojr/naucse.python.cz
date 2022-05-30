@@ -161,9 +161,6 @@ The reason why `return` is better than `print` is that a function
 can be re-used in many different situations. When we don't actually
 want to know the intermediate results, we can't use functions with `print`. 
 
-Using `return`, we can re-use the same function, for example, in graphic games, 
-web applications, or even to control a robot.
-
 It is similar with input: If I hardcoded `input` into a function, I could use
 it only in situations where there's a user with keyboard present.
 That's why it's always better to pass arguments to a function, and call
