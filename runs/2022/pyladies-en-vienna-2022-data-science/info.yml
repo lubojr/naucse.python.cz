@@ -80,20 +80,26 @@ plan:
   - title: "Lecture materials on PyLadies Vienna GitHub"
     url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/06
 
-- title: "Data analysis and multiple variables + recap session"
+- title: "Machine learning - Introduction to regression"
   slug: ds7
   date: 2022-05-26
   materials:
   - title: "Lecture materials on PyLadies Vienna GitHub"
     url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/07
 
-- title: "Machine learning - Introduction to regression"
+- title: "Machine learning - Classification"
   slug: ds8
   date: 2022-06-02
+  materials:
+  - title: "Lecture materials on PyLadies Vienna GitHub"
+    url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/08
 
-- title: "Machine learning - Classification"
+- title: "Machine learning - Clustering"
   slug: ds9
   date: 2022-06-09
+  materials:
+  - title: "Lecture materials on PyLadies Vienna GitHub"
+    url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/09
 
 - title: "Introduction to Natural language processing (NLP)"
   slug: ds10

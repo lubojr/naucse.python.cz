@@ -81,8 +81,10 @@ Switched to branch 'adding-name'
   main␛[m
 ```
 
-Add the name of the poem to the file and by using commands `git add`, `git commit` save the commit.
-Again, check everything using `git show`, `git status` or `git log`
+Now add the name of the poem to the file in your text editor and using the same procedure
+as before by using commands `git add poem.txt`, `git commit -m "commit message"` save the commit.
+
+Again, check everything using `git show`, `git status` or `git log`.
 
 This is a simple example how you can solve the situation from the introduction:
 Leaving work in progress, switch to "stable" version `main` and
