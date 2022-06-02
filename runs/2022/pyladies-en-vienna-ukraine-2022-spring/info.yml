@@ -109,9 +109,9 @@ plan:
 - title: Lists
   slug: list
   date: 2022-06-09
-  # materials:
-  #  - lesson: beginners-en/list
-  #  - lesson: beginners-en/tuple
+  materials:
+   - lesson: beginners-en/list
+   - lesson: beginners-en/tuple
   #  - title: Homework (PDF)
   #    url: https://drive.google.com/file/d/1tFemjjefHWY2R5Rbh0TF4L6hFAZ5Fe3p/view?usp=sharing
   #    type: homework
