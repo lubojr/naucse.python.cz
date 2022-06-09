@@ -293,7 +293,7 @@ print(melody.index('DE'))
 
 ### Two tasks for practice
 
-1. Write a function that returns a middle element of a list.
+Write a function that returns a middle element of a list.
 
 {% filter solution%}
 ```python
@@ -305,7 +305,7 @@ def middle_element(l):
 ```
 {% endfilter%}
 
-2. Write a function which counts how many entries of a list are larger than 10 and smaller than 15:
+Write a function which counts how many entries of a list are larger than 10 and smaller than 15:
 
 {% filter solution%}
 ```python
