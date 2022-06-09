@@ -291,6 +291,34 @@ print(melody.count('DE'))
 print(melody.index('DE'))
 ```
 
+### Two tasks for practice
+
+1. Write a function that returns a middle element of a list.
+
+{% filter solution%}
+```python
+l = [4, 12, 7]
+def middle_element(l):
+    # middle = l[ int(len(l) / 2) ]
+    middle = l[ len(l) // 2 ]
+    return middle
+```
+{% endfilter%}
+
+2. Write a function which counts how many entries of a list are larger than 10 and smaller than 15:
+
+{% filter solution%}
+```python
+l = [1, 3, 11, 13, 19]
+def count_selected(l):
+    count_selected = 0
+    for number in l:
+        if 10 <= number < 15:
+            count_selected  = count_selected + 1
+    return count_selected
+```
+{% endfilter%}
+
 ## A list as a condition
 
 A list can be used in an `if` (or` while`) statement
@@ -519,7 +547,7 @@ Such a list behaves as expected - we can choose
 elements (which are, of course, lists):
 
 ```python
-first_list = list_of_lista[0]
+first_list = list_of_lists[0]
 print(first_list)
 ```
 
@@ -536,13 +564,13 @@ And because `list_of_lists[1]`
 indicates the list, we can take the elements directly from it:
 
 ```python
-first_element_of_second_list = (list_of_list[1])[0]
+first_element_of_second_list = (list_of_lists[1])[0]
 ```
 
 Or:
 
 ```python
-first_element_of_second_list = list_of_list[1][0]
+first_element_of_second_list = list_of_lists[1][0]
 ```
 
 This approach is quite useful.
