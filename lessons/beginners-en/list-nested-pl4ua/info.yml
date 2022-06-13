@@ -1,0 +1,11 @@
+title: Nested lists
+style: md
+attribution:
+- |
+    Modified by Martin Pačes, 2022 for [PyLadies Vienna]
+    [PyLadies Vienna]: https://pyladiesvienna.pythonanywhere.com
+- Translated by Marketa Muzikova and Google Translate :/
+- |
+    Originally written by Petr Viktorin, 2014-2017 for [PyLadies CZ].
+    [PyLadies CZ]: https://naucse.python.cz/course/pyladies/beginners/list/
+license: cc-by-sa-40

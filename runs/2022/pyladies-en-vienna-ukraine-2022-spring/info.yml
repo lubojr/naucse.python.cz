@@ -111,18 +111,21 @@ plan:
   date: 2022-06-09
   materials:
    - lesson: beginners-en/list
-   - lesson: beginners-en/tuple
+   #- lesson: beginners-en/tuple
    - title: Homework (PDF)
      url: https://drive.google.com/file/d/1tFemjjefHWY2R5Rbh0TF4L6hFAZ5Fe3p/view
      type: homework
 
 
-- title: Dictionaries
+- title: List (continued), Tuples, Dictionaries
   slug: dict
   date: 2022-06-13
   materials:
-   - lesson: beginners-en/dict
-   - lesson: beginners-en/json
+   - lesson: beginners-en/list-nested-pl4ua
+   - lesson: beginners-en/mutability
+   - lesson: beginners-en/tuple-pl4ua
+   - lesson: beginners-en/dict-pl4ua
+   #- lesson: beginners-en/json
    - title: Dicts
      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_dictionaries.pdf
      type: cheatsheet
