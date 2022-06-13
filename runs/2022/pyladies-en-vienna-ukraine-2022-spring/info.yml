@@ -125,13 +125,12 @@ plan:
    - lesson: beginners-en/mutability
    - lesson: beginners-en/tuple-pl4ua
    - lesson: beginners-en/dict-pl4ua
-   #- lesson: beginners-en/json
    - title: Dicts
      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_dictionaries.pdf
      type: cheatsheet
-  #  - title: Homework (PDF)
-  #    url: https://drive.google.com/file/d/1sJhOmCTC1wspG6um4KRNJvtpUib3L2x7/view
-  #    type: homework
+   - title: Homework (PDF)
+     url: https://drive.google.com/file/d/1sJhOmCTC1wspG6um4KRNJvtpUib3L2x7/view
+     type: homework
 
 - title: Recap session
   slug: recap1
@@ -161,6 +160,7 @@ plan:
   # materials:
   #  - lesson: beginners-en/files
   #  - lesson: beginners-en/argparse
+  # - lesson: beginners-en/json
 
 - title: Classes
   slug: classes
