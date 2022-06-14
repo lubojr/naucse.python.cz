@@ -4,7 +4,7 @@ To build the container image run:
 
    $ ./build.sh
 
-To start the server run the container:
+To start the server run the container run:
 
   $ ./run.sh
 
@@ -18,4 +18,4 @@ the viewed web-page in their browser).
 
 Because the pyenv configuration is mounted at the run-time, the required SW
 is not installed in the image but installed at run-time.  This is also
-the reason why container is being preserved between runs.
+the reason why the container is being preserved between runs.
