@@ -120,6 +120,15 @@ if not (a == b):
     raise AssertionError
 ```
 
+> [note] Assertions
+> We have already discussed the `assert` command in [exceptions]({{ lesson_url('beginners-en/exceptions-pl4ua') }}).
+>
+> As you see, the testing library borrowed the Python built-in assertion
+> functionality and gave it a slightly different meaning.
+>
+> Just make sure you are not running your tests with the `-O` option enabled 😉
+
+
 ## Running tests
 
 You execute tests with the command `python -m pytest -v <path>`

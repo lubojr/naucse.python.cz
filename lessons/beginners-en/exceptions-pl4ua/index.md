@@ -110,23 +110,68 @@ BaseException
 
 For the full list of built-in exception see the [Python documentation](https://docs.python.org/3/library/exceptions.html).
 
+> [note] What does this hierarchy mean?
+>
+> The hierarchy of exceptions is like a family tree with the most generic type
+> of exception as the root, every branch becoming more specific.
+> E.g., `KeyError` is also a `LookupError` and `Exception` but it is
+> not, e.g., a `SyntaxError`.
+>
+> You will learn more about these hierarchies and when we will talk about
+> the Object Oriented Programming, classes and inheritance.
+>
+> For the moment, it is enough to say that the exceptions are **classes** and
+> that the more specific **child** exceptions **inherit** the properties
+> of their generic generic **parent**.  Namely, the `Exception` is the parent
+> class of the `LookupError` and the `LookupError` is the parent classes of the
+> `KeyError` exception. Therefore the `KeyError` has properties
+> of `LookupError` and `Exception` exceptions.
+
+
+## Custom exceptions
+
 > [note]
->
-> What does this hierarchy mean? E.g., `KeyError` is also a
-> (type of) `LookupError` and `Exception` but it is not, e.g., a `SyntaxError`.
->
-> You will learn more about these hierarchies and how to create them when we will
-> talk about the classes and inheritance. For the moment, it is enough to say
-> that the exceptions are classes. Namely, `Exception` and `LookupError` are
-> parent classes of the `KeyError` class.
->
-> Once you will learn about the classes you will be also able to create your own
-> custom exceptions.
+> There will be a whole session dedicated to classes and we will no explain
+> the syntax in detail here.
+
+This is an example of a custom exception called `PyLadiesException` derived from
+the `Exception`.
+
+```ansi
+BaseException
+ ╰── Exception
+      ╰── ␛[32mPyLadiesException␛[0m
+```
+
+The code is fairly simple:
+
+```python
+class PyLadiesException(Exception):
+    """ PyLadies private exception. """
+
+raise PyLadiesException("My first PyLadies exception!")
+```
+
+Try it and you will see that your new exception behaves just like any other
+exception:
+
+```pycon
+Traceback (most recent call last):
+  File "exception.py", line 5, in <module>
+    raise PyLadiesException("My first PyLadies exception!")
+__main__.PyLadiesException: My first PyLadies exception!
+```
+
+> [note]
+> We strongly recommend that you always inherit your private exceptions from
+> the `Exceptions` class or its descendants so that it can be caught as an
+> actual `Exception`.
+
 
 ## Handling Exceptions
 
 Why there are so many built-in exceptions? Because this way we can more easily
-selectively *catch* exceptions of specific error states.
+*catch* exceptions of specific error states.
 
 It is not always desired that an exception kills our program. And we also cannot
 (or do not want to) cover all possible error conditions in the code
@@ -210,7 +255,7 @@ user enters something meaningful:
 ...         try:
 ...             return int(answer)
 ...         except ValueError:
-...             print("Oi! This is trash, mate! Do it again!")
+...             print("Oi! This is rubbish, mate! Do it again!")
 >>> fetch_number()
 Type a number: nan
 Oi! This is trash, mate! Do it again!
@@ -266,56 +311,137 @@ finally:
     print("This will always be printed; even if there's e.g. a 'return' in the 'try' block.")
 ```
 
+## Assertions
+
+Let's briefly talk about the *assertions* and the Python `assert` statement:
+
+```python
+assert <condition>
+
+```
+
+The assertions are used to check that certain conditions (*assumptions*) in your
+code are fulfilled. To do so you can put the Python `assert` command followed
+by a logical condition (aka *predicte*). If the condition is not met
+Python will raise the `AssertionError` exception. The `assert <condition>`
+statement is equivalent to:
+
+``` python
+if not <condition>:
+    raise AssertionError
+```
+
+E.g., let's see this code to calculate the perimeter and area of a square:
+
+```python
+def input_side():
+    return float(input("Enter the side of a square in centimeters: "))
+
+def get_square_perimeter(side):
+    return 4 * side
+
+def get_square_area(side):
+    return side ** 2
+
+def main():
+    side = input_side()
+    perimeter = get_square_perimeter(side)
+    area = get_square_area(side)
+
+    print(f"The perimeter of a square with a side of {side} cm is {perimeter} cm.")
+    print(f"The area of a square with a side of {side} cm is {area} cm2.")
+
+if __name__ == "__main__":
+    main()
+```
+
+The perimeter and are calculation does work only if the side of the sqare
+is not negative (`side >= 0`), we want to **assert that the side is
+a non-negative number**. We do it by inserting the `assert` commands:
+
+```python
+def get_square_perimeter(side):
+    assert side >= 0
+    return 4 * side
+
+def get_square_area(side):
+    assert side >= 0
+    return side ** 2
+```
+
+Now when we run the code and enter negative number for the side,
+the program ends with the `AssertionError` error:
+
+```pycon
+Traceback (most recent call last):
+  File "square.py", line 21, in <module>
+    main()
+  File "square.py", line 14, in main
+    perimeter = get_square_perimeter(side)
+  File "square.py", line 5, in get_square_perimeter
+    assert side >= 0
+AssertionError
+```
+
+Assertions are meant to help us to debug the code. By putting the assertions
+in your code you are telling to Python (and also to other readers of your code)
+that certain condition must be satisfied in order to make your code work
+correctly.
+
+The assertions however do not replace proper error checking (e.g., a proper
+input value check in our case; see next section):
+
+> [note] Python can disable assertions
+>
+> Assertions are debugging features and make the execution slower.
+> When executed with the performance optimized mode (`python -O ...`),
+> Python disables the assertions.
+>
+> Therefore the assertions do not replace proper checks in your code.
 
 ## Task
 
-Let's add exception handling to our original square size calculator
-(or to 1-D tick-tac-toe, if you have it)
-if the user doesn't enter a number in the input.
-
+Let's add exception handling and proper input checking to our square size
+calculator. Modify the code so that if the user does not enter a non-negative
+number the programs prompts the input again.
 
 {% filter solution %}
 
 Possible solution for the calculator:
 
 ```python
-while True:
-    try:
-        side = float(input("Enter the side of a square in centimeters: "))
-    except ValueError:
-        print("Your input is not a number!")
-    else:
-        if side < 0:
-            print("Negative side is not allowed!")
-        else:
-            break
-
-print(f"The perimeter of a square with a side of {side} cm is {side * 4} cm.")
-print(f"The area of a square with a side of {side} cm is {side * side} cm2.")
-```
-
-Possible solution for 1-D tick-tac-toe:
-
-```python
-def player_move(field):
+def input_side():
     while True:
+        raw_input = input("Enter the side of a square in centimeters: ")
         try:
-            position = int(input(
-                f"Enter a new position to fill? [1..{len(field)}]"
-            )) - 1
+            side = float(raw_input)
         except ValueError:
-            print("This is not a number!")
+            print(f"{raw_input} is not a number!")
         else:
-            if position < 0 or position >= len(field):
-                print("You can't play outside the field!")
-            elif field[position] != "-":
-                print("That position isn't free!")
+            if side < 0:
+                print(f"{raw_input} is a negative number!")
             else:
                 break
-    return field[:position] + "o" + field[position + 1:]
+    return side
 
+def get_square_perimeter(side):
+    assert side >= 0
+    return 4 * side
 
-print(player_move("-x----"))
+def get_square_area(side):
+    assert side >= 0
+    return side ** 2
+
+def main():
+    side = input_side()
+    perimeter = get_square_perimeter(side)
+    area = get_square_area(side)
+
+    print(f"The perimeter of a square with a side of {side} cm is {perimeter} cm.")
+    print(f"The area of a square with a side of {side} cm is {area} cm2.")
+
+if __name__ == "__main__":
+    main()
 ```
 
 {% endfilter %}
