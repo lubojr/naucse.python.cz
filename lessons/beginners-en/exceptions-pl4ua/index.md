@@ -1,32 +1,33 @@
 # Exceptions
 
-We have already talked about [error messages]({{ lesson_url('beginners-en/print') }}),
-Python complains, tells us where the error (line) is, and terminates the program.
-But there is much more that we can learn about error messages (aka *exceptions*).
+We have already talked about [error messages]({{ lesson_url('beginners-en/print') }}).
+When an error occurs, Python complains, tells us where the error (line) is,
+and terminates the program.  But there is much more that we can learn about
+error messages (aka *exceptions*).
 
 
 ## Printing errors:
 
-Let's start by an example (`example.py`):
+Let's start with an example (`example.py`):
 
 ```python
-def outer_fucntion():
+def outer_function():
     return innner_function(0)
 
 def inner_function(divisor):
     return 1 / divisor
 
-print(outer_fucntion()
+print(outer_function()
 ```
 
-When we run the code it stops with an error and message like:
+When we run the code it stops with an error and a message like:
 
 <!-- XXX: Highlight the line numbers -->
 ```pycon
 Traceback (most recent call last):
   File "example.py", line 7, in <module>
-    print(outer_fucntion())
-  File "example.py", line 2, in outer_fucntion
+    print(outer_function())
+  File "example.py", line 2, in outer_function
     return inner_function(0)
   File "example.py", line 5, in inner_function
     return 1 / divisor
@@ -42,19 +43,19 @@ or write the `inner_function` so that it handles the case the `0` divisor.
 But Python does not know what the right solution is.
 During the execution, it simply reaches an error state where it cannot continue
 and gives up with a nice report where the error happened (we call this
-report a `stack trace`).
+report a *stack trace*).
 
-This behaviour is called an *exception*. When Python reaches an error state
-it *raises* an exception (`ZeroDivisionError` in our case).
-This exception is propagated up trough the stack of the calling function and,
+This situation is called an *exception*. When Python reaches an error state
+it *raises* an exception object (`ZeroDivisionError` in our case).
+This exception is propagated up through the stack of the called functions and,
 if not caught, it eventual kills the running script.
 
 
 ## Raising an exception
 
-In Python, an *exception* is by the command `raise`.
+In Python, an *exception* is raised by the command `raise`.
 The command is followed by the name of the exception we want to raise and
-a short description of what went wrong (in parentheses).
+an optional short description of what went wrong (in parentheses).
 
 ```python
 MAX_ALLOWED_VALUE = 20
@@ -68,8 +69,8 @@ verify_number(5)
 verify_number(25)
 ```
 
-When we run the script, we get following output:
-```
+When we run the script, we get the following output:
+```pycon
 The number 5 is OK!
 Traceback (most recent call last):
   File "example.py", line 9, in <module>
@@ -79,6 +80,7 @@ Traceback (most recent call last):
 ValueError: The number 25 is not in the allowed range!
 ```
 
+What exceptions are available in Python?
 Python provides a hierarchy of standard (built-in) exceptions. This
 is just a subset of them:
 
@@ -110,30 +112,31 @@ For the full list of built-in exception see the [Python documentation](https://d
 
 > [note]
 >
-> What does this hierarchy mean? It means that, e.g., `KeyError` is also a
+> What does this hierarchy mean? E.g., `KeyError` is also a
 > (type of) `LookupError` and `Exception` but it is not, e.g., a `SyntaxError`.
 >
-> You will learn more about these hierarchies and how to create them when will
+> You will learn more about these hierarchies and how to create them when we will
 > talk about the classes and inheritance. For the moment, it is enough to say
-> that all exceptions are classes. `Exception` and `LookupError` are parent
-> classes of `KeyError`.
+> that the exceptions are classes. Namely, `Exception` and `LookupError` are
+> parent classes of the `KeyError` class.
 >
-> Once you will learn about classes you will also be able to create your own
-> exceptions.
+> Once you will learn about the classes you will be also able to create your own
+> custom exceptions.
 
 ## Handling Exceptions
 
-Why there are so many built-in exceptions?
-So that we can more or less selectively catch them and handle them.
+Why there are so many built-in exceptions? Because this way we can more easily
+selectively *catch* exceptions of specific error states.
 
-It is not always desired that the exception kill our program. And we also cannot
+It is not always desired that an exception kills our program. And we also cannot
 (or do not want to) cover all possible error conditions in the code
 where the exceptions are raised from.
 
-What we often do is that let the exceptions to be raised in the low-level
-code and catch them in upper in the calling stack.
+What we often do is that we let the exceptions to be raised in the low-level
+code and catch them higher in the call stack.
 
 Let me show you an example:
+
 ```python
 def prompt_number():
     answer = input('Enter some number: ')
@@ -162,10 +165,10 @@ Invalid input does not cause an error, instead it gets replaced by `0`.
 So how does this work?
 
 We call the `int()` function within the `try` block.
-If there is no error, this function is executed, returns a value which
+If there is no error, this function is executed, it returns a value which
 is assigned to the `number` variable and leaves the `try` block.
 
-In case of a `ValueError` exception raised by `int()` because of an invalid input
+In case of a `ValueError` exception raised by `int()` caused by an invalid input
 value, this exception is caught and the execution continues
 in the `except ValueError` block. There, a message is printed and
 `0` is assigned to the `number` variable.
@@ -195,7 +198,7 @@ Use the command `try/except` only in situations when you
 anticipate some exception, i.e., you know exactly what can happen
 and why, and you are able to fix the error state in the except block.
 
-A typical example would be reading input from a user. If the user
+A typical example would be reading the input from a user. If the user
 enters gibberish, it is better to ask again until the
 user enters something meaningful:
 
@@ -227,7 +230,7 @@ of the `try` block but outside of it, e.g., to run code which
 might raise unwanted exception interfering with the `except` clauses.
 
 The latter, `finally`, runs every time regardless of what happens in the `try`
-block.  The `finally` block is executed even in case of an uncaught exception
+block.  The `finally` block is executed even in the case of an uncaught exception
 and may be used even without any `except` clause.
 It is mostly used for clean-ups:
 
@@ -238,7 +241,7 @@ finally:
     # release the allocaded resource regardless of the 'try' result
 ```
 
-You can also have several `except` blocks. Only one of them will be executed --
+You can also have multiple `except` blocks. Only one of them will be executed --
 the first one that can handle the raised exception.
 
 > [note]

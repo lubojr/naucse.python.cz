@@ -19,9 +19,9 @@ Python interpreter and you've been writing your Python *scripts* as
 text files with the `.py` extension.
 
 The scripts can be easily edited and executed repeatedly. This works nicely
-up to the point when is becomes too limiting to hold all our code in a
+up to the point when it becomes too limiting to hold all our code in a
 single file (e.g., the script becomes too long, parts of code repeat in
-different scripts, or we mix pieces of unrelated low-level code)
+different scripts or we mix pieces of loosely low-level code)
 
 Can we organize our code better than that? The answer is *yes*, with the Python
 *modules*.
@@ -30,7 +30,7 @@ Can we organize our code better than that? The answer is *yes*, with the Python
 
 Python allows us to organize code in *modules*. A *module* is something like
 a box containing some ready-to-use code.  We can pull it from a shelf, *import*
-it, and then use it our script.
+it, and then use it in our script.
 
 For example, you can import the function `sqrt` and the constant `e` from
 the module `math`:
@@ -43,7 +43,7 @@ print(sqrt(0.5 * e))
 
 In this case, the module `math` (Python standard library)
 contains a set of various mathematical functions and constants.
-With the `from <module> import <names>` command in we pulled from the
+With the `from <module> import <names>` command we pulled from the
 `math` modules two objects named `e` and `sqrt`, which happen to refer
 to the [*e* constant](https://en.wikipedia.org/wiki/E_%28mathematical_constant%29)
 and function calculating [square root](https://en.wikipedia.org/wiki/Square_root),
@@ -76,7 +76,7 @@ A module which is a collection of modules is called a *package* in the Python
 jargon. A package can have sub-packages and, in more complex projects, it is
 common to have several levels of sub-modules.
 
-Do nor fear! Import of sub-module from a *package* does not differ from the
+Do nor fear! Import of a sub-module from a *package* does not differ from the
 regular top-level module. The sub-modules are separated by dots, but apart from
 that, you work with them the same way:
 
@@ -95,11 +95,11 @@ Creating a new Python module is easy, just create a new Python file.
 The function and global variables that you create in this file will become
 available for import.
 
-You can also create your own module simply by creating a Python file.
+You can also create your own module, simply, by creating a Python file.
 Functions and variables (and other named objects) that you create there will be available
 in programs where you import this module.
 
-Let's try it. First, create Python file `meadow.py` and write:
+Let's try it. First, create a new Python file `meadow.py` and write:
 
 ```python
 meadow_colour = 'green'
@@ -112,7 +112,7 @@ def description():
     )
 ```
 
-And then write in another file `write.py` with the following content:
+And then create another file `write.py` with the following content:
 
 ```python
 import meadow
@@ -120,7 +120,7 @@ import meadow
 print(meadow.description())
 ```
 
-Run the `write.py` script:
+Finally, run the `write.py` script:
 
 ```console
 $ python write.py
@@ -130,10 +130,8 @@ Python searches for the imported modules in the same folder where
 the executed script is located. Please make sure both files are placed
 in the same folder.
 
-> [note]
->
-> What about the `write.py` is not it a module too? In fact, it is.
-> You could import it to another script. 
+> [note] What about the write.py is not it a module too?
+> In fact, it is. You could import it to another script.
 >
 > Python distinguishes the main script from the imported modules by name.
 > The main script is always named `__main__`.
@@ -168,7 +166,7 @@ Congratulations! You have managed to create a package module `landscape` with
 a sub-module `meadow` with just a simple directory.
 
 > [note]
-> We have the `meadow.py` file twice now. This not ideal but let's tolerate
+> We have the `meadow.py` file twice now. This is not ideal but let's tolerate
 > it for purpose of our demonstration.
 >
 > Note that, for Python, these are two different modules (`meadow` and
@@ -207,14 +205,14 @@ The meadow is green!
 The message we print at the end of the module appears only once.
 
 When the module is "doing something" (it prints something, asks the user,
-writes something into a file) - we say that it has a *side effect*.
+writes something into a file) we say that it has a *side effect*.
 We generally try to avoid writing modules with side effects.
 The purpose of a module is to give us *functions*, that we
 will use to do something, not to do it instead of us.
 E.g., when we write `import turtle`, no window opens. It opens
 only when we write `turtle.forward()`.
 
-So you better delete the print from our module.
+So you had better delete the print from our module.
 
 
 ## One directory for every project

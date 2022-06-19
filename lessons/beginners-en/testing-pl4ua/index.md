@@ -18,8 +18,7 @@
 
 Programming is not just about writing code.
 It is also about verifying that the code does what it is supposed to do and,
-if needed, correcting it.
-The process of verification that the program works as expected is called *testing*.
+if needed, correcting it. This process of verification is called *testing*.
 
 You have probably already tested your programs by executing them.
 When you test your program, you usually enter some input data and look if
@@ -27,8 +26,8 @@ the result is correct.
 This is okay for a small program, but it gets harder as the program gets bigger.
 Bigger programs have more options what they can do based on the possible
 user input and configuration. Their manual testing becomes time-consuming,
-especially when it needs to be repeated
-after every change, and it becomes more likely errors get unnoticed.
+especially when it needs to be repeated after every change, and it becomes more
+likely errors slip unnoticed into our code.
 
 Humans are not very good at performing boring repetitive tasks, that is
 the domain of computers. And, not surprisingly, that is the reason why
@@ -36,12 +35,12 @@ developers write the code that verifies their programs.
 
 *Automated tests* are functions checking, with no manual intervention,
 that all features of the tested program work correctly.
-If made correctly, the tests should be lean and give quick response whether
-the program has issues or not.
+If made right, the tests should be lean and give quick response whether
+the program has issues or not. The testing does not give us 100% proof that
+the code is without errors but it is still better than no testing at all.
 
 The automated tests make modification of the code easier as you can
-easily and faster find possible bugs in the existing functionality
-(aka regressions).
+faster find possible bugs in the existing functionality (aka *regressions*).
 
 
 ## Installing the `pytest` library
@@ -75,11 +74,11 @@ $ python -m pip install pytest
 > [note] python -m &lt;command&gt; or just &lt;command&gt;
 > `python -m <command>` tells Python to execute a script from the
 > Python module named `<command>` (e.g., `python -m pip ...`).
-> In a properly configured Python environment it should be possible to call
+> In a properly configured Python environment, it should be possible to call
 > the `<command>` directly, without the help of the `python` command
 > (e.g., `pip ...`)
 >
-> To safe ourselves the trouble of unnecessary complications with a possibly
+> To save ourselves the trouble of unnecessary complications with a possibly
 > misconfigured Python environment we recommend using the longer
 > `python -m <command>` version.
 
@@ -94,11 +93,6 @@ There is another function `test_add` that tests if the
 Make a copy of the code into a file named `test_addition.py` in a new empty
 directory.
 
-The naming of files and test functions matters. `pytest` scans your code and
-searches for the included tests. When found, these tests are executed.
-By default, the names of the test files and the test functions must start with
-the `test_` prefix in order to be recognized as tests.
-
 ```python
 def add(a, b):
     return a + b
@@ -106,6 +100,13 @@ def add(a, b):
 def test_add():
     assert add(1, 2) == 3
 ```
+
+> [note] The naming of files and test functions matters
+> `pytest` scans your code and
+> searches for the included tests. When found, these tests are executed.
+>
+> By default, the names of the test files and the test functions must start with
+> the `test_` prefix in order to be recognized as tests.
 
 What does the test function do?
 
@@ -173,14 +174,14 @@ FAILED test_addition.py::test_add - assert 4 == 3
 ␛[31m============================== ␛[31m␛[1m1 failed␛[0m␛[31m in 0.01s␛[0m␛[31m ===============================␛[0m
 ```
 
-Try to run the test yourself. Modify the `add` function or (its test) so the
+Try to run the test yourself. Modify the `add` function or (its test) so that the
 test fails.
 
 ## Test modules
 
-It is common to write tests separately from the tested regular code.
-Typically, we write tests in another file. This way, the code is easier to read
-and it can be distributed without the tests.
+It is common to write tests separately (in another file) from the tested regular
+code.  This way, the code is easier to read and it can be distributed without
+the tests, if desired.
 
 Let's split the `test_addition.py` into two separate files, moving the `add()`
 function into a new module `addition.py` and keeping the tests in the old
@@ -226,6 +227,10 @@ e.g., by email.
 In practical terms, this means that the tests must not depend on live
 interaction with the user, e.g., the `input` function will not work in tests.
 
+> [note] Can we test user interaction in automated tests?
+> There are testing techniques allowing us to emulate user interaction
+> in the user interfaces. But is that beyond the scope of this course.
+
 This can make your work harder sometimes. Let's look at a more complex project,
 the 1D (one-dimensional) tic-tac-toe.
 
@@ -246,7 +251,7 @@ def move(board, space_number, mark):
     ...
 
 def player_move(board):
-    """Ask the player what move should be done and returns the updated board
+    """Ask the player what move should be done and return the updated board
     with the move played.
     """
     ...
@@ -256,7 +261,7 @@ def player_move(board):
 def tic_tac_toe_1d():
     """Start the game
 
-    It creates an empty board and runs player_move and computer_move alternately
+    It creates an empty board and run player_move and computer_move alternately
     until the game is finished.
     """
     while ...:
@@ -268,17 +273,18 @@ def tic_tac_toe_1d():
 tic_tac_toe_1d()
 ```
 
-If you import this module, Python executes all commands in it, from top to bottom.
+If you import this module, Python executes all commands in it, from top to bottom:
 
-The first command, `import`, initializes the variables and functions of the
-`random` module. It is module from the standard Python library it is unlikely
-that it would have any side effect to worry about.
+- The first command, `import`, initializes the variables and functions of the
+  `random` module. It is module from the standard Python library it is unlikely
+  that it would have any side effect to worry about.
 
-The definitions of functions (`def` statements and everything in them)
-just define the functions but they do not execute them.
+- The definitions of functions (`def` statements and everything in them)
+  just define the functions but they do not execute them.
 
-Calling the `tic_tac_toe_1d` function starts the game.
-The `tic_tac_toe_1d` calls the `player_move()` function which calls `input()`.
+- Calling the `tic_tac_toe_1d` function starts the game.
+  The `tic_tac_toe_1d` calls the `player_move()` function which calls `input()`.
+  This is an issue.
 
 If you import this module to the tests, the `input` fails and the module does
 not get not imported.
@@ -292,7 +298,8 @@ The calling of `tic_tac_toe_1d` is a side-effect and we need to remove it.
 Okay, but you cannot start the game without it! What can we do about it?
 
 There are two possible solutions. First, we detect if the module is imported
-from another script or it is itself the main script:
+from another script or it is itself the main script and start the game only
+if it runs as the `__main__` module:
 
 ```python
 if __name__ == "__main__":
@@ -300,7 +307,7 @@ if __name__ == "__main__":
     tic_tac_toe_1d()
 ```
 
-Second, create a new python file, e.g., `game.py` and we move the
+Second, we can create a new python file, e.g., `game.py` and we move the
 `tic_tac_toe_1d()` call in it:
 
 ```python
@@ -310,7 +317,7 @@ tic_tac_toe.tic_tac_toe_1d()
 ```
 
 Obviously, the `game.py` itself, cannot be tested because it calls `input`
-indirectly. But you can execute it if you want to play.
+indirectly. But almost empty and you can execute it only if you want to play.
 
 <!-- Editor's opinionated comment: I cannot help myself, but I like the first
 option better. -->
@@ -334,7 +341,7 @@ def test_move_to_empty_space():
 
 Tests that verify that a program works correctly
 under correct conditions are called *positive tests*.
-Exception raised during the positive testing lead to failure of the test.
+An exception raised during the positive testing lead to failure of the test.
 
 Tests that check behaviour in case of invalid inputs are called *negative tests*.
 The purpose of the negative testing is verification of the graceful handling
