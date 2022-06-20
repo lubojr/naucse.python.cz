@@ -12,12 +12,12 @@ Let's start with an example (`example.py`):
 
 ```python
 def outer_function():
-    return innner_function(0)
+    return inner_function(0)
 
 def inner_function(divisor):
     return 1 / divisor
 
-print(outer_function()
+print(outer_function())
 ```
 
 When we run the code it stops with an error and a message like:
@@ -61,7 +61,7 @@ an optional short description of what went wrong (in parentheses).
 MAX_ALLOWED_VALUE = 20
 
 def verify_number(number):
-    if number < 0 or number >= < MAX_ALLOWED_VALUE:
+    if number < 0 or number >= MAX_ALLOWED_VALUE:
         raise ValueError(f"The number {number} is not in the allowed range!")
     print(f"The number {number} is OK!")
 
