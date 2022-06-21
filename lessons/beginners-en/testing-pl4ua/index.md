@@ -213,10 +213,13 @@ def find_rectangle_perimeter(width, height):
 Possible tests examples:
 
 ```python
+# Do not forget to import the find_rectangle_perimeter function.
+from addition import find_rectangle_perimeter
+
 def test_find_rectangle_perimeter():
     """ Tests if the function can handle two positive integer values as input.
     """
-    assert find_perimeter(4, 5) == 18
+    assert find_rectangle_perimeter(4, 5) == 18
 
 def test_find_rectangle_perimeter_zero_width():
     """ Tests if the function can handle width set to 0.
