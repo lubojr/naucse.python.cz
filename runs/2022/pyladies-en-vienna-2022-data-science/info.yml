@@ -89,26 +89,22 @@ plan:
 
 - title: "Machine learning - Classification"
   slug: ds8
-  date: 2022-06-02
+  date: 2022-06-09
   materials:
   - title: "Lecture materials on PyLadies Vienna GitHub"
     url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/08
 
-- title: "Machine learning - Clustering"
+- title: "Introduction to Natural language processing (NLP)"
   slug: ds9
-  date: 2022-06-09
+  date: 2022-06-23
   materials:
   - title: "Lecture materials on PyLadies Vienna GitHub"
     url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/09
 
-- title: "Introduction to Natural language processing (NLP)"
-  slug: ds10
-  date: 2022-06-16
-
 - title: "SQL and Databases"
-  slug: ds11
-  date: 2022-06-23
+  slug: ds10
+  date: 2022-06-30
 
 - title: "Streamlit project - Interactive visualisations"
-  slug: ds12
-  date: 2022-06-30
+  slug: ds11
+  date: 2022-07-07
