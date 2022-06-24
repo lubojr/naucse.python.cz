@@ -29,15 +29,16 @@ based on user given parameters of the search.
 ### Examples of libraries & argparse
 
 Quite many tools for processing arguments from the CLI are also present in the standard Python:
-[sys.argv], [optparse], [getopt].
+`sys.argv`, `optparse`, `getopt`.
 Additionally there is quite commonly used `click` library, which you would need to install via pip
 and uses a decorator syntax, that we have not seen yet, so we have decided not to delve into it.
 
 You can find the official documentation on:
-[argparse](https://docs.python.org/3/library/argparse.html)
-[sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
-[optparse](https://docs.python.org/3/library/optparse.html)
-[getopt](https://docs.python.org/3/library/getopt.html)
+
+- [argparse](https://docs.python.org/3/library/argparse.html)
+- [sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
+- [optparse](https://docs.python.org/3/library/optparse.html)
+- [getopt](https://docs.python.org/3/library/getopt.html)
 
 And a quite handy tutorial going through most of functionalities, you could ever encounter:
 [argparse-tutorial](https://docs.python.org/3/howto/argparse.html)
@@ -96,7 +97,7 @@ parser.add_argument("input_file", default=None, help=("Input file to read"))
 ```
 
 ```console
-python hello.py output.txt --count 5 --name PyLady
+python hello.py input.txt --count 5 --name PyLady
 
 ```
 
@@ -112,7 +113,7 @@ parser.add_argument(
         help=(
             "Set verbosity of log output "
             "(4=DEBUG, 3=INFO, 2=WARNING, 1=ERROR, 0=CRITICAL). (default: 3)"
-        )
+        ),
     )
 ```
 
@@ -122,7 +123,7 @@ with `underscores`, as it is not possible to have a `hyphen` in variable name in
 ```python
 parser.add_argument(
         "--extreme-universe",
-        action="store_true" help=("Computations will return all results to the power of 2.")
+        action="store_true", help=("Computations will return all results to the power of 2.")
     )
 args = parser.parse_args()
 print(args.extreme_universe)
@@ -133,7 +134,7 @@ If you use more options with two hyphens, you need to access the values from the
 object via the first option, as in this example:
 
 ```python
-parser.add_argument('-n', '--name', '--firstname' help='a name to repeat', required=True)
+parser.add_argument('-n', '--name', '--firstname', help='a name to repeat', required=True)
 hello(args.count, args.name, args.indent)
 ```
 
@@ -151,11 +152,11 @@ A small exercise is prepared for you to straighten up your understanding of CLI 
 
 - Write a new text file in your editor, naming as it you like, save it.
 
-- Create a simple CLI Python program, which will accept **input_file** argument and an **output_file** arguments.
+- Create a simple CLI Python program, which will receives **input_file** argument and an **output_file** arguments.
 
 - The Python code should **read** the **input_file**, perform some kind of operation on the text content of the file and **write** the content to the **output_file**.
 
-- Some example of the operation to perform would be: changing the text to Capital letters or replacing certain letters with numbers etc.
+- Some example of the operation to perform would be: changing the text to Capital letters or replacing certain letters with numbers.
 
 - Add some **optional** command line parameters of your choice and add one boolean **flag** parameter.
 

@@ -135,10 +135,10 @@ plan:
 - title: Recap session
   slug: recap1
   date: 2022-06-16
-  # materials:
-  #  - title: Recap session materials (PDF)
-  #    url: https://drive.google.com/file/d/16k2-sXhoyJaiXw8-3q0n8vVFmo1yZoyR/view?usp=sharing
-  #    type: homework
+  materials:
+   - title: Recap session materials (PDF)
+     url: https://drive.google.com/file/d/16k2-sXhoyJaiXw8-3q0n8vVFmo1yZoyR/view?usp=sharing
+     type: homework
 
 - title: Testing
   slug: testing
@@ -157,17 +157,17 @@ plan:
 - title: Working with Files and CLI
   slug: files_cli
   date: 2022-06-23
-  # materials:
-  #  - lesson: beginners-en/files
-  #  - lesson: beginners-en/argparse
-  # - lesson: beginners-en/json
+  materials:
+    - lesson: beginners-en/files
+    - lesson: beginners-en/argparse
+    - lesson: beginners-en/json
 
 - title: Classes
   slug: classes
   date: 2022-06-27
-  # materials:
-  #  - lesson: beginners-en/class
-  #  - lesson: beginners-en/inheritance
+  materials:
+   - lesson: beginners-en/class
+   - lesson: beginners-en/inheritance
 
 - title: Final Project
   slug: final_project
