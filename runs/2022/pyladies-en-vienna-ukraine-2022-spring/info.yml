@@ -168,6 +168,9 @@ plan:
   materials:
    - lesson: beginners-en/class
    - lesson: beginners-en/inheritance
+   - title: Homework (PDF)
+     url: https://drive.google.com/file/d/1amhY9-pvtN8w6tHnOvR0tIcwOfNVx-Bl/view
+     type: homework
 
 - title: Final Project
   slug: final_project
