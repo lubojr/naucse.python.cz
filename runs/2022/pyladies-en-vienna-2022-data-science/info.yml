@@ -106,7 +106,7 @@ plan:
   date: 2022-06-30
   materials:
   - title: "Lecture materials on PyLadies Vienna GitHub"
-    url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/10
+    url: https://docs.google.com/presentation/d/1r6jpAcq30dwVWgktyLRGtNcYzVX5TDRKE-KJa59Ctf8
 
 - title: "Streamlit project - Interactive visualisations"
   slug: ds11
