@@ -175,7 +175,12 @@ plan:
 - title: Final Project
   slug: final_project
   date: 2022-06-30
-  # materials:
+  materials:
+   - title: Homework (PDF)
+     url: https://drive.google.com/file/d/1gJ4FdvmMwKSRr5D5k-idkvYoIs588HU-/view
+     type: homework
+   - title: What next?
+     url: https://docs.google.com/presentation/d/10ePH2ALijAM9p1Sn0tnFptgvBdSMH_0ifTkaBYFetnY/edit
 
 - title: Final Project II.
   date: 2022-07-04

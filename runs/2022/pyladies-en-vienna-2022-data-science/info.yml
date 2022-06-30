@@ -104,7 +104,13 @@ plan:
 - title: "SQL and Databases"
   slug: ds10
   date: 2022-06-30
+  materials:
+  - title: "Lecture materials on PyLadies Vienna GitHub"
+    url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/10
 
 - title: "Streamlit project - Interactive visualisations"
   slug: ds11
   date: 2022-07-07
+  materials:
+  - title: "Lecture materials on PyLadies Vienna GitHub"
+    url: https://github.com/UndeadFairy/pyladies_vienna_data_course/tree/main/11
