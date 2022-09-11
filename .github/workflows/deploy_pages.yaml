@@ -1,0 +1,42 @@
+name: GitHub Pages deployment
+
+on:
+  push:
+    branches: [ pyladies-en-vienna-2021 ]
+permissions:
+  contents: write
+
+concurrency:
+  group: ci-tests-${{ github.ref }}-1
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+
+    steps:
+    # Checkout code
+    - uses: actions/checkout@v3
+
+    # Build base image
+    - name: Build docker image
+      run: docker build . -t naucse-python
+
+    # Generate static files for website
+    - name: Generate static files via freeze
+      run: |
+        docker run --name naucse naucse-python pipenv run freeze
+
+    - name: Copy out static from the container
+      run: |
+        docker cp naucse:/root/.local/share/virtualenvs/-x-v5uFv0/src/naucse/naucse/_build naucse_build
+
+    - name: Deploy github pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: naucse_build
+
+    - name: Cleanup
+      if: always()
+      run: |
+        docker rm naucse
