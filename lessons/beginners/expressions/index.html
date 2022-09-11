@@ -1,0 +1,167 @@
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            
+                Vyhodnocování výrazů
+            
+        </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+        
+
+        <link rel="stylesheet" href="/static/css/naucse.css">
+        <link rel="stylesheet" href="/static/css/body.css">
+        <link rel="stylesheet" href="/static/css/pygments-lovelace-style.css">
+        <link rel="stylesheet" href="/static/css/ipython.css">
+
+        
+    
+
+
+        <style>
+            
+    
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="header">
+            <ul class="container menu">
+                <li><a href="/" class="logo"><h1>PyLadies Vienna</h1></a></li>
+                <!-- <li><a href="/courses/" class="menu-link"><h2>Materials</h2></a></li> -->
+                <li><a href="/runs/" class="menu-link"><h2>Courses</h2></a></li>
+            </ul>
+        </nav>
+
+        
+
+<div class="page">
+    <div class="container">
+
+        
+  
+
+
+        <div class="lesson-content">
+          
+    
+
+    <h1>Vyhodnocování výrazů</h1>
+<p>Už víš, že Python se dá použít jako kalkulačka: dokáže spočítat
+hodnotu <em>výrazu</em> (angl. <em>expression</em>) jako <code>3 * (5 + 2)</code>.
+Jak to ale vlastně dělá?
+Jak se vyhodnocují výrazy?</p>
+<p>Pro základní výrazy je to tak, jak to možná znáš ze školy.
+U <code>3 * (5 + 2)</code> nejdřív spočítáš to, co je v závorkách: <code>(5 + 2)</code> je <code>7</code>.
+Výsledek dosadíš do původního výrazu místo závorky: <code>3 * 7</code>.
+Stejně fungují výrazy v Pythonu.</p>
+<p>Možná to zní jednoduše, ale protože budeme ten samý postup používat
+i na složitější výrazy, hodí se ho umět „rozepsat“:</p>
+<div class="highlight"><pre><span></span><span class="n">vysledek</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1">#              ╰──┬──╯</span>
+<span class="n">vysledek</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span>    <span class="mi">7</span>
+<span class="c1">#          ╰─┬────╯</span>
+<span class="n">vysledek</span> <span class="o">=</span>  <span class="mi">21</span>
+</pre></div><p>Když Python potřebuje vyhodnotit <em>proměnnou</em>, dosadí její hodnotu.
+Pokud je zrovna v proměnné <var>a</var> číslo 4, za <code>a</code> se dosadí <code>4</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">vysledek</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="n">a</span>
+<span class="c1">#           |   |    |</span>
+<span class="n">vysledek</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="c1">#          ╰──┬──╯</span>
+<span class="n">vysledek</span> <span class="o">=</span>    <span class="mi">9</span>    <span class="o">/</span> <span class="mi">4</span>
+<span class="c1">#             ╰────┬─╯</span>
+<span class="n">vysledek</span> <span class="o">=</span>        <span class="mf">2.25</span>
+</pre></div><p>Funguje to i u složitých výrazů.
+Python se složitými výrazy nemá problém.
+Jen člověk, který program čte či píše, se v nich může lehce ztratit.
+Když opravdu potřebuješ napsat složitý výraz, je dobré jej rozdělit na několik
+menších nebo vysvětlit pomocí komentáře.</p>
+<p>Je ale dobré mít povědomí o tom, jak složité výrazy „fungují“,
+aby ses jich nemusel/a bát.
+Měl/a bys být schopný/á vysvětlit, co se stane,
+když se Pythonu zeptáš, kolik je -<var>b</var> + (<var>b</var>² +
+4<var>a</var><var>c</var>)⁰·⁵ / (2<var>a</var>), abys pak věděl/a, co za
+tebe Python dělá.</p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+
+
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+<span class="c1">#    |    |            |   |                |</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span> <span class="o">+</span> <span class="p">(</span><span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1">#         ╰──┬─╯   ╰─┬─╯               ╰──┬──╯</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span> <span class="o">+</span> <span class="p">(</span>  <span class="mi">25</span>   <span class="o">+</span>   <span class="mi">8</span>   <span class="o">*</span> <span class="mi">3</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">/</span>    <span class="mi">4</span>
+<span class="c1">#                   ╰────┬─╯</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span> <span class="o">+</span> <span class="p">(</span>  <span class="mi">25</span>   <span class="o">+</span>      <span class="mi">24</span>  <span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">/</span>    <span class="mi">4</span>
+<span class="c1">#        ╰───────┬──────────╯</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span> <span class="o">+</span>         <span class="mi">49</span>           <span class="o">**</span> <span class="mf">0.5</span> <span class="o">/</span>    <span class="mi">4</span>
+<span class="c1">#                ╰──────┬──────────╯</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span> <span class="o">+</span>               <span class="mf">7.0</span>           <span class="o">/</span>    <span class="mi">4</span>
+<span class="c1">#                      ╰─────────────┬────╯</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span> <span class="o">+</span>                            <span class="mf">1.75</span>
+<span class="c1">#   ╰──────────────┬───────────────────╯</span>
+<span class="n">x</span> <span class="o">=</span>              <span class="o">-</span><span class="mf">3.25</span>
+</pre></div><p>Výrazy se používají na více místech Pythonu než jen v přiřazování
+do proměnných.
+Třeba podmínka u <code>if</code> je taky výraz a vyhodnocuje se stejně jako ostatní
+výrazy:</p>
+<div class="highlight"><pre><span></span><span class="n">strana</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">strana</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Strana musí být kladná!"</span><span class="p">)</span>
+</pre></div><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">strana</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c1">#  ╰──────┬──╯</span>
+<span class="k">if</span>      <span class="kc">True</span>  <span class="p">:</span>
+</pre></div>
+
+
+        </div>
+
+        
+
+    </div>
+</div>
+
+
+
+        <script type="text/javascript" src="/static/js/solutions.js"></script>
+
+        <div class="footer container">
+            <hr>
+            <div class="lesson-attribution">
+                
+    
+        <p>Pro PyLadies Brno napsal Petr Viktorin, 2019.</p>
+    
+
+                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
+                
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+        
+
+    </body>
+</html>

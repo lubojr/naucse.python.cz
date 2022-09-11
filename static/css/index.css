@@ -1,0 +1,48 @@
+nav.header {
+    background-color: #E63D40;
+}
+nav.header * {
+    color: rgba(255,255,255);
+}
+
+.motivation {
+    text-shadow: black 0 0 1px, black 0 0 2px, black 0 0 10px;
+    color: white;
+    padding: 8em 1em;
+    margin-bottom: 3rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.motivation h1 {
+    font-family: "Bree Serif", serif;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+.motivation .lead {
+    font-weight: bold;
+    color: rgba(255,255,255,.85);
+}
+
+.calls-to-action {
+    margin-bottom: 8rem;
+}
+.calls-to-action .row {
+    margin-bottom: 3rem;
+}
+.call-to-action {
+    text-align: center;
+}
+
+.btn-primary, .btn-primary:active, .btn-primary:focus {
+    background-color: #E63D40;
+    outline-color: white;
+    border-color: #296e62;
+    color: white;
+}
+.btn-primary:active, .btn-primary:focus {
+    outline-color: #E63D40;
+}
+.btn-primary:hover {
+    background-color: #296e62;
+    outline-color: #E63D40;
+}
