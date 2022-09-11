@@ -22,10 +22,10 @@ jobs:
     - name: Build docker image
       run: docker build . -t naucse-python
 
-    # Generate static files for website
+    # Generate static files for website, always exits with code 1 :(
     - name: Generate static files via freeze
       run: |
-        docker run --name naucse naucse-python pipenv run freeze
+        docker run --name naucse naucse-python pipenv run freeze || true
 
     - name: Copy out static from the container
       run: |
