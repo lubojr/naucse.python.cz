@@ -1,13 +1,12 @@
 # Python installation for Windows 
 
-Go to [the Python website](https://www.python.org/downloads/) and 
-download the latest stable version of Python. From version 3.6.0.
-there are some enhancements for Windows so download only version
- **3.6.0 and above**.
+Go to [the Python website](https://www.python.org/downloads/) and
+download the `latest stable version of Python`. At the moment of writing
+the materials it is `Python 3.10.7`.
 
 How to know which installer is the right one?
-If your computer has 64bit Windows then download *Windows x86-64 executable installer*.
-If your Windows is only 32bit download *Windows x86 executable installer*.
+If your computer has 64bit Windows then download *Windows installer (64-bit)*.
+If your Windows is only 32bit download *Windows installer (32-bit)*.
 
 
 > [note]
@@ -20,9 +19,8 @@ If your Windows is only 32bit download *Windows x86 executable installer*.
 ) }}
 
 Then you can run the installer.
-In the beginning check **Install launcher for all Users**
-and also **Add Python 3.6 to PATH**.
-This will make creating venv much easier.
+> [warning]  In the beginning check **Install launcher for all Users** and also very important: **Add Python 3.10 to PATH**.
+
 
 (If you don't have admin rights don't check *Install launcher for all Users*.)
 
@@ -33,5 +31,4 @@ This will make creating venv much easier.
 
 Then click **Install now** and follow the instructions.
 
-If you have your command line open, close it and open again.
-
+If you did have your command line open, close it and open again.

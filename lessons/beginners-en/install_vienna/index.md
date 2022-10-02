@@ -17,7 +17,4 @@ Choose a page depending on your operating system:
 * [macOS]({{ subpage_url('macos') }})
 
 
-If you have another system or if you have any problem, don't hesitate
-to ask your coach (raise the red post-it note), or send us an e-mail.
-
-
+If you have another system or if you have any problem send us an e-mail.

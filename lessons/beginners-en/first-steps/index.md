@@ -74,7 +74,9 @@ NameError: name 'whoami' is not defined
 
 This is an *error message* which appears every time when you do anything wrong. You will see a lot of them during the course, so look at it carefully so you recognise it later.
 
-If you got this far, congratulations! You have installed Python and it works. You can now quit the Python console and close the command prompt. To quit, just type `exit()` with empty parentheses. 
+If you got this far, congratulations! You have installed Python and it works. You can now quit the Python console and close the command prompt.
+
+To quit, just type `exit()` with empty parentheses
 
 
 <div class="highlight"><pre>
@@ -85,7 +87,7 @@ If you got this far, congratulations! You have installed Python and it works. Yo
 The greater-than signs `>>>` change back to `$` or `>`. This tells you that you're back on the system prompt. Now commands like `whoami` and `cd` work again, but Python commands like `1 + 2` won't work. You can re-activate the Python prompt anytime you want by simply typing `python`  
 
 
-The terminal can be closed by typing `exit`.
+The terminal can be closed by typing `exit` or press `CTRL+D`.
 
 ```console
 $ exit
