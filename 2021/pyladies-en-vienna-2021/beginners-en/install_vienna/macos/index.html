@@ -53,13 +53,22 @@
     
 
     <h1>Python install for macOS</h1>
-<p>Install <a href="http://brew.sh">Homebrew</a> which makes app and modules installtation
-much easier,</p>
-<p>Enter this command in the command line/terminal:</p>
+<p>First check in your command line/terminal
+if you don't already have python3 installed.
+Open the terminal and type into it:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3 --version
+</pre></div><p>If "Python" and version number (e. g. <code>Python 3.8.2</code>) will appear
+and the version is higher than or equal to 3.8 then everything is fine and please continue with
+further section.</p>
+<p>If not, then please install <a href="http://brew.sh">Homebrew</a> which makes app and modules installation
+much easier.</p>
+<p>First check if brew is already installed by:</p>
+<div class="highlight"><pre><span></span><span class="go">brew -v</span>
+</pre></div><p>If previous command did not return a installed brew version, install it by entering this command in the command line/terminal:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>/usr/bin/ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">"</span>
 </pre></div><p>And then you can just enter this command:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>brew install python3
-</pre></div>
+</pre></div><p>Typing <em>python3 --version</em> again should already return you a used version of Python.</p>
 
 
         </div>
