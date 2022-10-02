@@ -19,9 +19,8 @@ and install it.
 
 ## Indentation practice
 
-As we already mentioned it's important in Python by how much spaces
-is line indented. So we will have to learn to quickly indent block
-of text.
+It's important in Python by how much spaces a line is indented.
+So we will have to learn to quickly indent block of text.
 
 First of all copy following text into your editor.
 
@@ -84,5 +83,3 @@ If you indent too much, press <kbd>Shift</kbd>+<kbd>Tab</kbd>.
 If you would want to indent more lines just highlight them and
 press <kbd>Tab</kbd>.
 For undo press <kbd>Shift</kbd>+<kbd>Tab</kbd>.
-
-

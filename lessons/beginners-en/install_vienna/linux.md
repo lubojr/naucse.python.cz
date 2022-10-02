@@ -4,20 +4,20 @@ Installing Python on Linux is actually easy.
 The only difficult part could be that there are many distributions that
 needs different installation commands.
 
-
 ## Python 3
 
-First chech in your command line/terminal
-if you don't already have python3 installed:
+First check in your command line/terminal
+if you don't already have python3 installed.
+Open the terminal and type into it:
 
 ```console
 $ python3 --version
 ```
-If there will appear "Python" and version number (e. g. `Python 3.8.2`)
-and the version is higher than 3.6 you are done here so continue with
-other section.
+If "Python" and version number (e. g. `Python 3.8.2`) will appear
+and the version is higher than or equal to 3.8 then everything is fine and please continue with
+further section.
 
-If there will be "Python" and version lower than 3.6, ask us how to proceed.
+If there will be "Python" and version lower than 3.8, ask us how to proceed.
 
 If `bash: python3: command not found` or something similar will appear
 you will have to install Python3.

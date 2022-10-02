@@ -44,8 +44,8 @@ we just want to use some of their built-in tricks:
 
 We recommend using *VSCode* for now.
 
-* [VSCode]({{ subpage_url('vscode') }})
-* [Atom]({{ subpage_url('atom') }}) 
+* [VSCode]({{ subpage_url('vscode') }}) recommended editor for all main operating systems. It is probably the most popular code editor nowadays. It offers many features and has a large user and developer base, so it is constantly being improved.
+* [Atom]({{ subpage_url('atom') }}) a good editor with a simple design but without official support anymore (we used to recommend this editor in past courses).
 
 You will already have some editor on Linux (but you can always download VScode).
 Just try to type into your command line `gedit` or `kate`, and if an editor 
