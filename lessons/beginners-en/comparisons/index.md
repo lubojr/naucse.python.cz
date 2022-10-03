@@ -3,7 +3,7 @@
 Do you still remember what an <em>operator</em> is?
 
 In our homework, we learned some basic arithmetic operators.
-When we add one more (`//`), our list will look like this:
+If we add one more basic operator (`//` for integer division), our list will look like this:
 
 <table class="table">
     <tr>
@@ -24,7 +24,7 @@ When we add one more (`//`), our list will look like this:
     <tr>
         <td><code>//</code>; <code>%</code></td>
         <td><code>7 // 2</code>; <code>7 % 2</code></td>
-        <td>Integer division, remainder</td>
+        <td>Integer division, remainder of division</td>
     </tr>
     <tr>
         <td><code>**</code></td>
@@ -62,7 +62,7 @@ or you can try `python`'s command line.)
     </tr>
 </table>
 
-Comparison values are called *boolean* values
+Comparison values are called **boolean** values
 (after [G. Boole](http://en.wikipedia.org/wiki/George_Boole)).
 They are used every time we want to know if something is `True` or `False`.
 Boolean types are exactly those two - `True` and `False`.
@@ -148,13 +148,15 @@ print("Thank you for using the geometric calculator.")
 So after `if`, there is a *condition* which is the
 expression we'll use for the decision making.
 After the condition you must write a colon (`:`).
-The colon is followed by the commands to be executed, if the condition is True.
-Indent the lines 4 spaces after every colon you use in Python.
+The colon is followed by the commands to be executed if the condition is `True`.
 
-Then on the same level as `if`, write `else:` followed by a colon. The next lines
-contain the commands that are executed if the condition is False, and they must also be indented.<br>
-Then you can write other code, not indented, that will be executed every time, because
-the if statement has already ended.
+You need to indent the follow-up lines by 4 spaces each after every colon you use in Python.
+
+Then on the same level as `if`, write `else` followed by a `colon :`. The next lines
+contain the commands that are executed if the condition is `False`, and they must also be indented.<br>
+
+Then you then can write other code, which is not going to be indented and that will be executed every time, because
+the `if` statement `code block` has already ended.
 
 > [note]
 > The indentation doesn't need to be 4 spaces, you could use 
@@ -163,8 +165,7 @@ the if statement has already ended.
 > So if you are working on some project with someone else, you
 > have to agree on indentation for the program 
 > to be able to run properly. Most of the people
-> from the Python community agree on 4 spaces (or one tab).
-
+> from the Python community agree on 4 spaces.
 
 ## Other conditional statements
 
@@ -181,8 +182,8 @@ print(number, '+ 3 =', number + 3)
 Sometimes several conditions are needed. For this situation, we have the `elif` statement
 (combination of `else` and `if`). It's between `if` and `else`.
 You can repeat the `elif` keyword after the first `if`, but 
-only one branch will be executed, to be precise: the first true one
-where the conditions are met. 
+only one branch will be executed, to be precise: the first one
+where the conditions are met (they are `true`).
 
 
 ```python
@@ -236,6 +237,6 @@ else:
 
 ```
 
-Yay, your first game!<br>
+Yay, your first game! **Congratulations!**<br>
 Now we need to overwrite the pc_choice so it will act
 randomly. We will talk about how to do this next time.

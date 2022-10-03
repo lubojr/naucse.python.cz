@@ -11,9 +11,9 @@ that calculates the perimeter and the area of a square.
 > school will be enough for basic programming.
 
 The perimeter of a square with a side length of <var>a</var>
-can be computed by the <var>P</var> = 4<var>a</var>
-formula, and the area formula is <var>S</var> = <var>a</var>².
-So let's say that our square has a side length of <var>a</var> = 356 cm.
+can be computed by the **<var>P</var> = 4<var>a</var>**
+formula, and the area formula is **<var>S</var> = <var>a</var>²**.
+So let's say that our square has a side length of **<var>a</var> = 356 cm**.
 
 
 Print the result with `print()`.
@@ -66,7 +66,7 @@ to rewrite one of the numbers?
 There is a way how to write a program without
 rewriting all the numbers every time:
 You name the side of the square and then you just
-use that name. In Python, *variables* are used to name values.
+use that name. In Python, **variables** are used to name values.
 They are being used this way:
 
 ```python
@@ -78,14 +78,14 @@ print("The area of a square with a side of", side,"cm is", side * side, "cm2.")
 So you write the name, then `=` and after that
 the expression whose value will be *assigned*
 to that variable.
-When ever you write the name of the variable,
+Whenever you write the name of the variable,
 Python will use just its value.
 
 > [style-note]
 > The convention here is to put a space before and after the equals sign.
 
 Which leads us to one of the core principles of programming:
-*Don't repeat yourself*, <abbr class="initialism">DRY</abbr>.
+*Don't repeat yourself*, **<abbr class="initialism">DRY</abbr>**.
 When there is a value, an expression or the same
 piece of code repeatedly, a good programmer will
 name that part, and then they use the name several times.
@@ -123,8 +123,9 @@ the numbers mean.
 ## Comments
 
 Now we will make our code clearer with *comments*.
-In Python, the comment begins with a Hash (Pound) sign #,
-after which you can write anything until the end of the line. Everything is ignored.
+In Python, the comment begins with a Hash (Pound) sign **"#"**,
+after which you can write anything until the end of the line.
+Everything following this sign is ignored by Python code execution.
 
 Comments are important! Programs are not read only by computers, but also by other humans.
 In your comments, you can include statements like: what the whole program does,
@@ -149,16 +150,24 @@ print("The area of a square with a side of", side,"cm is", side * side, "cm2.")
 > then after `#` there is one more space.
 
 
+There are many opinionated suggestions how often and where to use comments. 
+These suggestions also depend on level of experience of programmers contributing to the project.
+ 
+Easiest way how to decide in the beginnings where/when to place comments and what should they contain is: 
+
+Comment often and whenever you are not 100% sure about certain part of code that
+your future YOU in a few months will understand what it does and why.
+
 ## Input
 
-Finally, we learn how to improve the program so that we don't have to write the number 
+Finally, we will learn how to improve the program so that we don't have to write the number 
 in the program - and users can (in)put their own number.
 
 Just like you used `print`, we will now use a different *function*
 to capture user input:
 We will explain the details later, for now, just remember these:
 
-* If you want to retrieve **a text(string)**, use:
+* If you want to retrieve **a text(string)** from the user, use:
 
   ```python
   variable = input('Enter some text: ')
@@ -176,7 +185,7 @@ We will explain the details later, for now, just remember these:
   variable = float(input('Enter some decimal: '))
   ```
 The text inside the parentheses can be tailored according to your needs.
-It serves as the prompt for the user, so use it to ask for any needed info.
+It serves as the text prompt for the user, so use it to ask for any needed info.
 
 And now try to put it all together: Ask user for a side of a square and use the variable as an input to the computation.
 

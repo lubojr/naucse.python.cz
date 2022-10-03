@@ -9,11 +9,11 @@ You can issue commands in the *Python interactive console*.
 But it has a disadvantage:
 The program that you type is lost when the session ends.
 It is good for trying simple commands. 
-But you need a way to save more complex programs somewhere. 
+Very often however, you need a way to save more complex programs somewhere. 
 
 Open your editor
 (You should have an editor installed. If not, follow the instructions in 
-[previous lesson]({{ lesson_url('beginners-en/install-editor')}}).)
+[Editor installation]({{ lesson_url('beginners-en/install-editor')}}).)
 
 Create a new file in your editor and type the following code:
 
@@ -37,11 +37,11 @@ If you can choose the file type, use `.py` or `All Formats`.
 
 Some operating systems or editors hide extensions or add their own extensions.
 You can check the real name using the command line.
-Open your command line and change your current directory using the `cd` command to
-~/pyladies/02.
+Open your command line and change your current directory to the subdirectory you created -
+for example by using the `cd` command to `~/pyladies/02`.
+
 List what is in the directory using the command `ls` (Mac or Linux) or `dir` (Windows) 
 and check that the filename is really `hello.py` and not, for example, `hello.py.txt`.
-
 
 ## Executing Your Program
 
@@ -54,7 +54,7 @@ $ python3 hello.py
 
 > [note]
 > You have learned about the command line in 
-> a [previous lesson](../../beginners-en/cmdline/) which shows how to change the current directory 
+> a [previous lesson]({{ lesson_url('beginners-en/cmdline')}}) which shows how to change the current directory 
 > using the `cd` command.
 
 
@@ -69,7 +69,7 @@ If it does not work, make sure that:
   It is printed by the operating system after any program has finished.
   You should type only: `python3 hello.py`.
 
-If it still does not work, ask your coach.
+If it still does not work, **ask your coach for help!**
 
 
 > [style-note] Note about code style
