@@ -149,7 +149,7 @@ Git will ignore them as well. Finally, save the file and close the editor.
 > [note] Working with editors
 >
 > In Windows, if you have
-> [set up your Git correctly]({{ lesson_url('git/install') }}),
+> [set up your Git correctly]({{ lesson_url('git-en/install') }}),
 > Notepad will be used as the editor; simply write something, save (<kbd>Ctrl</kbd>+<kbd>S</kbd>)
 > and close (<kbd>Alt</kbd>+<kbd>F4</kbd>).
 >
