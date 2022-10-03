@@ -1,20 +1,32 @@
 ## First commands in Python
 
-Let's see if we installed Python successfully!
+Let's see if we installed `Python` successfully!
 
 First open your terminal and we can now start Python (specifically, the Python console).
-To do that, just write `python`:
-
+To do that, just write `python3` into the terminal:
 
 ``` plain
-$ python
+$ python3
 Python 3.8.1 (default, Dec 24 2019, 17:02:07) 
 [GCC 9.2.1 20191008] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-This command will print some information. In the first line, it shows which version of Python you have (you should have Python 3+). The command line starts with a `>>>` symbol. This way Python prompts (asks) you for instructions. This is the same as the standard command line, but instead of commands like `cd` or `mkdir`, you write Python commands.
+This command will print some information. In the first line, it shows which version of Python you have (you should have Python 3.8+).
+
+The command line starts with a `>>>` symbol. This way Python prompts (asks) you for instructions. This is the same as the standard command line, but instead of commands like `cd` or `mkdir`, you write Python specific commands.
+
+> [warning] What if previous command returns something else?
+> If you are on Windows, the command to run is sometimes called `py` instead of `python3`, try that instead. If that does not work either:
+> 
+> Then most probably the Python installation `was not successful or complete`.
+> 
+> Please go back to [Python Installation]({{ lesson_url('beginners-en/install_vienna') }}) and try installing Python again according to the instructions for your operating system.
+> 
+> If something unexpected happened or you need help, please raise a hand and ask for a mentor support.
+>
+> It is very important that this first step works for all of you.
 
 ## Quick task 
 
@@ -22,13 +34,15 @@ If you have the terminal ready don't waste time! Type `print("Hello, world!")` i
 
 {% filter solution %}
 
-What happened? Python "printed out" `Hello, world!` for you. It's an old programming tradition, going back to ~1970s. It is a traditional first command executed by people who are learning a given programming language, which illustrates the basic syntax of the language. In python one can simply execute `print("Hello, world!")`. In other programming languages it might not be that simple! Feel free to search for examples of a "Hello world" code in C++, Java, HTML, JavaScript or other languages.  
+What happened? Python "printed out" `Hello, world!` for you. It's an old programming tradition, going back to ~1970s. It is a traditional first command executed by people who are learning a given programming language, which illustrates the basic syntax of the language.
+
+In Python one can simply execute `print("Hello, world!")`. In other programming languages it might not be that simple! Feel free to search for examples of a "Hello world" code in C++, Java, HTML, JavaScript or other languages. 
 
 {% endfilter %}
 
 ## Python basics
 
-Python can work as a simple calculator:
+Python can work as a simple calculator. Try running following commands in your Python and you should see these responses.
 
 ```pycon
 >>> 1
@@ -72,7 +86,7 @@ Traceback (most recent call last):
 NameError: name 'whoami' is not defined
 ```
 
-This is an *error message* which appears every time when you do anything wrong. You will see a lot of them during the course, so look at it carefully so you recognise it later.
+This is an *error message* which appears every time when you do anything wrong. You will see a lot of them during the course. Have a look at it carefully so you can recognise it later.
 
 If you got this far, congratulations! You have installed Python and it works. You can now quit the Python console and close the command prompt.
 
@@ -84,7 +98,7 @@ To quit, just type `exit()` with empty parentheses
 <span class="gp">$</span>
 </pre></div>
 
-The greater-than signs `>>>` change back to `$` or `>`. This tells you that you're back on the system prompt. Now commands like `whoami` and `cd` work again, but Python commands like `1 + 2` won't work. You can re-activate the Python prompt anytime you want by simply typing `python`  
+The greater-than signs `>>>` change back to `$` or `>`. This tells you that you're back on the system prompt. Now commands like `whoami` and `cd` work again, but Python commands like `1 + 2` won't work. You can re-activate the Python prompt anytime you want by simply typing `python3`  
 
 
 The terminal can be closed by typing `exit` or press `CTRL+D`.
@@ -93,5 +107,7 @@ The terminal can be closed by typing `exit` or press `CTRL+D`.
 $ exit
 ```
 
-As an exercise, try to run the Python console again - open the command prompt 
-(the terminal), and finally run Python.
+As a last exercise, try to run the Python console again
+
+- open the command prompt (the terminal)
+- run Python

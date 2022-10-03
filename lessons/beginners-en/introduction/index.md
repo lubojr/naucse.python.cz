@@ -30,24 +30,33 @@ This is not going to be an intense IT course. We are not going to dwell into the
 
 We are here to help you with problems. The important thing to note is that coaches should not touch your keyboard (even virtually). Finally - we are here in our free time. Please respect that. 
 
-If you have any questions about the course, if you have comments, suggestions, hard feelings or you just want to share something - feel free to contact us at pyladies.vienna@gmail.com. 
+If you have any questions about the course, if you have comments, suggestions, hard feelings or you just want to share something - feel free to contact us at pyladies.vienna@gmail.com or via discord.
 
 ## Gather features
 
 During lessons, we will use some tools that gather.town is offering to help us mentors, know how you are doing.
-On the carpet in this main teaching room you can see two large words, WORKING and DONE. During a lesson, when we are doing an exercise, you should move your avatar on WORKING side of the table, and when you are done, move to the DONE side. This way we can keep a better overview how is group doing.
 
-We won't continue until everyone is on the DONE side!
+On the carpet in this main teaching room you can see two large words, **WORKING** and **DONE**.
+
+During a lesson, when we are doing an exercise, you should move your avatar on **WORKING** side of the table, and when you are done, move to the **DONE** side. This way we can keep a better overview how the group is doing.
+
+We will not continue until everyone is on the **DONE** side!
+
+### Trouble?
 
 When you have troubles, there are two ways how to proceed.
-- If you think that your trouble is general and solving it might help others, simly ask directly in the main room.
-- If it is more related to your personal set up in the computer, or you do not feel comfortable sharing your screen with everyone, raise your hand (on the bottom panel, next to your name is hand emoji symbol) and leave the teaching room to one of the numbered private spaces. One of our choaches will follow you there and help you.
+
+If you think that your trouble is general and solving it might help others, simly ask directly in the main room.
+
+If you think, the issue is related just to your personal setup or you do not feel comfortable sharing the screen with everyone, raise your hand (on the bottom panel, next to your name is hand emoji symbol) and leave the teaching room to one of the numbered private spaces.
+
+One of our coaches will follow you there and help you.
 
 ## Requirements for completion
 
 To successfully finish the course and acquire a completion certificate, there are several conditions:
 
-- Submit all homeworks (do not need to be 100% correct!)
+- Submit all homeworks (do not need to be 100% correct!, but have to be submitted)
 - Submit two projects: one during the course and one final project
 - Submit 3 course feedbacks
 - Attendance on 70% of all lectures (don't worry, we are flexible on this point)
@@ -56,8 +65,9 @@ To successfully finish the course and acquire a completion certificate, there ar
 ## Homeworks
 
 It is preferred by us that all homeworks are done via Google Collab, an online Python coding notebook interface with sharing options.
+
 You can find our tutorial here: [Google Collab Tutorial](//drive.google.com/file/d/1KPlvbwGpIe8HQVkancKk6wuTwhV5VkRc/view).
-This tool will allow us to provide better feedback.
+This tool will allow the mentors to provide a better feedback.
 
 ## What to do after this course?
 
@@ -72,7 +82,7 @@ not really hard, they will give you a foundation) - e.g. [Coding game](https://w
 * We have good feedback on the book [Automate the boring stuff with Python](https://automatetheboringstuff.com/).
 <br>
 <hr>
-And now, the coaches will introduce themselves. (Once they finish, it will be your turn, so 
-think about what you want to say -- your name, why you want to learn python, where are you located and tell us something surprising about yourself!)
+And now, the mentors will introduce themselves.
 
-        
+Once they finish, it will be your turn, so  think about what you want to say -
+your name, why you want to learn python, where are you located and tell us something surprising about yourself!)

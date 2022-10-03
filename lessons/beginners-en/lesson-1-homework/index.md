@@ -3,7 +3,7 @@
 
 Try out these exercises at home. These are just examples. Try to find some more examples in the internet or just play around!
 
-1. Try to start up `python` in your command line again and see if this still works:
+1. Try to start up Python in your command line again and see if this still works:
 ```pycon
 >>> 1+1
 2

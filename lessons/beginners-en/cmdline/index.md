@@ -43,8 +43,7 @@ How can I open it?
 * Linux (KDE): Main Menu → search for Console
 * Linux (GNOME): Super → search for Terminal
 
-If you don't know what to do, you can try Google, ask the coach,
-or you can e-mail us.
+If you don't know what to do, you can try Google or ask the coach.
 
 
 When you open the command line, you should see a white or black window that is waiting for your command.
@@ -134,7 +133,7 @@ Music
 
 ## Change current directory
 
-You can chnage your current directory by using the command `cd` (*change directory*) -
+You can change your current directory by using the command `cd` (*change directory*) -
 for all OSs (in Windows, if you don't specify anything after `cd`, command 
 prints the *current directory* as we said earlier)
 So after `cd` we have to write the folder's name where we want to go.
@@ -206,7 +205,8 @@ First, we need to get back to the Desktop. We can't use `cd Desktop` because in 
 folder, there is no Desktop.
 So we have to go to the *parent directory* which contains the folder that you are
 currently in.
-Two dots stand for the parent directory.
+
+Two dots **".."** stand for the parent directory.
 
 {% call sidebyside() %}
 $ pwd
@@ -228,14 +228,17 @@ For that purpose, use `rm` or `rmdir`
 
 > [warning] Warning!
 > The command line does not have a Recycle Bin or an Undo button! Everything will be deleted for good.
+> 
 > Every time, make sure that you are deleting the right folder.
 
 In Unix, you have to write `rm -rv` (minus,`r`, `v`). The parameter deletes everything
 (`r` - *recursive*) inside the folder, and it prints info telling you (`v` - *verbose*) 
 what the command is doing.
 
-In Windows, you also have to add a switch to the `rm` command to delete everything inside a
-directory. Here, the switch is `/S` (forward slash, `S`). `rmdir` deletes an empty directory.
+In Windows, you also have to add a switch to the `rmdir` command to delete everything inside a
+directory. Here, the switch is `/S` (forward slash, `S`).
+
+`rmdir` without the extra switch only deletes an empty directory.
 
 {% call sidebyside() %}
 $ pwd
@@ -252,7 +255,7 @@ practice, Are you sure <Y/N>? Y
 
 ## Summary
 
-There is a table of basic commands:
+There is a table of basic commands that you can use as a reference for the beginning of your amazing journey!
 
 <table class="table">
     <tr>
@@ -315,32 +318,35 @@ There is a table of basic commands:
         <td><code>rm -rv</code></td>
         <td><code>rmdir /S</code></td>
         <td>delete a directory</td>
-        <td><code>rm -rv testdir</code></td>
+        <td><code>rm -rv testdir</code><br><code>rmdir /S testdir</code></td>
     </tr>
     <tr>
         <td><code>exit</code></td>
         <td><code>exit</code></td>
-        <td>close the window</td>
+        <td>close the window (optionally <code>CTRL+D</code> does the same)</td>
         <td><code>exit</code></td>
     </tr>
 </table>
 
-There are of course a lot more commands.
-All the programs that you have installed on your laptop can be
+There are of course a lot more commands available in your command line.
+
+Some programs that you have installed on your laptop can be
 run from the command line - usually by typing their names.
+
 Try for example - `firefox`, `notepad`, `safari`, or `gedit`.
+
 {% if var('coach-present') -%}
 If it's not working, ask your coach and they might help you to find an example command that works.
 {%- endif %}
 
 We will use commands/programs like `python` and `git` a lot. 
-<!--- XXX: this assumes installation is after intro to cmdline -->
-
 
 ## Exit
 
 Now you can try one more command - the one that closes the command line window - `exit`.
-It works the same in all operating systems.
+Optionally also `CTRL+D` does the same.
+
+It should work the same in all operating systems.
 
 
 ```console
@@ -349,5 +355,3 @@ $ exit
 We will be using `$` to indicate Linux/macOS (in fact, for Unix based OS) commands
 and `>` to indicate Windows commands for the rest of our course.
 This is the convention in most materials and tutorials you will find.
-
-
