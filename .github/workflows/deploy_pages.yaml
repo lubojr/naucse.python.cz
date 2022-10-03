@@ -2,7 +2,7 @@ name: GitHub Pages deployment
 
 on:
   push:
-    branches: [ pyladies-en-vienna-2021 ]
+    branches: [ pyladies-en-vienna ]
 permissions:
   contents: write
 
