@@ -57,9 +57,9 @@ developers.
 
 To install the library run the following command in the command line:
 {% call sidebyside() %}
-> python -m pip install pytest
+> python3 -m pip install pytest
 ---
-$ python -m pip install pytest
+$ python3 -m pip install pytest
 {% endcall %}
 
 > [note] What is pip and why do we use it?
@@ -67,20 +67,20 @@ $ python -m pip install pytest
 > Python libraries from the [Python Package Index (PyPI)](https://pypi.org)
 > and other sources (e.g., Git repositories).
 >
-> `python -m pip install pytest` makes Python to install `pytest` library from PyPI.
+> `python3 -m pip install pytest` makes Python to install `pytest` library from PyPI.
 >
-> For help on how to use pip run `python -m pip --help`.
+> For help on how to use pip run `python3 -m pip --help`.
 
-> [note] python -m &lt;command&gt; or just &lt;command&gt;
-> `python -m <command>` tells Python to execute a script from the
-> Python module named `<command>` (e.g., `python -m pip ...`).
+> [note] python3 -m &lt;command&gt; or just &lt;command&gt;
+> `python3 -m <command>` tells Python to execute a script from the
+> Python module named `<command>` (e.g., `python3 -m pip ...`).
 > In a properly configured Python environment, it should be possible to call
 > the `<command>` directly, without the help of the `python` command
 > (e.g., `pip ...`)
 >
 > To save ourselves the trouble of unnecessary complications with a possibly
 > misconfigured Python environment we recommend using the longer
-> `python -m <command>` version.
+> `python3 -m <command>` version.
 
 
 ## Writing tests
@@ -147,7 +147,7 @@ with the `test_` prefix. It executes them and checks if they raise any exception
 e.g., raised by the `assert` statement.
 
 ```ansi
-$ python -m pytest -v test_addition.py
+$ python3 -m pytest -v test_addition.py
 ␛[1m============================= test session starts ==============================␛[0m
 platform linux -- Python 3.8.3, pytest-7.1.2, pluggy-1.0.0
 rootdir: /tmp/test_example

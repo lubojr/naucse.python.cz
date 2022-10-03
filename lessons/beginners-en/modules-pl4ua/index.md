@@ -123,7 +123,7 @@ print(meadow.description())
 Finally, run the `write.py` script:
 
 ```console
-$ python write.py
+$ python3 write.py
 ```
 
 Python searches for the imported modules in the same folder where

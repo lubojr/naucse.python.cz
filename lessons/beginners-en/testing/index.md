@@ -35,23 +35,23 @@ Submit the following command. (It is a command-line command,
 just as `cd` or `mkdir`; do not enter it into the Python console.)
 
 ```console
-$ python -m pip install pytest
+$ python3 -m pip install pytest
 ```
 
 > [note] What does Pip do?
-> `python -m pip` calls Python and tells it to execute the
+> `python3 -m pip` calls Python and tells it to execute the
 > `pip` module. This module can install and uninstall libraries. 
 > And the arguments `install pytest` tell Pip to install `pytest`.
 >
 > You can display the help for the Pip module using the command
-> `python -m pip --help`.
+> `python3 -m pip --help`.
 
 > [warning] For Windows users
 > If you use Windows, it is important to run Python programs using
-> `python program.py`, and not just `program.py`.
+> `python3 program.py`, and not just `program.py`.
 > Although we always show `python` in our lessons, 
 > it could work without it so far.
-> If you do not use the command `python` in the beginning, the program 
+> If you do not use the command `python3` in the beginning, the program 
 > could start in a different Python and different virtual environment, 
 > where the `pytest` module might not have been installed.
 
@@ -105,7 +105,7 @@ Execute the <strong>m</strong>odule named <strong>pytest</strong>,
 in <strong>v</strong>erbose mode, for the given file.
 
 ```ansi
-$ python -m pytest -v test_addition.py
+$ python3 -m pytest -v test_addition.py
 ␛[1m============= test session starts =============␛[0m
 platform darwin -- Python 3.6.5, pytest-3.9.1, py-1.7.0, pluggy-0.8.0 -- 
 rootdir: learn, inifile: 

@@ -77,12 +77,12 @@ In order to allow simple storing of boolean flags `true/false`, you can use the 
 Try it! If you have it saved as `hello.py`, try:
 
 ```console
-python hello.py
-python hello.py --help
-python hello.py --name PyLady
-python hello.py --count 5
-python hello.py --count 5 --name PyLady
-python hello.py --count 5 --name PyLady --indent
+python3 hello.py
+python3 hello.py --help
+python3 hello.py --name PyLady
+python3 hello.py --count 5
+python3 hello.py --count 5 --name PyLady
+python3 hello.py --count 5 --name PyLady --indent
 ```
 
 That is already a very solid first program is it not?
@@ -97,7 +97,7 @@ parser.add_argument("input_file", default=None, help=("Input file to read"))
 ```
 
 ```console
-python hello.py input.txt --count 5 --name PyLady
+python3 hello.py input.txt --count 5 --name PyLady
 
 ```
 
@@ -140,8 +140,8 @@ hello(args.count, args.name, args.indent)
 
 ```console
 # both work
-python hello.py --name PyLady --count 5
-python hello.py --firstname PyLady --count 5
+python3 hello.py --name PyLady --count 5
+python3 hello.py --firstname PyLady --count 5
 ```
 
 This has been a short introduction into working with CLI.

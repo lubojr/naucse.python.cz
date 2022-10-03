@@ -49,7 +49,7 @@ Open the command line.
 Change to the `~/pyladies/02` directory and issue the following command:
 
 ```console
-$ python hello.py
+$ python3 hello.py
 ```
 
 > [note]
@@ -58,7 +58,7 @@ $ python hello.py
 > using the `cd` command.
 
 
-After you run `python hello.py` you should see the program responding with `Hello world!`.
+After you run `python3 hello.py` you should see the program responding with writing `Hello world!` into the terminal.
 
 If it does not work, make sure that:
 
@@ -67,7 +67,7 @@ If it does not work, make sure that:
 * The `hello.py` file contains the correct command, including quotes and parentheses.
 * Do not type `$` or `>` character in the command line – it is there to indicate that this is a command line.
   It is printed by the operating system after any program has finished.
-  You type only: `python hello.py`.
+  You should type only: `python3 hello.py`.
 
 If it still does not work, ask your coach.
 

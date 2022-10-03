@@ -70,7 +70,7 @@ print(meadow.description())
 and run:
 
 ```console
-$ python write.py
+$ python3 write.py
 ```
 
 The command `import` looks for files in the same folder
