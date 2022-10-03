@@ -78,19 +78,19 @@ It is quite difficult to use this library so we will use a better one.
 We will install the library <code>pytest</code> which is faster, easier to use and very popular.</p>
 <p>Submit the following command. (It is a command-line command, 
 just as <code>cd</code> or <code>mkdir</code>; do not enter it into the Python console.)</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install pytest
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3 -m pip install pytest
 </pre></div><div class="admonition note"><p class="admonition-title">What does Pip do?</p>
-<p><code>python -m pip</code> calls Python and tells it to execute the
+<p><code>python3 -m pip</code> calls Python and tells it to execute the
 <code>pip</code> module. This module can install and uninstall libraries. 
 And the arguments <code>install pytest</code> tell Pip to install <code>pytest</code>.</p>
 <p>You can display the help for the Pip module using the command
-<code>python -m pip --help</code>.</p>
+<code>python3 -m pip --help</code>.</p>
 </div><div class="admonition warning"><p class="admonition-title">For Windows users</p>
 <p>If you use Windows, it is important to run Python programs using
-<code>python program.py</code>, and not just <code>program.py</code>.
+<code>python3 program.py</code>, and not just <code>program.py</code>.
 Although we always show <code>python</code> in our lessons, 
 it could work without it so far.
-If you do not use the command <code>python</code> in the beginning, the program 
+If you do not use the command <code>python3</code> in the beginning, the program 
 could start in a different Python and different virtual environment, 
 where the <code>pytest</code> module might not have been installed.</p>
 </div><h2>Writing tests</h2>
@@ -124,7 +124,7 @@ followed by the name of the file containing the tests.
 By using this command you are telling: <strong>Python</strong>: 
 Execute the <strong>m</strong>odule named <strong>pytest</strong>,
 in <strong>v</strong>erbose mode, for the given file.</p>
-<div class="highlight"><pre><code>$ python -m pytest -v test_addition.py
+<div class="highlight"><pre><code>$ python3 -m pytest -v test_addition.py
 <span style="font-weight: bold">============= test session starts =============</span>
 platform darwin -- Python 3.6.5, pytest-3.9.1, py-1.7.0, pluggy-0.8.0 -- 
 rootdir: learn, inifile: 

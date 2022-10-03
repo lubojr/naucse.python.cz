@@ -85,24 +85,24 @@ library instead which is not only easier to use but also popular among Python
 developers.</p>
 <p>To install the library run the following command in the command line:</p>
 <div class="row side-by-side-commands"><div class="col">
-                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>python -m pip install pytest
+                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>python3 -m pip install pytest
 </pre></div></div><div class="col">
-                <h4>macOS / Linux</h4><div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install pytest
+                <h4>macOS / Linux</h4><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 -m pip install pytest
 </pre></div></div></div><div class="admonition note"><p class="admonition-title">What is pip and why do we use it?</p>
 <p><code>pip</code> is a Python command-line tool for installing 3rd-party
 Python libraries from the <a href="https://pypi.org">Python Package Index (PyPI)</a>
 and other sources (e.g., Git repositories).</p>
-<p><code>python -m pip install pytest</code> makes Python to install <code>pytest</code> library from PyPI.</p>
-<p>For help on how to use pip run <code>python -m pip --help</code>.</p>
-</div><div class="admonition note"><p class="admonition-title">python -m &lt;command&gt; or just &lt;command&gt;</p>
-<p><code>python -m &lt;command&gt;</code> tells Python to execute a script from the
-Python module named <code>&lt;command&gt;</code> (e.g., <code>python -m pip ...</code>).
+<p><code>python3 -m pip install pytest</code> makes Python to install <code>pytest</code> library from PyPI.</p>
+<p>For help on how to use pip run <code>python3 -m pip --help</code>.</p>
+</div><div class="admonition note"><p class="admonition-title">python3 -m &lt;command&gt; or just &lt;command&gt;</p>
+<p><code>python3 -m &lt;command&gt;</code> tells Python to execute a script from the
+Python module named <code>&lt;command&gt;</code> (e.g., <code>python3 -m pip ...</code>).
 In a properly configured Python environment, it should be possible to call
 the <code>&lt;command&gt;</code> directly, without the help of the <code>python</code> command
 (e.g., <code>pip ...</code>)</p>
 <p>To save ourselves the trouble of unnecessary complications with a possibly
 misconfigured Python environment we recommend using the longer
-<code>python -m &lt;command&gt;</code> version.</p>
+<code>python3 -m &lt;command&gt;</code> version.</p>
 </div><h2>Writing tests</h2>
 <p>We will show testing with a very simple example.
 There is a function <code>add</code> that adds two numbers.
@@ -143,7 +143,7 @@ the tests.</p>
 </div><p>This command scans the given file and calls all functions that start
 with the <code>test_</code> prefix. It executes them and checks if they raise any exception,
 e.g., raised by the <code>assert</code> statement.</p>
-<div class="highlight"><pre><code>$ python -m pytest -v test_addition.py
+<div class="highlight"><pre><code>$ python3 -m pytest -v test_addition.py
 <span style="font-weight: bold">============================= test session starts ==============================</span>
 platform linux -- Python 3.8.3, pytest-7.1.2, pluggy-1.0.0
 rootdir: /tmp/test_example

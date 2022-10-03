@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             
-                Beginners course PyLadies Vienna for Ukraine: First steps
+                Beginners course: Python installation - macOS
             
         </title>
 
@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="/static/css/ipython.css">
 
         
-    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/first-steps/" />
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/install_vienna/" />
 
 
         <style>
@@ -51,45 +51,27 @@
         <div class="lesson-content">
           
     
-        <h1>First steps – Solution [0]</h1>
-    
 
-    <p>What happened? Python "printed out" <code>Hello, world!</code> for you. It's an old programming tradition, going back to ~1970s. It is a traditional first command executed by people who are learning a given programming language, which illustrates the basic syntax of the language.</p>
-<p>In Python one can simply execute <code>print("Hello, world!")</code>. In other programming languages it might not be that simple! Feel free to search for examples of a "Hello world" code in C++, Java, HTML, JavaScript or other languages.</p>
+    <h1>Python install for macOS</h1>
+<p>First check in your command line/terminal
+if you don't already have python3 installed.
+Open the terminal and type into it:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3 --version
+</pre></div><p>If "Python" and version number (e. g. <code>Python 3.8.2</code>) will appear
+and the version is higher than or equal to 3.8 then everything is fine and please continue with
+further section.</p>
+<p>If not, then please install <a href="http://brew.sh">Homebrew</a> which makes app and modules installation
+much easier.</p>
+<p>First check if brew is already installed by:</p>
+<div class="highlight"><pre><span></span><span class="go">brew -v</span>
+</pre></div><p>If previous command did not return a installed brew version, install it by entering this command in the command line/terminal:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>/usr/bin/ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">"</span>
+</pre></div><p>And then you can just enter this command:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>brew install python3
+</pre></div><p>Typing <em>python3 --version</em> again should already return you a used version of Python.</p>
 
 
         </div>
-
-        
-
-
-        
-    <div class="row prev-next">
-        
-            
-                
-    <div class="col text-left">
-        <a href="/2022/pyladies-en-vienna-ukraine-2022-spring/beginners-en/cmdline/">← <span class="d-none d-sm-inline">Introduction to command line</span></a>
-    </div>
-
-            
-            
-                
-    <div class="col text-left">
-        <a href="/2022/pyladies-en-vienna-ukraine-2022-spring/sessions/install/">↑ <span class="d-none d-sm-inline">Lesson: Introduction, installation check</span></a>
-    </div>
-
-            
-            
-                
-    <div class="col text-right">
-        <a href="/2022/pyladies-en-vienna-ukraine-2022-spring/beginners-en/lesson-1-homework/"><span class="d-none d-sm-inline">Homework - lesson 1</span> →</a>
-    </div>
-
-            
-        
-    </div>
-
 
         
 
@@ -105,9 +87,9 @@
             <div class="lesson-attribution">
                 
     
-        <p>Translated by Marketa Muzikova, edits by Mateusz Krainski</p>
+        <p>Edited by Tyna Dolezalova</p>
     
-        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/beginners/first-steps/">PyLadies CZ</a>.</p>
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/beginners/install">PyLadies CZ</a>.</p>
     
 
                 

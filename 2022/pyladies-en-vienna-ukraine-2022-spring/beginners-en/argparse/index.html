@@ -108,18 +108,18 @@ This information is stored and used when <code>parse_args()</code> is called.</p
 It is also possible to their <code>type</code>, which will try to convert the variable to the data type announced.
 In order to allow simple storing of boolean flags <code>true/false</code>, you can use the <code>action="store_true"</code> parameter.</p>
 <p>Try it! If you have it saved as <code>hello.py</code>, try:</p>
-<div class="highlight"><pre><span></span><span class="go">python hello.py</span>
-<span class="go">python hello.py --help</span>
-<span class="go">python hello.py --name PyLady</span>
-<span class="go">python hello.py --count 5</span>
-<span class="go">python hello.py --count 5 --name PyLady</span>
-<span class="go">python hello.py --count 5 --name PyLady --indent</span>
+<div class="highlight"><pre><span></span><span class="go">python3 hello.py</span>
+<span class="go">python3 hello.py --help</span>
+<span class="go">python3 hello.py --name PyLady</span>
+<span class="go">python3 hello.py --count 5</span>
+<span class="go">python3 hello.py --count 5 --name PyLady</span>
+<span class="go">python3 hello.py --count 5 --name PyLady --indent</span>
 </pre></div><p>That is already a very solid first program is it not?</p>
 <h2>Positional arguments</h2>
 <p>You can of course define arguments, which are <code>positional</code> in the same way as when you are defining and calling
 a function. The parsing will expect all arguments to be in the order, you defined them.</p>
 <div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"input_file"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s2">"Input file to read"</span><span class="p">))</span>
-</pre></div><div class="highlight"><pre><span></span><span class="go">python hello.py input.txt --count 5 --name PyLady</span>
+</pre></div><div class="highlight"><pre><span></span><span class="go">python3 hello.py input.txt --count 5 --name PyLady</span>
 </pre></div><h2>Other options</h2>
 <p>Switch names begin, according to Unix convention, with hyphens: one hyphen <code>-</code>
 for one-letter abbreviations, two hyphens <code>--</code> for multi-letter names.
@@ -144,8 +144,8 @@ object via the first option, as in this example:</p>
 <div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'-n'</span><span class="p">,</span> <span class="s1">'--name'</span><span class="p">,</span> <span class="s1">'--firstname'</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">'a name to repeat'</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">hello</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">indent</span><span class="p">)</span>
 </pre></div><div class="highlight"><pre><span></span><span class="gp"># </span>both work
-<span class="go">python hello.py --name PyLady --count 5</span>
-<span class="go">python hello.py --firstname PyLady --count 5</span>
+<span class="go">python3 hello.py --name PyLady --count 5</span>
+<span class="go">python3 hello.py --firstname PyLady --count 5</span>
 </pre></div><p>This has been a short introduction into working with CLI.</p>
 <p>A small exercise is prepared for you to straighten up your understanding of CLI and practice a bit.</p>
 <h2>Task</h2>

@@ -59,10 +59,10 @@
 But it has a disadvantage:
 The program that you type is lost when the session ends.
 It is good for trying simple commands. 
-But you need a way to save more complex programs somewhere.</p>
+Very often however, you need a way to save more complex programs somewhere.</p>
 <p>Open your editor
 (You should have an editor installed. If not, follow the instructions in 
-<a href="/2021/pyladies-en-vienna-2021/beginners-en/install-editor/">previous lesson</a>.)</p>
+<a href="/2021/pyladies-en-vienna-2021/beginners-en/install-editor/">Editor installation</a>.)</p>
 <p>Create a new file in your editor and type the following code:</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello world!"</span><span class="p">)</span>
 </pre></div><p>Then save the file as <code>hello.py</code>.</p>
@@ -75,18 +75,18 @@ But you need a way to save more complex programs somewhere.</p>
 If you can choose the file type, use <code>.py</code> or <code>All Formats</code>.</p>
 <p>Some operating systems or editors hide extensions or add their own extensions.
 You can check the real name using the command line.
-Open your command line and change your current directory using the <code>cd</code> command to
-~/pyladies/02.
-List what is in the directory using the command <code>ls</code> (Mac or Linux) or <code>dir</code> (Windows) 
+Open your command line and change your current directory to the subdirectory you created -
+for example by using the <code>cd</code> command to <code>~/pyladies/02</code>.</p>
+<p>List what is in the directory using the command <code>ls</code> (Mac or Linux) or <code>dir</code> (Windows) 
 and check that the filename is really <code>hello.py</code> and not, for example, <code>hello.py.txt</code>.</p>
 <h2>Executing Your Program</h2>
 <p>Open the command line.
 Change to the <code>~/pyladies/02</code> directory and issue the following command:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python hello.py
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3 hello.py
 </pre></div><div class="admonition note"><p>You have learned about the command line in 
 a <a href="/2021/pyladies-en-vienna-2021/beginners-en/cmdline/">previous lesson</a> which shows how to change the current directory 
 using the <code>cd</code> command.</p>
-</div><p>After you run <code>python hello.py</code> you should see the program responding with <code>Hello world!</code>.</p>
+</div><p>After you run <code>python3 hello.py</code> you should see the program responding with writing <code>Hello world!</code> into the terminal.</p>
 <p>If it does not work, make sure that:</p>
 <ul>
 <li>You are in the correct directory: <code>~/pyladies/02</code>
@@ -94,9 +94,9 @@ using the <code>cd</code> command.</p>
 <li>The <code>hello.py</code> file contains the correct command, including quotes and parentheses.</li>
 <li>Do not type <code>$</code> or <code>&gt;</code> character in the command line – it is there to indicate that this is a command line.
 It is printed by the operating system after any program has finished.
-You type only: <code>python hello.py</code>.</li>
+You should type only: <code>python3 hello.py</code>.</li>
 </ul>
-<p>If it still does not work, ask your coach.</p>
+<p>If it still does not work, <strong>ask your coach for help!</strong></p>
 <div class="admonition style-note"><p class="admonition-title">Note about code style</p>
 <p>It does not usually matter where you use space in Python inside a command. 
 The command <code>print("Hello world!")</code> has the same effect as:</p>

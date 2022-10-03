@@ -62,9 +62,9 @@ word <em>computing</em>. So there's no need
 to be scared, knowledge from elementary
 school will be enough for basic programming.</p>
 </div><p>The perimeter of a square with a side length of <var>a</var>
-can be computed by the <var>P</var> = 4<var>a</var>
-formula, and the area formula is <var>S</var> = <var>a</var>².
-So let's say that our square has a side length of <var>a</var> = 356 cm.</p>
+can be computed by the <strong><var>P</var> = 4<var>a</var></strong>
+formula, and the area formula is <strong><var>S</var> = <var>a</var>²</strong>.
+So let's say that our square has a side length of <strong><var>a</var> = 356 cm</strong>.</p>
 <p>Print the result with <code>print()</code>.
 Save the program into the file <code>~/pyladies/02/square.py</code>
 and run it; this is what it should print:</p>
@@ -108,7 +108,7 @@ to rewrite one of the numbers?</p>
 <p>There is a way how to write a program without
 rewriting all the numbers every time:
 You name the side of the square and then you just
-use that name. In Python, <em>variables</em> are used to name values.
+use that name. In Python, <strong>variables</strong> are used to name values.
 They are being used this way:</p>
 <div class="highlight"><pre><span></span><span class="n">side</span> <span class="o">=</span> <span class="mi">123</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The perimeter of a square with a side of"</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span><span class="s2">"cm is "</span><span class="p">,</span> <span class="n">side</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span><span class="s2">"cm."</span><span class="p">)</span>
@@ -116,11 +116,11 @@ They are being used this way:</p>
 </pre></div><p>So you write the name, then <code>=</code> and after that
 the expression whose value will be <em>assigned</em>
 to that variable.
-When ever you write the name of the variable,
+Whenever you write the name of the variable,
 Python will use just its value.</p>
 <div class="admonition style-note"><p>The convention here is to put a space before and after the equals sign.</p>
 </div><p>Which leads us to one of the core principles of programming:
-<em>Don't repeat yourself</em>, <abbr class="initialism">DRY</abbr>.
+<em>Don't repeat yourself</em>, <strong><abbr class="initialism">DRY</abbr></strong>.
 When there is a value, an expression or the same
 piece of code repeatedly, a good programmer will
 name that part, and then they use the name several times.
@@ -145,8 +145,9 @@ and π is approx. 3.1415926.</p>
 <p>Python already has some variables (or constants) defined for you. You can put <code>from math import pi</code> in the beginning of your program. Now you have a variable <code>pi</code> available, which holds the value of π. What exactly is <code>from math import pi</code>? You'll learn that during one of the future lessons!</p>
 </div><h2>Comments</h2>
 <p>Now we will make our code clearer with <em>comments</em>.
-In Python, the comment begins with a Hash (Pound) sign #,
-after which you can write anything until the end of the line. Everything is ignored.</p>
+In Python, the comment begins with a Hash (Pound) sign <strong>"#"</strong>,
+after which you can write anything until the end of the line.
+Everything following this sign is ignored by Python code execution.</p>
 <p>Comments are important! Programs are not read only by computers, but also by other humans.
 In your comments, you can include statements like: what the whole program does,
 explain how a more complicated part works and clarify something
@@ -162,14 +163,19 @@ Help yourself. After a few months you will not remember what the code is about.<
 </pre></div><div class="admonition style-note"><p>The convention is that when you write a comment on the same line
 as the code, there are two spaces or more before <code>#</code>,
 then after <code>#</code> there is one more space.</p>
-</div><h2>Input</h2>
-<p>Finally, we learn how to improve the program so that we don't have to write the number 
+</div><p>There are many opinionated suggestions how often and where to use comments. 
+These suggestions also depend on level of experience of programmers contributing to the project.</p>
+<p>Easiest way how to decide in the beginnings where/when to place comments and what should they contain is:</p>
+<p>Comment often and whenever you are not 100% sure about certain part of code that
+your future YOU in a few months will understand what it does and why.</p>
+<h2>Input</h2>
+<p>Finally, we will learn how to improve the program so that we don't have to write the number 
 in the program - and users can (in)put their own number.</p>
 <p>Just like you used <code>print</code>, we will now use a different <em>function</em>
 to capture user input:
 We will explain the details later, for now, just remember these:</p>
 <ul>
-<li><p>If you want to retrieve <strong>a text(string)</strong>, use:</p>
+<li><p>If you want to retrieve <strong>a text(string)</strong> from the user, use:</p>
 <div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'Enter some text: '</span><span class="p">)</span>
 </pre></div></li>
 <li><p>If you want to retrieve <strong>a whole number</strong>, use:</p>
@@ -178,7 +184,7 @@ We will explain the details later, for now, just remember these:</p>
 <li><p>If you want to retrieve <strong>a decimal</strong>, use:</p>
 <div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'Enter some decimal: '</span><span class="p">))</span>
 </pre></div><p>The text inside the parentheses can be tailored according to your needs.
-It serves as the prompt for the user, so use it to ask for any needed info.</p>
+It serves as the text prompt for the user, so use it to ask for any needed info.</p>
 </li>
 </ul>
 <p>And now try to put it all together: Ask user for a side of a square and use the variable as an input to the computation.</p>

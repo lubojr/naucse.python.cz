@@ -70,8 +70,7 @@ Other names for the command line are:
 <li>Linux (KDE): Main Menu → search for Console</li>
 <li>Linux (GNOME): Super → search for Terminal</li>
 </ul>
-<p>If you don't know what to do, you can try Google, ask the coach,
-or you can e-mail us.</p>
+<p>If you don't know what to do, you can try Google or ask the coach.</p>
 <p>When you open the command line, you should see a white or black window that is waiting for your command.
 Each command will be prepended by the sign <code>$</code> or <code>&gt;</code> (depending on your operating system) 
 and one space, but you don’t have to type this prompt. 
@@ -133,7 +132,7 @@ subfolders.</p>
 <span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  Music</span>
 <span class="go">…</span>
 </pre></div></div></div><h2>Change current directory</h2>
-<p>You can chnage your current directory by using the command <code>cd</code> (<em>change directory</em>) -
+<p>You can change your current directory by using the command <code>cd</code> (<em>change directory</em>) -
 for all OSs (in Windows, if you don't specify anything after <code>cd</code>, command 
 prints the <em>current directory</em> as we said earlier)
 So after <code>cd</code> we have to write the folder's name where we want to go.
@@ -191,8 +190,8 @@ if it was created.</p>
 First, we need to get back to the Desktop. We can't use <code>cd Desktop</code> because in the current
 folder, there is no Desktop.
 So we have to go to the <em>parent directory</em> which contains the folder that you are
-currently in.
-Two dots stand for the parent directory.</p>
+currently in.</p>
+<p>Two dots <strong>".."</strong> stand for the parent directory.</p>
 <div class="row side-by-side-commands"><div class="col">
                 <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
 <span class="go">/home/Alex/Desktop/practice</span>
@@ -209,13 +208,14 @@ Two dots stand for the parent directory.</p>
 For that purpose, use <code>rm</code> or <code>rmdir</code>
 (<em>remove</em> or <em>remove directory</em>).</p>
 <div class="admonition warning"><p class="admonition-title">Warning!</p>
-<p>The command line does not have a Recycle Bin or an Undo button! Everything will be deleted for good.
-Every time, make sure that you are deleting the right folder.</p>
+<p>The command line does not have a Recycle Bin or an Undo button! Everything will be deleted for good.</p>
+<p>Every time, make sure that you are deleting the right folder.</p>
 </div><p>In Unix, you have to write <code>rm -rv</code> (minus,<code>r</code>, <code>v</code>). The parameter deletes everything
 (<code>r</code> - <em>recursive</em>) inside the folder, and it prints info telling you (<code>v</code> - <em>verbose</em>) 
 what the command is doing.</p>
-<p>In Windows, you also have to add a switch to the <code>rm</code> command to delete everything inside a
-directory. Here, the switch is <code>/S</code> (forward slash, <code>S</code>). <code>rmdir</code> deletes an empty directory.</p>
+<p>In Windows, you also have to add a switch to the <code>rmdir</code> command to delete everything inside a
+directory. Here, the switch is <code>/S</code> (forward slash, <code>S</code>).</p>
+<p><code>rmdir</code> without the extra switch only deletes an empty directory.</p>
 <div class="row side-by-side-commands"><div class="col">
                 <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
 <span class="go">/home/Alex/Desktop</span>
@@ -227,7 +227,7 @@ directory. Here, the switch is <code>/S</code> (forward slash, <code>S</code>). 
 <span class="gp">&gt; </span>rmdir /S practice
 <span class="go">practice, Are you sure &lt;Y/N&gt;? Y</span>
 </pre></div></div></div><h2>Summary</h2>
-<p>There is a table of basic commands:</p>
+<p>There is a table of basic commands that you can use as a reference for the beginning of your amazing journey!</p>
 <table class="table">
     <tr>
         <th>Unix</th>
@@ -289,24 +289,24 @@ directory. Here, the switch is <code>/S</code> (forward slash, <code>S</code>). 
         <td><code>rm -rv</code></td>
         <td><code>rmdir /S</code></td>
         <td>delete a directory</td>
-        <td><code>rm -rv testdir</code></td>
+        <td><code>rm -rv testdir</code><br><code>rmdir /S testdir</code></td>
     </tr>
     <tr>
         <td><code>exit</code></td>
         <td><code>exit</code></td>
-        <td>close the window</td>
+        <td>close the window (optionally <code>CTRL+D</code> does the same)</td>
         <td><code>exit</code></td>
     </tr>
-</table><p>There are of course a lot more commands.
-All the programs that you have installed on your laptop can be
-run from the command line - usually by typing their names.
-Try for example - <code>firefox</code>, <code>notepad</code>, <code>safari</code>, or <code>gedit</code>.
-If it's not working, ask your coach and they might help you to find an example command that works.</p>
-<p>We will use commands/programs like <code>python</code> and <code>git</code> a lot. 
-<!--- XXX: this assumes installation is after intro to cmdline --></p>
+</table><p>There are of course a lot more commands available in your command line.</p>
+<p>Some programs that you have installed on your laptop can be
+run from the command line - usually by typing their names.</p>
+<p>Try for example - <code>firefox</code>, <code>notepad</code>, <code>safari</code>, or <code>gedit</code>.</p>
+<p>If it's not working, ask your coach and they might help you to find an example command that works.</p>
+<p>We will use commands/programs like <code>python</code> and <code>git</code> a lot.</p>
 <h2>Exit</h2>
 <p>Now you can try one more command - the one that closes the command line window - <code>exit</code>.
-It works the same in all operating systems.</p>
+Optionally also <code>CTRL+D</code> does the same.</p>
+<p>It should work the same in all operating systems.</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">exit</span>
 </pre></div><p>We will be using <code>$</code> to indicate Linux/macOS (in fact, for Unix based OS) commands
 and <code>&gt;</code> to indicate Windows commands for the rest of our course.
