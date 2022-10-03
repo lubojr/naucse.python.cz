@@ -5,7 +5,7 @@
 </div>
 
 Now we will deepen the knowledge of programming graphics applications
-which we got in the last [lecture about Pyglet]({{ lesson_url('intro/pyglet') }}),
+which we got in the last [lecture about Pyglet]({{ lesson_url('beginners-en/pyglet') }}),
 by creating real program.
 
 We will program one of the first video game ever, [Pong](https://en.wikipedia.org/wiki/Pong).
