@@ -30,11 +30,20 @@ plan:
   materials:
   - lesson: beginners-en/install_vienna
   - lesson: beginners-en/install-editor
+  - title: VS Code keybindings cheat sheet Windows
+    url: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
+    type: cheatsheet
+  - title: VS Code keybindings cheat sheet Mac OS
+    url: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
+    type: cheatsheet
 
 - title: Introduction, installation check
   slug: install
   date: 2022-10-11
-  # materials:
+  materials:
+  - title: Keyboard layout cheat sheet
+    url: https://drive.google.com/file/d/1Bvnb52oirQDiZ7WI5t4Q8UeCd10-_gpT
+    type: cheatsheet
   # - lesson: beginners-en/introduction
   # - lesson: beginners-en/cmdline
   # - lesson: beginners-en/first-steps
