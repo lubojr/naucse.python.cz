@@ -16,3 +16,6 @@ If you don't remember try figuring it out from the Python console. Try, e.g. `1%
 ```
 4. Try adding a number to a string. What happens? What is Python trying to tell you? What if you try to add a string to a number?
 5. How about multiplying a string by a number? Can this work? `'Ha' * 10`
+
+
+You can find our tutorial on how to use the Google Colab and how to use it to submit the homeworks here: [Google Colab Tutorial](//drive.google.com/file/d/1KPlvbwGpIe8HQVkancKk6wuTwhV5VkRc/view).

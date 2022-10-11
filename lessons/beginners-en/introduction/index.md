@@ -66,7 +66,7 @@ To successfully finish the course and acquire a completion certificate, there ar
 
 It is preferred by us that all homeworks are done via Google Collab, an online Python coding notebook interface with sharing options.
 
-You can find our tutorial here: [Google Collab Tutorial](//drive.google.com/file/d/1KPlvbwGpIe8HQVkancKk6wuTwhV5VkRc/view).
+You can find our tutorial here: [Google Colab Tutorial](//drive.google.com/file/d/1KPlvbwGpIe8HQVkancKk6wuTwhV5VkRc/view).
 This tool will allow the mentors to provide a better feedback.
 
 ## What to do after this course?
