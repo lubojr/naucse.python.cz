@@ -3,7 +3,7 @@
 Let's see if we installed `Python` successfully!
 
 First open your terminal and we can now start Python (specifically, the Python console).
-To do that, just write `python3` into the terminal:
+To do that, just write `python3` or `py` or `python` into the terminal:
 
 ``` plain
 $ python3
@@ -18,7 +18,7 @@ This command will print some information. In the first line, it shows which vers
 The command line starts with a `>>>` symbol. This way Python prompts (asks) you for instructions. This is the same as the standard command line, but instead of commands like `cd` or `mkdir`, you write Python specific commands.
 
 > [warning] What if previous command returns something else?
-> If you are on Windows, the command to run is sometimes called `py` instead of `python3`, try that instead. If that does not work either:
+> If you are on Windows, the command to run is sometimes called `py` or `python` instead of `python3`, try that instead. If that does not work either:
 > 
 > Then most probably the Python installation `was not successful or complete`.
 > 
@@ -27,6 +27,8 @@ The command line starts with a `>>>` symbol. This way Python prompts (asks) you 
 > If something unexpected happened or you need help, please raise a hand and ask for a mentor support.
 >
 > It is very important that this first step works for all of you.
+>
+> If you are on `Mac` or `Linux` the `python` command will usually run `python version 2` which is `not` what we want - if `python3` works, perfect, if not, please try reinstalling the newest `python` or ask a mentor for help.
 
 ## Quick task 
 
