@@ -60,7 +60,6 @@ plan:
   - lesson: beginners-en/hello-world
   - lesson: beginners-en/print
   - lesson: beginners-en/variables
-  - lesson: beginners-en/comparisons
   - lesson: beginners-en/lesson-2-homework
     type: homework
   - title: Basics cheatsheet
@@ -71,6 +70,7 @@ plan:
   slug: loops
   date: 2022-10-25
   # materials:
+  #  - lesson: beginners-en/comparisons
   #  - lesson: beginners-en/and-or
   #  - lesson: beginners-en/functions
   #  - lesson: beginners-en/turtle
