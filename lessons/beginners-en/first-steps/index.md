@@ -36,7 +36,7 @@ If you have the terminal ready don't waste time! Type `print("Hello, world!")` i
 
 {% filter solution %}
 
-What happened? Python "printed out" `Hello, world!` for you. It's an old programming tradition, going back to ~1970s. It is a traditional first command executed by people who are learning a given programming language, which illustrates the basic syntax of the language.
+What happened? Python "printed out" `Hello, world!` for you. It's an old programming tradition, going back to 1970s. It is a traditional first command executed by people who are learning a given programming language, which illustrates the basic syntax of the language.
 
 In Python one can simply execute `print("Hello, world!")`. In other programming languages it might not be that simple! Feel free to search for examples of a "Hello world" code in C++, Java, HTML, JavaScript or other languages. 
 
