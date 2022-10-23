@@ -150,7 +150,7 @@ expression we'll use for the decision making.
 After the condition you must write a colon (`:`).
 The colon is followed by the commands to be executed if the condition is `True`.
 
-You need to indent the follow-up lines by 4 spaces each after every colon you use in Python.
+You need to indent the follow-up lines by **4** spaces each after every colon you use in Python.
 
 Then on the same level as `if`, write `else` followed by a `colon :`. The next lines
 contain the commands that are executed if the condition is `False`, and they must also be indented.<br>
