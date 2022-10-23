@@ -40,3 +40,9 @@ jobs:
       if: always()
       run: |
         docker rm naucse
+    - name: Discord notification of deployment
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_DEPLOY_GITHUB_WEBHOOK }}
+      uses: Ilshidur/action-discord@0.3.2
+      with:
+        args: 'PyLadies website has been deployed. Changes on https://github.com/${{ github.repository}}/commit/${{ github.sha }}.'
