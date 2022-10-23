@@ -10,8 +10,9 @@ Try out these exercises at home. These are just examples. Try to find some more 
 4. Which one of `shorterEdge`, `shorter_edge` is a more correct name for a variable? Why? Try searching for *PEP 8 variable names*. What's a PEP 8?
 5. Try to write a program that calculates the `surface` and `volume` of a `cube` with `edge = 2852 cm`.
 6. Now change the program so that the user can enter the `edge` value.
-7. Write a program that calculates the `Body Mass Index (BMI)` from a user's `weight` and `height`. The BMI is a measure of some's weight taking into account their height. e.g. If a tall person and a short person both weigh the same amount, the short person is usually more overweight.
-The BMI is calculated by `dividing` a person's `weight` (in kg) by the `square of their height` (in m).
+7. Write a program that calculates the `Body Mass Index (BMI)` from a user's `weight` and `height`.
+The BMI is a measure of some's weight taking into account their height. e.g. If a tall person and a short person both weigh the same amount, the short person is usually more overweight.
+The BMI is calculated by `dividing` a person's `weight` (in kg) by the `square of their height` (in `m`).
 8. Save the following code into trial.py and run more times. What is it doing? 
 ```python
 from random import randrange 
