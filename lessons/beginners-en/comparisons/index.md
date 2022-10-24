@@ -237,6 +237,6 @@ else:
 
 ```
 
-Yay, your first game! **Congratulations!**<br>
+Yay, your first game! **Congratulations!!!**<br>
 Now we need to overwrite the pc_choice so it will act
 randomly. We will talk about how to do this next time.

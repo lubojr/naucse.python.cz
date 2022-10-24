@@ -14,4 +14,4 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_DEPLOY_GITHUB_WEBHOOK }}
       uses: Ilshidur/action-discord@0.3.2
       with:
-        args: 'PyLadies website has been deployed. Changes on https://github.com/${{ github.repository}}/commit/${{ github.event.workflow_run.head_sha }}.'
+        args: 'PyLadies website has been deployed. Changes to the website content are on https://github.com/${{ github.repository}}/commit/${{ github.event.workflow_run.head_sha }}. This latest commit in the default branch causing the deploy was https://github.com/${{ github.repository}}/commit/${{ github.sha }}.'
