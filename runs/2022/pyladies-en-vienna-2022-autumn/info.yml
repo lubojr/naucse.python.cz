@@ -69,17 +69,17 @@ plan:
 - title: Functions, Modules, Loops
   slug: loops
   date: 2022-10-25
-  # materials:
-  #  - lesson: beginners-en/comparisons
-  #  - lesson: beginners-en/and-or
-  #  - lesson: beginners-en/functions
-  #  - lesson: beginners-en/turtle
+  materials:
+   - lesson: beginners-en/comparisons
+   - lesson: beginners-en/and-or
+   - lesson: beginners-en/functions
+   - lesson: beginners-en/turtle
+   - title: Basics cheatsheet
+     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
+     type: cheatsheet
   #  - title: Homework (PDF)
   #    url: https://drive.google.com/file/d/1w-hD2Yi5osGOr1dv0DjIvWC3euTb-JQS
   #    type: homework
-  #  - title: Basics cheatsheet
-  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
-  #    type: cheatsheet
 
 - title: While, Strings
   date: 2022-11-01
