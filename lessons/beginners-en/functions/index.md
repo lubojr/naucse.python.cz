@@ -222,7 +222,7 @@ They are written similarly to the assignment of a variable, with an equals sign,
 but inside the parentheses:
 
 For example, the function `print` ends with printing a newline character at the end of a line by default,
-but we can chnage that by using the named argument `end`, and print something else.
+but we can change that by using the named argument `end`, and print something else.
 
 > [note]
 > We have to write this into a .py file to run it because we won't
