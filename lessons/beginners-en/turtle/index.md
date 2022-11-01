@@ -3,7 +3,7 @@
 
 In this lesson, we will be drawing with the *turtle* module.
 
-Run Python in *interactive mode* (after you activate Conda, write Python in the command line).
+Run Python in *interactive mode* (write Python in the command line).
 
 ```pycon
 $ python

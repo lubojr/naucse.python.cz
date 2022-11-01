@@ -2,7 +2,7 @@
 
 We will do two things in this section:
 
-* We will install Python and Conda
+* We will install Python
 * We will create virtual environment
 * We will give Python a test run.
 
