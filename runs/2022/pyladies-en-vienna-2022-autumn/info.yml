@@ -97,7 +97,7 @@ plan:
 - title: Custom functions
   date: 2022-11-08
   slug: custom_func
-  materials:
+  # materials:
   # - lesson: beginners-en/str
   #  - lesson: beginners-en/def
   #  - title: Functions cheatsheet
