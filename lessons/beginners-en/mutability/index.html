@@ -1,0 +1,345 @@
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            
+                What is mutability and why does it matter
+            
+        </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+        
+
+        <link rel="stylesheet" href="/static/css/naucse.css">
+        <link rel="stylesheet" href="/static/css/body.css">
+        <link rel="stylesheet" href="/static/css/pygments-lovelace-style.css">
+        <link rel="stylesheet" href="/static/css/ipython.css">
+
+        
+    
+
+
+        <style>
+            
+    
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="header">
+            <ul class="container menu">
+                <li><a href="/" class="logo"><h1>PyLadies Vienna</h1></a></li>
+                <!-- <li><a href="/courses/" class="menu-link"><h2>Materials</h2></a></li> -->
+                <li><a href="/runs/" class="menu-link"><h2>Courses</h2></a></li>
+            </ul>
+        </nav>
+
+        
+
+<div class="page">
+    <div class="container">
+
+        
+  
+
+
+        <div class="lesson-content">
+          
+    
+
+    <p>You have recently learned about Python lists, the first <em>mutable</em> data type
+taught in this beginners course. Before we move on to its <em>immutable</em> counterpart,
+let's have a closer look what the <em>mutability</em> actually means.</p>
+<h1>What Is Mutability and Why Does It Matter</h1>
+<p>The <em>mutability</em> is a property of a data type telling us whether a value
+of this data type can change (mutate) in the course of its existence.</p>
+<p>Data types can be either <em>immutable</em> or <em>mutable</em>.</p>
+<p>Values of <em>immutable</em> data types stay as they were created and cannot
+change - mutate - in some other value. Immutable types in Python are. e.g.,
+Booleans (<code>True</code>, <code>False</code>), numbers, strings, tuples.</p>
+<p>On the other hand, values of <em>mutable</em> data type can mutate in some other values.
+Mutable types in Python are. e.g., lists, dictionaries, sets.</p>
+<p>Sounds simple, right? Let's see them in detail.</p>
+<h2>Immutable Data Types</h2>
+<p>Let's start with an example of an immutable data type -
+string. Let's create a value and see what is Python doing:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">example1</span> <span class="o">=</span> <span class="s2">"Hi there!"</span>
+</pre></div><p>With this command you created a new string (<code>"Hi there"</code>)  and assigned it
+to a variable. Easy! You have done that many times already.</p>
+<p>Now, what is actually Python doing is, first, it creates a new value,
+a string object, and stores in the computer memory and, second, it stores
+a <em>reference</em> to this value into a variable (<code>example1</code>).</p>
+<p><img src="/lessons/beginners-en/mutability/static/references-11.png" alt="a reference to a string"></p>
+<p>What is a <em>reference</em>? In simple words, it is a link to the value stored
+somewhere in the computer memory. Were and how exactly is stored is not our
+concern right now.</p>
+<p>Let's see what happens when we assign the value held in our variable
+to another variable like:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">example2</span> <span class="o">=</span> <span class="n">example1</span>
+</pre></div><p>In this assignment, Python takes the reference from the <code>example1</code>
+variable and copies it into <code>exampled2</code>. It does not copy the referenced
+value though.</p>
+<p><img src="/lessons/beginners-en/mutability/static/references-12.png" alt="two references to a string"></p>
+<p>How do we check it? Let's compare the actual values first:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">example2</span> <span class="o">==</span> <span class="n">example1</span>
+<span class="go">True</span>
+</pre></div><p>Okay, if variables point to the same string object it must be equal,
+but is it really they the same string object? Let's check it with the
+<a href="https://docs.python.org/3/reference/expressions.html#is">Python <code>is</code> operator</a>:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">example2</span> <span class="ow">is</span> <span class="n">example1</span>
+<span class="go">True</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div><p>They are. Since the assignment copied a reference to the same string object,
+both variables refer to the same value (string object).</p>
+<p>Now, see what happens if we create a new string rather than a reference to
+an existing one:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">example3</span> <span class="o">=</span> <span class="s2">"Hi there!"</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">example3</span> <span class="o">==</span> <span class="n">example1</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">example3</span> <span class="ow">is</span> <span class="n">example1</span>
+<span class="go">False</span>
+</pre></div><p>In this case, a new string object is created and its reference is stored
+in the <code>example3</code> variable. The strings to which this variable refers
+is equal to the one referred by <code>example1</code> but it is not the same one
+(two equal strings occupying two different places in the computer memory).</p>
+<p><img src="/lessons/beginners-en/mutability/static/references-13.png" alt="two equal string values"></p>
+<p>All right, this is an interesting detail, but why should we really care?</p>
+<p>Well, the nice thing is that <strong>with <em>immutable</em> data types we do not need to care</strong>.
+Do you remember what we said before? Immutable values stay as they are and they
+cannot change (mutate) into something else.</p>
+<p>To see the difference, let's repeat the same experiment with a mutable data type.</p>
+<h2>Mutable Data Types</h2>
+<p>We try the same experiment with a <em>mutable</em> data type. Let's create a list
+and assign it to a variable:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">example1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div><p>We already know what is happening. Python creates a new list object and store
+its reference into a variable.</p>
+<p><img src="/lessons/beginners-en/mutability/static/references-21.png" alt="a reference to a list"></p>
+<div class="admonition note"><p>Note that the list elements are references too, just like the variables.</p>
+</div><p>Let's move to the next step and copy the content of <code>example1</code> into a new
+variable <code>example2</code>:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">example2</span> <span class="o">=</span> <span class="n">example1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">example2</span> <span class="o">==</span> <span class="n">example1</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">example2</span> <span class="ow">is</span> <span class="n">example1</span>
+<span class="go">True</span>
+</pre></div><p>So far so good, <code>example2</code> contains a reference to the same list object
+as <code>example1</code>.</p>
+<p><img src="/lessons/beginners-en/mutability/static/references-22.png" alt="two references to a list"></p>
+<p>Let's create a new list and store in the <code>example3</code> variable:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">example3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">example3</span> <span class="o">==</span> <span class="n">example1</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">example3</span> <span class="ow">is</span> <span class="n">example1</span>
+<span class="go">False</span>
+</pre></div><p>All right, nothing new, a new list object is created and its reference
+is stored in <code>example3</code>. This list is equal to the one referenced by <code>example1</code>
+but the referenced objects are different.</p>
+<p><img src="/lessons/beginners-en/mutability/static/references-23.png" alt="two equal list values"></p>
+<p>Now, let's mutate the list referenced by the <code>example2</code> variable by appending
+a new element to the list:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">example2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">example2</span>
+<span class="go">[1, 2, 3, 4]</span>
+</pre></div><p>... and check what it is in the other variables</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">example1</span>
+<span class="go">[1, 2, 3, 4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">example3</span>
+<span class="go">[1, 2, 3]</span>
+</pre></div><p>All of the sudden, <code>example1</code> holds a "different" list than we assigned to it.
+But we did not touch the <code>example1</code> variable!</p>
+<p>It will start making sense when we recall that variables in Python hold
+references to values, list objects in this case, rather than copies of the values.</p>
+<p><img src="/lessons/beginners-en/mutability/static/references-24.png" alt="a mutated list value"></p>
+<p>The <code>example1</code> and <code>example2</code> variables refer the same list object and
+when we change the object through one of the variables it changes also
+for the other one. And <strong>this might be a problem if we do not pay attention with
+the <em>mutable</em> values</strong>.</p>
+<p>This is a simple obvious example but in real life this might get less clear.
+In Python, the references to values are passed not just when we assign values
+to variables but also when we pass arguments to functions or add elements
+to list and other composed data types. Or, in other words, <strong>Python does not
+copy the mutable values unless we do it ourselves</strong>.</p>
+<div class="admonition note"><p>In case of composed data types, we distinguish so called <em>shallow</em> and
+<em>deep</em> copy. A <em>shallow copy</em> copies just the topmost object leaving the nested
+references unchanged. A <em>deep copy</em> copies also the nested objects.</p>
+<p>You can explicitly request a (shallow) copy, e.g., by using
+<code>list(&lt;existing list&gt;)</code>.</p>
+<p>For more details see
+<a href="https://docs.python.org/3/library/copy.html"><code>copy</code> documentation</a></p>
+</div><p>Mutable data types as, e.g, lists are very useful but may lead to undesired
+side effects and shall be used with care.</p>
+<p>There are also cases where mutable values are forbidden such as the keys
+in <em>dictionaries</em> or <em>sets</em> (worry not, you will learn about them later).</p>
+<h2>A Less Obvious Example</h2>
+<p>Let's continue with a more complex example where mutability may lead to
+an undesired side effect.</p>
+<p>Let's create a 10-by-10 "table" created from lists holding simple character
+values and a function printing the table in a nice form</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_table</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="p">:</span>
+       <span class="nb">print</span><span class="p">(</span><span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">create_blank_table</span><span class="p">(</span><span class="n">n_rows</span><span class="p">,</span> <span class="n">n_columns</span><span class="p">,</span> <span class="n">fill_character</span><span class="o">=</span><span class="s2">"."</span><span class="p">):</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">fill_character</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_columns</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">):</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">table</span>
+
+<span class="n">table</span> <span class="o">=</span> <span class="n">create_blank_table</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">print_table</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div><div class="admonition note"><p>There is an error in the code. Can you find where? If not, don't worry
+and keep reading ...</p>
+</div><p>The creation looks elegant and simple. The output looks like</p>
+<div class="highlight"><pre><code>. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .</code></pre></div><p>The table creation clearly works and produces a list of 10 lists,
+each of them having 10 elements. Now, let's edit the table and fill it
+with some new content.</p>
+<p>We would like to change elements of the table so that the
+output looks like this (row 2, column 4 set to <code>X</code> and row 5, column 5 set to <code>O</code>)</p>
+<div class="highlight"><pre><code>. . . . . . . . . .
+. . . X . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . O . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .</code></pre></div><p>Since you know how to change elements of nested arrays try it yourself</p>
+<div class="solution" id="solution-0">
+    <h3>Solution</h3>
+    <div class="solution-cover">
+        <a href="/lessons/beginners-en/mutability/index/solutions/0/"><span class="link-text">Show solution</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <p>This is the way how to do it</p>
+<div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">create_blank_table</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">table</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span>
+<span class="n">table</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span>
+<span class="n">print_table</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div><p>But the result looks different than we expected</p>
+<div class="highlight"><pre><code>. . . X O . . . . .
+. . . X O . . . . .
+. . . X O . . . . .
+. . . X O . . . . .
+. . . X O . . . . .
+. . . X O . . . . .
+. . . X O . . . . .
+. . . X O . . . . .
+. . . X O . . . . .
+. . . X O . . . . .</code></pre></div><p>You did the right thing, but the result looks wrong, doesn't it? What is going on?!</p>
+<p>There is obviously an error. But where? Look at the function again and try to
+guess.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_blank_table</span><span class="p">(</span><span class="n">n_rows</span><span class="p">,</span> <span class="n">n_columns</span><span class="p">,</span> <span class="n">fill_character</span><span class="o">=</span><span class="s2">"."</span><span class="p">):</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">fill_character</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_columns</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">):</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">table</span>
+</pre></div>
+    </div>
+</div><div class="solution" id="solution-1">
+    <h3>Solution</h3>
+    <div class="solution-cover">
+        <a href="/lessons/beginners-en/mutability/index/solutions/1/"><span class="link-text">Show solution</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <p>Right, each row of is the same list object. By editing one them, you edit all of
+them.</p>
+<p>But how to generate the table in a safe way? Any idea?</p>
+    </div>
+</div><div class="solution" id="solution-2">
+    <h3>Solution</h3>
+    <div class="solution-cover">
+        <a href="/lessons/beginners-en/mutability/index/solutions/2/"><span class="link-text">Show solution</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <p>The function creating a blank table needs to be corrected, e.g., like this</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_blank_table_corrected</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">fill_character</span><span class="o">=</span><span class="s2">"."</span><span class="p">):</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">fill_character</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_columns</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">table</span>
+</pre></div><p>Let's run the code with the corrected function and see the result</p>
+<div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">create_blank_corrected</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">table</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span>
+<span class="n">table</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span>
+<span class="n">print_table</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div><p>Now, each row is a different is object and the result is correct.</p>
+<div class="highlight"><pre><code>. . . . . . . . . .
+. . . X . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . O . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .</code></pre></div>
+    </div>
+</div><h2>Conclusion</h2>
+<p>I hope this chapter helped you better understand what the data type <em>mutability</em>
+means.</p>
+<p>We cannot say that <em>immutable</em> types are always better than the <em>mutable</em>
+ones, or the other way around. Both have their place in Python.</p>
+<p>But remember that multiple references to <em>mutable</em> values may lead to
+unexpected side effects and strange errors.</p>
+
+
+        </div>
+
+        
+
+    </div>
+</div>
+
+
+
+        <script type="text/javascript" src="/static/js/solutions.js"></script>
+
+        <div class="footer container">
+            <hr>
+            <div class="lesson-attribution">
+                
+    
+        <p>Written by Martin Pačes, 2022 for <a href="https://pyladiesvienna.pythonanywhere.com">PyLadies Vienna</a></p>
+    
+
+                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
+                
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+        
+
+    </body>
+</html>
