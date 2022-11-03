@@ -93,6 +93,9 @@ plan:
    - title: Homework (PDF)
      url: https://drive.google.com/file/d/1mCs7AD3qoR07HhmWq7Zo96CWTB-p7-dF
      type: homework
+   - title: Practice exercises (offline session 3.11.2022)
+     url: https://drive.google.com/file/d/1nYuODqu-FsVSnLTruVB8eNJwEsKxMvEw
+     type: cheatsheet
 
 - title: Custom functions
   date: 2022-11-08
