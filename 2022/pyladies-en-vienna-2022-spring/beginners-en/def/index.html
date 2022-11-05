@@ -53,9 +53,9 @@
     
 
     <h1>Functions</h1>
-<p>In the previous <a href="/2022/pyladies-en-vienna-2022-spring/beginners-en/functions/">lesson</a> 
-we were working with functions that were written by someone else - they are
-already built-in in Python.</p>
+<p>In the one of the past <a href="/2022/pyladies-en-vienna-2022-spring/beginners-en/functions/">lessons</a> 
+we were working with functions that were written by someone else - they were
+already built-in in Python - <code>print</code> or we imported them from a module - <code>turtle</code> for example.</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
@@ -78,7 +78,7 @@ the commands that the function performs.
 In the body you can use various commands including <code>if</code>, <code>loop</code>, etc.</p>
 <p>The body can start with a <em>documentation comment</em> or so called <em>docstring</em> which describes what
 the function is doing.</p>
-<p>A function can return a value with the <code>return</code> command.</p>
+<p>A function can return a value with the <code>return</code> command. More on that later.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_score</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span> 
     <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">'score is'</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span> 
     <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
@@ -96,8 +96,8 @@ the function is doing.</p>
 <span class="n">print_score</span><span class="p">(</span><span class="s1">'Denis'</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div><p>When you call a function, the arguments you write in parentheses
 are assigned to the corresponding variables in the function definition's
-parentheses.
-So when you call our new function with <code>print_score('Your', 256)</code>,
+parentheses.</p>
+<p>So when you call our new function with <code>print_score('Your', 256)</code>,
 imagine that, internally, it assigns the values like this:</p>
 <div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Your'</span>
 <span class="n">score</span> <span class="o">=</span> <span class="mi">256</span>
@@ -106,8 +106,8 @@ imagine that, internally, it assigns the values like this:</p>
 <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
     <span class="o">...</span> <span class="c1">#etc.</span>
 </pre></div><h2>Return</h2>
-<p>The <code>return</code> command <em>terminates</em> the function and returns the calculated value 
-out of the function. You can use this command only in functions.</p>
+<p>The <code>return</code> command <em>terminates</em> the function immediately and returns the calculated value 
+out of the function. You can use this command only in functions!</p>
 <p>It behaves similar to the <code>break</code> command that terminates loops.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">yes_or_no</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
     <span class="s2">"Returns True or False, depending on the user's answers."</span>
@@ -124,7 +124,7 @@ out of the function. You can use this command only in functions.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'OK, but you have to program it first.'</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'That is sad.'</span> <span class="p">)</span>
-</pre></div><div class="admonition note"><p>Same as <code>if</code> and <code>break</code>, <code>return</code> is a <em>command</em>, not a function.
+</pre></div><div class="admonition note"><p>Same as <code>if</code> and <code>break</code>, <code>return</code> is a Python <em>command</em>, not a function.
 That's why <code>return</code> has no parentheses after it.</p>
 </div><p>Try to write a function that returns the area of an ellipse with given 
 dimensions.
@@ -185,14 +185,16 @@ a text can be written with <code>print</code>, or a function that processes text
 But when the function calculates something it's better to not have
 <code>print</code> and <code>input</code> inside it.</p>
 <h2>None</h2>
-<p>When the function does not end with an explicit <code>return</code>,
+<p>When the function run does not end with an explicit <code>return</code>,
 the value that it returns is automatically <code>None</code>.</p>
 <p><code>None</code> is a value that is already "inside" Python (same as <code>True</code> and <code>False</code>).
 It's literally "none, nothing".</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nothing</span><span class="p">():</span>
     <span class="s2">"This function isn't doing anything."</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">nothing</span><span class="p">())</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">nothing</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># returns None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="c1"># returns True</span>
 </pre></div><h2>Local variables</h2>
 <p>Congratulations! You can now define your own functions!
 Now we have to explain what local and global variables are.</p>
@@ -203,11 +205,11 @@ Now we have to explain what local and global variables are.</p>
     <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
-</pre></div><p>But every variable and argument that is defined within the function body are
-<em>brand new</em> and they share nothing with "outside" code.</p>
-<p>Variables that are defined inside a function body are <em>local variables</em>,
-because they work only locally inside the function.
-For example, the following won't work how you would expect:</p>
+</pre></div><p>But every variable and argument that is defined in the function body are
+<em>brand new</em> and they share nothing with the "outside" variables.</p>
+<p>Variables that are defined inside a function body are called <em>local variables</em>,
+because they work only locally inside the function.</p>
+<p>For example, the following won't work how you would expect:</p>
 <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Assign value to global variable x</span>
 
 <span class="k">def</span> <span class="nf">set_x</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
@@ -216,9 +218,9 @@ For example, the following won't work how you would expect:</p>
 <span class="n">set_x</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div><p>Variables that are not local are <em>global variables</em> -
-they exist throughout the whole program. But if a function defines
-a local variable with the same name, this local variable will only<br>
-have the value that was assigned within the function.</p>
+they exist throughout the whole program.</p>
+<p>If a function defines a local variable with the same name, this local variable will only<br>
+have the value that was assigned in the function.</p>
 <p>Let's look at an example.
 Before you run the next program, try to guess how it will behave.
 Then run it, and if it did something different than
@@ -263,6 +265,39 @@ longer available, it will never be used.</li>
     </div>
 </div><p>If it seems confusing and complicated just avoid naming variables (and
 function's arguments) within a function the same as those outside.</p>
+<h2>Arguments, their count and defaults</h2>
+<p>If you define a function with a certain number of <code>positional arguments</code>, then the calling of the
+function needs to pass all of these arguments as well. Following will happen if too little 
+arguments are passed in.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_name_5</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">first_name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">last_name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+
+<span class="n">say_name_5</span><span class="p">(</span><span class="s2">"Eva"</span><span class="p">,</span> <span class="s2">"Blasco"</span><span class="p">)</span>
+
+<span class="n">say_name_5</span><span class="p">(</span><span class="s2">"Eva"</span><span class="p">)</span>
+<span class="c1"># TypeError: say_name_5() missing 1 required positional argument: 'last_name'</span>
+</pre></div><p>But in this case, we should not be forced to input both First name and Surname.
+There are powerful and well known people without a Surname, that would not be able to use our 
+function without a workaround - like setting their surname to empty string <code>""</code>.</p>
+<h3>Defaults</h3>
+<p>It is possible (although it does not always make sense) to add <code>default</code> argument values
+which will get used if the function call does not have these arguments specified.</p>
+<p>For specifying default argument, we use <code>argument=value</code> syntax in the function definition:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_name_5</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">first_name</span> <span class="o">!=</span> <span class="s2">""</span> <span class="ow">or</span> <span class="n">last_name</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">first_name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">last_name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Warning: Use this function with at least a first name"</span><span class="p">)</span>
+
+<span class="n">say_name_5</span><span class="p">(</span><span class="s2">"Eva"</span><span class="p">)</span>
+<span class="n">say_name_5</span><span class="p">()</span>
+</pre></div><p>A problem also appears in case we supply more arguments than the function allows:</p>
+<div class="highlight"><pre><span></span><span class="n">say_name_5</span><span class="p">(</span><span class="s2">"Eva"</span><span class="p">,</span> <span class="s2">"Blasco"</span><span class="p">,</span> <span class="s2">"of Royal Court!"</span><span class="p">)</span>
+
+<span class="c1"># TypeError: say_name_5() takes 2 positional arguments but 3 were given</span>
+</pre></div><p>Remember that for positional arguments, the order in which they are passed in is important.</p>
 
 
         </div>

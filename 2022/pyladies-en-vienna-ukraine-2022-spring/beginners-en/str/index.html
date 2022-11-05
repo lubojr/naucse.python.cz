@@ -65,8 +65,8 @@ appear on just one).</p>
 new line <code>\n</code>:</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Hello word</span><span class="se">\n</span><span class="s1">How are you?'</span><span class="p">)</span>
 </pre></div><p>A backslash allows us to write characters which we can't easily
-write on the keyboard.
-The backslash also allows us to use both types of quotes in one piece of text.</p>
+write on the keyboard.</p>
+<p>The backslash also allows us to use both types of quotes in one piece of text.</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'"Don</span><span class="se">\'</span><span class="s1">t do it", said dad.'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\"</span><span class="s2">Don't do it</span><span class="se">\"</span><span class="s2">, said dad."</span><span class="p">)</span>
 </pre></div><p>Backward slashes can also insert exotic characters 
@@ -111,7 +111,7 @@ In order to leave the newly opened help window, press <code>q</code> as <code>qu
 </pre></div><p>Now we will learn how we can get part of a string.
 We will start with single characters.
 This is done by <em>subscripting</em>. The Syntax looks similar
-to calling a function but with square brackets.</p>
+to calling a function but with <em>square brackets</em>!</p>
 <div class="highlight"><pre><span></span><span class="n">fifth_character</span> <span class="o">=</span> <span class="s1">'PyLadies'</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">fifth_character</span><span class="p">)</span>
@@ -124,7 +124,7 @@ to calling a function but with square brackets.</p>
     <div class="solution-body" aria-hidden="true">
         <p>You didn't – you got the <em>sixth</em> character.</p>
     </div>
-</div><p>As you may have already noticed, programmers start counting from zero.
+</div><p>As you may have already noticed, programmers in Python start counting from zero.
 First comes 0, then 1, and so on.</p>
 <p>It's the same with strings - the first character is on position zero.</p>
 <p>Why is it like that?
@@ -186,7 +186,7 @@ you would have to change the case of both strings
 To do that, we will need another Python feature: methods.</p>
 <h2>Methods</h2>
 <p><em>Methods</em> are like functions - we can call something with them.
-Unlike a function, a method is tied to some <em>object</em> (value).
+Unlike a function, a method is tied to some <em>object</em>.
 It is called by writing a <code>dot</code> and a method name just after the object.
 And then, of course, parentheses, which may contain arguments.</p>
 <p>The String methods <code>upper()</code> and <code>lower()</code> change the case.</p>
@@ -199,10 +199,12 @@ Methods return a new string and the old string stays
 as it was.</p>
 <p>That is Python's standard behavior: already existing string can't be changed,
 we can only create a new one - derived from the old one.</p>
+<p>But it is not true that all methods do not change the original object they are being called on.
+This is true just for strings.</p>
 </div><h3>Initials</h3>
 <p>For practicing methods and subscripting, try to write a program,
 which will ask the user for their name, then their surname
-and then it will print their initials - the first letters of
+and then it will print their <em>initials</em> - the first letter of
 name and surname.</p>
 <p>Initials are always upper case (even if the
 user won't write it that way).</p>
