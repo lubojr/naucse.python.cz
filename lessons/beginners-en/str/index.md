@@ -21,6 +21,7 @@ print('Hello word\nHow are you?')
 ```
 A backslash allows us to write characters which we can't easily
 write on the keyboard.
+
 The backslash also allows us to use both types of quotes in one piece of text. 
 
 ```python
@@ -90,10 +91,11 @@ You already know how to concatenate strings by addition and multiplication.
 concatenated_string = 'a' + 'b'
 long_string = 'o' * 100
 ```
+
 Now we will learn how we can get part of a string.
 We will start with single characters.
 This is done by *subscripting*. The Syntax looks similar
-to calling a function but with square brackets.
+to calling a function but with *square brackets*!
 
 ```python
 fifth_character = 'PyLadies'[5]
@@ -107,7 +109,7 @@ Does it work? Did you really get the fifth character?
 You didn't – you got the *sixth* character.
 {% endfilter %}
 
-As you may have already noticed, programmers start counting from zero.
+As you may have already noticed, programmers in Python start counting from zero.
 First comes 0, then 1, and so on.
 
 It's the same with strings - the first character is on position zero.
@@ -188,7 +190,7 @@ To do that, we will need another Python feature: methods.
 ## Methods
 
 *Methods* are like functions - we can call something with them.
-Unlike a function, a method is tied to some *object* (value).
+Unlike a function, a method is tied to some *object*.
 It is called by writing a `dot` and a method name just after the object.
 And then, of course, parentheses, which may contain arguments.
 
@@ -208,13 +210,16 @@ print(string)
 >
 > That is Python's standard behavior: already existing string can't be changed,
 > we can only create a new one - derived from the old one.
+>
+> But it is not true that all methods do not change the original object they are being called on.
+> This is true just for strings.
 
 
 ### Initials
 
 For practicing methods and subscripting, try to write a program,
 which will ask the user for their name, then their surname
-and then it will print their initials - the first letters of
+and then it will print their *initials* - the first letter of
 name and surname.
 
 Initials are always upper case (even if the

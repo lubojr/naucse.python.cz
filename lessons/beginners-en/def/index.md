@@ -1,7 +1,7 @@
 # Functions
-In the previous [lesson]({{ lesson_url('beginners-en/functions') }}) 
-we were working with functions that were written by someone else - they are
-already built-in in Python.
+In the one of the past [lessons]({{ lesson_url('beginners-en/functions') }}) 
+we were working with functions that were written by someone else - they were
+already built-in in Python - `print` or we imported them from a module - `turtle` for example.
 
 
 ```python
@@ -11,7 +11,7 @@ print(pi)
 ```
 
 Today we will learn how to code our own functions
-which will be helpful when we need to run tasks repeatedly. 
+which will be helpful when we need to run tasks repeatedly.
 
 It's not hard:
 
@@ -31,6 +31,7 @@ You *define* a function with the command `def`. Right after that
 you have to write name of the function, parentheses (which may contain 
 *arguments*) and then, of course, a *colon*. 
 
+
 We have already said that after a colon, everything that 
 belongs to (in our case) the function must be indented. 
 The indented code is called *function body* and it contains 
@@ -40,7 +41,7 @@ In the body you can use various commands including `if`, `loop`, etc.
 The body can start with a *documentation comment* or so called *docstring* which describes what
 the function is doing.
 
-A function can return a value with the `return` command.
+A function can return a value with the `return` command. More on that later.
 
 
 ```python
@@ -64,6 +65,7 @@ print_score('Denis', 5)
 When you call a function, the arguments you write in parentheses
 are assigned to the corresponding variables in the function definition's
 parentheses.
+
 So when you call our new function with `print_score('Your', 256)`,
 imagine that, internally, it assigns the values like this:
 
@@ -79,8 +81,8 @@ if score > 1000:
 ```
 ## Return
 
-The `return` command *terminates* the function and returns the calculated value 
-out of the function. You can use this command only in functions.
+The `return` command *terminates* the function immediately and returns the calculated value 
+out of the function. You can use this command only in functions!
 
 It behaves similar to the `break` command that terminates loops.
 
@@ -105,7 +107,7 @@ else:
 ```
 
 > [note]
-> Same as `if` and `break`, `return` is a *command*, not a function.
+> Same as `if` and `break`, `return` is a Python *command*, not a function.
 > That's why `return` has no parentheses after it.
 
 Try to write a function that returns the area of an ellipse with given 
@@ -188,7 +190,7 @@ But when the function calculates something it's better to not have
 
 ## None
 
-When the function does not end with an explicit `return`,
+When the function run does not end with an explicit `return`,
 the value that it returns is automatically `None`.
 
 `None` is a value that is already "inside" Python (same as `True` and `False`).
@@ -198,9 +200,10 @@ It's literally "none, nothing".
 def nothing():
     "This function isn't doing anything."
 
-print(nothing())
+result = nothing()
+print(result) # returns None
+print(result is None) # returns True
 ```
-
 
 ## Local variables
 
@@ -218,11 +221,12 @@ def circle_area(radius):
 print(circle_area(100))
 ```
 
-But every variable and argument that is defined within the function body are
-*brand new* and they share nothing with "outside" code.
+But every variable and argument that is defined in the function body are
+*brand new* and they share nothing with the "outside" variables.
 
-Variables that are defined inside a function body are *local variables*,
+Variables that are defined inside a function body are called *local variables*,
 because they work only locally inside the function.
+
 For example, the following won't work how you would expect:
 
 ```python
@@ -236,9 +240,10 @@ print(x)
 ```
 
 Variables that are not local are *global variables* -
-they exist throughout the whole program. But if a function defines
-a local variable with the same name, this local variable will only  
-have the value that was assigned within the function.
+they exist throughout the whole program.
+
+If a function defines a local variable with the same name, this local variable will only  
+have the value that was assigned in the function.
 
 Let's look at an example.
 Before you run the next program, try to guess how it will behave.
@@ -284,3 +289,54 @@ longer available, it will never be used.
 
 If it seems confusing and complicated just avoid naming variables (and
 function's arguments) within a function the same as those outside.
+
+## Arguments, their count and defaults
+
+If you define a function with a certain number of `positional arguments`, then the calling of the
+function needs to pass all of these arguments as well. Following will happen if too little 
+arguments are passed in.
+
+```python
+def say_name_5(first_name, last_name):
+    for i in range(5):
+        print(first_name.upper() + " " + last_name.upper())
+
+say_name_5("Eva", "Blasco")
+
+say_name_5("Eva")
+# TypeError: say_name_5() missing 1 required positional argument: 'last_name'
+```
+
+But in this case, we should not be forced to input both First name and Surname.
+There are powerful and well known people without a Surname, that would not be able to use our 
+function without a workaround - like setting their surname to empty string `""`.
+
+### Defaults
+
+It is possible (although it does not always make sense) to add `default` argument values
+which will get used if the function call does not have these arguments specified.
+
+For specifying default argument, we use `argument=value` syntax in the function definition:
+
+```python
+def say_name_5(first_name="", last_name=""):
+    if (first_name != "" or last_name != ""):
+        for i in range(5):
+            print(first_name.upper() + " " + last_name.upper())
+    else:
+        print("Warning: Use this function with at least a first name")
+
+say_name_5("Eva")
+say_name_5()
+
+```
+
+A problem also appears in case we supply more arguments than the function allows:
+
+```python
+say_name_5("Eva", "Blasco", "of Royal Court!")
+
+# TypeError: say_name_5() takes 2 positional arguments but 3 were given
+```
+
+Remember that for positional arguments, the order in which they are passed in is important.

@@ -100,12 +100,12 @@ plan:
 - title: Custom functions
   date: 2022-11-08
   slug: custom_func
-  # materials:
-  # - lesson: beginners-en/str
-  #  - lesson: beginners-en/def
-  #  - title: Functions cheatsheet
-  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_functions.pdf
-  #    type: cheatsheet
+  materials:
+   - lesson: beginners-en/str
+   - lesson: beginners-en/def
+   - title: Functions cheatsheet
+     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_functions.pdf
+     type: cheatsheet
   #  - title: Homework (PDF)
   #    url: https://drive.google.com/file/d/1_NKMGKy6X8HwIvoYp0ew5gCckezIVwBB
   #    type: homework
@@ -113,8 +113,8 @@ plan:
 - title: GIT
   slug: git
   date: 2022-11-15
-  # materials:
-  #  - lesson: git-en/install
+  materials:
+   - lesson: git-en/install
   #  - lesson: git-en/basics
   #  - lesson: git-en/github
   #  - lesson: git-en/branching
