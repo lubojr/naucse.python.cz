@@ -1,0 +1,246 @@
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            
+                Beginners course PyLadies Vienna: Branches in Git
+            
+        </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+        
+
+        <link rel="stylesheet" href="/static/css/naucse.css">
+        <link rel="stylesheet" href="/static/css/body.css">
+        <link rel="stylesheet" href="/static/css/pygments-lovelace-style.css">
+        <link rel="stylesheet" href="/static/css/ipython.css">
+
+        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/git-en/branching/" />
+
+
+        <style>
+            
+    
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="header">
+            <ul class="container menu">
+                <li><a href="/" class="logo"><h1>PyLadies Vienna</h1></a></li>
+                <!-- <li><a href="/courses/" class="menu-link"><h2>Materials</h2></a></li> -->
+                <li><a href="/runs/" class="menu-link"><h2>Courses</h2></a></li>
+            </ul>
+        </nav>
+
+        
+
+<div class="page">
+    <div class="container">
+
+        
+  
+
+
+        <div class="lesson-content">
+          
+    
+
+    <h1>Branching in GIT</h1>
+<p>So, now you know Git!
+We will dive into something a bit more complex now :)</p>
+<p>Programmers sometimes need to work on two or even more projects at the same time.
+Let's imagine that a severe mistake is found and needs to be fixed as soon as possible (meaning now was already late :) )
+So the programmer has to leave what he is currently working on and goes back to
+a "stable" version, fixes the error and ships it to the customers to remove their anger or despair.
+After this, she goes back to the original project. But before that, she should also 
+incorporate the fix of the error into the version she is currrently working on.</p>
+<p>Git has so called <em>branches</em> exactly for this purpose.
+On a single "branch" you can work, but you can switch to another (even older) branch,
+do some changes and then change back to new branch and continue,
+or <em>merge</em> the changes.</p>
+<p>Branching comes handy also when more people are working on a same project - 
+everyone is working on his/her own branch and when the time comes,
+all changes are combined (merged) together.</p>
+<p>You can check what branches you have in your repository.
+For that, we have a command <code>git branch</code>:</p>
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git branch
+* <span style="color: #00aa00">main</span></code></pre></div><p>We should have only one and it is called <code>main</code> or <code>master</code>.
+– it is a traditionally name of "backbone" branch for the project</p>
+<ul>
+<li>In the last two years there was a commonly accepted default branch name change from <em>master</em> to <em>main</em>, so in older project you can still find <em>master</em> branches, while GitHub by default already creates <em>main</em> branch.</li>
+</ul>
+<p>To create a new branch, you will again use command <code>git branch</code>.
+You will just add a name of the branch as an argument as well.
+So if you want to add the name of the author to the poem,
+you can name the branch <code>adding-author</code>.</p>
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git branch adding-author
+<span style="color: #00aaaa">$</span> git branch
+  adding-author
+* <span style="color: #00aa00">main</span></code></pre></div><p>This command created a new branch, but it does not switch into it yet.
+The asterisk symbol in the output of <code>git branch</code> is showing, on which branch you are working.
+In this case, it is still <code>main</code>.
+To switch between branches, you need another command:</p>
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git checkout adding-author
+Switched to branch 'adding-author'
+<span style="color: #00aaaa">$</span> git branch
+* <span style="color: #00aa00">adding-author</span>
+  main</code></pre></div><p>So, now you are "in" branch <code>adding-author</code>
+Add some author name into your file <code>poem.txt</code>.
+And with the help of <code>git add</code> and <code>git commit</code> perform new commit.
+Perfect!
+You can check how it looks using <code>git show</code>, <code>git status</code> or <code>git log</code>.</p>
+<p>Let's leave the adding the author of the poem for a moment.
+Go back to branch <code>main</code> and create a branch called
+<code>adding-name</code> from it.
+Then switch to this new branch.</p>
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git checkout main
+Switched to branch 'main'
+<span style="color: #00aaaa">$</span> git branch adding-name
+<span style="color: #00aaaa">$</span> git checkout adding-name
+Switched to branch 'adding-name'
+<span style="color: #00aaaa">$</span> git branch
+  adding-author
+* <span style="color: #00aa00">adding-name</span>
+  main</code></pre></div><p>Now add the name of the poem to the file in your text editor and using the same procedure
+as before by using commands <code>git add poem.txt</code>, <code>git commit -m "commit message"</code> save the commit.</p>
+<p>Again, check everything using <code>git show</code>, <code>git status</code> or <code>git log</code>.</p>
+<p>This is a simple example how you can solve the situation from the introduction:
+Leaving work in progress, switch to "stable" version <code>main</code> and
+start working in a completely different project part.</p>
+<p>You can switch between the versions as you want to,
+but it is always a good habbit to do a new commit:
+(<code>git commit</code>) and with help of <code>git status</code> confirm, 
+that everything is where it is supposed to be.</p>
+<p>Collaboration of multiple people on same project works on the exactly same principle:
+There is a common base (<code>main</code>) and every member
+is working on his/her own branch until all expected changes are there.</p>
+<p>When a certain branch is ready, it can be incorporated back into <code>main</code>.
+Let's see how to do it!</p>
+<h2>Merging</h2>
+<p>It would make no sense to split the history of a project,
+if there would be no way how to merge it back together.
+Luckily for us, merging in git is quite easy. Do not trust people who tell you otherwise.
+You will be the professional to impress others with your git skills.</p>
+<p>Switch back to <code>main</code>
+and use commit <code>git merge</code> with a name of branch you want to merge.
+This commit will merge branch you want into <code>main</code>.</p>
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git checkout main
+Switched to branch 'main'
+<span style="color: #00aaaa">$</span> git merge adding-name
+Updating e929fb0..c982a81
+Fast-forward
+ poem.txt | 6 <span style="color: #00aa00">+++++</span><span style="color: #aa0000">-</span>
+ 1 file changed, 5 insertions(+), 1 deletion(-)</code></pre></div><p>Merged! This „<code>Fast-forward</code>” means, that there was nothing to actually 
+"merge" - we just added new changes from another branch into the branch <code>main</code>.
+You can check how it looks using <code>git log</code> or <code>git status</code>.</p>
+<p>And now try to merge the second branch too - 
+<code>git merge adding-author</code>.
+Here it might be more complicated: It can happen that changes can't be 
+automatically merged together and in the command line we will see output as
+<code>merge conflict</code>. The reason for it is that git can not in this case 
+safely know "which way to merge to be 100% correct".
+A common example is if two commits in different branches edit the same line of code.
+You will probably know which way is correct but git usually can not, as there can be three options:
+Keep just changes from the first commit, keep just the changes from the second commit or make custom changes (which usually means use both changes but adapt the code a bit).</p>
+<p>How to solve it?
+Open the file in editor and you should see a content of both versions
+marked with signs ("&gt;&gt;&gt;" usually) which points to the exact location where conflict happened.
+Change the file to look like it should (also remove the signs), save it and do a commit
+<code>git commit</code>.</p>
+<p>Whether there was a conflict or not, there will be a special <em>merge commit</em></p>
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git merge adding-author
+Auto-merging poem.txt
+Merge made by the 'recursive' strategy.
+ poem.txt | 2 <span style="color: #00aa00">++</span>
+ 1 file changed, 2 insertions(+)</code></pre></div><p>Everything worked?</p>
+<p>If yes, you can delete old branches - all their changes are inside the <code>main</code>
+and there is usually no reason to continue work on them. You can always create a new branch later again.</p>
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git branch -d adding-author
+Deleted branch adding-author (was 0e213cd).
+<span style="color: #00aaaa">$</span> git branch -d adding-name
+Deleted branch adding-name (was c982a81).
+<span style="color: #00aaaa">$</span> git branch
+* <span style="color: #00aa00">main</span></code></pre></div><p>Congratulations, now you are able to use branches and merge them.
+This brings you further on your adventure in getting to know git as a programming collaboration tool.</p>
+
+
+        </div>
+
+        
+
+
+        
+    <div class="row prev-next">
+        
+            
+                
+    <div class="col text-left">
+        <a href="/2021/pyladies-en-vienna-2021/git-en/github/">← <span class="d-none d-sm-inline">GitHub</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-left">
+        <a href="/2021/pyladies-en-vienna-2021/sessions/git/">↑ <span class="d-none d-sm-inline">Lesson: GIT</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-right">
+        <a href="/2021/pyladies-en-vienna-2021/sessions/git/back/"><span class="d-none d-sm-inline">End of lesson</span> →</a>
+    </div>
+
+            
+        
+    </div>
+
+
+        
+
+    </div>
+</div>
+
+
+
+        <script type="text/javascript" src="/static/js/solutions.js"></script>
+
+        <div class="footer container">
+            <hr>
+            <div class="lesson-attribution">
+                
+    
+        <p>Translated by Tyna Dolezalova</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/git/basics/">PyLadies CZ</a>.</p>
+    
+
+                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
+                
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+        
+
+    </body>
+</html>
