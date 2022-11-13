@@ -96,7 +96,7 @@ file in the directory and that it isn't managed by Git yet.
 
 <!-- XXX: Color coding! -->
 
-```ansis
+```ansi
 ␛[36m$␛[0m git status
 On branch master
 
