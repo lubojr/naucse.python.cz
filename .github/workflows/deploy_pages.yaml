@@ -29,7 +29,14 @@ jobs:
 
     - name: Copy out static from the container
       run: |
-        docker cp naucse:/root/.local/share/virtualenvs/-x-v5uFv0/src/naucse/naucse/_build naucse_build && echo "pyladies.at" > naucse_build/CNAME
+        docker cp naucse:/root/.local/share/virtualenvs/-x-v5uFv0/src/naucse/naucse/_build naucse_build
+        if [ -z "$(ls -A naucse_build)" ]; then
+          echo 'Build folder empty, probably a failure in build due to syntax error. Check logs of the run. Aborting.'
+          exit 1 
+        else
+          echo 'Content Exists'
+        fi
+        echo "pyladies.at" > naucse_build/CNAME
 
     - name: Deploy github pages
       uses: JamesIves/github-pages-deploy-action@v4
