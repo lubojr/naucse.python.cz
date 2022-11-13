@@ -87,13 +87,16 @@ And *“nothing to commit”* says that there are no files to be saved and versi
 Try adding something to Git now!
 
 Using your code editor create a new file `poem.txt` and write/copy a short poem inside.
+
+As a quick source of totally unbiased texts to work with, you can have a look [here:](https://www.scottishpoetrylibrary.org.uk/best-scottish-poems/best-of-the-best-scottish-poems)
+
 It should span at least five lines so that we have enough to work with.
 Then, try executing `git status` again: Git reports that there is a new
 file in the directory and that it isn't managed by Git yet.
 
 <!-- XXX: Color coding! -->
 
-```ansi
+```ansis
 ␛[36m$␛[0m git status
 On branch master
 

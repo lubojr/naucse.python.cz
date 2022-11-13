@@ -115,17 +115,17 @@ plan:
   date: 2022-11-15
   materials:
    - lesson: git-en/install
-  #  - lesson: git-en/basics
-  #  - lesson: git-en/github
-  #  - lesson: git-en/branching
-  #  - title: Extensive Git cheatsheet
-  #    url: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
-  #    type: cheatsheet
-  #  - title: Have you just made a git mess?
-  #    url: http://justinhileman.info/article/git-pretty/git-pretty.png
-  #    type: cheatsheet
-  #  - lesson: beginners-en/tictactoe
-  #    type: homework
+   - lesson: git-en/basics
+   - lesson: git-en/github
+   - lesson: git-en/branching
+   - title: Extensive Git cheatsheet
+     url: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
+     type: cheatsheet
+   - title: Have you just made a git mess?
+     url: http://justinhileman.info/article/git-pretty/git-pretty.png
+     type: cheatsheet
+   - lesson: beginners-en/tictactoe
+     type: homework
 
 - title: Lists
   slug: list

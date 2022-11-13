@@ -17,6 +17,18 @@ The email you use for creating an account *does not* have to match the one you u
 
 After registering and confirming your email, log in and go to the GitHub home page.
 
+### Setup a personal access token
+
+Unless you have already used GitHub before and have setup ssh access (not objective of this course), you will need to go through following step.
+
+In the user [Settings/Developer settings/Personal Access tokens](//github.com/settings/tokens) you need to generate a new access token which will be used instead of a password for interacting with GitHub API from your command line. You will still log in to the website using your normal password.
+
+When creating the personal access token, there are currently two options, select the "Generate new token (classic)".
+
+When a set of options appears about the new token to be generated, add a name to the token (can be anything) select `No expiration`, tick the `repo` scope and click `Generate token`. `Make sure` that you copy the token somewhere - ideally your password manager or your web browser password saving vault, less ideally a file on your computer.
+
+If you lose the personal access token, it is not a big problem, you will just need to generate it again using the same steps above.
+
 ### Create a repository
 
 And now we are READY to create our first GitHub repository:
@@ -46,11 +58,14 @@ git branch -M main
 git push -u origin main
 ```
 
+What happened now? 
+
 > [Note]
 > If you have done the [configuration step]({{ lesson_url('git-en/install') }}), you 
-> should be prompted for the first time for a log in to the Git Credential Manager
-> and upon singing in via your standard Log in and Password, the program will remember
-> your login and will allow you to push into your repository.
+> should be prompted for the first time for a log in to the Git Credential Manager.
+> It is unfortunately not possible to log in just via username and password, you need to supply the 
+> username and personal access token you created before. Once successfully confirming your identity, 
+> the program will remember your login and will allow you to push into your repository.
 
 ## Working with GitHub
 More detailed explanation of some of previous commands would be great. So let's delve into it.
