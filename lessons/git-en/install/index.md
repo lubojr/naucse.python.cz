@@ -85,9 +85,7 @@ You do that with this command:
 $ git config --global core.editor nano
 ```
 
-After this step, please install the [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) by downloading gcmcore-linux.(version).deb package from https://github.com/GitCredentialManager/git-credential-manager/releases/latest.
-
-After that install and configure with commands:
+After that install and configure [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) with commands:
 
 ```console
 $ brew tap microsoft/git

@@ -22,7 +22,7 @@ brew -v
 If previous command did not return a installed brew version, install it by entering this command in the command line/terminal:
 
 ```console
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 And then you can just enter this command:
