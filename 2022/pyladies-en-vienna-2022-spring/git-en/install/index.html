@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             
-                Beginners course PyLadies Vienna: Git installation (optional)
+                Beginners course PyLadies Vienna: Git installation
             
         </title>
 
@@ -57,55 +57,13 @@
 and develop programs together with other people. It's called <a href="https://git-scm.com/">Git</a>.
 Let's install it and set it up.</p>
 <p>On some operating systems, for convenience, we shall also install <a href="https://github.com/GitCredentialManager/git-credential-manager">Git Credential Manager</a></p>
-<p>The installation procedure is different for various operating systems, so choose yours.</p>
-<h2>Linux</h2>
-<p>In Linux, we can install it with one command:</p>
-<p><strong>Ubuntu, Debian</strong>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt-get install git git-gui nano
-</pre></div><p>If you are using some other distribution we expect that you already know
-how to install programs. Go ahead and install <em>git</em>, <em>git gui</em> and <em>nano</em>.</p>
-<p>After you have installed git, choose your Git editor.
-If you do not like Vim (or you do not know what it is)
-enter this command to choose a more user-friendly editor called Nano:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global core.editor nano
-</pre></div><p>After this step, please install the <a href="https://github.com/GitCredentialManager/git-credential-manager">Git Credential Manager</a> by downloading gcmcore-linux.(version).deb package from <a href="https://github.com/GitCredentialManager/git-credential-manager/releases/latest">https://github.com/GitCredentialManager/git-credential-manager/releases/latest</a>.</p>
-<p>After that install and configure with commands:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dpkg -i &lt;path-to-package&gt;
-<span class="gp">$ </span>git-credential-manager-core configure
-<span class="gp">$ </span>git config --global credential.credentialStore secretservice
-</pre></div><p>Continue with the general <a href="#config">settings</a> below.</p>
-<h2>Windows</h2>
-<p>Go to <a href="https://git-scm.org">git-scm.org</a>, download Git and install it.
-When installing, select these options:</p>
+<p>Choose a page depending on your operating system:</p>
 <ul>
-<li>Run Git from the Windows Command Prompt</li>
-<li>Checkout Windows-style, commit Unix-style line endings</li>
+<li><a href="/2022/pyladies-en-vienna-2022-spring/git-en/install/linux/">Linux</a></li>
+<li><a href="/2022/pyladies-en-vienna-2022-spring/git-en/install/windows/">Windows</a></li>
+<li><a href="/2022/pyladies-en-vienna-2022-spring/git-en/install/macos/">macOS</a></li>
 </ul>
-<p>Do not change any other options, they can be left as default.
-Please ensure that <strong>Git Credential Manager Core</strong> option is <a href="https://github.com/GitCredentialManager/git-credential-manager#windows">"checked"</a>, to install the extra tool by default with Git installation.</p>
-<p>Then set your Git editor.
-If you have a terminal window open, close it, and open a new one.
-(The installation changes system settings which have to be loaded again.)
-In the new command line, enter:</p>
-<div class="highlight"><pre><span></span><span class="go">&gt; git config --global core.editor notepad</span>
-<span class="go">&gt; git config --global format.commitMessageColumns 80</span>
-<span class="go">&gt; git config --global gui.encoding utf-8</span>
-</pre></div><p>Now go to <a href="#config">Settings</a> below.</p>
-<h2>macOS</h2>
-<p>Try to run <code>git</code> on the command line.
-If it's already installed, it will show you how to use it.
-Otherwise, install it using Homebrew:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>brew install git
-</pre></div><p>It is still necessary to set up your Git editor (enter <code>nano</code>,
-even if you installed for example Atom during the installation of the editor).
-You do that with this command:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global core.editor nano
-</pre></div><p>After that install and configure <a href="https://github.com/GitCredentialManager/git-credential-manager">Git Credential Manager</a> with commands:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>brew tap microsoft/git
-<span class="gp">$ </span>brew install --cask git-credential-manager-core
-<span class="gp">$ </span>git config --global credential.credentialStore secretservice
-</pre></div><p>Continue with the general settings:</p>
-<p><a id="config"></a></p>
+<p>After you finish installation of <code>git</code> return back here to finish the next part <strong>Settings</strong>.</p>
 <h2>Settings</h2>
 <p>Several people can collaborate in one project in Git.
 To track who make a specific change, we need to
@@ -132,7 +90,8 @@ This is normal; many other commands behave like that, for example <code>cd</code
 <div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global --list
 <span class="go">user.name=Jane Berry</span>
 <span class="go">user.email=jane.berry@example.com</span>
-</pre></div></div><p>And that's all! You have installed Git. Congratulations!</p>
+</pre></div></div><p>And that's all! You have installed and configured <code>Git</code>.</p>
+<p><strong>Congratulations!</strong></p>
 
 
         </div>
