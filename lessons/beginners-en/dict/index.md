@@ -3,14 +3,22 @@
 Another basic data type which we will introduce is the
 *dictionary*, or short, `dict`.
 
-Similar to lists, dictionaries contain values.
-In contrast to lists, where all elements are in a specific order, there are two types
-of elements in dictionaries: *key* and *value*. 
-Exactly one value exists for every key. (I don't want to confuse you right at the beginning,
-but just so you know -- an empty list can also be a value for a key.)
+Dictionary is a data structure consisting of multiple *key/value* pairs,
+mapping *keys* to their corresponding *values*.
 
-You use a dictionary when each piece of data has an individual name, but you want 
-to work with the data as one variable.
+Its main purpose is to find quickly and efficiently a value for a given key.
+
+Python constraints what dictionary *keys* can be.
+The keys must not repeat (one key cannot map to two different values)
+and must not be changeable (*mutable* values, such as lists and dictionaries
+are therefore not allowed). Strings keys are the most common, though other
+types such as numbers and tuples are also used.
+
+The target *values*, as in the case of, e.g., lists, can by anything
+which can be assigned to a variable. The values can repeat and multiple
+keys can point to a same value.
+
+![a dicitionary](static/dict.png)
 
 There is a dictionary with 3 keys, and each one of them has a value:
 
@@ -18,14 +26,20 @@ There is a dictionary with 3 keys, and each one of them has a value:
 >>> me = {'name': 'Marketa', 'city': 'Prague', 'numbers': [20, 8]}
 ```
 
-When you print the dictionary you may find that 
-your keys and values are in a different order.
-Dictionaries don't have a fixed order of elements. They just 
-assign values to keys.
+Note the curly braces `{}` and the colons `:` between each key and value.
+The key/value pairs are separated by commas `,`.
 
+> [note]
+> **Are dictionaries ordered?**
+> As of [Python 3.7](https://docs.python.org/3/whatsnew/3.7.html)
+> officially (effectively
+> [already from Python 3.6](https://docs.python.org/3/whatsnew/3.6.html#new-dict-implementation))
+> dictionaries are gurateed to preserve order in which their key/values pairs
+> are inserted. Before, the ordering was not guaranteed, as it can be still
+> found mentioned in older text books.
 
 You can get values from the dictionary similar as
-from lists, but instead of an index, you have to use the key. 
+from lists, but instead of an index, you have to use e key.
 
 ```pycon
 >>> me['name']
@@ -63,6 +77,52 @@ You can change the values of keys:
 >>> del me['numbers']
 >>> me
 {'name': 'Marketa', 'city': 'Prague', 'language': 'Python'}
+```
+
+Dictionaries in Python have a couple of useful methods which are good to know.
+
+One of them is the `get` method which allows you to get a value for a key
+when the key exists or return a default value when it does not exist:
+
+```pycon
+>>> record.get('name') # key exits and value is returned
+'Peggy'
+>>> record.get('age') # key does not exist and None is returned instead
+>>> record.get('age', 'n/a') # key does not exist and 'n/a' is returned instead
+'n/a'
+```
+
+Other useful method is `pop`, removing key from the dictionary and
+returning its value. `pop` throws an error in case of a missing
+value, unless a default value is provided:
+
+```pycon
+>>> record.pop('name') # 'name' is removed from dictionary
+'Peggy'
+
+>>> record.pop('name')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'name'
+
+>>> record.pop('name', None)  # None is returned
+
+>>> record.pop('name', 'n/a') # 'n/a' is returned
+```
+
+The `update` method updates a dictionary from another one (rewrites existing
+and adds new keys):
+
+```pycon
+>>> record
+{'city': 'Prague', 'name': 'Lucy'}
+
+>>> record.update({'name': 'Peggy', 'hobby': 'Python programming'})
+'Lucy'
+
+>>> record
+{'city': 'Prague', 'name': 'Peggy', 'hobby': 'Python programming'}
+
 ```
 
 ## Lookup table
@@ -140,8 +200,6 @@ dict: dictionary
 len: length
 ```
 
-
-
 > [note]
 > There is also the method `keys()` which return just keys.
 >
@@ -153,6 +211,12 @@ len: length
 In a `for` loop, you can't add keys to dictionary nor delete them:
 
 ```pycon
+>>> for key, value in func_descript.items():
+...     func_descript[key.upper()] = value.upper()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+RuntimeError: dictionary changed size during iteration
+
 >>> for key in func_descript:
 ...     del func_descript[key]
 Traceback (most recent call last):
@@ -160,7 +224,22 @@ Traceback (most recent call last):
 RuntimeError: dictionary changed size during iteration
 ```
 
-But you can change values for already existing keys.
+... this limitation can be easily overcome by using a list copy
+of the iterator
+
+```pycon
+>>> for key, value in list(func_descript.items()):
+...     func_descript[key.upper()] = value.upper()
+>>> func_descript
+{'len': 'length', 'str': 'string', 'dict': 'dictionary', 'LEN': 'LENGTH', 'STR': 'STRING', 'DICT': 'DICTIONARY'}
+
+>>> for key in list(func_descript):
+...     del func_descript[key]
+>>> func_descript
+{}
+```
+
+However, you can change values for already existing keys.
 
 Update the `phones` dictionary so that all numbers contain '+43' prefix
 
@@ -195,9 +274,39 @@ The other way is by using the keyword `dict`.
 This works similar to `strings`, `integer` or `list`, so it will
 convert some specific objects to a dictionary.
 
-A dictionary has very specific structure --
-numbers or simple lists can't be converted into a dictionary.
-But we can convert a dictionary into *another dictionary*.
+```pycon
+>>> {}  # empty dictionary
+{}
+```
+
+```pycon
+>>> dict()  # empty dictionary
+{}
+```
+
+```python
+colours = {
+    'pear': 'green',
+    'apple': 'red',
+    'melon': 'green',
+    'plum': 'purple',
+    'radish': 'red',
+    'cabbage': 'green',
+    'carrot': 'orange',
+}
+```
+
+You can fill a new dictionary from one or more existing ones
+```python
+new_colours = {
+    **colours,          # ** unpacks dictionary into key value pairs
+    'celery': 'green',
+    'squash': 'yellow',
+    'plum': 'purple',
+}
+```
+
+It is possible to convert a dictionary into *another dictionary*.
 This new dictionary won't be in any way connected to the
 old one.
 
@@ -209,31 +318,56 @@ print(colours['apple'])
 print(colour_riped['apple'])
 ```
 
-We can also convert a list which contains tuples with *pairs* 
+WWe can also convert a sequence of *pairs* (e.g., list of tuples)
 (which work as *key* and *value*) into a dictionary:
 
-```python
-data = [(1, 'one'), (2, 'two'), (3, 'three')]
-number_names = dict(data)
+```pycon
+>>> data = [(1, 'one'), (2, 'two'), (3, 'three')]
+>>> dict(data)
+{1: 'one', 2: 'two', 3: 'three'}
+
+>>> data = [[1, 'one'], [2, 'two'], [3, 'three']]
+>>> dict(data)
+{1: 'one', 2: 'two', 3: 'three'}
 ```
 
-And that's all that we can convert into a dictionary.
 
-As a bonus function, `dict` can also work with named arguments.
-Each argument's name will be a key and the argument itself will be the value:
+## Dictionaries and function keyword arguments - *args **kwargs
+
+*args and **kwargs allow you to pass multiple arguments or keyword arguments to a function.
+
+If you do not know how many arguments will be passed into your function, or you do not really care 
+add a `*` before the parameter name in the function definition.
+
+**kwargs allows us to pass a variable number of keyword arguments to a Python function.
+In the function, we use the double-asterisk before the parameter name to denote this type of argument.
+
+Args are collected in a function always as tuples, while kwargs are collected as dictionaries.
 
 
-```python
-func_descript = dict(len='length', str='string', dict='dictionary')
-print(func_descript['len'])
+```pycon
+>>> def test(*args, **kwargs):
+...     print("args:", args)
+...     print("kwargs:", kwargs)
+
+>>> test(1, 2, 3, a="Hi Bob!", b=True)
+args: (1, 2, 3)
+kwargs: {'a': 'Hi Bob!', 'b': True}
 ```
 
-> [note]
-> Be aware that in this case, keys have to have "pythonic" names –- 
-> they must follow the same rules as other Python variables.
-> For example, the following strings can't be keys: `"def"` or `"propan-butan"`.
+Example of real-life usage of *args could be for example:
 
+```pycon
+>>> def my_sum(*args):
+...     result = 0
+...     for x in args:
+...         result += x
+...     return result
+>>> print(my_sum(1, 2, 3))
+6
+```
 
+## Exercise
 
 We have this dictionary of computer access information of two users and another lookup table with cities information.
 ```python
@@ -298,8 +432,9 @@ for username, properties in users.items():
 ## And that's all for now
 
 If you would like to know all the tricks
-about dictionaries you can look at (and also print) this [cheatsheet](https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_dictionaries.pdf).
+about dictionaries you can look at the [cheatsheet](https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_dictionaries.pdf).
+
+If you want to demystify the `*args` and `**kwargs` and learn more than we could fit in the lecture, have a look [here](https://realpython.com/python-kwargs-and-args/).
 
 A complete description can be found here in the
 Python [documentation](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict).
-

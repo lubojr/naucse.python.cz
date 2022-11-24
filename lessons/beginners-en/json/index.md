@@ -56,21 +56,6 @@ languages:
 age: 26
 ```
 
-Or maybe [Bencode](http://en.wikipedia.org/wiki/Bencode):
-
-```plain
-d6: language9: czech11: english6: Pythone4: agei26e6: city4: Prague6: name4: Annae
-```
-
-There are also non-text formats like
-[Pickle 3] (https://docs.python.org/3/library/pickle.html):
-
-```plain
-}q(XjmÃ©noqXAnnaqXmÄtoqXBrnoqXjazykyq]q(X       ÄeÅ¡tinaqX
-                                                          angliÄtinaXPythonq       eXvÄq
-K▒u.
-```
-
 Finally, there is also [JSON](http://json.org/)
 (*Javascript Object Notation*),
 which, for its simplicity, has expanded the most:
