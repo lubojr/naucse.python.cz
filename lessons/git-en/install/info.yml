@@ -1,4 +1,4 @@
-title: Git installation (optional)
+title: Git installation
 style: md
 attribution:
 - Translated by Marketa Muzikova
@@ -6,3 +6,10 @@ attribution:
     Originally written by Petr Viktorin, 2014-2017 for [PyLadies CZ].
     [PyLadies CZ]: https://naucse.python.cz/course/pyladies/git/install/
 license: cc-by-sa-40
+subpages:
+    linux:
+        title: Git installation - Linux
+    windows:
+        title: Git installation - Windows
+    macos:
+        title: Git installation - macOS

@@ -6,97 +6,14 @@ Let's install it and set it up.
 
 On some operating systems, for convenience, we shall also install [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager)
 
-The installation procedure is different for various operating systems, so choose yours.
+Choose a page depending on your operating system:
 
-## Linux
+* [Linux]({{ subpage_url('linux') }})
+* [Windows]({{ subpage_url('windows') }})
+* [macOS]({{ subpage_url('macos') }})
 
-In Linux, we can install it with one command:
+After you finish installation of `git` return back here to finish the next part **Settings**.
 
-**Ubuntu, Debian**:
-
-```console
-$ sudo apt-get install git git-gui nano
-```
-
-If you are using some other distribution we expect that you already know
-how to install programs. Go ahead and install *git*, *git gui* and *nano*.
-
-After you have installed git, choose your Git editor.
-If you do not like Vim (or you do not know what it is)
-enter this command to choose a more user-friendly editor called Nano:
-
-```console
-$ git config --global core.editor nano
-```
-
-After this step, please install the [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) by downloading gcmcore-linux.(version).deb package from https://github.com/GitCredentialManager/git-credential-manager/releases/latest.
-
-After that install and configure with commands:
-
-```console
-$ sudo dpkg -i <path-to-package>
-$ git-credential-manager-core configure
-$ git config --global credential.credentialStore secretservice
-```
-
-Continue with the general [settings](#config) below.
-
-
-## Windows
-
-Go to [git-scm.org](https://git-scm.org), download Git and install it.
-When installing, select these options:
-
-* Run Git from the Windows Command Prompt
-* Checkout Windows-style, commit Unix-style line endings
-
-Do not change any other options, they can be left as default.
-Please ensure that **Git Credential Manager Core** option is ["checked"](https://github.com/GitCredentialManager/git-credential-manager#windows), to install the extra tool by default with Git installation.
-
-Then set your Git editor.
-If you have a terminal window open, close it, and open a new one.
-(The installation changes system settings which have to be loaded again.)
-In the new command line, enter:
-
-```console
-> git config --global core.editor notepad
-> git config --global format.commitMessageColumns 80
-> git config --global gui.encoding utf-8
-```
-
-Now go to [Settings](#config) below.
-
-
-## macOS
-
-Try to run `git` on the command line.
-If it's already installed, it will show you how to use it.
-Otherwise, install it using Homebrew:
-
-```console
-$ brew install git
-```
-
-It is still necessary to set up your Git editor (enter `nano`,
-even if you installed for example Atom during the installation of the editor).
-You do that with this command:
-
-```console
-$ git config --global core.editor nano
-```
-
-After that install and configure [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) with commands:
-
-```console
-$ brew tap microsoft/git
-$ brew install --cask git-credential-manager-core
-$ git config --global credential.credentialStore secretservice
-```
-
-Continue with the general settings:
-
-
-{{ anchor('config') }}
 ## Settings
 
 Several people can collaborate in one project in Git.
@@ -141,4 +58,6 @@ $ git config --global color.ui true
 > user.email=jane.berry@example.com
 > ```
 
-And that's all! You have installed Git. Congratulations!
+And that's all! You have installed and configured `Git`.
+
+**Congratulations!**
