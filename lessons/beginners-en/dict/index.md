@@ -259,7 +259,7 @@ keys_to_delete = ['Lubo', 'Tyna', 'Oliwia']
 ```python
 for to_delete in keys_to_delete:
     # need to check if is present - can not delete a key which does not exist in dictionary
-    if to_delete in phones:
+    if to_delete in phones.keys(): # or to_delete in phones:
         del phones[to_delete]
 print(phones)
 ```
@@ -363,6 +363,7 @@ Example of real-life usage of *args could be for example:
 ...     for x in args:
 ...         result += x
 ...     return result
+
 >>> print(my_sum(1, 2, 3))
 6
 ```
@@ -400,7 +401,7 @@ cities = {
   }
 }
 ```
-Print out following information about each user of they have it:
+Print out following information about each user if they have it:
 His/her 'username', 'full name' (first and last with first letter capitalized), 'email', 'city' they live in and 'country' they live in
 
 {% filter solution %}
