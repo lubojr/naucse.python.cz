@@ -54,40 +54,22 @@
         <h1>Exceptions – Solution [0]</h1>
     
 
-    <p>Possible solution for the calculator:</p>
-<div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">side</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'Enter the side of a square in centimeters: '</span><span class="p">))</span>
-    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">'That was not a number!'</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">side</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">'That does not make sense!'</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">break</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The perimeter of a square with a side of"</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span><span class="s2">"cm is "</span><span class="p">,</span> <span class="n">side</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span><span class="s2">"cm."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The area of a square with a side of"</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span><span class="s2">"cm is"</span><span class="p">,</span> <span class="n">side</span> <span class="o">*</span> <span class="n">side</span><span class="p">,</span> <span class="s2">"cm2."</span><span class="p">)</span>
-</pre></div><p>Possible solution for 1-D ticktactoe:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_number</span><span class="p">(</span><span class="n">field</span><span class="p">):</span>
+    <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input_side</span><span class="p">():</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">raw_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the side of a square in centimeters: "</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">position</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'Which position do you want to fill? (0..19) '</span><span class="p">))</span>
+            <span class="n">side</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">raw_input</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">'This is not a number!'</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">raw_input</span><span class="si">}</span><span class="s2"> is not a number!"</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">position</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">position</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">field</span><span class="p">):</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">'You can not play outside the field!'</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="n">field</span><span class="p">[</span><span class="n">position</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'-'</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">'That position is not free!'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">side</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">raw_input</span><span class="si">}</span><span class="s2"> is a negative number!"</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">break</span>
-
-    <span class="n">field</span> <span class="o">=</span> <span class="n">field</span><span class="p">[:</span><span class="n">position</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'o'</span> <span class="o">+</span> <span class="n">field</span><span class="p">[</span><span class="n">position</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
-    <span class="k">return</span> <span class="n">field</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="n">player_move</span><span class="p">(</span><span class="s1">'-x----'</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">side</span>
+<span class="n">side</span> <span class="o">=</span> <span class="n">input_side</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The perimeter of a square with a side of </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2"> cm is </span><span class="si">{</span><span class="n">perimeter</span><span class="si">}</span><span class="s2"> cm."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The area of a square with a side of </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2"> cm is </span><span class="si">{</span><span class="n">area</span><span class="si">}</span><span class="s2"> cm2."</span><span class="p">)</span>
 </pre></div>
 
 

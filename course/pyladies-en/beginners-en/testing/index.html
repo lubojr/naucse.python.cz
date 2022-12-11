@@ -57,17 +57,24 @@
 It is important to verify that the code does what it should 
 (and about fixing it if needed).
 The process of verification that the program works as expected is called <em>testing</em>.</p>
-<p>You have probably tested your programs by trying to execute them, 
-entered some input data and looked if the results are correct.
-It is harder to do it for bigger programs. 
-Bigger programs have more possibilities what to do and it is harder 
-to verify that all possibilities do what they should.</p>
-<p>That is why developers write code that verifies their program 
-instead of testing their programs manually.</p>
-<p><em>Automated tests</em> are functions that check that the program works correctly.
-You can execute the tests anytime and verify that the code works.
-The main benefit is that you can change the code in the future
-and let the tests verify that the change does not break existing functionality.</p>
+<p>You have probably already tested your programs by executing them.
+When you test your program, you usually enter some input data and look if
+the result is correct.
+This is okay for a small program, but it gets harder as the program gets bigger.
+Bigger programs have more options what they can do based on the possible
+user input and configuration. Their manual testing becomes time-consuming,
+especially when it needs to be repeated after every change, and it becomes more
+likely errors slip unnoticed into our code.</p>
+<p>Humans are not very good at performing boring repetitive tasks, that is
+the domain of computers. And, not surprisingly, that is the reason why
+developers write the code that verifies their programs.</p>
+<p><em>Automated tests</em> are functions checking, with no manual intervention,
+that all features of the tested program work correctly.
+If made right, the tests should be lean and give quick response whether
+the program has issues or not. The testing does not give us 100% proof that
+the code is without errors but it is still better than no testing at all.</p>
+<p>The automated tests make modification of the code easier as you can
+faster find possible bugs in the existing functionality (aka <em>regressions</em>).</p>
 <h2>Installing the pytest library</h2>
 <p>Up to now, we have used only the modules that come installed with Python, 
 for example, modules such as <code>math</code> or <code>turtle</code>.
@@ -79,20 +86,21 @@ We will install the library <code>pytest</code> which is faster, easier to use a
 <p>Submit the following command. (It is a command-line command, 
 just as <code>cd</code> or <code>mkdir</code>; do not enter it into the Python console.)</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>python3 -m pip install pytest
-</pre></div><div class="admonition note"><p class="admonition-title">What does Pip do?</p>
-<p><code>python3 -m pip</code> calls Python and tells it to execute the
-<code>pip</code> module. This module can install and uninstall libraries. 
-And the arguments <code>install pytest</code> tell Pip to install <code>pytest</code>.</p>
-<p>You can display the help for the Pip module using the command
-<code>python3 -m pip --help</code>.</p>
-</div><div class="admonition warning"><p class="admonition-title">For Windows users</p>
-<p>If you use Windows, it is important to run Python programs using
-<code>python3 program.py</code>, and not just <code>program.py</code>.
-Although we always show <code>python</code> in our lessons, 
-it could work without it so far.
-If you do not use the command <code>python3</code> in the beginning, the program 
-could start in a different Python and different virtual environment, 
-where the <code>pytest</code> module might not have been installed.</p>
+</pre></div><div class="admonition note"><p class="admonition-title">What is pip and why do we use it?</p>
+<p><code>pip</code> is a Python command-line tool for installing 3rd-party
+Python libraries from the <a href="https://pypi.org">Python Package Index (PyPI)</a>
+and other sources (e.g., Git repositories).</p>
+<p><code>python3 -m pip install pytest</code> makes Python to install <code>pytest</code> library from PyPI.</p>
+<p>For help on how to use pip run <code>python3 -m pip --help</code>.</p>
+</div><div class="admonition note"><p class="admonition-title">python3 -m &lt;command&gt; or just &lt;command&gt;</p>
+<p><code>python3 -m &lt;command&gt;</code> tells Python to execute a script from the
+Python module named <code>&lt;command&gt;</code> (e.g., <code>python3 -m pip ...</code>).
+In a properly configured Python environment, it should be possible to call
+the <code>&lt;command&gt;</code> directly, without the help of the <code>python</code> command
+(e.g., <code>pip ...</code>)</p>
+<p>To save ourselves the trouble of unnecessary complications with a possibly
+misconfigured Python environment we recommend using the longer
+<code>python3 -m &lt;command&gt;</code> version.</p>
 </div><h2>Writing tests</h2>
 <p>We will show testing through a very simple example.
 There is a function <code>add</code> that can add two numbers.
@@ -108,41 +116,62 @@ to start with <code>test_</code>.</p>
 
 <span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
     <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
-</pre></div><p>What does the test function do?</p>
+</pre></div><div class="admonition note"><p class="admonition-title">The naming of files and test functions matters</p>
+<p><code>pytest</code> scans your code and
+searches for the included tests. When found, these tests are executed.</p>
+<p>By default, the names of the test files and the test functions must start with
+the <code>test_</code> prefix in order to be recognized as tests.</p>
+</div><p>What does the test function do?</p>
 <p>The <code>assert</code> statement evaluates the expression that follows it.
-If the result is not true then it raises an exception 
-and it makes the test fail.
+If the result is not true then it raises the <code>AssertionError</code> exception 
+which is interpreted by <code>pytest</code> as a failing test.
 You can imagine that <code>assert a == b</code> does following:</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">b</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s1">'Test failed!'</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="ne">AssertionError</span>
 </pre></div><div class="admonition note"><p>Do not use <code>assert</code> outside of test functions for now.
 For "regular" code, the  <code>assert</code> has functionality that
 we will not explain now.</p>
 </div><h2>Running tests</h2>
-<p>You execute tests with the command <code>python -m pytest -v</code>, 
-followed by the name of the file containing the tests.
-By using this command you are telling: <strong>Python</strong>: 
-Execute the <strong>m</strong>odule named <strong>pytest</strong>,
-in <strong>v</strong>erbose mode, for the given file.</p>
+<p>You execute tests with the command <code>python -m pytest -v &lt;path&gt;</code>
+followed by the path to the file containing the tests.</p>
+<div class="admonition note"><p>You can omit the <code>&lt;filename&gt;</code> argument and then <code>python -m pytest -v</code>
+scans the current directory and runs tests in all files whose names start
+with the <code>test_</code> prefix.</p>
+<p>You can also use a path to a directory where <code>pytest</code> should searches for
+the tests.</p>
+</div><p>This command scans the given file and calls all functions that start
+with the <code>test_</code> prefix. It executes them and checks if they raise any exception,
+e.g., raised by the <code>assert</code> statement.</p>
 <div class="highlight"><pre><code>$ python3 -m pytest -v test_addition.py
-<span style="font-weight: bold">============= test session starts =============</span>
-platform darwin -- Python 3.6.5, pytest-3.9.1, py-1.7.0, pluggy-0.8.0 -- 
-rootdir: learn, inifile: 
-<span style="font-weight: bold">collecting ...</span> collected 1 items
+<span style="font-weight: bold">============================= test session starts ==============================</span>
+platform linux -- Python 3.8.3, pytest-7.1.2, pluggy-1.0.0
+rootdir: /tmp/test_example
+collected 1 item
 
-test_addition.py::test_add <span style="color: #00aa00">PASSED</span>
+test_addition.py <span style="color: #00aa00">.</span><span style="color: #00aa00">                                                       [100%]</span>
 
-<span style="color: #00aa00">============= 1 passed in 0.01 seconds =============</span></code></pre></div><p>This command scans the given file and calls all functions that start
-with <code>test_</code>. It checks that they do not raise any exceptions, 
-for example, an exception raised by <code>assert</code>.
-If an exception occurs, <code>pytest</code> shows a red message with
-additional details that can help you find the bug and fix it.</p>
-<div class="admonition note"><p>You can omit the argument with the filename: <code>python -m pytest -v</code>
-In this case, <code>pytest</code> scans the current directory and runs tests
-in all files whose names start with <code>test_</code>. You can use a path to 
-a directory and <code>pytest</code> finds tests in it.</p>
-</div><p>Try to change the <code>add</code> function (or its test) and see what happens
-if a test fails.</p>
+<span style="color: #00aa00">============================== </span><span style="color: #00aa00"></span><span style="font-weight: bold; color: #00aa00">1 passed</span><span style="color: #00aa00"> in 0.00s</span><span style="color: #00aa00"> ===============================</span></code></pre></div><p>If an exception occurs, <code>pytest</code> shows a red message with
+additional details that can help you find the bug and fix it:</p>
+<div class="highlight"><pre><code><span style="font-weight: bold">============================= test session starts ==============================</span>
+platform linux -- Python 3.8.3, pytest-7.1.2, pluggy-1.0.0
+rootdir: /tmp/test_example
+collected 1 item
+
+test_addition.py <span style="color: #aa0000">F</span><span style="color: #aa0000">                                                       [100%]</span>
+
+=================================== FAILURES ===================================
+<span style="color: #aa0000"></span><span style="font-weight: bold; color: #aa0000">___________________________________ test_add ___________________________________</span>
+
+    def test_add():
+&gt;       assert add(1, 2) == 3
+<span style="font-weight: bold"></span><span style="font-weight: bold; color: #aa0000">E       assert 4 == 3</span>
+<span style="font-weight: bold"></span><span style="font-weight: bold; color: #aa0000">E        +  where 4 = add(1, 2)</span>
+
+<span style="font-weight: bold"></span><span style="font-weight: bold; color: #aa0000">test_addition.py</span>:5: AssertionError
+=========================== short test summary info ============================
+FAILED test_addition.py::test_add - assert 4 == 3
+<span style="color: #aa0000">============================== </span><span style="color: #aa0000"></span><span style="font-weight: bold; color: #aa0000">1 failed</span><span style="color: #aa0000"> in 0.01s</span><span style="color: #aa0000"> ===============================</span></code></pre></div><p>Try to run the test yourself. Modify the <code>add</code> function or (its test) so that the
+test fails.</p>
 <h2>Test modules</h2>
 <p>You do not usually write tests in the same file with the regular code.
 Typically, you write tests in another file.
@@ -166,34 +195,34 @@ rectangle from <a href="/course/pyladies-en/beginners-en/functions/">custom func
     <div class="solution-body" aria-hidden="true">
         <p>Possible tests examples:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_find_perimeter_1</span><span class="p">():</span>
-    <span class="sd">"""</span>
-<span class="sd">    Tests of positive integer values</span>
-<span class="sd">    as input</span>
+    <span class="sd">""" Tests if the function can handle two positive integer values as input.</span>
 <span class="sd">    """</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">find_perimeter</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">18</span>
 
-<span class="k">def</span> <span class="nf">test_find_perimeter_empty</span><span class="p">():</span>
-    <span class="sd">"""</span>
-<span class="sd">    Tests if function can handle input</span>
-<span class="sd">    where one of sides is 0</span>
+<span class="k">def</span> <span class="nf">test_find_rectangle_perimeter_zero_width</span><span class="p">():</span>
+    <span class="sd">""" Tests if the function can handle width set to 0.</span>
 <span class="sd">    """</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">find_perimeter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">0</span>
 </pre></div>
     </div>
 </div><h2>Executable modules</h2>
-<p>Automated tests have to run "unattended".
-They are usually executed automatically and the failures are reported
-automatically (e.g. by email) and the code that passes all tests can
-be automatically released (installed to a system where it runs 
-or is made available to customers).</p>
-<p>What does this mean to us?
-The <code>input</code> function will not work in tests. There is no-one who can reply.</p>
-<p>This can make your work harder sometimes. Let's look at a more complex project: 1D (one-dimensional) tic-tac-toe.</p>
-<div class="admonition note"><p>If you study at home, complete the 1D tic-tac-toe lesson before continuing.
+<p>Automated tests have to be able to run unattended. They are often executed
+automatically and the failures are reported via some sort of notification,
+e.g., by email.</p>
+<p>In practical terms, this means that the tests must not depend on live
+interaction with the user, e.g., the <code>input</code> function will not work in tests.</p>
+<div class="admonition note"><p class="admonition-title">Can we test user interaction in automated tests?</p>
+<p>There are testing techniques allowing us to emulate user interaction
+in the user interfaces. But is that beyond the scope of this course.</p>
+</div><p>This can make your work harder sometimes. Let's look at a more complex project,
+the 1D (one-dimensional) tic-tac-toe.</p>
+<div class="admonition note"><p>If you do not have the 1D tic-tac-toe program, the following sections are
+only theoretical.</p>
+<p>If you study at home, complete the 1D tic-tac-toe lesson before continuing.
 The task description is at <a href="/course/pyladies-en/beginners-en/tictactoe/">one-dimensional tic-tac-toe</a>)..</p>
-</div><p>The structure of your 1D tic-tac-toe code could look like this:</p>
+</div><p>The structure of the 1D tic-tac-toe code looks roughly like this:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>  <span class="c1"># (and possibly other import statements that are needed)</span>
 
 <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">space_number</span><span class="p">,</span> <span class="n">mark</span><span class="p">):</span>
@@ -221,23 +250,29 @@ The task description is at <a href="/course/pyladies-en/beginners-en/tictactoe/"
 
 <span class="c1"># Start the game:</span>
 <span class="n">tic_tac_toe_1d</span><span class="p">()</span>
-</pre></div><p>If you import this module, Python executes all commands in it 
-from top to bottom.</p>
-<p>The first command, <code>import</code>, makes some functions and variables available.
-Imports usually do not have any side-effects.</p>
-<p>The definitions of functions (<code>def</code> statements and everything in them) 
-just define the functions (but they do not execute the functions).</p>
-<p>Calling the <code>tic_tac_toe_1d</code> function starts the game.
-The <code>tic_tac_toe_1d</code> calls the <code>player_move()</code> function which calls <code>input()</code>.</p>
-<p>If you import this module from tests, the <code>input</code> fails 
-and the module is not imported.</p>
-<div class="admonition note"><p>If you want to import such a module from elsewhere – for example, you would like
-to use <code>move</code> in another game – the import of the module requires the user to 
-play 1D tic-tac-toe!</p>
+</pre></div><p>If you import this module, Python executes all commands in it, from top to bottom:</p>
+<ul>
+<li><p>The first command, <code>import</code>, initializes the variables and functions of the
+<code>random</code> module. It is module from the standard Python library it is unlikely
+that it would have any side effect to worry about.</p>
+</li>
+<li><p>The definitions of functions (<code>def</code> statements and everything in them)
+just define the functions but they do not execute them.</p>
+</li>
+<li><p>Calling the <code>tic_tac_toe_1d</code> function starts the game.
+The <code>tic_tac_toe_1d</code> calls the <code>player_move()</code> function which calls <code>input()</code>.
+This is an issue.</p>
+</li>
+</ul>
+<p>If you import this module to the tests, the <code>input</code> fails and the module does
+not get not imported.</p>
+<div class="admonition note"><p>If you want to import such a module from elsewhere, e.g., you would like
+to use <code>move()</code> in a different game, the import of the module itself will
+start the 1D tic-tac-toe game!</p>
 </div><p>The calling of <code>tic_tac_toe_1d</code> is a side-effect and we need to remove it.
-Yeah but you cannot start the game without it! What about it?</p>
-<p>You can create a new module.
-Name it <code>game.py</code> and put just this call into it:</p>
+Okay, but you cannot start the game without it! What can we do about it?</p>
+<p>We can create a new python file, e.g., <code>game.py</code> and we move the
+<code>tic_tac_toe_1d()</code> call in it:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tic_tac_toe</span>
 
 <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">tic_tac_toe_1d</span><span class="p">()</span>
@@ -255,29 +290,29 @@ one import and one statement.</p>
     <span class="k">assert</span> <span class="n">board</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
     <span class="k">assert</span> <span class="n">board</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'-'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">19</span>
 </pre></div><h2>Positive and negative tests</h2>
-<p>The tests that verify that the program works correctly 
+<p>Tests that verify that a program works correctly
 under correct conditions are called <em>positive tests</em>.
-But you can test what your program does under unexpected conditions.</p>
-<p>The tests that check the behavior in case of "invalid" input
-are called <em>negative tests</em>.
-They can check for a specific negative result (for example 
-that a call like <code>is_number_even(7)</code> returns <code>False</code>), 
-or that a "reasonable" exception is raised.</p>
-<p>For example, the <code>computer_move</code> function should raise an error 
-(for example <code>ValueError</code>) when the board is full.</p>
-<div class="admonition note"><p>It is much better to raise an exception than doing nothing 
-and silently letting the program get stuck.
-You can use such function in a more complex program 
-and be sure that you will get an understandable error
-when it is called under bad conditions. 
-Then you can easily fix it.</p>
+An exception raised during the positive testing lead to failure of the test.</p>
+<p>Tests that check behaviour in case of invalid inputs are called <em>negative tests</em>.
+The purpose of the negative testing is verification of the graceful handling
+of error states. Raising of an exception is often the expected behaviour
+of the tested code.</p>
+<p>For example, the <code>computer_move</code> function should raise an error
+(e.g., <code>ValueError</code>) when the board is full.</p>
+<div class="admonition note"><p>It is much better to raise an exception than doing nothing
+and silently letting the program get stuck elsewhere.
+You can use such function in a more complex program
+and be sure that it will raise an understandable error
+when it is called under bad conditions.
+The error helps you to fix the actual problem. The sooner you discover
+an error the easier is to fix it.</p>
 </div><p>Use the <code>with</code> statement and the <code>raises</code> function 
 to test that your code raises the expected exception.
-The <code>raises</code> function is imported from the <code>pytest</code> module.
-We will explain the <code>with</code> statement later.
-You just need to know that it checks that the block of code below 
-raises the specified exception:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+The <code>raises</code> function is imported from the <code>pytest</code> module.</p>
+<div class="admonition note"><p>We have not talked about the <code>with</code> statement and context managers yet.
+But don't worry, you will learn about them later.  Just check how it is used
+to test whether an exception is raised.</p>
+</div><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
 
 <span class="kn">import</span> <span class="nn">tic_tac_toe</span>
 
@@ -294,19 +329,19 @@ Add a test for the new functionality. <a href="/course/pyladies-en/beginners-en/
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-<span class="k">def</span> <span class="nf">find_perimeter</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span> 
-    <span class="s2">"Returns the rectangle's perimeter of the given sides"</span> 
-    <span class="k">if</span> <span class="n">width</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">height</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Input can be only positive number.'</span><span class="p">)</span>
-    <span class="k">return</span>  <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">width</span>  <span class="o">+</span>  <span class="n">height</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">testfind_perimeter_exception_negative</span><span class="p">():</span>
-    <span class="sd">"""</span>
-<span class="sd">    Tests of negative integer values</span>
-<span class="sd">    as input</span>
+<span class="k">def</span> <span class="nf">find_rectangle_perimeter</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+    <span class="sd">""" Calculate perimeter of a rectangle from the given sides.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">width</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">height</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Rectangle sides must be non-negative."</span><span class="p">)</span>
+    <span class="k">return</span>  <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">width</span> <span class="o">+</span> <span class="n">height</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_find_perimeter_exception_negative</span><span class="p">():</span>
+    <span class="sd">""" Tests of negative integer values as input</span>
 <span class="sd">    """</span>
     <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-        <span class="n">find_perimeter</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="n">find_rectangle_perimeter</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
     </div>
 </div>

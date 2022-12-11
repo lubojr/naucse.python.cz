@@ -53,26 +53,27 @@
     
 
     <h1>Exceptions</h1>
-<p>We have already talked about <a href="/2022/pyladies-en-vienna-ukraine-2022-spring/beginners-en/print/">error messages</a>: 
-Python complains, tells us where the error (line) is, and terminates the program.
-But there is much more that we can learn about error messages (a.k.a <em>exceptions</em>).</p>
+<p>We have already talked about <a href="/2022/pyladies-en-vienna-ukraine-2022-spring/beginners-en/print/">error messages</a>.
+When an error occurs, Python complains, tells us where the error (line) is,
+and terminates the program.  But there is much more that we can learn about
+error messages (aka <em>exceptions</em>).</p>
 <h2>Printing errors:</h2>
 <p>In the beginning we will repeat how Python prints an error which is in a nested function.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">out_func</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">in_func</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">outer_function</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">inner_function</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">in_func</span><span class="p">(</span><span class="n">divisor</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">inner_function</span><span class="p">(</span><span class="n">divisor</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">divisor</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">out_func</span><span class="p">())</span>
-</pre></div><!-- XXX: Highlight the line numbers -->
-
-<div class="highlight"><pre><span></span><span class="x">Traceback (most recent call last):          </span>
-  File <span class="nb">"/tmp/example.py"</span>, line <span class="m">7</span>, in <span class="n">&lt;module&gt;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">out_func</span><span class="p">())</span>
-  File <span class="nb">"/tmp/example.py"</span>, line <span class="m">2</span>, in <span class="n">out_func</span>
-    <span class="k">return</span> <span class="n">in_func</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-  File <span class="nb">"/tmp/example.py"</span>, line <span class="m">5</span>, in <span class="n">in_func</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">outer_function</span><span class="p">())</span>
+</pre></div><p>When we run the code it stops with an error and a message like:</p>
+<p><!-- XXX: Highlight the line numbers --></p>
+<div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">"example.py"</span>, line <span class="m">7</span>, in <span class="n">&lt;module&gt;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">outer_function</span><span class="p">())</span>
+  File <span class="nb">"example.py"</span>, line <span class="m">2</span>, in <span class="n">outer_function</span>
+    <span class="k">return</span> <span class="n">inner_function</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  File <span class="nb">"example.py"</span>, line <span class="m">5</span>, in <span class="n">inner_function</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">divisor</span>
 <span class="gr">ZeroDivisionError</span>: <span class="n">division by zero</span>
 </pre></div><p>You notice that every function call that led to the error is listed here.
@@ -83,20 +84,22 @@ and it should do something else than try to divide by zero.</p>
 <p>Python can't know where the original error is that needs to be fixed, so it shows
 you everything in the error message.
 This will be very useful in more complex programs.</p>
-<h2>Raising an error</h2>
-<p>An error, or more precisely an <em>exception</em>, can be also invoked by the command <code>raise</code>.
-After that command, write the name of the exception and some
-information about what went wrong in parentheses.</p>
-<div class="highlight"><pre><span></span><span class="n">LIST_SIZE</span> <span class="o">=</span> <span class="mi">20</span>
+<h2>Raising an exception</h2>
+<p>In Python, an <em>exception</em> is raised by the command <code>raise</code>.
+The command is followed by the name of the exception we want to raise and
+an optional short description of what went wrong (in parentheses).</p>
+<div class="highlight"><pre><span></span><span class="n">MAX_ALLOWED_VALUE</span> <span class="o">=</span> <span class="mi">20</span>
 
 <span class="k">def</span> <span class="nf">verify_number</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
-    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="n">LIST_SIZE</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">'OK!'</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'The number </span><span class="si">{n}</span><span class="s1"> is not in the list!'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">number</span><span class="p">))</span>
-</pre></div><p>All types of built-in exceptions are
-<a href="https://docs.python.org/3/library/exceptions.html">here</a>, including their hierarchy.</p>
-<p>These exceptions are important to us now:</p>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">number</span> <span class="o">&gt;=</span> <span class="n">MAX_ALLOWED_VALUE</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The number </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> is not in the allowed range!"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The number </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> is OK!"</span><span class="p">)</span>
+
+<span class="n">verify_number</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">verify_number</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</pre></div><p>What exceptions are available in Python?
+Python provides a hierarchy of standard (built-in) exceptions. This
+is just a subset of them:</p>
 <div class="highlight"><pre><code>BaseException
  ├── SystemExit                     raised by function exit()
  ├── KeyboardInterrupt              raised after pressing Ctrl+C
@@ -107,77 +110,107 @@ information about what went wrong in parentheses.</p>
       ├── AttributeError            non-existing attribute, e.g. 'abc'.len
       ├── ImportError               failed import
       ├── LookupError
-      │    ╰── IndexError           non-existing index, e.g. 'abc'[999]
+      │    ├── IndexError           non-existing index, e.g. 'abc'[999]
+      │    ╰── KeyError             non-existing dictionary key
       ├── NameError                 used a non-existing variable name
       │    ╰── UnboundLocalError    used a variable that wasn't initiated
+      ├── OSError
+      │    ╰── FileNotFoundError    requested file does not exist
       ├── SyntaxError               wrong syntax – program is unreadable/unusable
       │    ╰── IndentationError     wrong indentation
       │         ╰── TabError        combination of tabs and spaces
-      ├── TypeError                 wrong type, e.g. len(9)
-      ╰── ValueError                wrong value, e.g. int('xyz')</code></pre></div><h2>Handling Exceptions</h2>
-<p>And why are there so many?
-So you can catch them! :)
-In the following function, the <code>int</code> function can 
-fail when something other than a
-number is given to it. It needs to be prepared for
-that kind of situation with a <code>try/except</code> block. (You also
-commonly hear this called a <code>try/catch</code> block - mostly in other
-programming languages).</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_number</span><span class="p">():</span>
+      ├── TypeError                 wrong type, e.g. "a" + 1
+      ╰── ValueError                wrong value, e.g. int('xyz')</code></pre></div><p>For the full list of built-in exception see the <a href="https://docs.python.org/3/library/exceptions.html">Python documentation</a>.</p>
+<div class="admonition note"><p class="admonition-title">What does this hierarchy mean?</p>
+<p>The hierarchy of exceptions is like a family tree with the most generic type
+of exception as the root, every branch becoming more specific.
+E.g., <code>KeyError</code> is also a <code>LookupError</code> and <code>Exception</code> but it is
+not, e.g., a <code>SyntaxError</code>.</p>
+<p>You will learn more about these hierarchies and when we will talk about
+the Object Oriented Programming, classes and inheritance.</p>
+<p>For the moment, it is enough to say that the exceptions are <strong>classes</strong> and
+that the more specific <strong>child</strong> exceptions <strong>inherit</strong> the properties
+of their generic generic <strong>parent</strong>.  Namely, the <code>Exception</code> is the parent
+class of the <code>LookupError</code> and the <code>LookupError</code> is the parent classes of the
+<code>KeyError</code> exception. Therefore the <code>KeyError</code> has properties
+of <code>LookupError</code> and <code>Exception</code> exceptions.</p>
+</div><h2>Handling Exceptions</h2>
+<p>Why there are so many built-in exceptions? Because this way we can more easily
+<em>catch</em> exceptions of specific error states.</p>
+<p>It is not always desired that an exception kills our program. And we also cannot
+(or do not want to) cover all possible error conditions in the code
+where the exceptions are raised from.</p>
+<p>Let me show you an example:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prompt_number</span><span class="p">():</span>
     <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'Enter some number: '</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">answer</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">'That was not a number! I will continue with 0'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'That is not a number! I will continue with 0'</span><span class="p">)</span>
         <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">return</span> <span class="n">number</span>
-</pre></div><p>So how does this work?
-Python runs the commands within the <code>try</code> block, but if the error occurs
-that you mentioned after <code>except</code>, Python won't terminate the program, instead, it will
-run all the commands in the exception block.
-If there's no error, the except block will be skipped.</p>
-<p>When you catch a general exception, Python also catches
-exceptions that are related to it (in the diagram, they are listed as child entries) -- 
-e.g. <code>except ArithmeticError:</code> will also catch <code>ZeroDivisionError</code>.
-And <code>except Exception:</code> will catch all usual exceptions.</p>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Press ENTER to stop the script."</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">prompt_number</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Entered number: </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div><p>Run the code and try different inputs. What happens if the input is not
+an integer number?</p>
+<p>Invalid input does not cause an error, instead it gets replaced by <code>0</code>.</p>
+<p>So how does this work?</p>
+<p>We call the <code>int()</code> function within the <code>try</code> block.
+If there is no error, this function is executed, it returns a value which
+is assigned to the <code>number</code> variable and leaves the <code>try</code> block.</p>
+<p>In case of a <code>ValueError</code> exception raised by <code>int()</code> caused by an invalid input
+value, this exception is caught and the execution continues
+in the <code>except ValueError</code> block. There, a message is printed and
+<code>0</code> is assigned to the <code>number</code> variable.</p>
+<p>In this case we specifically catch the <code>ValueError</code> exception.
+We could achieve the same by catching generic <code>Exception</code>, because, as you can
+see in the hierarchy above, <code>ValueError</code> is a specific type of <code>Exception</code>.</p>
 <h2>Don't catch'em all!</h2>
-<p>There is no need to catch most of the errors.</p>
-<p>If any unexpected error happens 
-it's always <em>much</em> better to terminate the program
-than to continue with wrong values.
-In addition, Python's standard error output will make it
-really easy for you to find the error.</p>
-<p>For example, catching the exception <code>KeyboardInterrupt</code>
+<p>Try to be as selective as possible when catching the expected exceptions.
+There is no need to catch the most of the errors.</p>
+<div class="admonition note"><p>When an unexpected error happens it is <strong>much better</strong> to terminate the program
+rather than to continue with wrong values.
+When an unexpected error happens we want to know about it as soon as it
+appears. With the wrong values bad things will happen later in the code anyway
+and the real cause will be <strong>difficult</strong> to trace.</p>
+</div><p>For example, catching the exception <code>KeyboardInterrupt</code>
 could have the side effect that the program couldn't be terminated if we needed to
 (with shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd>).</p>
 <p>Use the command <code>try/except</code> only in situations when you
-expect some exception -- when you know exactly what could happen
-and why, and you have the option to correct it -- in the
-except block.
-A typical example would be reading input from a user. If the user 
-enters gibberish, it's better to ask again until the
+anticipate some exception, i.e., you know exactly what can happen
+and why, and you are able to fix the error state in the except block.</p>
+<p>A typical example would be reading the input from a user. If the user
+enters gibberish, it is better to ask again until the
 user enters something meaningful:</p>
-<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">retrieve_number</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">fetch_number</span><span class="p">():</span>
 <span class="gp">... </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="gp">... </span>            <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Type a number: "</span><span class="p">)</span>
-<span class="gp">... </span>            <span class="k">try</span><span class="p">:</span>
-<span class="gp">... </span>                    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
-<span class="gp">... </span>            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-<span class="gp">... </span>                    <span class="nb">print</span><span class="p">(</span><span class="s2">"This is not a number. Try again"</span><span class="p">)</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">retrieve_number</span><span class="p">())</span>
-<span class="go">Type a number: twenty</span>
-<span class="go">This is not a number. Try again</span>
-<span class="go">Type a number: 20</span>
-<span class="go">20</span>
+<span class="gp">... </span>        <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Type a number: "</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="nb">print</span><span class="p">(</span><span class="s2">"Oi! This is rubbish, mate! Do it again!"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fetch_number</span><span class="p">()</span>
+<span class="go">Type a number: nan</span>
+<span class="go">Oi! This is trash, mate! Do it again!</span>
+<span class="go">Type a number: 42</span>
+<span class="go">42</span>
 </pre></div><h2>Other clauses</h2>
 <p>Additionally to <code>except</code>, there are two more clauses - blocks that can 
-be used with <code>try</code>, and these are <code>else</code> and <code>finally</code>.
-The first one will be run if exception in the <code>try</code> block didn't happen.
-And <code>finally</code> runs every time.</p>
-<p>You can also have several <code>except</code> blocks. Only one of them will be triggered -- 
-the first one that can handle the raised exception.</p>
-<div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+be used with <code>try</code>, and these are <code>else</code> and <code>finally</code>.</p>
+<p>The first one <code>else</code> will be run if no exception in the <code>try</code> block was raised.
+And <code>finally</code> runs every time and is executed even in the case of an uncaught exception
+and may be used even without any <code>except</code> clause. It is mostly used for clean-ups.</p>
+<p>You can also have several <code>except</code> blocks. Only one of them will be triggered. 
+The first one that can handle the raised exception.</p>
+<div class="admonition note"><p>Always catch more specific exceptions before the generic ones.</p>
+</div><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">do_something</span><span class="p">()</span>
 <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"This will be printed if there's a ValueError."</span><span class="p">)</span>
@@ -194,48 +227,31 @@ the first one that can handle the raised exception.</p>
 <span class="k">finally</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"This will always be printed; even if there's e.g. a 'return' in the 'try' block."</span><span class="p">)</span>
 </pre></div><h2>Task</h2>
-<p>Let's add exception handling to our original square size calculator (or to 1-D ticktactoe, if you have it)<br>
-if the user doesn't enter a number in the input.</p>
+<p>Let's add exception handling and proper input checking to our square size
+calculator. Modify the code so that if the user does not enter a non-negative
+number the programs prompts the input again.</p>
 <div class="solution" id="solution-0">
     <h3>Solution</h3>
     <div class="solution-cover">
         <a href="/2022/pyladies-en-vienna-ukraine-2022-spring/beginners-en/exceptions/index/solutions/0/"><span class="link-text">Show solution</span></a>
     </div>
     <div class="solution-body" aria-hidden="true">
-        <p>Possible solution for the calculator:</p>
-<div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">side</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'Enter the side of a square in centimeters: '</span><span class="p">))</span>
-    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">'That was not a number!'</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">side</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">'That does not make sense!'</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">break</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The perimeter of a square with a side of"</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span><span class="s2">"cm is "</span><span class="p">,</span> <span class="n">side</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span><span class="s2">"cm."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The area of a square with a side of"</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span><span class="s2">"cm is"</span><span class="p">,</span> <span class="n">side</span> <span class="o">*</span> <span class="n">side</span><span class="p">,</span> <span class="s2">"cm2."</span><span class="p">)</span>
-</pre></div><p>Possible solution for 1-D ticktactoe:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_number</span><span class="p">(</span><span class="n">field</span><span class="p">):</span>
+        <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input_side</span><span class="p">():</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">raw_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the side of a square in centimeters: "</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">position</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'Which position do you want to fill? (0..19) '</span><span class="p">))</span>
+            <span class="n">side</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">raw_input</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">'This is not a number!'</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">raw_input</span><span class="si">}</span><span class="s2"> is not a number!"</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">position</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">position</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">field</span><span class="p">):</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">'You can not play outside the field!'</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="n">field</span><span class="p">[</span><span class="n">position</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'-'</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">'That position is not free!'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">side</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">raw_input</span><span class="si">}</span><span class="s2"> is a negative number!"</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">break</span>
-
-    <span class="n">field</span> <span class="o">=</span> <span class="n">field</span><span class="p">[:</span><span class="n">position</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'o'</span> <span class="o">+</span> <span class="n">field</span><span class="p">[</span><span class="n">position</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
-    <span class="k">return</span> <span class="n">field</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="n">player_move</span><span class="p">(</span><span class="s1">'-x----'</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">side</span>
+<span class="n">side</span> <span class="o">=</span> <span class="n">input_side</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The perimeter of a square with a side of </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2"> cm is </span><span class="si">{</span><span class="n">perimeter</span><span class="si">}</span><span class="s2"> cm."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The area of a square with a side of </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2"> cm is </span><span class="si">{</span><span class="n">area</span><span class="si">}</span><span class="s2"> cm2."</span><span class="p">)</span>
 </pre></div>
     </div>
 </div>
