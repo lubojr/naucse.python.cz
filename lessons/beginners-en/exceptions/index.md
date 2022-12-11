@@ -1,9 +1,9 @@
 # Exceptions
 
-We have already talked about [error messages]({{ lesson_url('beginners-en/print') }}): 
-Python complains, tells us where the error (line) is, and terminates the program.
-But there is much more that we can learn about error messages (a.k.a *exceptions*).
-
+We have already talked about [error messages]({{ lesson_url('beginners-en/print') }}).
+When an error occurs, Python complains, tells us where the error (line) is,
+and terminates the program.  But there is much more that we can learn about
+error messages (aka *exceptions*).
 
 ## Printing errors:
 
@@ -11,24 +11,25 @@ In the beginning we will repeat how Python prints an error which is in a nested 
 
 
 ```python
-def out_func():
-    return in_func(0)
+def outer_function():
+    return inner_function(0)
 
-def in_func(divisor):
+def inner_function(divisor):
     return 1 / divisor
 
-print(out_func())
+print(outer_function())
 ```
 
-<!-- XXX: Highlight the line numbers -->
+When we run the code it stops with an error and a message like:
 
+<!-- XXX: Highlight the line numbers -->
 ```pycon
-Traceback (most recent call last):          
-  File "/tmp/example.py", line 7, in <module>
-    print(out_func())
-  File "/tmp/example.py", line 2, in out_func
-    return in_func(0)
-  File "/tmp/example.py", line 5, in in_func
+Traceback (most recent call last):
+  File "example.py", line 7, in <module>
+    print(outer_function())
+  File "example.py", line 2, in outer_function
+    return inner_function(0)
+  File "example.py", line 5, in inner_function
     return 1 / divisor
 ZeroDivisionError: division by zero
 ```
@@ -44,27 +45,27 @@ you everything in the error message.
 This will be very useful in more complex programs.
 
 
-## Raising an error
+## Raising an exception
 
-An error, or more precisely an *exception*, can be also invoked by the command `raise`.
-After that command, write the name of the exception and some
-information about what went wrong in parentheses.
-
+In Python, an *exception* is raised by the command `raise`.
+The command is followed by the name of the exception we want to raise and
+an optional short description of what went wrong (in parentheses).
 
 ```python
-LIST_SIZE = 20
+MAX_ALLOWED_VALUE = 20
 
 def verify_number(number):
-    if 0 <= number < LIST_SIZE:
-        print('OK!')
-    else:
-        raise ValueError('The number {n} is not in the list!'.format(n=number))
+    if number < 0 or number >= MAX_ALLOWED_VALUE:
+        raise ValueError(f"The number {number} is not in the allowed range!")
+    print(f"The number {number} is OK!")
+
+verify_number(5)
+verify_number(25)
 ```
 
-All types of built-in exceptions are
-[here](https://docs.python.org/3/library/exceptions.html), including their hierarchy.
-
-These exceptions are important to us now:
+What exceptions are available in Python?
+Python provides a hierarchy of standard (built-in) exceptions. This
+is just a subset of them:
 
 ```plain
 BaseException
@@ -77,89 +78,129 @@ BaseException
       ├── AttributeError            non-existing attribute, e.g. 'abc'.len
       ├── ImportError               failed import
       ├── LookupError
-      │    ╰── IndexError           non-existing index, e.g. 'abc'[999]
+      │    ├── IndexError           non-existing index, e.g. 'abc'[999]
+      │    ╰── KeyError             non-existing dictionary key
       ├── NameError                 used a non-existing variable name
       │    ╰── UnboundLocalError    used a variable that wasn't initiated
+      ├── OSError
+      │    ╰── FileNotFoundError    requested file does not exist
       ├── SyntaxError               wrong syntax – program is unreadable/unusable
       │    ╰── IndentationError     wrong indentation
       │         ╰── TabError        combination of tabs and spaces
-      ├── TypeError                 wrong type, e.g. len(9)
+      ├── TypeError                 wrong type, e.g. "a" + 1
       ╰── ValueError                wrong value, e.g. int('xyz')
 ```
+
+For the full list of built-in exception see the [Python documentation](https://docs.python.org/3/library/exceptions.html).
+
+> [note] What does this hierarchy mean?
+>
+> The hierarchy of exceptions is like a family tree with the most generic type
+> of exception as the root, every branch becoming more specific.
+> E.g., `KeyError` is also a `LookupError` and `Exception` but it is
+> not, e.g., a `SyntaxError`.
+>
+> You will learn more about these hierarchies and when we will talk about
+> the Object Oriented Programming, classes and inheritance.
+>
+> For the moment, it is enough to say that the exceptions are **classes** and
+> that the more specific **child** exceptions **inherit** the properties
+> of their generic generic **parent**.  Namely, the `Exception` is the parent
+> class of the `LookupError` and the `LookupError` is the parent classes of the
+> `KeyError` exception. Therefore the `KeyError` has properties
+> of `LookupError` and `Exception` exceptions.
 
 
 ## Handling Exceptions
 
-And why are there so many?
-So you can catch them! :)
-In the following function, the `int` function can 
-fail when something other than a
-number is given to it. It needs to be prepared for
-that kind of situation with a `try/except` block. (You also
-commonly hear this called a `try/catch` block - mostly in other
-programming languages).
+Why there are so many built-in exceptions? Because this way we can more easily
+*catch* exceptions of specific error states.
+
+It is not always desired that an exception kills our program. And we also cannot
+(or do not want to) cover all possible error conditions in the code
+where the exceptions are raised from.
+
+Let me show you an example:
 
 ```python
-def load_number():
+def prompt_number():
     answer = input('Enter some number: ')
+    if not answer:
+        return None
     try:
         number = int(answer)
     except ValueError:
-        print('That was not a number! I will continue with 0')
+        print('That is not a number! I will continue with 0')
         number = 0
     return number
+
+print("Press ENTER to stop the script.")
+while True:
+    number = prompt_number()
+    if number is None:
+        break
+    print(f"Entered number: {number}")
 ```
 
-So how does this work?
-Python runs the commands within the `try` block, but if the error occurs
-that you mentioned after `except`, Python won't terminate the program, instead, it will
-run all the commands in the exception block.
-If there's no error, the except block will be skipped.
+Run the code and try different inputs. What happens if the input is not
+an integer number?
 
-When you catch a general exception, Python also catches
-exceptions that are related to it (in the diagram, they are listed as child entries) -- 
-e.g. `except ArithmeticError:` will also catch `ZeroDivisionError`.
-And `except Exception:` will catch all usual exceptions.
+Invalid input does not cause an error, instead it gets replaced by `0`.
+
+So how does this work?
+
+We call the `int()` function within the `try` block.
+If there is no error, this function is executed, it returns a value which
+is assigned to the `number` variable and leaves the `try` block.
+
+In case of a `ValueError` exception raised by `int()` caused by an invalid input
+value, this exception is caught and the execution continues
+in the `except ValueError` block. There, a message is printed and
+`0` is assigned to the `number` variable.
+
+In this case we specifically catch the `ValueError` exception.
+We could achieve the same by catching generic `Exception`, because, as you can
+see in the hierarchy above, `ValueError` is a specific type of `Exception`.
 
 
 ## Don't catch'em all!
 
-There is no need to catch most of the errors.
+Try to be as selective as possible when catching the expected exceptions.
+There is no need to catch the most of the errors.
 
-If any unexpected error happens 
-it's always *much* better to terminate the program
-than to continue with wrong values.
-In addition, Python's standard error output will make it
-really easy for you to find the error.
+> [note]
+> When an unexpected error happens it is **much better** to terminate the program
+> rather than to continue with wrong values.
+> When an unexpected error happens we want to know about it as soon as it
+> appears. With the wrong values bad things will happen later in the code anyway
+> and the real cause will be **difficult** to trace.
 
 For example, catching the exception `KeyboardInterrupt`
 could have the side effect that the program couldn't be terminated if we needed to
 (with shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd>).
 
 Use the command `try/except` only in situations when you
-expect some exception -- when you know exactly what could happen
-and why, and you have the option to correct it -- in the
-except block.
-A typical example would be reading input from a user. If the user 
-enters gibberish, it's better to ask again until the
+anticipate some exception, i.e., you know exactly what can happen
+and why, and you are able to fix the error state in the except block.
+
+A typical example would be reading the input from a user. If the user
+enters gibberish, it is better to ask again until the
 user enters something meaningful:
 
 
 ```pycon
->>> def retrieve_number():
+>>> def fetch_number():
 ...     while True:
-...             answer = input("Type a number: ")
-...             try:
-...                     return int(answer)
-...             except ValueError:
-...                     print("This is not a number. Try again")
-
->>> print(retrieve_number())
-Type a number: twenty
-This is not a number. Try again
-Type a number: 20
-20
-
+...         answer = input("Type a number: ")
+...         try:
+...             return int(answer)
+...         except ValueError:
+...             print("Oi! This is rubbish, mate! Do it again!")
+>>> fetch_number()
+Type a number: nan
+Oi! This is trash, mate! Do it again!
+Type a number: 42
+42
 ```
 
 
@@ -167,12 +208,16 @@ Type a number: 20
 
 Additionally to `except`, there are two more clauses - blocks that can 
 be used with `try`, and these are `else` and `finally`.
-The first one will be run if exception in the `try` block didn't happen.
-And `finally` runs every time.
 
-You can also have several `except` blocks. Only one of them will be triggered -- 
-the first one that can handle the raised exception. 
+The first one `else` will be run if no exception in the `try` block was raised.
+And `finally` runs every time and is executed even in the case of an uncaught exception
+and may be used even without any `except` clause. It is mostly used for clean-ups.
 
+You can also have several `except` blocks. Only one of them will be triggered. 
+The first one that can handle the raised exception. 
+
+> [note]
+> Always catch more specific exceptions before the generic ones.
 
 ```python
 try:
@@ -196,54 +241,30 @@ finally:
 
 ## Task
 
-Let's add exception handling to our original square size calculator (or to 1-D ticktactoe, if you have it)  
-if the user doesn't enter a number in the input.
-
+Let's add exception handling and proper input checking to our square size
+calculator. Modify the code so that if the user does not enter a non-negative
+number the programs prompts the input again.
 
 {% filter solution %}
 
-Possible solution for the calculator:
-
 ```python
-
-while True:
-    try:
-        side = float(input('Enter the side of a square in centimeters: '))
-    except ValueError:
-        print('That was not a number!')
-    else:
-        if side <= 0:
-            print('That does not make sense!')
-        else:
-            break
-
-print("The perimeter of a square with a side of", side,"cm is ", side * 4,"cm.")
-print("The area of a square with a side of", side,"cm is", side * side, "cm2.")
-
-```
-
-Possible solution for 1-D ticktactoe:
-
-```python
-def load_number(field):
+def input_side():
     while True:
+        raw_input = input("Enter the side of a square in centimeters: ")
         try:
-            position = int(input('Which position do you want to fill? (0..19) '))
+            side = float(raw_input)
         except ValueError:
-            print('This is not a number!')
+            print(f"{raw_input} is not a number!")
         else:
-            if position < 0 or position >= len(field):
-                print('You can not play outside the field!')
-            elif field[position] != '-':
-                print('That position is not free!')
+            if side <= 0:
+                print(f"{raw_input} is a negative number!")
             else:
                 break
+    return side
+side = input_side()
+print(f"The perimeter of a square with a side of {side} cm is {perimeter} cm.")
+print(f"The area of a square with a side of {side} cm is {area} cm2.")
 
-    field = field[:position] + 'o' + field[position + 1:]
-    return field
-
-
-print(player_move('-x----'))
 ```
 
 {% endfilter %}

@@ -5,19 +5,27 @@ It is important to verify that the code does what it should
 (and about fixing it if needed).
 The process of verification that the program works as expected is called *testing*.
 
-You have probably tested your programs by trying to execute them, 
-entered some input data and looked if the results are correct.
-It is harder to do it for bigger programs. 
-Bigger programs have more possibilities what to do and it is harder 
-to verify that all possibilities do what they should.
+You have probably already tested your programs by executing them.
+When you test your program, you usually enter some input data and look if
+the result is correct.
+This is okay for a small program, but it gets harder as the program gets bigger.
+Bigger programs have more options what they can do based on the possible
+user input and configuration. Their manual testing becomes time-consuming,
+especially when it needs to be repeated after every change, and it becomes more
+likely errors slip unnoticed into our code.
 
-That is why developers write code that verifies their program 
-instead of testing their programs manually.
+Humans are not very good at performing boring repetitive tasks, that is
+the domain of computers. And, not surprisingly, that is the reason why
+developers write the code that verifies their programs.
 
-*Automated tests* are functions that check that the program works correctly.
-You can execute the tests anytime and verify that the code works.
-The main benefit is that you can change the code in the future
-and let the tests verify that the change does not break existing functionality.
+*Automated tests* are functions checking, with no manual intervention,
+that all features of the tested program work correctly.
+If made right, the tests should be lean and give quick response whether
+the program has issues or not. The testing does not give us 100% proof that
+the code is without errors but it is still better than no testing at all.
+
+The automated tests make modification of the code easier as you can
+faster find possible bugs in the existing functionality (aka *regressions*).
 
 
 ## Installing the pytest library
@@ -38,22 +46,25 @@ just as `cd` or `mkdir`; do not enter it into the Python console.)
 $ python3 -m pip install pytest
 ```
 
-> [note] What does Pip do?
-> `python3 -m pip` calls Python and tells it to execute the
-> `pip` module. This module can install and uninstall libraries. 
-> And the arguments `install pytest` tell Pip to install `pytest`.
+> [note] What is pip and why do we use it?
+> `pip` is a Python command-line tool for installing 3rd-party
+> Python libraries from the [Python Package Index (PyPI)](https://pypi.org)
+> and other sources (e.g., Git repositories).
 >
-> You can display the help for the Pip module using the command
-> `python3 -m pip --help`.
+> `python3 -m pip install pytest` makes Python to install `pytest` library from PyPI.
+>
+> For help on how to use pip run `python3 -m pip --help`.
 
-> [warning] For Windows users
-> If you use Windows, it is important to run Python programs using
-> `python3 program.py`, and not just `program.py`.
-> Although we always show `python` in our lessons, 
-> it could work without it so far.
-> If you do not use the command `python3` in the beginning, the program 
-> could start in a different Python and different virtual environment, 
-> where the `pytest` module might not have been installed.
+> [note] python3 -m &lt;command&gt; or just &lt;command&gt;
+> `python3 -m <command>` tells Python to execute a script from the
+> Python module named `<command>` (e.g., `python3 -m pip ...`).
+> In a properly configured Python environment, it should be possible to call
+> the `<command>` directly, without the help of the `python` command
+> (e.g., `pip ...`)
+>
+> To save ourselves the trouble of unnecessary complications with a possibly
+> misconfigured Python environment we recommend using the longer
+> `python3 -m <command>` version.
 
 
 ## Writing tests
@@ -78,16 +89,24 @@ def test_add():
     assert add(1, 2) == 3
 ```
 
+> [note] The naming of files and test functions matters
+> `pytest` scans your code and
+> searches for the included tests. When found, these tests are executed.
+>
+> By default, the names of the test files and the test functions must start with
+> the `test_` prefix in order to be recognized as tests.
+
+
 What does the test function do?
 
 The `assert` statement evaluates the expression that follows it.
-If the result is not true then it raises an exception 
-and it makes the test fail.
+If the result is not true then it raises the `AssertionError` exception 
+which is interpreted by `pytest` as a failing test.
 You can imagine that `assert a == b` does following:
 
 ```python
-if a != b:
-    raise AssertionError('Test failed!')
+if not (a == b):
+    raise AssertionError
 ```
 
 > [note]
@@ -98,39 +117,59 @@ if a != b:
 
 ## Running tests
 
-You execute tests with the command `python -m pytest -v`, 
-followed by the name of the file containing the tests.
-By using this command you are telling: <strong>Python</strong>: 
-Execute the <strong>m</strong>odule named <strong>pytest</strong>,
-in <strong>v</strong>erbose mode, for the given file.
+You execute tests with the command `python -m pytest -v <path>`
+followed by the path to the file containing the tests.
+
+> [note]
+> You can omit the `<filename>` argument and then `python -m pytest -v`
+> scans the current directory and runs tests in all files whose names start
+> with the `test_` prefix.
+>
+> You can also use a path to a directory where `pytest` should searches for
+> the tests.
+
+This command scans the given file and calls all functions that start
+with the `test_` prefix. It executes them and checks if they raise any exception,
+e.g., raised by the `assert` statement.
 
 ```ansi
 $ python3 -m pytest -v test_addition.py
-␛[1m============= test session starts =============␛[0m
-platform darwin -- Python 3.6.5, pytest-3.9.1, py-1.7.0, pluggy-0.8.0 -- 
-rootdir: learn, inifile: 
-␛[1mcollecting ...␛[0m collected 1 items
+␛[1m============================= test session starts ==============================␛[0m
+platform linux -- Python 3.8.3, pytest-7.1.2, pluggy-1.0.0
+rootdir: /tmp/test_example
+collected 1 item
 
-test_addition.py::test_add ␛[32mPASSED␛[0m
+test_addition.py ␛[32m.␛[0m␛[32m                                                       [100%]␛[0m
 
-␛[32m============= 1 passed in 0.01 seconds =============␛[0m
+␛[32m============================== ␛[32m␛[1m1 passed␛[0m␛[32m in 0.00s␛[0m␛[32m ===============================␛[0m
+```
+If an exception occurs, `pytest` shows a red message with
+additional details that can help you find the bug and fix it:
+
+```ansi
+␛[1m============================= test session starts ==============================␛[0m
+platform linux -- Python 3.8.3, pytest-7.1.2, pluggy-1.0.0
+rootdir: /tmp/test_example
+collected 1 item
+
+test_addition.py ␛[31mF␛[0m␛[31m                                                       [100%]␛[0m
+
+=================================== FAILURES ===================================
+␛[31m␛[1m___________________________________ test_add ___________________________________␛[0m
+
+    def test_add():
+>       assert add(1, 2) == 3
+␛[1m␛[31mE       assert 4 == 3␛[0m
+␛[1m␛[31mE        +  where 4 = add(1, 2)␛[0m
+
+␛[1m␛[31mtest_addition.py␛[0m:5: AssertionError
+=========================== short test summary info ============================
+FAILED test_addition.py::test_add - assert 4 == 3
+␛[31m============================== ␛[31m␛[1m1 failed␛[0m␛[31m in 0.01s␛[0m␛[31m ===============================␛[0m
 ```
 
-This command scans the given file and calls all functions that start
-with `test_`. It checks that they do not raise any exceptions, 
-for example, an exception raised by `assert`.
-If an exception occurs, `pytest` shows a red message with
-additional details that can help you find the bug and fix it.
-
-> [note]
-> You can omit the argument with the filename: `python -m pytest -v`
-> In this case, `pytest` scans the current directory and runs tests
-> in all files whose names start with `test_`. You can use a path to 
-> a directory and `pytest` finds tests in it.
-
-Try to change the `add` function (or its test) and see what happens
-if a test fails.
-
+Try to run the test yourself. Modify the `add` function or (its test) so that the
+test fails.
 
 ## Test modules
 
@@ -161,17 +200,13 @@ Possible tests examples:
 
 ```python
 def test_find_perimeter_1():
-    """
-    Tests of positive integer values
-    as input
+    """ Tests if the function can handle two positive integer values as input.
     """
     res = find_perimeter(4, 5)
     assert res == 18
 
-def test_find_perimeter_empty():
-    """
-    Tests if function can handle input
-    where one of sides is 0
+def test_find_rectangle_perimeter_zero_width():
+    """ Tests if the function can handle width set to 0.
     """
     res = find_perimeter(0, 3)
     assert res == 0
@@ -181,25 +216,28 @@ def test_find_perimeter_empty():
 
 ## Executable modules
 
-Automated tests have to run "unattended".
-They are usually executed automatically and the failures are reported
-automatically (e.g. by email) and the code that passes all tests can
-be automatically released (installed to a system where it runs 
-or is made available to customers).
+Automated tests have to be able to run unattended. They are often executed
+automatically and the failures are reported via some sort of notification,
+e.g., by email.
 
-What does this mean to us?
-The `input` function will not work in tests. There is no-one who can reply.
+In practical terms, this means that the tests must not depend on live
+interaction with the user, e.g., the `input` function will not work in tests.
 
-This can make your work harder sometimes. Let's look at a more complex project: 1D (one-dimensional) tic-tac-toe.
+> [note] Can we test user interaction in automated tests?
+> There are testing techniques allowing us to emulate user interaction
+> in the user interfaces. But is that beyond the scope of this course.
+
+This can make your work harder sometimes. Let's look at a more complex project,
+the 1D (one-dimensional) tic-tac-toe.
 
 > [note]
-{% if var('coach-present') -%}
-> If you do not have the 1D tic-tac-toe program, the following sections are only theoretical.
-{% endif -%}
+> If you do not have the 1D tic-tac-toe program, the following sections are
+> only theoretical.
+>
 > If you study at home, complete the 1D tic-tac-toe lesson before continuing.
 > The task description is at [one-dimensional tic-tac-toe](../tictactoe))..
 
-The structure of your 1D tic-tac-toe code could look like this:
+The structure of the 1D tic-tac-toe code looks roughly like this:
 
 ```python
 import random  # (and possibly other import statements that are needed)
@@ -231,31 +269,32 @@ def tic_tac_toe_1d():
 tic_tac_toe_1d()
 ```
 
-If you import this module, Python executes all commands in it 
-from top to bottom.
+If you import this module, Python executes all commands in it, from top to bottom:
 
-The first command, `import`, makes some functions and variables available.
-Imports usually do not have any side-effects.
+- The first command, `import`, initializes the variables and functions of the
+  `random` module. It is module from the standard Python library it is unlikely
+  that it would have any side effect to worry about.
 
-The definitions of functions (`def` statements and everything in them) 
-just define the functions (but they do not execute the functions).
+- The definitions of functions (`def` statements and everything in them)
+  just define the functions but they do not execute them.
 
-Calling the `tic_tac_toe_1d` function starts the game.
-The `tic_tac_toe_1d` calls the `player_move()` function which calls `input()`.
+- Calling the `tic_tac_toe_1d` function starts the game.
+  The `tic_tac_toe_1d` calls the `player_move()` function which calls `input()`.
+  This is an issue.
 
-If you import this module from tests, the `input` fails 
-and the module is not imported.
+If you import this module to the tests, the `input` fails and the module does
+not get not imported.
 
 > [note]
-> If you want to import such a module from elsewhere – for example, you would like
-> to use `move` in another game – the import of the module requires the user to 
-> play 1D tic-tac-toe!
+> If you want to import such a module from elsewhere, e.g., you would like
+> to use `move()` in a different game, the import of the module itself will
+> start the 1D tic-tac-toe game!
 
 The calling of `tic_tac_toe_1d` is a side-effect and we need to remove it.
-Yeah but you cannot start the game without it! What about it?
+Okay, but you cannot start the game without it! What can we do about it?
 
-You can create a new module.
-Name it `game.py` and put just this call into it:
+We can create a new python file, e.g., `game.py` and we move the
+`tic_tac_toe_1d()` call in it:
 
 ```python
 import tic_tac_toe
@@ -284,33 +323,36 @@ def test_move_to_empty_space():
 
 ## Positive and negative tests
 
-The tests that verify that the program works correctly 
+Tests that verify that a program works correctly
 under correct conditions are called *positive tests*.
-But you can test what your program does under unexpected conditions.
+An exception raised during the positive testing lead to failure of the test.
 
-The tests that check the behavior in case of "invalid" input
-are called *negative tests*.
-They can check for a specific negative result (for example 
-that a call like `is_number_even(7)` returns `False`), 
-or that a "reasonable" exception is raised. 
+Tests that check behaviour in case of invalid inputs are called *negative tests*.
+The purpose of the negative testing is verification of the graceful handling
+of error states. Raising of an exception is often the expected behaviour
+of the tested code.
 
-For example, the `computer_move` function should raise an error 
-(for example `ValueError`) when the board is full.
+For example, the `computer_move` function should raise an error
+(e.g., `ValueError`) when the board is full.
 
 > [note]
-> It is much better to raise an exception than doing nothing 
-> and silently letting the program get stuck.
-> You can use such function in a more complex program 
-> and be sure that you will get an understandable error
-> when it is called under bad conditions. 
-> Then you can easily fix it.
+> It is much better to raise an exception than doing nothing
+> and silently letting the program get stuck elsewhere.
+> You can use such function in a more complex program
+> and be sure that it will raise an understandable error
+> when it is called under bad conditions.
+> The error helps you to fix the actual problem. The sooner you discover
+> an error the easier is to fix it.
 
 Use the `with` statement and the `raises` function 
 to test that your code raises the expected exception.
 The `raises` function is imported from the `pytest` module.
-We will explain the `with` statement later.
-You just need to know that it checks that the block of code below 
-raises the specified exception:
+
+
+> [note]
+> We have not talked about the `with` statement and context managers yet.
+> But don't worry, you will learn about them later.  Just check how it is used
+> to test whether an exception is raised.
 
 ```python
 import pytest
@@ -326,22 +368,23 @@ Let's now try to edit the function for getting a perimeter of rectangle
 so that it raises a ValueError if any of the sides is smaller or equal to zero.
 Add a test for the new functionality. [custom functions]({{ lesson_url('beginners-en/functions') }})
 
+
 {% filter solution %}
 
 ```python
 import pytest
-def find_perimeter(width, height): 
-    "Returns the rectangle's perimeter of the given sides" 
-    if width < 0 or height < 0:
-        raise ValueError('Input can be only positive number.')
-    return  2 * (width  +  height)
 
-def testfind_perimeter_exception_negative():
+def find_rectangle_perimeter(width, height):
+    """ Calculate perimeter of a rectangle from the given sides.
     """
-    Tests of negative integer values
-    as input
+    if width < 0 or height < 0:
+        raise ValueError("Rectangle sides must be non-negative.")
+    return  2 * (width + height)
+
+def test_find_perimeter_exception_negative():
+    """ Tests of negative integer values as input
     """
     with pytest.raises(ValueError):
-        find_perimeter(-3, 5)
+        find_rectangle_perimeter(-3, 5)
 ```
 {% endfilter %}
