@@ -262,8 +262,8 @@ def input_side():
                 break
     return side
 side = input_side()
-print(f"The perimeter of a square with a side of {side} cm is {perimeter} cm.")
-print(f"The area of a square with a side of {side} cm is {area} cm2.")
+print(f"The perimeter of a square with a side of {side} cm is {side * 4} cm.")
+print(f"The area of a square with a side of {side} cm is {side ** 2} cm2.")
 
 ```
 

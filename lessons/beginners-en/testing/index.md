@@ -366,7 +366,7 @@ def test_move_failure():
 
 Let's now try to edit the function for getting a perimeter of rectangle
 so that it raises a ValueError if any of the sides is smaller or equal to zero.
-Add a test for the new functionality. [custom functions]({{ lesson_url('beginners-en/functions') }})
+Add a test for the new functionality.
 
 
 {% filter solution %}

@@ -52,12 +52,6 @@ turtle.forward(100)
 turtle.exitonclick()
 ```
 
-> [note] We don't want asterisks
->
-> In documentation or in another course, you have maybe seen 
-> an import with an asterisk (`*`).
-> In this course, we won't use it, we always import the whole module instead.
-
 ## Packages
 
 Python allows a special kind of module which itself contains sub-modules.
