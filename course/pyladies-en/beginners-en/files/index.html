@@ -158,7 +158,8 @@ to close or terminate something -- not just a file,
 it can also be a database connection.</p>
 <h2>The <code>with</code> statement</h2>
 <p>Because the <code>try/finally</code> block is quite verbose, 
-there is a better way in Python. It's the <code>with</code> statement, that we have not seen before:</p>
+there is a better way in Python. It's the <code>with</code> statement, that we have seen during the 
+negative testing using pytest (with <code>pytest.raises()</code>):</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">initial_character</span><span class="p">():</span>
     <span class="sd">"""Return the first character in the poem."""</span>
 
