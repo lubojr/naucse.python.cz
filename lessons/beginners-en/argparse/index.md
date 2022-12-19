@@ -72,7 +72,7 @@ This information is stored and used when `parse_args()` is called.
 
 You can set parameters as required by adding `required=True` option.
 It is also possible to their `type`, which will try to convert the variable to the data type announced.
-In order to allow simple storing of boolean flags `true/false`, you can use the `action="store_true"` parameter.
+In order to allow simple storing of boolean flags `True/False`, you can use the `action="store_true"` parameter.
 
 Try it! If you have it saved as `hello.py`, try:
 

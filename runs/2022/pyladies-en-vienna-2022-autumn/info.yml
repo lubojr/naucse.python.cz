@@ -184,17 +184,17 @@ plan:
 - title: Working with Files and CLI
   slug: files_cli
   date: 2022-12-20
-  # materials:
-  #   - lesson: beginners-en/files
-  #   - lesson: beginners-en/argparse
-  #   - lesson: beginners-en/json
-  #  - title: Files/Exceptions cheatsheet
-  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
-  #    type: cheatsheet
+  materials:
+    - lesson: beginners-en/json
+    - lesson: beginners-en/files
+    - lesson: beginners-en/argparse
+    - title: Files/Exceptions cheatsheet
+      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
+      type: cheatsheet
 
 - title: Classes
   slug: classes
-  date: 2023-01-03
+  date: 2023-01-10
   # materials:
   #  - lesson: beginners-en/class
   #  - lesson: beginners-en/inheritance
@@ -207,7 +207,7 @@ plan:
 
 - title: Final Project
   slug: final_project
-  date: 2023-01-10
+  date: 2023-01-17
   # materials:
   #  - title: Homework (PDF)
   #    url: https://drive.google.com/file/d/1gJ4FdvmMwKSRr5D5k-idkvYoIs588HU-/view
@@ -216,7 +216,7 @@ plan:
   #    url: https://docs.google.com/presentation/d/10ePH2ALijAM9p1Sn0tnFptgvBdSMH_0ifTkaBYFetnY/edit
 
 - title: Final Project II.
-  date: 2023-01-17
+  date: 2023-01-24
   slug: final_project2
   # materials:
   #   - title: Final Project II.

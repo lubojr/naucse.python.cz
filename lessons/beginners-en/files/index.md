@@ -138,7 +138,8 @@ it can also be a database connection.
 ## The `with` statement
 
 Because the `try/finally` block is quite verbose, 
-there is a better way in Python. It's the `with` statement, that we have not seen before:
+there is a better way in Python. It's the `with` statement, that we have seen during the 
+negative testing using pytest (with `pytest.raises()`):
 
 ```python
 def initial_character():

@@ -2,7 +2,7 @@
 
 There are also other programming languages ​​than Python.
 
-Other languages ​​can not work with python code.
+Other languages ​​can not work with Python code.
 If you would like to "talk" with such programs -
 pass them some processing information
 or to get results from them -
