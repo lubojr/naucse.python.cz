@@ -145,20 +145,3 @@ python3 hello.py --firstname PyLady --count 5
 ```
 
 This has been a short introduction into working with CLI.
-
-A small exercise is prepared for you to straighten up your understanding of CLI and practice a bit.
-
-## Task
-
-- Write a new text file in your editor, naming as it you like, save it.
-
-- Create a simple CLI Python program, which will receives **input_file** argument and an **output_file** arguments.
-
-- The Python code should **read** the **input_file**, perform some kind of operation on the text content of the file and **write** the content to the **output_file**.
-
-- Some example of the operation to perform would be: changing the text to Capital letters or replacing certain letters with numbers.
-
-- Add some **optional** command line parameters of your choice and add one boolean **flag** parameter.
-
-Please **note**! that opening a file in a `w` mode replaces all contents of that file!!
-Try to use the CLI you have built.

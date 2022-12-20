@@ -191,6 +191,9 @@ plan:
     - title: Files/Exceptions cheatsheet
       url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
       type: cheatsheet
+    - title: Homework (PDF)
+      url: https://drive.google.com/file/d/1-wbEd9KtSSz7k37i4xek85_kS4-vpPJ-/view
+      type: homework
 
 - title: Classes
   slug: classes
