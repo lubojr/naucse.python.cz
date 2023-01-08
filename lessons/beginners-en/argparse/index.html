@@ -93,7 +93,7 @@ and uses a decorator syntax, that we have not seen yet, so we have decided not t
 <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">"""Simple program that greets 'name' for a total of 'count' times and optionally indents."""</span>
+<span class="w">    </span><span class="sd">"""Simple program that greets 'name' for a total of 'count' times and optionally indents."""</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">indent</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"    "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
@@ -143,7 +143,7 @@ with <code>underscores</code>, as it is not possible to have a <code>hyphen</cod
 object via the first option, as in this example:</p>
 <div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'-n'</span><span class="p">,</span> <span class="s1">'--name'</span><span class="p">,</span> <span class="s1">'--firstname'</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">'a name to repeat'</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">hello</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">indent</span><span class="p">)</span>
-</pre></div><div class="highlight"><pre><span></span><span class="gp"># </span>both work
+</pre></div><div class="highlight"><pre><span></span><span class="gp"># </span>both<span class="w"> </span>work
 <span class="go">python3 hello.py --name PyLady --count 5</span>
 <span class="go">python3 hello.py --firstname PyLady --count 5</span>
 </pre></div><p>This has been a short introduction into working with CLI.</p>

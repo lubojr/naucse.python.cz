@@ -124,7 +124,7 @@ in programs where you import this module.</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">meadow</span><span class="o">.</span><span class="n">description</span><span class="p">())</span>
 </pre></div><p>Finally, run the <code>write.py</code> script:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python3 write.py
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>write.py
 </pre></div><p>Python searches for the imported modules in the same folder where
 the executed script is located. Please make sure both files are placed
 in the same folder.</p>
@@ -140,11 +140,11 @@ a Python file in it.</p>
 <p>Let's try it with our meadow example. Create a directory named <code>landscape</code>
 and copy the <code>meadow.py</code> file in it:</p>
 <div class="row side-by-side-commands"><div class="col">
-                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>mkdir landscape<span class="gp"></span>
+                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>mkdir landscape
 <span class="gp">&gt; </span>copy meadow.py landscape
 </pre></div></div><div class="col">
-                <h4>macOS / Linux</h4><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir landscape
-<span class="gp">$ </span>cp meadow.py landscape/
+                <h4>macOS / Linux</h4><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>landscape
+<span class="gp">$ </span>cp<span class="w"> </span>meadow.py<span class="w"> </span>landscape/
 </pre></div></div></div><p>Now start the Python interpreter and try</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">landscape.meadow</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">landscape</span><span class="o">.</span><span class="n">meadow</span><span class="o">.</span><span class="n">meadow_colour</span>

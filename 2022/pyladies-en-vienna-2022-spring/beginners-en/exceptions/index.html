@@ -70,11 +70,11 @@ error messages (aka <em>exceptions</em>).</p>
 <p><!-- XXX: Highlight the line numbers --></p>
 <div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">"example.py"</span>, line <span class="m">7</span>, in <span class="n">&lt;module&gt;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">outer_function</span><span class="p">())</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">outer_function</span><span class="p">())</span>
   File <span class="nb">"example.py"</span>, line <span class="m">2</span>, in <span class="n">outer_function</span>
-    <span class="k">return</span> <span class="n">inner_function</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span> <span class="n">inner_function</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
   File <span class="nb">"example.py"</span>, line <span class="m">5</span>, in <span class="n">inner_function</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">divisor</span>
+<span class="w">    </span><span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">divisor</span>
 <span class="gr">ZeroDivisionError</span>: <span class="n">division by zero</span>
 </pre></div><p>You notice that every function call that led to the error is listed here.
 The actuall error is probably somewhere near that function call.
@@ -250,8 +250,8 @@ number the programs prompts the input again.</p>
                 <span class="k">break</span>
     <span class="k">return</span> <span class="n">side</span>
 <span class="n">side</span> <span class="o">=</span> <span class="n">input_side</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The perimeter of a square with a side of </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2"> cm is </span><span class="si">{</span><span class="n">side</span> <span class="o">*</span> <span class="mi">4</span><span class="si">}</span><span class="s2"> cm."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The area of a square with a side of </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2"> cm is </span><span class="si">{</span><span class="n">side</span> <span class="o">**</span> <span class="mi">2</span><span class="si">}</span><span class="s2"> cm2."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The perimeter of a square with a side of </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2"> cm is </span><span class="si">{</span><span class="n">side</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="si">}</span><span class="s2"> cm."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The area of a square with a side of </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2"> cm is </span><span class="si">{</span><span class="n">side</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2"> cm2."</span><span class="p">)</span>
 </pre></div>
     </div>
 </div>

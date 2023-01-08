@@ -142,7 +142,7 @@ by drawing two triangles.</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyglet</span> <span class="kn">import</span> <span class="n">gl</span>
 <span class="o">...</span>
 <span class="k">def</span> <span class="nf">draw_rectangle</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
-    <span class="sd">"""Draw the rectangle to the given coordinates</span>
+<span class="w">    </span><span class="sd">"""Draw the rectangle to the given coordinates</span>
 
 <span class="sd">    How it should look like::</span>
 
@@ -169,7 +169,7 @@ the game dynamics. We also did it with the python, but now we have more
 graphical elements.</p>
 <div class="highlight"><pre><span></span><span class="o">...</span>
 <span class="k">def</span> <span class="nf">render</span><span class="p">():</span>
-    <span class="sd">"""Render(draw) state of the game"""</span>
+<span class="w">    </span><span class="sd">"""Render(draw) state of the game"""</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">glClear</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">)</span>  <span class="c1"># clear the window (paint the window black)</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># set the paint to white</span>
 
@@ -259,7 +259,7 @@ we would just change its text and redraw it but we will do it this way
 cause it's easier. Finally we have to call <code>draw()</code> method or the
 text won't be rendered.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x_position</span><span class="p">):</span>
-    <span class="sd">"""Draw given text on the given coordinates</span>
+<span class="w">    </span><span class="sd">"""Draw given text on the given coordinates</span>
 
 <span class="sd">    Argument `x_position` can be "left" or "right" - sets where the text will be aligned</span>
 <span class="sd">    """</span>

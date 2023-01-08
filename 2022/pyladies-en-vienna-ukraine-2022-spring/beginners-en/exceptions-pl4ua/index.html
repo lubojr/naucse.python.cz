@@ -70,11 +70,11 @@ error messages (aka <em>exceptions</em>).</p>
 <p><!-- XXX: Highlight the line numbers --></p>
 <div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">"example.py"</span>, line <span class="m">7</span>, in <span class="n">&lt;module&gt;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">outer_function</span><span class="p">())</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">outer_function</span><span class="p">())</span>
   File <span class="nb">"example.py"</span>, line <span class="m">2</span>, in <span class="n">outer_function</span>
-    <span class="k">return</span> <span class="n">inner_function</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span> <span class="n">inner_function</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
   File <span class="nb">"example.py"</span>, line <span class="m">5</span>, in <span class="n">inner_function</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">divisor</span>
+<span class="w">    </span><span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">divisor</span>
 <span class="gr">ZeroDivisionError</span>: <span class="n">division by zero</span>
 </pre></div><p>Note that every function call that led to the error is listed here.
 The actual error is probably somewhere near that function call.
@@ -106,9 +106,9 @@ an optional short description of what went wrong (in parentheses).</p>
 <div class="highlight"><pre><span></span><span class="go">The number 5 is OK!</span>
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">"example.py"</span>, line <span class="m">9</span>, in <span class="n">&lt;module&gt;</span>
-    <span class="n">verify_number</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="w">    </span><span class="n">verify_number</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
   File <span class="nb">"example.py"</span>, line <span class="m">5</span>, in <span class="n">verify_number</span>
-    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The number </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> is not in the allowed range!"</span><span class="p">)</span>
+<span class="w">    </span><span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The number </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> is not in the allowed range!"</span><span class="p">)</span>
 <span class="gr">ValueError</span>: <span class="n">The number 25 is not in the allowed range!</span>
 </pre></div><p>What exceptions are available in Python?
 Python provides a hierarchy of standard (built-in) exceptions. This
@@ -156,14 +156,14 @@ the <code>Exception</code>.</p>
  ╰── Exception
       ╰── <span style="color: #00aa00">PyLadiesException</span></code></pre></div><p>The code is fairly simple:</p>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PyLadiesException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="sd">""" PyLadies private exception. """</span>
+<span class="w">    </span><span class="sd">""" PyLadies private exception. """</span>
 
 <span class="k">raise</span> <span class="n">PyLadiesException</span><span class="p">(</span><span class="s2">"My first PyLadies exception!"</span><span class="p">)</span>
 </pre></div><p>Try it and you will see that your new exception behaves just like any other
 exception:</p>
 <div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">"exception.py"</span>, line <span class="m">5</span>, in <span class="n">&lt;module&gt;</span>
-    <span class="k">raise</span> <span class="n">PyLadiesException</span><span class="p">(</span><span class="s2">"My first PyLadies exception!"</span><span class="p">)</span>
+<span class="w">    </span><span class="k">raise</span> <span class="n">PyLadiesException</span><span class="p">(</span><span class="s2">"My first PyLadies exception!"</span><span class="p">)</span>
 <span class="gr">__main__.PyLadiesException</span>: <span class="n">My first PyLadies exception!</span>
 </pre></div><div class="admonition note"><p>We strongly recommend that you always inherit your private exceptions from
 the <code>Exceptions</code> class or its descendants so that it can be caught as an
@@ -315,11 +315,11 @@ a non-negative number</strong>. We do it by inserting the <code>assert</code> co
 the program ends with the <code>AssertionError</code> error:</p>
 <div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">"square.py"</span>, line <span class="m">21</span>, in <span class="n">&lt;module&gt;</span>
-    <span class="n">main</span><span class="p">()</span>
+<span class="w">    </span><span class="n">main</span><span class="p">()</span>
   File <span class="nb">"square.py"</span>, line <span class="m">14</span>, in <span class="n">main</span>
-    <span class="n">perimeter</span> <span class="o">=</span> <span class="n">get_square_perimeter</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
+<span class="w">    </span><span class="n">perimeter</span> <span class="o">=</span> <span class="n">get_square_perimeter</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
   File <span class="nb">"square.py"</span>, line <span class="m">5</span>, in <span class="n">get_square_perimeter</span>
-    <span class="k">assert</span> <span class="n">side</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+<span class="w">    </span><span class="k">assert</span> <span class="n">side</span> <span class="o">&gt;=</span> <span class="mi">0</span>
 <span class="gr">AssertionError</span>
 </pre></div><p>Assertions are meant to help us to debug the code. By putting the assertions
 in your code you are telling to Python (and also to other readers of your code)

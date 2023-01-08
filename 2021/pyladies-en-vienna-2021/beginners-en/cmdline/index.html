@@ -140,11 +140,11 @@ Don't forget to check if you were successful.</p>
 <p>If you have Linux or macOS, be careful - those systems are case sensitive,
 so <code>Desktop</code> and <code>desktop</code> are two different folders!</p>
 <div class="row side-by-side-commands"><div class="col">
-                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> Desktop
+                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>Desktop
 <span class="gp">$ </span><span class="nb">pwd</span>
 <span class="go">/home/Alex/Desktop</span>
 </pre></div></div><div class="col">
-                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd Desktop<span class="gp"></span>
+                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd Desktop
 <span class="gp">&gt; </span>cd
 <span class="go">C:\Users\Alex\Desktop</span>
 </pre></div></div></div><div class="admonition note"><p class="admonition-title">Note for Windows users</p>
@@ -157,7 +157,7 @@ command <code>mkdir</code> (<em>make directory</em>).
 After that command, write the name of the folder that you want to create -
 in our case <code>practice</code>.</p>
 <div class="row side-by-side-commands"><div class="col">
-                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir practice
+                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>practice
 </pre></div></div><div class="col">
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>mkdir practice
 </pre></div></div></div><p>Now, look on your Desktop or into some other graphical program
@@ -173,13 +173,13 @@ if it was created.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="row side-by-side-commands"><div class="col">
-                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> practice
-<span class="gp">$ </span>mkdir <span class="nb">test</span>
+                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>practice
+<span class="gp">$ </span>mkdir<span class="w"> </span><span class="nb">test</span>
 <span class="gp">$ </span>ls
 <span class="go">test</span>
 </pre></div></div><div class="col">
-                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd practice<span class="gp"></span>
-<span class="gp">&gt; </span>mkdir test<span class="gp"></span>
+                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd practice
+<span class="gp">&gt; </span>mkdir test
 <span class="gp">&gt; </span>dir
 <span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  test</span>
 </pre></div></div></div>
@@ -195,13 +195,13 @@ currently in.</p>
 <div class="row side-by-side-commands"><div class="col">
                 <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
 <span class="go">/home/Alex/Desktop/practice</span>
-<span class="gp">$ </span><span class="nb">cd</span> ..
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>..
 <span class="gp">$ </span><span class="nb">pwd</span>
 <span class="go">/home/Alex/Desktop</span>
 </pre></div></div><div class="col">
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd
-<span class="go">C:\Users\Alex\Desktop\practice</span><span class="gp"></span>
-<span class="gp">&gt; </span>cd ..<span class="gp"></span>
+<span class="go">C:\Users\Alex\Desktop\practice</span>
+<span class="gp">&gt; </span>cd ..
 <span class="gp">&gt; </span>cd
 <span class="go">C:\Users\Alex\Desktop</span>
 </pre></div></div></div><p>Now it's time to delete the <code>practice</code> directory.
@@ -219,11 +219,11 @@ directory. Here, the switch is <code>/S</code> (forward slash, <code>S</code>).<
 <div class="row side-by-side-commands"><div class="col">
                 <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
 <span class="go">/home/Alex/Desktop</span>
-<span class="gp">$ </span>rm -rv practice
+<span class="gp">$ </span>rm<span class="w"> </span>-rv<span class="w"> </span>practice
 <span class="go">removed directory: ‘practice’</span>
 </pre></div></div><div class="col">
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd
-<span class="go">C:\Users\Alex\Desktop</span><span class="gp"></span>
+<span class="go">C:\Users\Alex\Desktop</span>
 <span class="gp">&gt; </span>rmdir /S practice
 <span class="go">practice, Are you sure &lt;Y/N&gt;? Y</span>
 </pre></div></div></div><h2>Summary</h2>

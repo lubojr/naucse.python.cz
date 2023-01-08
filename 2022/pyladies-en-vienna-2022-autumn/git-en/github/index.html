@@ -80,18 +80,18 @@ The email you use for creating an account <em>does not</em> have to match the on
 <p>After clicking the button, GitHub will ask you to name your repository and provide a brief description. You do not need to add <em>.gitignore</em> or <em>README</em> file yet.</p>
 <p>Afterwards depending on you situation GitHub will provide you with detailed instructions how to proceed.</p>
 <h4>Create a new repository from scratch on your command line</h4>
-<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">"# new-repository"</span> &gt;&gt; README.md
-git init
-git add README.md
-git commit -m <span class="s2">"first commit"</span>
-git branch -M main
-git remote add origin git@github.com:&lt;your-github-username&gt;/&lt;your-github-repository&gt;.git
-git push -u origin main
+<div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">"# new-repository"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>README.md
+git<span class="w"> </span>init
+git<span class="w"> </span>add<span class="w"> </span>README.md
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"first commit"</span>
+git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:&lt;your-github-username&gt;/&lt;your-github-repository&gt;.git
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div><h4>Or <em>push</em> existing repository from the command line</h4>
 <p>if you already have created a few commits locally.</p>
-<div class="highlight"><pre><span></span>git remote add origin git@github.com:&lt;your-github-username&gt;/&lt;your-github-repository&gt;.git
-git branch -M main
-git push -u origin main
+<div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:&lt;your-github-username&gt;/&lt;your-github-repository&gt;.git
+git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div><p>What happened now?</p>
 <div class="admonition Note"><p>If you have done the <a href="/2022/pyladies-en-vienna-2022-autumn/git-en/install/">configuration step</a>, you 
 should be prompted for the first time for a log in to the Git Credential Manager.

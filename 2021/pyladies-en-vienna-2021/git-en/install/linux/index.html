@@ -53,18 +53,18 @@
     
 
     <h2>Git installation on Ubuntu/Debian</h2>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt-get install git git-gui nano
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>git-gui<span class="w"> </span>nano
 </pre></div><p>If you are using some other distribution we expect that you already know
 how to install programs. Go ahead and install <em>git</em>, <em>git gui</em> and <em>nano</em>.</p>
 <p>After you have installed git, choose your Git editor.
 If you do not like Vim (or you do not know what it is)
 enter this command to choose a more user-friendly editor called Nano:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global core.editor nano
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span>nano
 </pre></div><p>After this step, please install the <a href="https://github.com/GitCredentialManager/git-credential-manager">Git Credential Manager</a> by downloading gcmcore-linux.(version).deb package from <a href="https://github.com/GitCredentialManager/git-credential-manager/releases/latest">official releases of gcm</a>.</p>
 <p>After that install and configure with commands:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dpkg -i &lt;path-to-package&gt;
-<span class="gp">$ </span>git-credential-manager-core configure
-<span class="gp">$ </span>git config --global credential.credentialStore secretservice
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>&lt;path-to-package&gt;
+<span class="gp">$ </span>git-credential-manager-core<span class="w"> </span>configure
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.credentialStore<span class="w"> </span>secretservice
 </pre></div><p>Now continue with <a href="/2021/pyladies-en-vienna-2021/git-en/install/">General Settings in Git install</a>.</p>
 
 

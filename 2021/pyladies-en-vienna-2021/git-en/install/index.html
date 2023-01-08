@@ -70,8 +70,8 @@ To track who make a specific change, we need to
 tell Git our name and e-mail.
 At the command prompt, enter the following commands, but change the
 name and address to yours:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global user.name <span class="s2">"Jane Berry"</span>
-<span class="gp">$ </span>git config --global user.email jane.berry@example.com
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Jane Berry"</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span>jane.berry@example.com
 </pre></div><p>You can of course use a nickname or even
 fake email, but then it will be more complicated to
 engage in team projects.
@@ -83,11 +83,11 @@ to which you contributed.
 Spammers mostly focus on less technically capable people than Git users. :)</p>
 </div><p>You can also set up color listings - if you don't think
 (like some Git authors) that the command line should be black and white:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global color.ui <span class="nb">true</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>color.ui<span class="w"> </span><span class="nb">true</span>
 </pre></div><div class="admonition note"><p>Running <code>git config</code> does not print any message that the operation was successful.
 This is normal; many other commands behave like that, for example <code>cd</code>.</p>
 <p>You can check your current git configuration with the command:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global --list
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--list
 <span class="go">user.name=Jane Berry</span>
 <span class="go">user.email=jane.berry@example.com</span>
 </pre></div></div><p>And that's all! You have installed and configured <code>Git</code>.</p>

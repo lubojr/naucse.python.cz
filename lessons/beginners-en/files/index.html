@@ -143,7 +143,7 @@ Then the file remains open.</p>
 It executes no matter if the <code>try</code> blocks ends with success, 
 or with an exception, or if you jump out of it using <code>return</code> or <code>break</code>.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">initial_character</span><span class="p">():</span>
-    <span class="sd">"""Return the first character in the poem."""</span>
+<span class="w">    </span><span class="sd">"""Return the first character in the poem."""</span>
 
     <span class="n">poem_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'poem.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
@@ -161,7 +161,7 @@ it can also be a database connection.</p>
 there is a better way in Python. It's the <code>with</code> statement, that we have seen during the 
 negative testing using pytest (with <code>pytest.raises()</code>):</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">initial_character</span><span class="p">():</span>
-    <span class="sd">"""Return the first character in the poem."""</span>
+<span class="w">    </span><span class="sd">"""Return the first character in the poem."""</span>
 
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'poem.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">poem_file</span><span class="p">:</span>
         <span class="n">content</span> <span class="o">=</span> <span class="n">poem_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>

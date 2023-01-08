@@ -375,7 +375,7 @@ in variables?! Get me out of here!</p>
 <h2>Dictionaries and function keyword arguments</h2>
 <p>Dictionaries can be passed to functions as keyword arguments:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">a</span><span class="si">!r}</span><span class="s2"> * </span><span class="si">{</span><span class="n">b</span><span class="si">!r}</span><span class="s2"> = </span><span class="si">{</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">a</span><span class="si">!r}</span><span class="s2"> * </span><span class="si">{</span><span class="n">b</span><span class="si">!r}</span><span class="s2"> = </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">multiply</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="go">2 * 3 = 6</span>
@@ -455,7 +455,7 @@ Letters not found in the transliteration table should be passed unchanged.</li>
 
 
 <span class="k">def</span> <span class="nf">parse_table</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
-    <span class="sd">""" Parse string table. """</span>
+<span class="w">    </span><span class="sd">""" Parse string table. """</span>
     <span class="n">table</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">source</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
         <span class="n">row</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -465,7 +465,7 @@ Letters not found in the transliteration table should be passed unchanged.</li>
 
 
 <span class="k">def</span> <span class="nf">add_capitals</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
-    <span class="sd">""" Add capital letters to the transliteration table. """</span>
+<span class="w">    </span><span class="sd">""" Add capital letters to the transliteration table. """</span>
     <span class="n">new_table</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">transcription</span> <span class="ow">in</span> <span class="n">table</span><span class="p">:</span>
         <span class="n">new_table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
@@ -540,7 +540,7 @@ Letters not found in the transliteration table should be passed unchanged.</li>
 
 
 <span class="k">def</span> <span class="nf">parse_table</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
-    <span class="sd">""" Parse string table. """</span>
+<span class="w">    </span><span class="sd">""" Parse string table. """</span>
     <span class="n">table</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">source</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
         <span class="n">row</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -550,7 +550,7 @@ Letters not found in the transliteration table should be passed unchanged.</li>
 
 
 <span class="k">def</span> <span class="nf">add_capitals</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
-    <span class="sd">""" Add capital letters to the transliteration table. """</span>
+<span class="w">    </span><span class="sd">""" Add capital letters to the transliteration table. """</span>
     <span class="n">new_table</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">transcription</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">new_table</span><span class="p">[</span><span class="n">source</span><span class="p">]</span> <span class="o">=</span> <span class="n">transcription</span>
@@ -559,7 +559,7 @@ Letters not found in the transliteration table should be passed unchanged.</li>
 
 
 <span class="k">def</span> <span class="nf">transliterate</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
-    <span class="sd">""" Transliterate string using the given table. """</span>
+<span class="w">    </span><span class="sd">""" Transliterate string using the given table. """</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
         <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
@@ -572,7 +572,7 @@ Letters not found in the transliteration table should be passed unchanged.</li>
 <span class="n">table</span> <span class="o">=</span> <span class="n">add_capitals</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">CITIES_UA</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="n">transliterate</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s2">]"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="n">transliterate</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s2">]"</span><span class="p">)</span>
 </pre></div><p>The result should look like:</p>
 <div class="highlight"><pre><code>Київ [Kȳyiv]
 Чернігів [Chernihiv]
@@ -631,7 +631,7 @@ His/her 'username', 'full name' (first and last with first letter capitalized), 
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">username</span><span class="p">,</span> <span class="n">properties</span> <span class="ow">in</span> <span class="n">users</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">fullname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">properties</span><span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span> <span class="n">properties</span><span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">properties</span><span class="p">[</span><span class="s2">&quot;last&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span> <span class="n">properties</span><span class="p">[</span><span class="s2">&quot;last&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">fullname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">properties</span><span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span><span class="w"> </span><span class="n">properties</span><span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">properties</span><span class="p">[</span><span class="s2">&quot;last&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span><span class="w"> </span><span class="n">properties</span><span class="p">[</span><span class="s2">&quot;last&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s1">&#39;</span>
     <span class="c1"># or properties[&quot;first&quot;].capitalize()</span>
     <span class="k">if</span> <span class="s2">&quot;email&quot;</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">:</span>
         <span class="n">email</span> <span class="o">=</span> <span class="n">properties</span><span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">]</span>

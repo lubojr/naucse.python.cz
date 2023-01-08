@@ -85,7 +85,7 @@ It is quite difficult to use this library so we will use a better one.
 We will install the library <code>pytest</code> which is faster, easier to use and very popular.</p>
 <p>Submit the following command. (It is a command-line command, 
 just as <code>cd</code> or <code>mkdir</code>; do not enter it into the Python console.)</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python3 -m pip install pytest
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pytest
 </pre></div><div class="admonition note"><p class="admonition-title">What is pip and why do we use it?</p>
 <p><code>pip</code> is a Python command-line tool for installing 3rd-party
 Python libraries from the <a href="https://pypi.org">Python Package Index (PyPI)</a>
@@ -195,13 +195,13 @@ rectangle from <a href="/2022/pyladies-en-vienna-2022-autumn/beginners-en/functi
     <div class="solution-body" aria-hidden="true">
         <p>Possible tests examples:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_find_perimeter_1</span><span class="p">():</span>
-    <span class="sd">""" Tests if the function can handle two positive integer values as input.</span>
+<span class="w">    </span><span class="sd">""" Tests if the function can handle two positive integer values as input.</span>
 <span class="sd">    """</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">find_perimeter</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">18</span>
 
 <span class="k">def</span> <span class="nf">test_find_rectangle_perimeter_zero_width</span><span class="p">():</span>
-    <span class="sd">""" Tests if the function can handle width set to 0.</span>
+<span class="w">    </span><span class="sd">""" Tests if the function can handle width set to 0.</span>
 <span class="sd">    """</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">find_perimeter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">0</span>
@@ -226,11 +226,11 @@ The task description is at <a href="/2022/pyladies-en-vienna-2022-autumn/beginne
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>  <span class="c1"># (and possibly other import statements that are needed)</span>
 
 <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">space_number</span><span class="p">,</span> <span class="n">mark</span><span class="p">):</span>
-    <span class="sd">"""Returns the board with the specified mark placed in the specified position"""</span>
+<span class="w">    </span><span class="sd">"""Returns the board with the specified mark placed in the specified position"""</span>
     <span class="o">...</span>
 
 <span class="k">def</span> <span class="nf">player_move</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
-    <span class="sd">"""Asks the player what move should be done and returns the board</span>
+<span class="w">    </span><span class="sd">"""Asks the player what move should be done and returns the board</span>
 <span class="sd">    with the move played.</span>
 <span class="sd">    """</span>
     <span class="o">...</span>
@@ -238,7 +238,7 @@ The task description is at <a href="/2022/pyladies-en-vienna-2022-autumn/beginne
     <span class="o">...</span>
 
 <span class="k">def</span> <span class="nf">tic_tac_toe_1d</span><span class="p">():</span>
-    <span class="sd">"""Starts the game</span>
+<span class="w">    </span><span class="sd">"""Starts the game</span>
 
 <span class="sd">    It creates an empty board and runs player_move and computer_move alternately</span>
 <span class="sd">    until the game is finished.</span>
@@ -331,14 +331,14 @@ Add a test for the new functionality.</p>
         <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
 
 <span class="k">def</span> <span class="nf">find_rectangle_perimeter</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-    <span class="sd">""" Calculate perimeter of a rectangle from the given sides.</span>
+<span class="w">    </span><span class="sd">""" Calculate perimeter of a rectangle from the given sides.</span>
 <span class="sd">    """</span>
     <span class="k">if</span> <span class="n">width</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">height</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Rectangle sides must be non-negative."</span><span class="p">)</span>
     <span class="k">return</span>  <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">width</span> <span class="o">+</span> <span class="n">height</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">test_find_perimeter_exception_negative</span><span class="p">():</span>
-    <span class="sd">""" Tests of negative integer values as input</span>
+<span class="w">    </span><span class="sd">""" Tests of negative integer values as input</span>
 <span class="sd">    """</span>
     <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
         <span class="n">find_rectangle_perimeter</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
