@@ -211,17 +211,20 @@ plan:
 - title: Final Project
   slug: final_project
   date: 2023-01-17
-  # materials:
-  #  - title: Homework (PDF)
-  #    url: https://drive.google.com/file/d/1gJ4FdvmMwKSRr5D5k-idkvYoIs588HU-/view
-  #    type: homework
-  #  - title: What next?
-  #    url: https://docs.google.com/presentation/d/10ePH2ALijAM9p1Sn0tnFptgvBdSMH_0ifTkaBYFetnY/edit
+  materials:
+    - title: Final project (PDF)
+      url: https://drive.google.com/file/d/1gJ4FdvmMwKSRr5D5k-idkvYoIs588HU-/view
+      type: homework
+    - lesson: git-en/branching
+    - title: Git collaboration
+      url: https://docs.google.com/presentation/d/1PrRqiY8LtmFIP2AbncnLNQmlwfUA1rpMm7Q_leOqyfM/edit
 
 - title: Final Project II.
   date: 2023-01-24
   slug: final_project2
   # materials:
+    #  - title: What next?
+  #    url: https://docs.google.com/presentation/d/10ePH2ALijAM9p1Sn0tnFptgvBdSMH_0ifTkaBYFetnY/edit
   #   - title: Final Project II.
   #     url: null
   #     type: special
