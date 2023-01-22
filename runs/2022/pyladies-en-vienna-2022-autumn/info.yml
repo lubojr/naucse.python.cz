@@ -222,9 +222,6 @@ plan:
 - title: Final Project II.
   date: 2023-01-24
   slug: final_project2
-  # materials:
-    #  - title: What next?
-  #    url: https://docs.google.com/presentation/d/10ePH2ALijAM9p1Sn0tnFptgvBdSMH_0ifTkaBYFetnY/edit
-  #   - title: Final Project II.
-  #     url: null
-  #     type: special
+  materials:
+    - title: What next?
+      url: https://docs.google.com/presentation/d/1_vRjrN-yGLT5Ruyx-sFqMKJYKwyFpwIT_oOcY6N4zwA
