@@ -42,7 +42,7 @@ plan:
   - title: Keyboard layout cheat sheet
     url: https://drive.google.com/file/d/1Bvnb52oirQDiZ7WI5t4Q8UeCd10-_gpT
     type: cheatsheet
-  - lesson: beginners-en/introduction
+  - lesson: beginners-en/introduction2
   - lesson: beginners-en/cmdline
   - lesson: beginners-en/first-steps
   # - lesson: beginners-en/lesson-1-homework
