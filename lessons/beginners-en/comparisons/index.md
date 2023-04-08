@@ -202,6 +202,35 @@ else :
     print('Visitors from the future are not welcomed here!')
 ```
 
+## Winter clothing
+
+The following piece of code is a bit advanced and we won't fully discuss it right now. In order to work with it, you only need to understand that it will load the current temperature in the city of Vienna from the internet into a variable:
+
+```python
+from urllib.request import urlopen
+url = "https://wttr.in/Vienna?format=%t"
+temperature = int(urlopen(url).read().decode().strip("°C"))
+```
+
+Write a program using `if`, `elif` and `else` which prints whether you will need no jacket, a light jacket or a winter coat depending on the current temperature:
+
+{% filter solution %}
+
+    ```python
+    from urllib.request import urlopen
+    url = "https://wttr.in/Vienna?format=%t"
+    temperature = int(urlopen(url).read().decode().strip("°C"))
+
+    if temperature >= 20:
+        print("No jacket needed, enjoy the warm temperature")
+    elif temperature >= 10:
+        print("Light jacket recommended")
+    else:
+        print("It's freezing, you'll need a winter coat")
+    ```
+{% endfilter %}
+
+
 ## Rock paper scissors
 
 `If`s can be nested - after an `if` and its indentation, there can be other `if`.
