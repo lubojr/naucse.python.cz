@@ -1,0 +1,176 @@
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            
+                Beginners course PyLadies Vienna: Comparison
+            
+        </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+        
+
+        <link rel="stylesheet" href="/static/css/naucse.css">
+        <link rel="stylesheet" href="/static/css/body.css">
+        <link rel="stylesheet" href="/static/css/pygments-lovelace-style.css">
+        <link rel="stylesheet" href="/static/css/ipython.css">
+
+        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/comparisons/" />
+
+
+        <style>
+            
+    
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="header">
+            <ul class="container menu">
+                <li><a href="/" class="logo"><h1>PyLadies Vienna</h1></a></li>
+                <li><a href="/mentorship/" class="menu-link"><h2>Mentorship</h2></a></li>
+                <li><a href="/runs/" class="menu-link"><h2>Courses</h2></a></li>
+            </ul>
+        </nav>
+
+        
+
+<div class="page">
+    <div class="container">
+
+        
+  
+
+
+        <div class="lesson-content">
+          
+    
+        <h1>Comparison – Solution [1]</h1>
+    
+
+    <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://wttr.in/Vienna?format=%t"</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"°C"</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">temperature</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No jacket needed, enjoy the warm temperature"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">temperature</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Light jacket recommended"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"It's freezing, you'll need a winter coat"</span><span class="p">)</span>
+</pre></div>
+
+
+        </div>
+
+        
+
+
+        
+    <div class="row prev-next">
+        
+            
+            
+                
+    <div class="col text-left">
+        <a href="/2022/pyladies-en-vienna-2022-autumn/sessions/loops/">↑ <span class="d-none d-sm-inline">Lesson: Functions, Modules, Loops</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-right">
+        <a href="/2022/pyladies-en-vienna-2022-autumn/beginners-en/and-or/"><span class="d-none d-sm-inline">Or &amp; and</span> →</a>
+    </div>
+
+            
+        
+    </div>
+
+
+        
+
+    </div>
+</div>
+
+
+
+        <script type="text/javascript" src="/static/js/solutions.js"></script>
+
+        <div class="footer container">
+            <hr>
+            <div class="lesson-attribution">
+                
+    
+        <p>Translated by Marketa Muzikova and Alexandru Dumitru</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/beginners/comparisons/">PyLadies CZ</a>.</p>
+    
+
+                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
+                
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="global-pyladies">
+                  PyLadies Vienna are a part of <a href="https://pyladies.com">international PyLadies</a>.
+                </div>
+                <ul>
+                    <li>
+                        <a href="mailto:pyladies.vienna@gmail.com">
+                            <img src="/static/img/mail-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/pyladies_vie" target="_blank">
+                            <img src="/static/img/twitter-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/UndeadFairy/pyladies_vienna" target="_blank">
+                            <img src="/static/img/github-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.meetup.com/PyLadies-Vienna/" target="_blank">
+                            <img src="/static/img/meetup.png">
+                        </a>
+                    </li>
+                    <li>
+                      <a href="https://discord.gg/v2qdvbD2dn" target="_blank">
+                          <img src="/static/img/discord-logo.png">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/company/pyladies-vienna" target="_blank">
+                          <img src="/static/img/linkedin-logo.png">
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+          </footer>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+        
+
+    </body>
+</html>

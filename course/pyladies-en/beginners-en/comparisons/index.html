@@ -203,7 +203,31 @@ where the conditions are met (they are <code>true</code>).</p>
 <span class="k">else</span> <span class="p">:</span>
     <span class="c1"># If no condition is met from above, the age had to be negative.</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'Visitors from the future are not welcomed here!'</span><span class="p">)</span>
-</pre></div><h2>Rock paper scissors</h2>
+</pre></div><h2>Winter clothing</h2>
+<p>The following piece of code is a bit advanced and we won't fully discuss it right now. In order to work with it, you only need to understand that it will load the current temperature in the city of Vienna from the internet into a variable:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://wttr.in/Vienna?format=%t"</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"°C"</span><span class="p">))</span>
+</pre></div><p>Write a program using <code>if</code>, <code>elif</code> and <code>else</code> which prints whether you will need no jacket, a light jacket or a winter coat depending on the current temperature:</p>
+<div class="solution" id="solution-1">
+    <h3>Solution</h3>
+    <div class="solution-cover">
+        <a href="/course/pyladies-en/beginners-en/comparisons/index/solutions/1/"><span class="link-text">Show solution</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://wttr.in/Vienna?format=%t"</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"°C"</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">temperature</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No jacket needed, enjoy the warm temperature"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">temperature</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Light jacket recommended"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"It's freezing, you'll need a winter coat"</span><span class="p">)</span>
+</pre></div>
+    </div>
+</div><h2>Rock paper scissors</h2>
 <p><code>If</code>s can be nested - after an <code>if</code> and its indentation, there can be other <code>if</code>.</p>
 <div class="highlight"><pre><span></span><span class="n">pc_choice</span> <span class="o">=</span> <span class="s1">'rock'</span>
 <span class="n">user_choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'rock, paper, or scissors?'</span><span class="p">)</span>
