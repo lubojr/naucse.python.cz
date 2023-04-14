@@ -32,3 +32,12 @@ $ brew install python3
 ```
 
 Typing *python3 --version* again should already return you a used version of Python.
+
+
+**Note** - If you have an older versions of Mac OS X - for example 10.10.x, the newest versions of Python and VSCode will not work for you.
+
+You will need to install an older version of both manually.
+
+`Python`: https://legacy.python.org/download/mac/ will definitely lead you to a solution.
+
+`VS Code`: For example January 2021 version of VS Code could solve it - refer to https://stackoverflow.com/a/67763370/7875133 for more details.

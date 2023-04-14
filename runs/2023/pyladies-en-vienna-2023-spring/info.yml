@@ -81,15 +81,15 @@ plan:
 - title: While, Strings
   date: 2023-04-18
   slug: strings
-  # materials:
-  #  - lesson: beginners-en/turtle
-  #  - lesson: beginners-en/while
-  #  - title: If/While cheatsheet
-  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_if_while.pdf
-  #    type: cheatsheet
-  #  - title: Homework (PDF)
-  #    url: https://drive.google.com/file/d/1mCs7AD3qoR07HhmWq7Zo96CWTB-p7-dF
-  #    type: homework
+  materials:
+   - lesson: beginners-en/turtle
+   - lesson: beginners-en/while
+   - title: If/While cheatsheet
+     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_if_while.pdf
+     type: cheatsheet
+   - title: Homework (PDF)
+     url: https://drive.google.com/file/d/1mCs7AD3qoR07HhmWq7Zo96CWTB-p7-dF
+     type: homework
   #  - title: Practice exercises (offline session 3.11.2022)
   #    url: https://drive.google.com/file/d/1nYuODqu-FsVSnLTruVB8eNJwEsKxMvEw
   #    type: cheatsheet
