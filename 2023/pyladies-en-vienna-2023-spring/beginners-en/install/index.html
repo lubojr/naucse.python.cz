@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             
-                Data Course PyLadies: Python installation - macOS
+                Beginners course PyLadies Vienna: Python installation
             
         </title>
 
@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="/static/css/ipython.css">
 
         
-    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/install_vienna/" />
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/install/" />
 
 
         <style>
@@ -52,61 +52,36 @@
           
     
 
-    <h1>Python install for macOS</h1>
-<p>First check in your command line/terminal
-if you don't already have python3 installed.
-Open the terminal and type into it:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>--version
-</pre></div><p>If "Python" and version number (e. g. <code>Python 3.8.2</code>) will appear
-and the version is higher than or equal to 3.8 then everything is fine and please continue with
-further section.</p>
-<p>If not, then please install <a href="http://brew.sh">Homebrew</a> which makes app and modules installation
-much easier.</p>
-<p>First check if brew is already installed by:</p>
-<div class="highlight"><pre><span></span><span class="go">brew -v</span>
-</pre></div><p>If previous command did not return a installed brew version, install it by entering this command in the command line/terminal:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">"</span>
-</pre></div><p>And then you can just enter this command:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>brew<span class="w"> </span>install<span class="w"> </span>python3
-</pre></div><p>Typing <em>python3 --version</em> again should already return you a used version of Python.</p>
-<p><strong>Note</strong> - If you have an older versions of Mac OS X - for example 10.10.x, the newest versions of Python and VSCode will not work for you.</p>
-<p>You will need to install an older version of both manually.</p>
-<p><code>Python</code>: <a href="https://legacy.python.org/download/mac/">https://legacy.python.org/download/mac/</a> will definitely lead you to a solution.</p>
-<p><code>VS Code</code>: For example January 2021 version of VS Code could solve it - refer to <a href="https://stackoverflow.com/a/67763370/7875133">https://stackoverflow.com/a/67763370/7875133</a> for more details.</p>
+    <h1>Python installation</h1>
+<p>We will do two things in this section:</p>
+<ul>
+<li>We will install Python</li>
+<li>We will create virtual environment</li>
+<li>We will give Python a test run.</li>
+</ul>
+<p>You might ask why we need all this.</p>
+<p>Python is programming language (a way how to tell computers what to do), 
+and also a program we need so we can talk to our computer in Python language.</p>
+<p>A virtual environment is something that will ensure that all computers
+will behave similarly.
+After we will activate it, we won't need special materials for Linux,
+Windows and Macs.</p>
+<div class="admonition note"><p>In the future, we will use another advantage of virtual environments: 
+every venv is separated from each other, so if we install a 
+module (an extension for Python) it will be in just that environment
+where we want to have it. If that library breaks something in your 
+project, all other projects will be safe.</p>
+</div><p>Choose a page depending on your operating system:</p>
+<ul>
+<li><a href="/2023/pyladies-en-vienna-2023-spring/beginners-en/install/linux/">Linux</a></li>
+<li><a href="/2023/pyladies-en-vienna-2023-spring/beginners-en/install/windows/">Windows</a></li>
+<li><a href="/2023/pyladies-en-vienna-2023-spring/beginners-en/install/macos/">macOS</a></li>
+</ul>
+<p>If you have another system or if you have any problem, don't hesitate
+to ask your coach (raise the red post-it note), or send us an e-mail.</p>
 
 
         </div>
-
-        
-
-
-        
-    <div class="row prev-next">
-        
-            
-                
-    <div class="col text-left">
-        <a href="/2022/pyladies-en-vienna-2022-data-science/beginners-en/install_vienna/">← <span class="d-none d-sm-inline">Python installation</span></a>
-    </div>
-
-            
-            
-                
-    <div class="col text-left">
-        <a href="/2022/pyladies-en-vienna-2022-data-science/sessions/ds0/">↑ <span class="d-none d-sm-inline">Lesson: Installations, working with git</span></a>
-    </div>
-
-            
-            
-                
-    <div class="col text-right">
-        <a href="/2022/pyladies-en-vienna-2022-data-science/beginners-en/install-editor/"><span class="d-none d-sm-inline">Editor installation</span> →</a>
-    </div>
-
-            
-        
-    </div>
-
 
         
 
@@ -122,7 +97,7 @@ much easier.</p>
             <div class="lesson-attribution">
                 
     
-        <p>Edited by Tyna Dolezalova</p>
+        <p>Translated by Marketa Muzikova, edits by Mateusz Krainski</p>
     
         <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/beginners/install">PyLadies CZ</a>.</p>
     
