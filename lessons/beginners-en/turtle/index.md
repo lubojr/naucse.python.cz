@@ -28,6 +28,15 @@ Now a popup window will appear, don't close it.
 Place it somewhere where you will be able to see it and
 your command line, too.
 
+> [note]
+> If you are a Mac OS X user and have problems with errors like:
+> `ModuleNotFoundError: No module named '_tkinter'`
+> then TKInter was not yet installed on your system
+> You will need to install it manually by adding following command in your terminal:
+> brew install python-tk@3.(your python version)
+> you can check your version by command python3 --version (it should be for example 3.11.3)
+> so the first command should be for example: brew install python-tk@3.11.3
+
 ## Where is the turtle?
 
 Currently, the turtle is disguised as an arrow.
@@ -82,6 +91,10 @@ and in the end call the function `exitonclick`
 > What does the function <code>exitonclick</code> do?
 
 After you are done, we can start with drawing pictures:
+
+> [note] If you are using directly the VS Code terminal for running turtle,
+> instead of using `exitonclick`, use `turtle.done()` to "start the main program"
+> as the last command of your turtle script.
 
 ### Square
 
