@@ -68,7 +68,14 @@ Before the <code>$</code> or <code>&gt;</code>, there can be some other words.</
 </pre></div><p>Now a popup window will appear, don't close it.
 Place it somewhere where you will be able to see it and
 your command line, too.</p>
-<h2>Where is the turtle?</h2>
+<div class="admonition note"><p>If you are a Mac OS X user and have problems with errors like:
+<code>ModuleNotFoundError: No module named '_tkinter'</code>
+then TKInter was not yet installed on your system
+You will need to install it manually by adding following command in your terminal:
+brew install python-tk@3.(your python version)
+you can check your version by command python3 --version (it should be for example 3.11.3)
+so the first command should be for example: brew install python-tk@3.11.3</p>
+</div><h2>Where is the turtle?</h2>
 <p>Currently, the turtle is disguised as an arrow.
 There is a way how to unmask it:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">shape</span>
@@ -101,7 +108,10 @@ and in the end call the function <code>exitonclick</code>
 <div class="admonition note"><p class="admonition-title">Question</p>
 <p>What does the function <code>exitonclick</code> do?</p>
 </div><p>After you are done, we can start with drawing pictures:</p>
-<h3>Square</h3>
+<div class="admonition note"><p class="admonition-title">If you are using directly the VS Code terminal for running turtle,</p>
+<p>instead of using <code>exitonclick</code>, use <code>turtle.done()</code> to "start the main program"
+as the last command of your turtle script.</p>
+</div><h3>Square</h3>
 <p>Draw a square.</p>
 <p><img src="/course/pyladies-en/beginners-en/turtle/static/turtle-square.png" alt="Turtle square"></p>
 <p>A square has 4 equal straight sides
