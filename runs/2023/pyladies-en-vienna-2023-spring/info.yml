@@ -110,8 +110,8 @@ plan:
 - title: GIT
   slug: git
   date: 2023-05-02
-  # materials:
-  #  - lesson: git-en/install
+  materials:
+   - lesson: git-en/install
   #  - lesson: git-en/basics
   #  - lesson: git-en/github
   #  - lesson: git-en/branching
