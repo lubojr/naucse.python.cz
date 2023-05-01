@@ -59,12 +59,13 @@ Initialized empty Git repository in ./.git/
 ```
 
 At first glance, it looks like nothing happened.
-This command created a *hidden* directory with the name `.git` and stored some information in there.
+This command created a *hidden* directory with the name `.git` and stored some
+information about history in there.
 You can see the file using `ls -a` (Linux) or `dir /a` (Windows).
 `.git` is a hidden directory because it is managed only by Git
 and you shouldn't be changing anything inside.
 
-The repository is empty for now.
+The repository is empty for now - it does not have any files or history.
 You can see for yourself by invoking `git status`, a command that shows information
 about the state of the repository:
 

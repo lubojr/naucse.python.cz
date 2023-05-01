@@ -67,8 +67,8 @@ def pc_move(board):
 
 ## Step 5
 
-Write a `1D_tictactoe` function that creates a string with a game board and alternately calls the player_move and
-pc_move functions until someone wins or draws.
+Write a `1D_tictactoe` function that creates a string with a game board and alternately calls the `player_move` and
+`pc_move` functions until someone wins or draws.
 Do not forget to check the status of the game after every turn.
 
 ## Step 6 - Optional

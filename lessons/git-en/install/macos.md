@@ -21,7 +21,10 @@ After that install and configure [Git Credential Manager](https://github.com/Git
 ```console
 $ brew tap microsoft/git
 $ brew install --cask git-credential-manager-core
-$ git config --global credential.credentialStore secretservice
 ```
+
+Following should not be necessary anymore with newest versions of the GCM:
+
+$ git config --global credential.credentialStore secretservice 
 
 Now continue with [General Settings in Git install]({{ lesson_url('git-en/install') }}).

@@ -7,7 +7,7 @@ When installing, select these options:
 * Checkout Windows-style, commit Unix-style line endings
 
 Do not change any other options, they can be left as default.
-Please ensure that **Git Credential Manager Core** option is ["checked"](https://github.com/GitCredentialManager/git-credential-manager#windows), to install the extra tool by default with Git installation.
+Please ensure that **Git Credential Manager Core** option is ["checked"](https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md#git-for-windows-star), to install the extra tool by default with Git installation.
 
 Then set your Git editor.
 If you have a terminal window open, close it, and open a new one.
