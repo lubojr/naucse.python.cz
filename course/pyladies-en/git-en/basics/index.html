@@ -105,11 +105,12 @@ Create a new directory now and navigate inside (use the command <code>cd</code>)
 Then, create a new Git <em>repository</em> using the command <code>git init</code>:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git init
 Initialized empty Git repository in ./.git/</code></pre></div><p>At first glance, it looks like nothing happened.
-This command created a <em>hidden</em> directory with the name <code>.git</code> and stored some information in there.
+This command created a <em>hidden</em> directory with the name <code>.git</code> and stored some
+information about history in there.
 You can see the file using <code>ls -a</code> (Linux) or <code>dir /a</code> (Windows).
 <code>.git</code> is a hidden directory because it is managed only by Git
 and you shouldn't be changing anything inside.</p>
-<p>The repository is empty for now.
+<p>The repository is empty for now - it does not have any files or history.
 You can see for yourself by invoking <code>git status</code>, a command that shows information
 about the state of the repository:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status

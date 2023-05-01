@@ -64,8 +64,9 @@ You do that with this command:</p>
 </pre></div><p>After that install and configure <a href="https://github.com/GitCredentialManager/git-credential-manager">Git Credential Manager</a> with commands:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>brew<span class="w"> </span>tap<span class="w"> </span>microsoft/git
 <span class="gp">$ </span>brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>git-credential-manager-core
-<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.credentialStore<span class="w"> </span>secretservice
-</pre></div><p>Now continue with <a href="/2021/pyladies-en-vienna-2021/git-en/install/">General Settings in Git install</a>.</p>
+</pre></div><p>Following should not be necessary anymore with newest versions of the GCM:</p>
+<p>$ git config --global credential.credentialStore secretservice</p>
+<p>Now continue with <a href="/2021/pyladies-en-vienna-2021/git-en/install/">General Settings in Git install</a>.</p>
 
 
         </div>

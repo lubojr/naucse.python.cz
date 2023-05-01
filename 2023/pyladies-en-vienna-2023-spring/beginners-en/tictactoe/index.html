@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             
-                Beginners course: Git installation - macOS
+                Beginners course PyLadies Vienna: Project 1 - 1D tic-tac-toe
             
         </title>
 
@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="/static/css/ipython.css">
 
         
-    <link rel="canonical" href="https://naucse.python.cz/lessons/git-en/install/" />
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/tictactoe/" />
 
 
         <style>
@@ -52,21 +52,64 @@
           
     
 
-    <h2>macOS installation of git</h2>
-<p>Try to run <code>git</code> on the command line.
-If it's already installed, it will show you how to use it.
-Otherwise, install it using Homebrew:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>brew<span class="w"> </span>install<span class="w"> </span>git
-</pre></div><p>It is still necessary to set up your Git editor (enter <code>nano</code>,
-even if you installed for example Atom during the installation of the editor).
-You do that with this command:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span>nano
-</pre></div><p>After that install and configure <a href="https://github.com/GitCredentialManager/git-credential-manager">Git Credential Manager</a> with commands:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>brew<span class="w"> </span>tap<span class="w"> </span>microsoft/git
-<span class="gp">$ </span>brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>git-credential-manager-core
-</pre></div><p>Following should not be necessary anymore with newest versions of the GCM:</p>
-<p>$ git config --global credential.credentialStore secretservice</p>
-<p>Now continue with <a href="/course/pyladies-en/git-en/install/">General Settings in Git install</a>.</p>
+    <h1>One-dimensional tic-tac-toe</h1>
+<p>You plan your 1D tic-tac-toe on a board that has one row with 20 spaces.</p>
+<p>There are two players.
+The first player makes a move by placing an <code>x</code> into an empty space.
+The second player places an <code>o</code>. Then the first player plays again.</p>
+<p>For example:</p>
+<ol>
+<li>move: <code>-------x------------</code></li>
+<li>move: <code>-------x--o---------</code></li>
+<li>move: <code>-------xx-o---------</code></li>
+<li>move: <code>-------xxoo---------</code></li>
+<li>move: <code>------xxxoo---------</code></li>
+</ol>
+<p>The player who places three of their own marks next to each other wins.</p>
+<p>Your task is to program the game!</p>
+<h2>Step 1</h2>
+<p>Write a function <code>evaluate</code> that accepts the string with the board of 1D tic-tac-toe as argument 
+and returns one character based on the state of the game:</p>
+<ul>
+<li><code>"x"</code> – The player who uses crosses (Xs) has won (the board contains <code>xxx</code>)</li>
+<li><code>"o"</code> – The player who uses noughts (Os) has won (the board contains <code>ooo</code>)</li>
+<li><code>"!"</code> – Draw (the board is full but nobody has won)</li>
+<li><code>"-"</code> – Rest (i.e. the game is not finished)</li>
+</ul>
+<h2>Step 2</h2>
+<p>Write a <code>move</code> function that accepts the string with the game board, a position number (0-19)
+and a (x or o) mark and returns a game board (i.e., a string with the given mark placed in the given position).
+The function header could look something like this:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">mark</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
+    <span class="c1"># Returns the game board with the given mark in the given position.</span>
+    <span class="o">...</span>
+</pre></div><h2>Step 3</h2>
+<p>Write a <code>player_move</code> function that accepts a string with the game board, asks the player 
+which position he wants to play
+and returns the updated game board with the player's move. The function should reject 
+negative or too large numbers or moves to an occupied position. If the user has entered
+a wrong argument, the function should ask again (to get correct answer).</p>
+<h2>Step 4</h2>
+<p>Write a <code>pc_move</code> function that accepts the string with the game board.
+It will select a position to play, and returns
+the game board with the computer's move.<br>
+Use a simple random "strategy":</p>
+<ul>
+<li>Select a random number from 0 to 19.</li>
+<li>If the position is empty, place the computer's mark there.</li>
+<li>If not, repeat from the first step (select another random number).
+The function header should look something like this:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pc_move</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+    <span class="c1"># Returns a game board with the computer's move.</span>
+    <span class="o">...</span>
+</pre></div><h2>Step 5</h2>
+<p>Write a <code>1D_tictactoe</code> function that creates a string with a game board and alternately calls the <code>player_move</code> and
+<code>pc_move</code> functions until someone wins or draws.
+Do not forget to check the status of the game after every turn.</p>
+<h2>Step 6 - Optional</h2>
+<p>Can you think of better strategy for your computer? 
+Let us know your ideas or try to program them directly.</p>
 
 
         </div>
@@ -80,21 +123,21 @@ You do that with this command:</p>
             
                 
     <div class="col text-left">
-        <a href="/course/pyladies-en/git-en/install/">← <span class="d-none d-sm-inline">Git installation</span></a>
+        <a href="/2023/pyladies-en-vienna-2023-spring/git-en/branching/">← <span class="d-none d-sm-inline">Branches in Git</span></a>
     </div>
 
             
             
                 
     <div class="col text-left">
-        <a href="/course/pyladies-en/sessions/git/">↑ <span class="d-none d-sm-inline">Lesson: Git</span></a>
+        <a href="/2023/pyladies-en-vienna-2023-spring/sessions/git/">↑ <span class="d-none d-sm-inline">Lesson: GIT</span></a>
     </div>
 
             
             
                 
     <div class="col text-right">
-        <a href="/course/pyladies-en/git-en/basics/"><span class="d-none d-sm-inline">Git</span> →</a>
+        <a href="/2023/pyladies-en-vienna-2023-spring/sessions/git/back/"><span class="d-none d-sm-inline">End of lesson</span> →</a>
     </div>
 
             
@@ -116,9 +159,11 @@ You do that with this command:</p>
             <div class="lesson-attribution">
                 
     
-        <p>Translated by Marketa Muzikova</p>
+        <p>Translated by Petr Plavjanik</p>
     
-        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/git/install/">PyLadies CZ</a>.</p>
+        <p>Modified by Tyna Dolezalova</p>
+    
+        <p>Czech original <a href="https://pyladies.cz/v1/s004-strings/handout/handout4.pdf">PyLadies CZ</a>.</p>
     
 
                 
