@@ -163,16 +163,16 @@ plan:
 - title: Testing
   slug: testing
   date: 2023-05-30
-  # materials:
-  #   - lesson: beginners-en/modules
-  #   - lesson: beginners-en/exceptions
-  #   - lesson: beginners-en/testing
-  #   - title: Exceptions cheatsheet
-  #     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
-  #     type: cheatsheet
-  #   - title: Testing cheatsheet
-  #     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_testing.pdf
-  #     type: cheatsheet
+  materials:
+    - lesson: beginners-en/modules
+    - lesson: beginners-en/exceptions
+    - lesson: beginners-en/testing
+    - title: Exceptions cheatsheet
+      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
+      type: cheatsheet
+    - title: Testing cheatsheet
+      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_testing.pdf
+      type: cheatsheet
   #   - title: Homework (PDF)
   #     url: https://drive.google.com/file/d/1Xkd0k3iCV1I7I5YhJc4eiANlQZXOo1yQ/view
   #     type: homework

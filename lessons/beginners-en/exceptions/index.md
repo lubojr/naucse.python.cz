@@ -242,7 +242,7 @@ finally:
 ## Task
 
 Let's add exception handling and proper input checking to our square size
-calculator. Modify the code so that if the user does not enter a non-negative
+calculator from {{ lesson_url('beginners-en/comparisons') }}. Modify the code so that if the user does not enter a non-negative
 number the programs prompts the input again.
 
 {% filter solution %}

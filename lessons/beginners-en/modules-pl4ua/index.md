@@ -195,10 +195,10 @@ And then run `python` in the command line (if you already have an interactive
 Python open, close it, and run again) and enter:
 
 ```pycon
->>> import medow
+>>> import meadow
 The meadow is green!
->>> import medow
->>> import medow
+>>> import meadow
+>>> import meadow
 >>>
 ```
 
