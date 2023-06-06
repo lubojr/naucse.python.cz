@@ -122,6 +122,63 @@ and `indent = 2` (indent with two spaces).
   "age": 26
 }
 ```
+## Exercise
+
+Write code to print the value of salary of Emma from following JSON string.
+
+Try not to depend on the fact that her entry is first in the list)
+
+
+```python
+sampleJson = """{
+  "company":{
+    "employees":[
+      {
+        "name":"emma",
+        "payable":{
+          "salary":7000,
+          "bonus":800
+        }
+      },
+      {
+        "name":"anna",
+        "payable":{
+          "salary":5500,
+          "bonus":1000
+        }
+      }
+    ]
+  }
+}"""
+```
+
+{% filter solution %}
+```python
+import json
+
+sampleJson = """{
+  "company":{
+    "employees":[
+      {
+        "name":"emma",
+        "payable":{
+          "salary":7000,
+          "bonus":800
+        }
+      },
+      {
+        "name":"anna",
+        "payable":{
+          "salary":5500,
+          "bonus":1000
+        }
+      }
+    ]
+  }
+}"""
+
+{% endfilter %}
+
 
 A complete description of `json` module -
 including write/read functions directly to/from files -
