@@ -171,36 +171,37 @@ and <code>indent = 2</code> (indent with two spaces).</p>
         <a href="/2022/pyladies-en-vienna-ukraine-2022-spring/beginners-en/json/index/solutions/0/"><span class="link-text">Show solution</span></a>
     </div>
     <div class="solution-body" aria-hidden="true">
-        <p>```python
-import json</p>
-<p>sampleJson = """{
-  "company":{
-    "employees":[
-      {
-        "name":"emma",
-        "payable":{
-          "salary":7000,
-          "bonus":800
-        }
-      },
-      {
-        "name":"anna",
-        "payable":{
-          "salary":5500,
-          "bonus":1000
-        }
-      }
-    ]
-  }
-}"""
-content = json.loads(sampleJson)
-employees = content.get("company", {}).get("employees", [])
-for employee in employees:
-    if employee.get("name", "") == "emma":
-        break
-payable = employee.get("payable", {})
-total = payable.get("salary", 0) + payable.get("bonus", 0)
-print(f"Anna has a total salary with bonus: {total}")</p>
+        <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">sampleJson</span> <span class="o">=</span> <span class="s2">"""{</span>
+<span class="s2">  "company":{</span>
+<span class="s2">    "employees":[</span>
+<span class="s2">      {</span>
+<span class="s2">        "name":"emma",</span>
+<span class="s2">        "payable":{</span>
+<span class="s2">          "salary":7000,</span>
+<span class="s2">          "bonus":800</span>
+<span class="s2">        }</span>
+<span class="s2">      },</span>
+<span class="s2">      {</span>
+<span class="s2">        "name":"anna",</span>
+<span class="s2">        "payable":{</span>
+<span class="s2">          "salary":5500,</span>
+<span class="s2">          "bonus":1000</span>
+<span class="s2">        }</span>
+<span class="s2">      }</span>
+<span class="s2">    ]</span>
+<span class="s2">  }</span>
+<span class="s2">}"""</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">sampleJson</span><span class="p">)</span>
+<span class="n">employees</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"company"</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"employees"</span><span class="p">,</span> <span class="p">[])</span>
+<span class="k">for</span> <span class="n">employee</span> <span class="ow">in</span> <span class="n">employees</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">employee</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"emma"</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="n">payable</span> <span class="o">=</span> <span class="n">employee</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"payable"</span><span class="p">,</span> <span class="p">{})</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">payable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"salary"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">payable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"bonus"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Anna has a total salary with bonus: </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
     </div>
 </div><p>A complete description of <code>json</code> module -
 including write/read functions directly to/from files -
