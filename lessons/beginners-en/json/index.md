@@ -184,7 +184,7 @@ for employee in employees:
 payable = employee.get("payable", {})
 total = payable.get("salary", 0) + payable.get("bonus", 0)
 print(f"Anna has a total salary with bonus: {total}")
-
+```
 {% endfilter %}
 
 
