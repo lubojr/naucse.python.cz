@@ -1,0 +1,227 @@
+title: Beginners course PyLadies Vienna
+subtitle: Online - autumn 2023 - Tuesdays
+place: | 
+  Online
+time: 18:00 - 20:00
+timezone: Europe/Vienna
+default_time:
+  start: '18:00'
+  end: '20:00'
+description: |
+    Learn Python from the beginning. No previous knowledge required!
+long_description: |
+    <br>
+    Here you can find all materials for the PyLadies Vienna Beginners Python Course.
+    All lectures are for complete beginners. Instructions are for Linux, Windows and macOS.
+    <br>
+    If you have any questions, feel free to contact us on pyladies.vienna@gmail.com
+derives: pyladies-en
+vars:
+  user-gender: f
+  pyladies: true
+  coach-present: true
+plan:
+
+- title: Installations
+  slug: install_home
+  serial: 0
+  materials:
+  - lesson: beginners-en/install_vienna
+  - lesson: beginners-en/install-editor
+  - title: VS Code keybindings cheat sheet Windows
+    url: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
+    type: cheatsheet
+  - title: VS Code keybindings cheat sheet Mac OS
+    url: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
+    type: cheatsheet
+
+- title: Introduction, installation check
+  slug: install
+  date: 2023-10-10
+  # materials:
+  # - title: Keyboard layout cheat sheet
+  #   url: https://drive.google.com/file/d/1Bvnb52oirQDiZ7WI5t4Q8UeCd10-_gpT
+  #   type: cheatsheet
+  # - lesson: beginners-en/introduction2
+  # - lesson: beginners-en/cmdline
+  # - lesson: beginners-en/first-steps
+  # - lesson: beginners-en/lesson-1-homework
+  #   type: homework
+  # - title: Google colab tutorial
+  #   url: https://drive.google.com/file/d/1KPlvbwGpIe8HQVkancKk6wuTwhV5VkRc
+  #   type: cheatsheet
+
+- title: First Program, Print
+  slug: hello
+  date: 2023-10-17
+  # materials:
+  # - lesson: beginners-en/hello-world
+  # - lesson: beginners-en/print
+  # - lesson: beginners-en/variables
+  # - title: Basics cheatsheet
+  #   url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
+  #   type: cheatsheet
+  # - lesson: beginners-en/lesson-2-homework
+  #   type: homework
+  
+- title: Functions, Modules, Loops
+  slug: loops
+  date: 2023-10-24
+  # materials:
+  #  - lesson: beginners-en/comparisons
+  #  - lesson: beginners-en/and-or
+  #  - lesson: beginners-en/functions
+  #  - title: Basics cheatsheet
+  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
+  #    type: cheatsheet
+  #  - title: Homework (PDF)
+  #    url: https://drive.google.com/file/d/17XIUJafxJWUgsrT0VCqrhMaN8Ogff-wW/view
+  #    type: homework
+
+- title: While
+  date: 2023-10-31
+  slug: strings
+  # materials:
+  #  - lesson: beginners-en/turtle
+  #  - lesson: beginners-en/while
+  #  - title: If/While cheatsheet
+  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_if_while.pdf
+  #    type: cheatsheet
+  #  - title: Homework (PDF)
+  #    url: https://drive.google.com/file/d/1mCs7AD3qoR07HhmWq7Zo96CWTB-p7-dF
+  #    type: homework
+
+- title: Strings, Custom functions
+  date: 2023-11-07
+  slug: custom_func
+  # materials:
+  #  - lesson: beginners-en/str
+  #  - lesson: beginners-en/def
+  #  - title: Functions cheatsheet
+  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_functions.pdf
+  #    type: cheatsheet
+  #  - title: Homework (PDF)
+  #    url: https://drive.google.com/file/d/1FeCPWTN4zZOmenBVVcsMTU0zhGCvK7es
+  #    type: homework
+
+- title: GIT
+  slug: git
+  date: 2023-11-14
+  # materials:
+  #  - lesson: git-en/install
+  #  - lesson: git-en/basics
+  #  - lesson: git-en/github
+  #  - lesson: git-en/branching
+  #  - title: Extensive Git cheatsheet
+  #    url: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
+  #    type: cheatsheet
+  #  - title: Have you just made a git mess?
+  #    url: http://justinhileman.info/article/git-pretty/git-pretty.png
+  #    type: cheatsheet
+  #  - lesson: beginners-en/tictactoe
+  #    type: homework
+  #  - title: Practice exercises (offline session 5.5.2023)
+  #    url: https://drive.google.com/file/d/15ko5NRf2arHs5DyHqpM1UQcyXodq3ymI
+  #    type: cheatsheet
+
+- title: Lists, Tuples
+  slug: list
+  date: 2023-11-21
+  # materials:
+  #  - lesson: beginners-en/list
+  #  - title: Homework (PDF)
+  #    url: https://drive.google.com/file/d/1fF0nl90GcCoaog0vgz4nmKGyspfGsQvS/view
+  #    type: homework
+  #  - title: Lists cheatsheet
+  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_lists.pdf
+  #    type: cheatsheet
+
+- title: Dictionaries
+  slug: dict
+  date: 2023-11-28
+  # materials:
+  #  - lesson: beginners-en/tuple
+  #  - lesson: beginners-en/dict
+  #  - title: Homework (PDF)
+  #    url: https://drive.google.com/file/d/1sJhOmCTC1wspG6um4KRNJvtpUib3L2x7/view
+  #    type: homework
+  #  - title: Dictionaries cheatsheet
+  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_dictionaries.pdf
+  #    type: cheatsheet
+
+- title: Recap session
+  slug: recap1
+  date: 2023-12-05
+  # materials:
+  #  - title: Recap session materials (PDF)
+  #    url: https://drive.google.com/file/d/19QGVdbfyRW3TURQCb6t2w98bva5aySNc/view
+  #    type: homework
+  #  - title: Small quiz
+  #    url: https://docs.google.com/presentation/d/106vBNe1rKOMxb3GdUnH37EWIeEkKvoPBJQDnh7DzwUA
+  #    type: homework
+
+- title: Classes
+  slug: classes
+  date: 2023-12-12
+  # materials:
+  #   - lesson: beginners-en/class
+  #   - lesson: beginners-en/inheritance
+  #   - title: Classes cheatsheet
+  #     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_classes.pdf
+  #     type: cheatsheet
+  #   - title: Homework (PDF)
+  #     url: https://drive.google.com/file/d/1amhY9-pvtN8w6tHnOvR0tIcwOfNVx-Bl/view
+  #     type: homework
+  #   - title: Offline session hackerrank
+  #     url: https://docs.google.com/presentation/d/16lJsaZAEJipIt939sGNMqZbv9ifIeztJkJBv2T0Cfqs
+
+- title: Testing
+  slug: testing
+  date: 2023-12-19
+  # materials:
+  #   - lesson: beginners-en/modules
+  #   - lesson: beginners-en/exceptions
+  #   - lesson: beginners-en/testing
+  #   - title: Exceptions cheatsheet
+  #     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
+  #     type: cheatsheet
+  #   - title: Testing cheatsheet
+  #     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_testing.pdf
+  #     type: cheatsheet
+  #   - title: Homework (PDF)
+  #     url: https://drive.google.com/file/d/1WGv6D-P1Odr8w2UwELKv4SB2TY9pQ2PP/view
+  #     type: homework
+
+- title: Working with Files and CLI
+  slug: files_cli
+  date: 2024-01-09
+  # materials:
+  #   - lesson: beginners-en/json
+  #   - lesson: beginners-en/files
+  #   - lesson: beginners-en/argparse
+  #   - title: Files/Exceptions cheatsheet
+  #     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
+  #     type: cheatsheet
+  #   - title: Homework (PDF)
+  #     url: https://drive.google.com/file/d/1y04_M3994x9GaS19IyYyqIAe0N4YdTI1/view
+  #     type: homework
+
+- title: Final Project
+  slug: final_project
+  date: 2024-01-16
+  # materials:
+  #   - title: Final project option 1 - Snake
+  #     url: https://drive.google.com/file/d/1gJ4FdvmMwKSRr5D5k-idkvYoIs588HU-/view
+  #     type: homework
+  #   - title: Final project option 2 - Battleship
+  #     url: https://drive.google.com/file/d/1X3IQG_FUiDinmLhx_ZStuEkMf4AzLdwQ/view
+  #     type: homework
+  #   - title: Requests and getting data via APIs
+  #     url: https://docs.google.com/presentation/d/1mE-eyGifAretDqA5GGRdTpMtSJgGCthz8ZCbRJsc0_E/edit
+
+- title: Final Project II.
+  date: 2024-01-23
+  slug: final_project2
+  # materials:
+  #   - title: What next?
+  #     url: https://drive.google.com/file/d/1_JM-BB2bIwSWsUlbnS_OKcS5xgQgCMT3/view
