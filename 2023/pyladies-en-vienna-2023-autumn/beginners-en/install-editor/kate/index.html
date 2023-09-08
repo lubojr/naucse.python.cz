@@ -1,0 +1,240 @@
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            
+                Beginners course PyLadies Vienna: Kate
+            
+        </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+        
+
+        <link rel="stylesheet" href="/static/css/naucse.css">
+        <link rel="stylesheet" href="/static/css/body.css">
+        <link rel="stylesheet" href="/static/css/pygments-lovelace-style.css">
+        <link rel="stylesheet" href="/static/css/ipython.css">
+
+        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/install-editor/" />
+
+
+        <style>
+            
+    
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="header">
+            <ul class="container menu">
+                <li><a href="/" class="logo"><h1>PyLadies Vienna</h1></a></li>
+                <li><a href="/mentorship/" class="menu-link"><h2>Mentorship</h2></a></li>
+                <li><a href="/runs/" class="menu-link"><h2>Courses</h2></a></li>
+            </ul>
+        </nav>
+
+        
+
+<div class="page">
+    <div class="container">
+
+        
+  
+
+
+        <div class="lesson-content">
+          
+    
+
+    <h1>Installation  Kate</h1>
+<p>Linux installation:</p>
+<dl>
+<dt></dt><dt>Fedora</dt><dd><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>kate
+</pre></div></dd><dt></dt><dt>Ubuntu</dt><dd><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>kate
+</pre></div></dd></dl><p>For Windows and macOS you can probably download Kate from its <a href="https://kate-editor.org/get-it/">webpage</a>.</p>
+<h2>Settings</h2>
+<dl>
+<dt></dt><dt>Line numbers</dt><dd><p>In menu View pick Show Line Numbers.</p>
+</dd><dt></dt><dt>Indentation:</dt><dd><p>In Settings choose Configure Kate</p>
+<p>Editing &gt; Indentation</p>
+<p>Now set here:</p>
+<ul>
+<li>Default indentation mode: Python</li>
+<li>Indent using: Spaces</li>
+<li>Tab Width: 4</li>
+<li>Indentation width: 4</li>
+<li>Backspace key in leading blank space unindents</li>
+</ul>
+</dd><dt></dt><dt>Colours:</dt><dd><p>Colouring of code is automatic if you save the file with proper extension
+– e. g. <code>.py</code> for Python.</p>
+<p>So it's better if you save your file as early as possible.</p>
+</dd></dl><h2>Indentation practice</h2>
+<p>It's important in Python by how much spaces a line is indented.
+So we will have to learn to quickly indent block of text.</p>
+<p>First of all copy following text into your editor.</p>
+<div class="highlight"><pre><code>OPHELIA:
+Good my lord,
+How does your honour for this many a day?
+HAMLET:
+I humbly thank you; well, well, well.
+OPHELIA:
+My lord, I have remembrances of yours,
+That I have longed long to re-deliver;
+I pray you, now receive them.
+HAMLET:
+No, not I;
+I never gave you aught.
+OPHELIA:
+My honour'd lord, you know right well you did;
+And, with them, words of so sweet breath composed
+As made the things more rich: their perfume lost,
+Take these again; for to the noble mind
+Rich gifts wax poor when givers prove unkind.
+There, my lord.</code></pre></div><p><small>Hamlet, W. Shakespeare</small></p>
+<p>This text is not well-arranged so we will indent it like that:</p>
+<div class="highlight"><pre><code>OPHELIA:
+    Good my lord,
+    How does your honour for this many a day?
+HAMLET:
+    I humbly thank you; well, well, well.
+OPHELIA:
+    My lord, I have remembrances of yours,
+    That I have longed long to re-deliver;
+    I pray you, now receive them.
+HAMLET:
+    No, not I;
+    I never gave you aught.
+OPHELIA:
+    My honour'd lord, you know right well you did;
+    And, with them, words of so sweet breath composed
+    As made the things more rich: their perfume lost,
+    Take these again; for to the noble mind
+    Rich gifts wax poor when givers prove unkind.
+    There, my lord.</code></pre></div><p>To indent one line set you coursor in the beginning of the line
+and press <kbd>Tab</kbd>.
+With every press you will indent the like by 4 spaces.</p>
+<p>If you indent too much, press <kbd>Shift</kbd>+<kbd>Tab</kbd>.</p>
+<p>If you would want to indent more lines just highlight them and
+press <kbd>Tab</kbd>.
+For undo press <kbd>Shift</kbd>+<kbd>Tab</kbd>.</p>
+
+
+        </div>
+
+        
+
+
+        
+    <div class="row prev-next">
+        
+            
+                
+    <div class="col text-left">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/beginners-en/install-editor/">← <span class="d-none d-sm-inline">Editor installation</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-left">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/sessions/install_home/">↑ <span class="d-none d-sm-inline">Lesson: Installations</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-right">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/sessions/install_home/back/"><span class="d-none d-sm-inline">End of lesson</span> →</a>
+    </div>
+
+            
+        
+    </div>
+
+
+        
+
+    </div>
+</div>
+
+
+
+        <script type="text/javascript" src="/static/js/solutions.js"></script>
+
+        <div class="footer container">
+            <hr>
+            <div class="lesson-attribution">
+                
+    
+        <p>Edited by Tyna Dolezalova</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/beginners/install-editor">PyLadies CZ</a>.</p>
+    
+
+                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
+                
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="global-pyladies">
+                  PyLadies Vienna are a part of <a href="https://pyladies.com">international PyLadies</a>.
+                </div>
+                <ul>
+                    <li>
+                        <a href="mailto:pyladies.vienna@gmail.com">
+                            <img src="/static/img/mail-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/pyladies_vie" target="_blank">
+                            <img src="/static/img/twitter-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/UndeadFairy/pyladies_vienna" target="_blank">
+                            <img src="/static/img/github-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.meetup.com/PyLadies-Vienna/" target="_blank">
+                            <img src="/static/img/meetup.png">
+                        </a>
+                    </li>
+                    <li>
+                      <a href="https://discord.gg/v2qdvbD2dn" target="_blank">
+                          <img src="/static/img/discord-logo.png">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/company/pyladies-vienna" target="_blank">
+                          <img src="/static/img/linkedin-logo.png">
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+          </footer>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+        
+
+    </body>
+</html>
