@@ -20,6 +20,26 @@ vars:
   user-gender: f
   pyladies: true
   coach-present: true
+mentors:
+  - name: Týna Doležalová
+    img: img/team/dolezalovat.jpg
+    role: "Geospatial Data Scientist, Overly enthusiastic about everything"
+    links:
+    - mail: mailto:dolezalova.tynka@gmail.com
+    - linkedin: https://www.linkedin.com/in/kristyna-dolezalova/
+  - name: Lubomír Doležal
+    img: img/team/dolezall.jpg
+    role: "Satellite Data Processing, Visualisation, Web maps, Databases"
+    links:
+    - mail: mailto:lubomir.bucek.ml@gmail.com
+    - linkedin: https://www.linkedin.com/in/lubomir-dolezal/
+  - name: Fabian Schindler
+    img: img/team/schindlerf.jpg
+    role: "Python/GIS developer, game enthusiast"
+    links:
+    - mail: mailto:fabian.schindler.strauss@gmail.com
+    - linkedin: https://www.linkedin.com/in/fabian-schindler-311030b9/
+    - twitter: https://twitter.com/__fschindler__
 plan:
 
 - title: Installations
