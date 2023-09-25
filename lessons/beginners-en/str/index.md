@@ -290,16 +290,22 @@ write = 'Hi {}! The result is {}.'.format(name, number)
 print(write)
 ```
 
-It is almost the same as the old fashioned `%s`, but instead of `.format`
-you write `%`. If you want to use just one variable, you don't
-need parenthesis, just make sure that there is one space after the `%`.
+### F-strings
+
+There is another (newer and shorter) way how to use formatting in Python and it involves `f-strings`.
+Instead of using .format() method, you prepend letter `f` before
+the string or the multiline string and Python will replace the variable names present
+in curly brackets inside the template with their values during script execution.
+
+The syntax looks like this:
 
 ```python
 number = 3 + 4
 name = "Mary"
-write = 'Hi %s! The result is %s.' % (name, number)
+write = f"Hi {name}! The result is {number}."
 print(write)
 ```
+
 ## Substrings
 
 Now we will go back to subscripting.
