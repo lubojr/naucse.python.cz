@@ -298,6 +298,121 @@ which will get used if the function call does not have these arguments specified
 
 <span class="c1"># TypeError: say_name_5() takes 2 positional arguments but 3 were given</span>
 </pre></div><p>Remember that for positional arguments, the order in which they are passed in is important.</p>
+<h2>Recursion</h2>
+<p><em>Recursion</em> is a programming technique,
+when a function calls itself.</p>
+<p>Such a recursion will end in an infinite call.
+When you enter this program:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recursive_function</span><span class="p">():</span>
+     <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span>
+     <span class="n">recursive_function</span><span class="p">()</span>
+     <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">recursive_function</span><span class="p">()</span>
+</pre></div><p>How does it work?</p>
+<ul>
+<li>Python defines a function <code>recursive_function</code></li>
+<li>Calls the function <code>recursive_function</code>:<ul>
+<li>Calculates the result</li>
+<li>Calls the function <code>recursive_function</code>:<ul>
+<li>Calculates the result</li>
+<li>Calls the function <code>recursive_function</code>:<ul>
+<li>Calculates the result</li>
+<li>Calls the function <code>recursive_function</code>:<ul>
+<li>Calculates the result</li>
+<li>Calls the function <code>recursive_function</code>:<ul>
+<li>...<ul>
+<li><em> ...
+   </em> after hundreds of iterations, Python notices that this
+     leads nowhere, and ends up with an error.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The error message corresponds to this:</p>
+<div class="highlight"><pre><code>Traceback (most recent call last):
+   File "/tmp/test.py", line 4, in &lt;module&gt;
+     recursive_function()
+   File "/tmp/test.py", line 2, in recursive_function
+     return recursive_function()
+   File "/tmp/test.py", line 2, in recursive_function
+     return recursive_function()
+   File "/tmp/test.py", line 2, in recursive_function
+     return recursive_function()
+   [Previous line repeated 996 more times]
+RecursionError: maximum recursion depth exceeded</code></pre></div><h2>Controlled nesting</h2>
+<p>How to use recursion in practice?
+One way is to count how many more times to "dive".</p>
+<p>Imagine a diver exploring the depths of the sea in the following way:</p>
+<ul>
+<li>How to <em>"explore the sea"</em> at a certain depth:<ul>
+<li>I look around</li>
+<li>If I'm already in too deep, I am scared. I will not explore further.</li>
+<li>Otherwise:<ul>
+<li>I dive 10 m lower</li>
+<li><em>I will explore the sea</em> at a new depth</li>
+<li>I submerge again in 10 m</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Or in Python:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="n">depth</span><span class="p">):</span>
+     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Looking around at a depth of </span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s1"> m'</span><span class="p">)</span>
+     <span class="k">if</span> <span class="n">depth</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">:</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s1">'Enough! I have seen it all!'</span><span class="p">)</span>
+     <span class="k">else</span><span class="p">:</span>
+         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'I dive more (from </span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s1"> m)'</span><span class="p">)</span>
+         <span class="n">explore</span><span class="p">(</span><span class="n">depth</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Surfacing (at </span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s1"> m)'</span><span class="p">)</span>
+
+<span class="n">explore</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div><div class="highlight"><pre><code>* Python defines the function ``survey''
+* Calls the `explore` function with a depth of 0:
+   * Prints `I'm looking around at a depth of 0 m'
+   * Checks that `0 ≥ 30` (which is not true)
+   * Prints ``I dive more (from 0 m)''
+   * Calls the `explore` function with a depth of 10 m:
+     * Writes `I look around at a depth of 10 m'
+     * Checks that `10 ≥ 30` (which is not true)
+     * Writes ``'I dive more (from 10 m)''
+     * Calls the `explore` function with a depth of 20m:
+       * Checks that `20 ≥ 30` (which is not true)
+       * Writes ``I dive more (from 30 m)''
+         * Calls the `explore` function with a depth of 30 m:
+           * Checks that `30 ≥ 30` (which is true! finally!)
+             * Prints ``Enough! I have seen it all!''
+             * and ends
+       * Prints ``Surfacing (at 20 m)''
+     * Prints ``Surfacing (at 10m)''
+   * Prints ``Surfacing (at 0 m)''</code></pre></div><h2>Factorial</h2>
+<p>Recursive algorithms have their origins in mathematics. The factorial of <var>x</var>, or
+the product of all numbers from 1 to <var>x</var>, written as <var>x</var>!,
+mathematicians define as follows:</p>
+<ul>
+<li>0! = 1</li>
+<li>For positive <var>x</var> is <var>x</var>! = <var>x</var> · (<var>x</var> - 1)!</li>
+</ul>
+<p>Or in Python:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+         <span class="k">return</span> <span class="mi">1</span>
+     <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+         <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
 
 
         </div>
