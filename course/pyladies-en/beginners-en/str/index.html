@@ -252,12 +252,15 @@ the string.</p>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">"Mary"</span>
 <span class="n">write</span> <span class="o">=</span> <span class="s1">'Hi </span><span class="si">{}</span><span class="s1">! The result is </span><span class="si">{}</span><span class="s1">.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">write</span><span class="p">)</span>
-</pre></div><p>It is almost the same as the old fashioned <code>%s</code>, but instead of <code>.format</code>
-you write <code>%</code>. If you want to use just one variable, you don't
-need parenthesis, just make sure that there is one space after the <code>%</code>.</p>
+</pre></div><h3>F-strings</h3>
+<p>There is another (newer and shorter) way how to use formatting in Python and it involves <code>f-strings</code>.
+Instead of using .format() method, you prepend letter <code>f</code> before
+the string or the multiline string and Python will replace the variable names present
+in curly brackets inside the template with their values during script execution.</p>
+<p>The syntax looks like this:</p>
 <div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">"Mary"</span>
-<span class="n">write</span> <span class="o">=</span> <span class="s1">'Hi </span><span class="si">%s</span><span class="s1">! The result is </span><span class="si">%s</span><span class="s1">.'</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+<span class="n">write</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Hi </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">! The result is </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">."</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">write</span><span class="p">)</span>
 </pre></div><h2>Substrings</h2>
 <p>Now we will go back to subscripting.
