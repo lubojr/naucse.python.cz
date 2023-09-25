@@ -340,3 +340,127 @@ say_name_5("Eva", "Blasco", "of Royal Court!")
 ```
 
 Remember that for positional arguments, the order in which they are passed in is important.
+
+## Recursion
+
+*Recursion* is a programming technique,
+when a function calls itself.
+
+Such a recursion will end in an infinite call.
+When you enter this program:
+
+```python
+def recursive_function():
+     result = 1+2
+     recursive_function()
+     return result
+
+recursive_function()
+```
+
+How does it work?
+
+* Python defines a function `recursive_function`
+* Calls the function `recursive_function`:
+   * Calculates the result
+   * Calls the function `recursive_function`:
+     * Calculates the result
+     * Calls the function `recursive_function`:
+       * Calculates the result
+       * Calls the function `recursive_function`:
+         * Calculates the result
+         * Calls the function `recursive_function`:
+           * ...
+             * ...
+                * after hundreds of iterations, Python notices that this
+                  leads nowhere, and ends up with an error.
+
+The error message corresponds to this:
+
+```
+Traceback (most recent call last):
+   File "/tmp/test.py", line 4, in <module>
+     recursive_function()
+   File "/tmp/test.py", line 2, in recursive_function
+     return recursive_function()
+   File "/tmp/test.py", line 2, in recursive_function
+     return recursive_function()
+   File "/tmp/test.py", line 2, in recursive_function
+     return recursive_function()
+   [Previous line repeated 996 more times]
+RecursionError: maximum recursion depth exceeded
+```
+
+## Controlled nesting
+
+How to use recursion in practice?
+One way is to count how many more times to "dive".
+
+Imagine a diver exploring the depths of the sea in the following way:
+
+* How to *"explore the sea"* at a certain depth:
+   * I look around
+   * If I'm already in too deep, I am scared. I will not explore further.
+   * Otherwise:
+     * I dive 10 m lower
+     * *I will explore the sea* at a new depth
+     * I submerge again in 10 m
+
+Or in Python:
+
+```python
+def explore(depth):
+     print(f'Looking around at a depth of {depth} m')
+     if depth >= 30:
+         print('Enough! I have seen it all!')
+     else:
+         print(f'I dive more (from {depth} m)')
+         explore(depth + 10)
+         print(f'Surfacing (at {depth} m)')
+
+explore(0)
+```
+
+```
+* Python defines the function ``survey''
+* Calls the `explore` function with a depth of 0:
+   * Prints `I'm looking around at a depth of 0 m'
+   * Checks that `0 ≥ 30` (which is not true)
+   * Prints ``I dive more (from 0 m)''
+   * Calls the `explore` function with a depth of 10 m:
+     * Writes `I look around at a depth of 10 m'
+     * Checks that `10 ≥ 30` (which is not true)
+     * Writes ``'I dive more (from 10 m)''
+     * Calls the `explore` function with a depth of 20m:
+       * Checks that `20 ≥ 30` (which is not true)
+       * Writes ``I dive more (from 30 m)''
+         * Calls the `explore` function with a depth of 30 m:
+           * Checks that `30 ≥ 30` (which is true! finally!)
+             * Prints ``Enough! I have seen it all!''
+             * and ends
+       * Prints ``Surfacing (at 20 m)''
+     * Prints ``Surfacing (at 10m)''
+   * Prints ``Surfacing (at 0 m)''
+```
+
+## Factorial
+
+Recursive algorithms have their origins in mathematics. The factorial of <var>x</var>, or
+the product of all numbers from 1 to <var>x</var>, written as <var>x</var>!,
+mathematicians define as follows:
+
+* 0! = 1
+* For positive <var>x</var> is <var>x</var>! = <var>x</var> · (<var>x</var> - 1)!
+
+Or in Python:
+
+```python
+def factorial(x):
+     if x == 0:
+         return 1
+     elif x > 0:
+         return x * factorial(x - 1)
+
+print(factorial(5))
+print(1 * 2 * 3 * 4 * 5)
+```
