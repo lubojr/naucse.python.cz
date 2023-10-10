@@ -4,7 +4,7 @@ An international group of people trying to involve women in the Python programmi
 
 ## Why?
 
-About 20-25% of programmers are women. That's very little. It's not that women are stupid or 
+About 28% of programmers are women, while in the European Union, it is only 19%. That's very very little. It's not that women are stupid or 
 awkward or have no logical thinking. They are discouraged by other things; 
 a lots of small details that create a not very friendly environment. 
 PyLadies are trying to solve this problem, for example by creating an environment 
@@ -16,7 +16,9 @@ that is more enjoyable for new programmers.
  * 2015 - PyLadies Vienna become dormant for some time
  * 2019 - PyLadies in Vienna re-started as half-day workshops on various topics
  * February 2021 - First PyLadies Vienna beginners course
- * Many more in the future!
+ * 2022 - First PyLadies Vienna PyData course
+ * 2023 - Mentorship programme launched
+ * Many more activities in the future!
  
 ## What will you learn here?
 
@@ -32,25 +34,23 @@ We are here to help you with problems. The important thing to note is that coach
 
 If you have any questions about the course, if you have comments, suggestions, hard feelings or you just want to share something - feel free to contact us at pyladies.vienna@gmail.com or via discord.
 
-## Trember features
+## Google Meet features
 
-During lessons, we will use some tools that Trember is offering to help us mentors, know how you are doing.
+During lessons, we will use Google Meet for our online classes.
 
-On the background you can see main teaching room you can see two large words, **WORKING SIDE** and **FINISHED SIDE**.
+For easier course flow, we will use some features of it:
 
-During a lesson, when we are doing an exercise, you should move your avatar on **WORKING SIDE** of the room, and when you are done, move to the **FINISHED SIDE**. This way we can keep a better overview how the group is doing.
-
-We will not continue until everyone is on the **FINISHED** side!
+- Breakout rooms
+- Raised hand to ask questions
+- Emoji reactions
 
 ### Trouble?
 
 When you have troubles, there are two ways how to proceed.
 
-If you think that your trouble is general and solving it might help others, simply click on raised hand symbol and ask directly in the main room.
+If you think that your trouble is general and solving it might help others, simply click on raised hand symbol and ask directly.
 
-If you think, the issue is related just to your personal setup or you do not feel comfortable sharing the screen with everyone, raise your hand also and move your avatar to one of the numbered private spaces. Lecturer will change the mode of the room so only close by people can hear you.
-
-One of our coaches will follow you there and help you.
+If you think, the issue is related just to your personal setup or you do not feel comfortable sharing the screen with everyone, raise your hand and we will move you to a breakout room with a side mentor to help you.
 
 ## Requirements for completion
 
@@ -58,7 +58,7 @@ To successfully finish the course and acquire a completion certificate, there ar
 
 - Submit all homeworks (do not need to be 100% correct!, but have to be submitted)
 - Submit two projects: one during the course and one final project
-- Submit mid and final course feedbacks
+- Submit final course feedback
 - Attendance on 70% of all lectures (don't worry, we are flexible on this point)
 
 

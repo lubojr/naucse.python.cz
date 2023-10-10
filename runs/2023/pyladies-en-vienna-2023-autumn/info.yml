@@ -58,18 +58,18 @@ plan:
 - title: Introduction, installation check
   slug: install
   date: 2023-10-10
-  # materials:
-  # - title: Keyboard layout cheat sheet
-  #   url: https://drive.google.com/file/d/1Bvnb52oirQDiZ7WI5t4Q8UeCd10-_gpT
-  #   type: cheatsheet
-  # - lesson: beginners-en/introduction2
-  # - lesson: beginners-en/cmdline
-  # - lesson: beginners-en/first-steps
-  # - lesson: beginners-en/lesson-1-homework
-  #   type: homework
-  # - title: Google colab tutorial
-  #   url: https://drive.google.com/file/d/1KPlvbwGpIe8HQVkancKk6wuTwhV5VkRc
-  #   type: cheatsheet
+  materials:
+  - title: Keyboard layout cheat sheet
+    url: https://drive.google.com/file/d/1Bvnb52oirQDiZ7WI5t4Q8UeCd10-_gpT
+    type: cheatsheet
+  - lesson: beginners-en/introduction2
+  - lesson: beginners-en/cmdline
+  - lesson: beginners-en/first-steps
+  - lesson: beginners-en/lesson-1-homework
+    type: homework
+  - title: Google colab tutorial
+    url: https://drive.google.com/file/d/1KPlvbwGpIe8HQVkancKk6wuTwhV5VkRc
+    type: cheatsheet
 
 - title: First Program, Print
   slug: hello
