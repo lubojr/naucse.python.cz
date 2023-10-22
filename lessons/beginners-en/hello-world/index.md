@@ -49,7 +49,7 @@ Open the command line.
 Change to the `~/pyladies/02` directory and issue the following command:
 
 ```console
-$ python3 hello.py
+python3 hello.py
 ```
 
 > [note]
