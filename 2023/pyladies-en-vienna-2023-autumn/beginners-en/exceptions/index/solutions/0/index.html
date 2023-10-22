@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             
-                PyLadies Vienna Python course
+                Beginners course PyLadies Vienna: Exceptions
             
         </title>
 
@@ -20,11 +20,13 @@
         <link rel="stylesheet" href="/static/css/ipython.css">
 
         
-        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/exceptions/" />
+
 
         <style>
             
-            
+    
+
         </style>
     </head>
 
@@ -43,78 +45,32 @@
     <div class="container">
 
         
-        
+  
+
 
         <div class="lesson-content">
           
-  <h1>
-    End of lecture: First Program, Print
-</h1>
-
-
-    <h2>Homeworks</h2>
     
-    <ul class="material-list">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="/2023/pyladies-en-vienna-2023-autumn/beginners-en/lesson-2-homework/">
-        <svg class="icon icon-edit" viewbox="0 0 32 32">
-<path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"></path>
-</svg>Homework - lesson 2
-        </a>
-        
-    </li>
-            
-        
-    </ul>
-
-
-
-
-
+        <h1>Exceptions – Solution [0]</h1>
     
 
-
-<hr class="lesson-end">
-
-
-    <div class="row prev-next">
-        
-    
-    <div class="col text-left">
-        <a href="/2023/pyladies-en-vienna-2023-autumn/sessions/hello/">← <span class="d-none d-sm-inline">First Program, Print</span></a>
-    </div>
-
-    
-    <div class="col text-left">
-        <a href="/2023/pyladies-en-vienna-2023-autumn/">↑ <span class="d-none d-sm-inline">Beginners course PyLadies Vienna</span></a>
-    </div>
-
-    
-        
-    <div class="col text-right">
-        <a href="/2023/pyladies-en-vienna-2023-autumn/sessions/loops/"><span class="d-none d-sm-inline">Conditions, modules and functions</span> →</a>
-    </div>
-
-    
-
-    </div>
+    <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input_side</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">raw_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the side of a square in centimeters: "</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">side</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">raw_input</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">raw_input</span><span class="si">}</span><span class="s2"> is not a number!"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">side</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">raw_input</span><span class="si">}</span><span class="s2"> is a negative number!"</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+    <span class="k">return</span> <span class="n">side</span>
+<span class="n">side</span> <span class="o">=</span> <span class="n">input_side</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The perimeter of a square with a side of </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2"> cm is </span><span class="si">{</span><span class="n">side</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="si">}</span><span class="s2"> cm."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The area of a square with a side of </span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2"> cm is </span><span class="si">{</span><span class="n">side</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2"> cm2."</span><span class="p">)</span>
+</pre></div>
 
 
         </div>
@@ -132,11 +88,21 @@
             <hr>
             <div class="lesson-attribution">
                 
+    
+        <p>Translated by Marketa Muzikova</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/beginners/exceptions/">PyLadies CZ</a>.</p>
+    
+
                 
-                    <p>
-                        Licence: <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>
-                    </p>
-                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
                 
             </div>
         </div>
