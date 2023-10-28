@@ -94,26 +94,25 @@ plan:
    - lesson: beginners-en/comparisons
    - lesson: beginners-en/and-or
    - lesson: beginners-en/functions
-   - lesson: beginners-en/turtle
    - title: Basics cheatsheet
      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
      type: cheatsheet
-   - title: Homework (PDF)
+   - title: Homework
      url: https://docs.google.com/document/d/1HsKbAt6DAH8uQYJUR8UB8sOFvzgUUr_WeZwB6cb9lcA
      type: homework
 
 - title: Loops, for and while
   date: 2023-10-31
   slug: strings
-  # materials:
-  #  - lesson: beginners-en/turtle
-  #  - lesson: beginners-en/while
-  #  - title: If/While cheatsheet
-  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_if_while.pdf
-  #    type: cheatsheet
-  #  - title: Homework (PDF)
-  #    url: https://drive.google.com/file/d/1mCs7AD3qoR07HhmWq7Zo96CWTB-p7-dF
-  #    type: homework
+  materials:
+   - lesson: beginners-en/turtle
+   - lesson: beginners-en/while
+   - title: If/While cheatsheet
+     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_if_while.pdf
+     type: cheatsheet
+   - title: Homework
+     url: https://docs.google.com/document/d/1t76R6vXagNsjPJvZz5JoQracXVq_0YLHNYDymwKOlPU/edit
+     type: homework
 
 - title: Strings, Custom functions
   date: 2023-11-07
