@@ -123,15 +123,15 @@ plan:
    - title: Functions cheatsheet
      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_functions.pdf
      type: cheatsheet
-  #  - title: Homework (PDF)
-  #    url: https://drive.google.com/file/d/1FeCPWTN4zZOmenBVVcsMTU0zhGCvK7es
-  #    type: homework
+   - title: Homework
+     url: https://docs.google.com/document/d/1SPL6yMD3XOm9ZFDMDX_U4zSP-ltWd7QKvie5iCS8mno/edit
+     type: homework
 
 - title: GIT
   slug: git
   date: 2023-11-14
-  # materials:
-  #  - lesson: git-en/install
+  materials:
+   - lesson: git-en/install
   #  - lesson: git-en/basics
   #  - lesson: git-en/github
   #  - lesson: git-en/branching
