@@ -117,12 +117,12 @@ plan:
 - title: Strings, Custom functions
   date: 2023-11-07
   slug: custom_func
-  # materials:
-  #  - lesson: beginners-en/str
-  #  - lesson: beginners-en/def
-  #  - title: Functions cheatsheet
-  #    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_functions.pdf
-  #    type: cheatsheet
+  materials:
+   - lesson: beginners-en/str
+   - lesson: beginners-en/def
+   - title: Functions cheatsheet
+     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_functions.pdf
+     type: cheatsheet
   #  - title: Homework (PDF)
   #    url: https://drive.google.com/file/d/1FeCPWTN4zZOmenBVVcsMTU0zhGCvK7es
   #    type: homework
