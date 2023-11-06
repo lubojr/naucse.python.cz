@@ -1,0 +1,530 @@
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            
+                Beginners course PyLadies Vienna: Custom functions
+            
+        </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+        
+
+        <link rel="stylesheet" href="/static/css/naucse.css">
+        <link rel="stylesheet" href="/static/css/body.css">
+        <link rel="stylesheet" href="/static/css/pygments-lovelace-style.css">
+        <link rel="stylesheet" href="/static/css/ipython.css">
+
+        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/def/" />
+
+
+        <style>
+            
+    
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="header">
+            <ul class="container menu">
+                <li><a href="/" class="logo"><h1>PyLadies Vienna</h1></a></li>
+                <li><a href="/mentorship/" class="menu-link"><h2>Mentorship</h2></a></li>
+                <li><a href="/runs/" class="menu-link"><h2>Courses</h2></a></li>
+            </ul>
+        </nav>
+
+        
+
+<div class="page">
+    <div class="container">
+
+        
+  
+
+
+        <div class="lesson-content">
+          
+    
+
+    <h1>Functions</h1>
+<p>In the one of the past <a href="/2023/pyladies-en-vienna-2023-autumn/beginners-en/functions/">lessons</a> 
+we were working with functions that were written by someone else - they were
+already built-in in Python - <code>print</code> or we imported them from a module - <code>turtle</code> for example.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div><p>Today we will learn how to code our own functions
+which will be helpful when we need to run tasks repeatedly.</p>
+<p>It's not hard:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_perimeter</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span> 
+    <span class="s2">"Returns the rectangle's perimeter of the given sides"</span> 
+    <span class="k">return</span>  <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">width</span>  <span class="o">+</span>  <span class="n">height</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">find_perimeter</span><span class="p">(</span><span class="mi">4</span> <span class="p">,</span>  <span class="mi">2</span><span class="p">))</span>
+</pre></div><p>How does it work?</p>
+<p>You <em>define</em> a function with the command <code>def</code>. Right after that
+you have to write name of the function, parentheses (which may contain 
+<em>arguments</em>) and then, of course, a <em>colon</em>.</p>
+<p>We have already said that after a colon, everything that 
+belongs to (in our case) the function must be indented. 
+The indented code is called <em>function body</em> and it contains 
+the commands that the function performs. 
+In the body you can use various commands including <code>if</code>, <code>loop</code>, etc.</p>
+<p>The body can start with a <em>documentation comment</em> or so called <em>docstring</em> which describes what
+the function is doing.</p>
+<p>A function can return a value with the <code>return</code> command. More on that later.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_score</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">'score is'</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span> 
+    <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'World record!'</span><span class="p">)</span> 
+    <span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Perfect!'</span><span class="p">)</span> 
+    <span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Passable.'</span><span class="p">)</span> 
+    <span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'At least something. '</span><span class="p">)</span> 
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Maybe next time. '</span><span class="p">)</span>
+
+<span class="n">print_score</span><span class="p">(</span><span class="s1">'Your'</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span> 
+<span class="n">print_score</span><span class="p">(</span><span class="s1">'Denis'</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div><p>When you call a function, the arguments you write in parentheses
+are assigned to the corresponding variables in the function definition's
+parentheses.</p>
+<p>So when you call our new function with <code>print_score('Your', 256)</code>,
+imagine that, internally, it assigns the values like this:</p>
+<div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Your'</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">256</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">'score is'</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span> 
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+    <span class="o">...</span> <span class="c1">#etc.</span>
+</pre></div><h2>Return</h2>
+<p>The <code>return</code> command <em>terminates</em> the function immediately and returns the calculated value 
+out of the function. You can use this command only in functions!</p>
+<p>It behaves similar to the <code>break</code> command that terminates loops.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">yes_or_no</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
+    <span class="s2">"Returns True or False, depending on the user's answers."</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">'yes'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">'no'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">'What do you want!! Just  type "Yes" or "No".'</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">yes_or_no</span><span class="p">(</span><span class="s1">'Do you want to play a game?'</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'OK, but you have to program it first.'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'That is sad.'</span> <span class="p">)</span>
+</pre></div><div class="admonition note"><p>Same as <code>if</code> and <code>break</code>, <code>return</code> is a Python <em>command</em>, not a function.
+That's why <code>return</code> has no parentheses after it.</p>
+</div><p>Try to write a function that returns the area of an ellipse with given 
+dimensions.
+The formula is <var>A</var> = π<var>a</var><var>b</var>,
+where <var>a</var> and <var>b</var> are the lengths of the axes.
+Then call the function and print the result.</p>
+<div class="solution" id="solution-0">
+    <h3>Solution</h3>
+    <div class="solution-cover">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/beginners-en/def/index/solutions/0/"><span class="link-text">Show solution</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="k">def</span> <span class="nf">ellipse</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The ellipsis area with 3 cm and 5 cm axes length is'</span><span class="p">,</span> <span class="n">ellipse</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span><span class="s1">'cm2.'</span><span class="p">)</span>
+</pre></div>
+    </div>
+</div><h3>Return or print?</h3>
+<p>The last program could be also written like that:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="k">def</span> <span class="nf">ellipse</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'The area is'</span><span class="p">,</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># Caution, 'print' instead of 'return'!</span>
+
+<span class="n">ellipse</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div><p>The program works this way, too. But it loses one of the main advantages
+that functions have - when you want to use the value differently than to <code>print</code> it.</p>
+<p>A function that <em>returns</em> its result can be used as part of other calculations:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">elliptical_cylinder</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ellipse</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">height</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">elliptical_cylinder</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div><p>But if our ellipse function just <em>printed</em> the result, we wouldn't be
+able to calculate the area of elliptical cylinder this way.</p>
+<p>The reason why <code>return</code> is better than <code>print</code> is that a function
+can be re-used in many different situations. When we don't actually
+want to know the intermediate results, we can't use functions with <code>print</code>.</p>
+<p>It is similar with input: If I hardcoded <code>input</code> into a function, I could use
+it only in situations where there's a user with keyboard present.
+That's why it's always better to pass arguments to a function, and call
+<code>input</code> outside of the function:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span>  <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="k">def</span> <span class="nf">ellipse</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
+<span class="w">    </span><span class="sd">"""This reusable function returns only the result - the ellipse's area with a and b axes"""</span>
+    <span class="c1">#This is only the calculation</span>
+    <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+
+<span class="c1">#print and input are "outside" the reusable function!</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'Enter length of 1st axis: '</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'Enter length of 2nd axis: '</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The ellipsis area is'</span><span class="p">,</span> <span class="n">ellipse</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span><span class="s1">'cm2.'</span><span class="p">)</span>
+</pre></div><p>There are of course exceptions: A function that directly generates 
+a text can be written with <code>print</code>, or a function that processes text information.
+But when the function calculates something it's better to not have
+<code>print</code> and <code>input</code> inside it.</p>
+<h2>None</h2>
+<p>When the function run does not end with an explicit <code>return</code>,
+the value that it returns is automatically <code>None</code>.</p>
+<p><code>None</code> is a value that is already "inside" Python (same as <code>True</code> and <code>False</code>).
+It's literally "none, nothing".</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nothing</span><span class="p">():</span>
+    <span class="s2">"This function isn't doing anything."</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">nothing</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># returns None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="c1"># returns True</span>
+</pre></div><h2>Local variables</h2>
+<p>Congratulations! You can now define your own functions!
+Now we have to explain what local and global variables are.</p>
+<p>A function can use variables from "outside":</p>
+<div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926</span>  <span class="c1"># a variable defined outside the function</span>
+
+<span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+</pre></div><p>But every variable and argument that is defined in the function body are
+<em>brand new</em> and they share nothing with the "outside" variables.</p>
+<p>Variables that are defined inside a function body are called <em>local variables</em>,
+because they work only locally inside the function.</p>
+<p>For example, the following won't work how you would expect:</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Assign value to global variable x</span>
+
+<span class="k">def</span> <span class="nf">set_x</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">value</span>  <span class="c1"># Assign value to local variable x</span>
+
+<span class="n">set_x</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div><p>Variables that are not local are <em>global variables</em> -
+they exist throughout the whole program.</p>
+<p>If a function defines a local variable with the same name, this local variable will only<br>
+have the value that was assigned in the function.</p>
+<p>Let's look at an example.
+Before you run the next program, try to guess how it will behave.
+Then run it, and if it did something different than
+you expected, try to explain why.
+There is a catch! :)</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="n">area</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="k">def</span> <span class="nf">ellipse_area</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>  <span class="c1"># Assign value to 'area`</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">3</span>  <span class="c1"># Assign value to 'a`</span>
+    <span class="k">return</span> <span class="n">area</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ellipse_area</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div><p>Now try to answer the following questions:</p>
+<ul>
+<li>Is the variable <code>pi</code> local or global?</li>
+<li>Is the variable <code>area</code> local or global?</li>
+<li>Is the variable <code>a</code> local or global?</li>
+<li>Is the variable <code>b</code> local or global?</li>
+</ul>
+<div class="solution" id="solution-1">
+    <h3>Solution</h3>
+    <div class="solution-cover">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/beginners-en/def/index/solutions/1/"><span class="link-text">Show solution</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <ul>
+<li><code>pi</code> is global - it's not defined within the function and it's
+accessible in the whole program.</li>
+<li><code>area</code> - Note there are two variables of that name! One is global
+ant the other one is local inside the function <code>ellipse_area</code>.</li>
+<li><code>a</code> - Note there are also two variables of that name. This was that catch:
+Writing <code>a = a + 3</code> has no point. A value is assigned to the local
+variable <code>a</code>, but the function ends right after that, and this <code>a</code> is no 
+longer available, it will never be used.</li>
+<li><code>b</code> is only local - it's an argument for the <code>ellipse_area</code> function. </li>
+</ul>
+    </div>
+</div><p>If it seems confusing and complicated just avoid naming variables (and
+function's arguments) within a function the same as those outside.</p>
+<h2>Arguments, their count and defaults</h2>
+<p>If you define a function with a certain number of <code>positional arguments</code>, then the calling of the
+function needs to pass all of these arguments as well. Following will happen if too little 
+arguments are passed in.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_name_5</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">first_name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">last_name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+
+<span class="n">say_name_5</span><span class="p">(</span><span class="s2">"Eva"</span><span class="p">,</span> <span class="s2">"Blasco"</span><span class="p">)</span>
+
+<span class="n">say_name_5</span><span class="p">(</span><span class="s2">"Eva"</span><span class="p">)</span>
+<span class="c1"># TypeError: say_name_5() missing 1 required positional argument: 'last_name'</span>
+</pre></div><p>But in this case, we should not be forced to input both First name and Surname.
+There are powerful and well known people without a Surname, that would not be able to use our 
+function without a workaround - like setting their surname to empty string <code>""</code>.</p>
+<h3>Defaults</h3>
+<p>It is possible (although it does not always make sense) to add <code>default</code> argument values
+which will get used if the function call does not have these arguments specified.</p>
+<p>For specifying default argument, we use <code>argument=value</code> syntax in the function definition:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_name_5</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">first_name</span> <span class="o">!=</span> <span class="s2">""</span> <span class="ow">or</span> <span class="n">last_name</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">first_name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">last_name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Warning: Use this function with at least a first name"</span><span class="p">)</span>
+
+<span class="n">say_name_5</span><span class="p">(</span><span class="s2">"Eva"</span><span class="p">)</span>
+<span class="n">say_name_5</span><span class="p">()</span>
+</pre></div><p>A problem also appears in case we supply more arguments than the function allows:</p>
+<div class="highlight"><pre><span></span><span class="n">say_name_5</span><span class="p">(</span><span class="s2">"Eva"</span><span class="p">,</span> <span class="s2">"Blasco"</span><span class="p">,</span> <span class="s2">"of Royal Court!"</span><span class="p">)</span>
+
+<span class="c1"># TypeError: say_name_5() takes 2 positional arguments but 3 were given</span>
+</pre></div><p>Remember that for positional arguments, the order in which they are passed in is important.</p>
+<h2>Recursion</h2>
+<p><em>Recursion</em> is a programming technique,
+when a function calls itself.</p>
+<p>Such a recursion will end in an infinite call.
+When you enter this program:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recursive_function</span><span class="p">():</span>
+     <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span>
+     <span class="n">recursive_function</span><span class="p">()</span>
+     <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">recursive_function</span><span class="p">()</span>
+</pre></div><p>How does it work?</p>
+<ul>
+<li>Python defines a function <code>recursive_function</code></li>
+<li>Calls the function <code>recursive_function</code>:<ul>
+<li>Calculates the result</li>
+<li>Calls the function <code>recursive_function</code>:<ul>
+<li>Calculates the result</li>
+<li>Calls the function <code>recursive_function</code>:<ul>
+<li>Calculates the result</li>
+<li>Calls the function <code>recursive_function</code>:<ul>
+<li>Calculates the result</li>
+<li>Calls the function <code>recursive_function</code>:<ul>
+<li>...<ul>
+<li><em> ...
+   </em> after hundreds of iterations, Python notices that this
+     leads nowhere, and ends up with an error.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The error message corresponds to this:</p>
+<div class="highlight"><pre><code>Traceback (most recent call last):
+   File "/tmp/test.py", line 4, in &lt;module&gt;
+     recursive_function()
+   File "/tmp/test.py", line 2, in recursive_function
+     return recursive_function()
+   File "/tmp/test.py", line 2, in recursive_function
+     return recursive_function()
+   File "/tmp/test.py", line 2, in recursive_function
+     return recursive_function()
+   [Previous line repeated 996 more times]
+RecursionError: maximum recursion depth exceeded</code></pre></div><h2>Controlled nesting</h2>
+<p>How to use recursion in practice?
+One way is to count how many more times to "dive".</p>
+<p>Imagine a diver exploring the depths of the sea in the following way:</p>
+<ul>
+<li>How to <em>"explore the sea"</em> at a certain depth:<ul>
+<li>I look around</li>
+<li>If I'm already in too deep, I am scared. I will not explore further.</li>
+<li>Otherwise:<ul>
+<li>I dive 10 m lower</li>
+<li><em>I will explore the sea</em> at a new depth</li>
+<li>I submerge again in 10 m</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Or in Python:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="n">depth</span><span class="p">):</span>
+     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Looking around at a depth of </span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s1"> m'</span><span class="p">)</span>
+     <span class="k">if</span> <span class="n">depth</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">:</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s1">'Enough! I have seen it all!'</span><span class="p">)</span>
+     <span class="k">else</span><span class="p">:</span>
+         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'I dive more (from </span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s1"> m)'</span><span class="p">)</span>
+         <span class="n">explore</span><span class="p">(</span><span class="n">depth</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Surfacing (at </span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s1"> m)'</span><span class="p">)</span>
+
+<span class="n">explore</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div><div class="highlight"><pre><code>* Python defines the function ``survey''
+* Calls the `explore` function with a depth of 0:
+   * Prints `I'm looking around at a depth of 0 m'
+   * Checks that `0 ≥ 30` (which is not true)
+   * Prints ``I dive more (from 0 m)''
+   * Calls the `explore` function with a depth of 10 m:
+     * Writes `I look around at a depth of 10 m'
+     * Checks that `10 ≥ 30` (which is not true)
+     * Writes ``'I dive more (from 10 m)''
+     * Calls the `explore` function with a depth of 20m:
+       * Checks that `20 ≥ 30` (which is not true)
+       * Writes ``I dive more (from 30 m)''
+         * Calls the `explore` function with a depth of 30 m:
+           * Checks that `30 ≥ 30` (which is true! finally!)
+             * Prints ``Enough! I have seen it all!''
+             * and ends
+       * Prints ``Surfacing (at 20 m)''
+     * Prints ``Surfacing (at 10m)''
+   * Prints ``Surfacing (at 0 m)''</code></pre></div><h2>Factorial</h2>
+<p>Recursive algorithms have their origins in mathematics. The factorial of <var>x</var>, or
+the product of all numbers from 1 to <var>x</var>, written as <var>x</var>!,
+mathematicians define as follows:</p>
+<ul>
+<li>0! = 1</li>
+<li>For positive <var>x</var> is <var>x</var>! = <var>x</var> · (<var>x</var> - 1)!</li>
+</ul>
+<p>Or in Python:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+         <span class="k">return</span> <span class="mi">1</span>
+     <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+         <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+
+        </div>
+
+        
+
+
+        
+    <div class="row prev-next">
+        
+            
+                
+    <div class="col text-left">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/beginners-en/str/">← <span class="d-none d-sm-inline">Strings</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-left">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/sessions/custom_func/">↑ <span class="d-none d-sm-inline">Lesson: Strings, Custom functions</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-right">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/sessions/custom_func/back/"><span class="d-none d-sm-inline">End of lesson</span> →</a>
+    </div>
+
+            
+        
+    </div>
+
+
+        
+
+    </div>
+</div>
+
+
+
+        <script type="text/javascript" src="/static/js/solutions.js"></script>
+
+        <div class="footer container">
+            <hr>
+            <div class="lesson-attribution">
+                
+    
+        <p>Translated by Marketa Muzikova and Atul Shurma</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/beginners/def/">PyLadies CZ</a>.</p>
+    
+
+                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
+                
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="global-pyladies">
+                  PyLadies Vienna are a part of <a href="https://pyladies.com">international PyLadies</a>.
+                </div>
+                <ul>
+                    <li>
+                        <a href="mailto:pyladies.vienna@gmail.com">
+                            <img src="/static/img/mail-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/pyladies_vie" target="_blank">
+                            <img src="/static/img/twitter-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/UndeadFairy/pyladies_vienna" target="_blank">
+                            <img src="/static/img/github-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.meetup.com/PyLadies-Vienna/" target="_blank">
+                            <img src="/static/img/meetup.png">
+                        </a>
+                    </li>
+                    <li>
+                      <a href="https://discord.gg/v2qdvbD2dn" target="_blank">
+                          <img src="/static/img/discord-logo.png">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/company/pyladies-vienna" target="_blank">
+                          <img src="/static/img/linkedin-logo.png">
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+          </footer>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+        
+
+    </body>
+</html>
