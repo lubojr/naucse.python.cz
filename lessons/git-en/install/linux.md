@@ -1,27 +1,35 @@
 ## Git installation on Ubuntu/Debian
 
 ```console
-$ sudo apt-get install git git-gui nano
+sudo apt-get install git nano pass
 ```
 
 If you are using some other distribution we expect that you already know
-how to install programs. Go ahead and install *git*, *git gui* and *nano*.
+how to install programs. Go ahead and install *git*, *pass* and *nano*.
 
 After you have installed git, choose your Git editor.
 If you do not like Vim (or you do not know what it is)
 enter this command to choose a more user-friendly editor called Nano:
 
 ```console
-$ git config --global core.editor nano
+git config --global core.editor nano
 ```
 
-After this step, please install the [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) by downloading gcm-linux.(version).deb package from [official releases of gcm](https://github.com/GitCredentialManager/git-credential-manager/releases/latest).
+After this step, please install the [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager) by downloading **gcm-linux.(version).deb** package from [official releases of gcm](https://github.com/GitCredentialManager/git-credential-manager/releases/latest).
 
 After that install and configure with commands:
 
 ```console
-$ sudo dpkg -i <path-to-package>
-$ git-credential-manager-core configure
+sudo dpkg -i <path-to-package>
+git-credential-manager-core configure
+git config --global credential.credentialStore gpg
 ```
 
-Now continue with [General Settings in Git install]({{ lesson_url('git-en/install') }}).
+Next, we need to generate a secure credentials store. Run following two commands to create and use a new GPG key pair 
+
+```console
+gpg --gen-key
+pass init <gpg-id> # where <gpg-id> is the username generated in step 1
+```
+
+Now continue with the rest of setup at [General Settings in Git install]({{ lesson_url('git-en/install') }}).
