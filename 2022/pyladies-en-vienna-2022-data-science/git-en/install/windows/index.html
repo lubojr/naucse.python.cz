@@ -53,22 +53,23 @@
     
 
     <h2>Windows installation of git</h2>
-<p>Go to <a href="https://git-scm.org">git-scm.org</a>, download Git and install it.
-When installing, select these options:</p>
+<p>Go to <a href="https://git-scm.com/download/win">git-scm.org</a>, download <strong>Git Standalone Installer</strong> and install it.
+When installing, go through the wizard and select these options:</p>
 <ul>
 <li>Run Git from the Windows Command Prompt</li>
 <li>Checkout Windows-style, commit Unix-style line endings</li>
 </ul>
 <p>Do not change any other options, they can be left as default.
 Please ensure that <strong>Git Credential Manager Core</strong> option is <a href="https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md#git-for-windows-star">"checked"</a>, to install the extra tool by default with Git installation.</p>
+<p><span class="figure"><a href="/2022/pyladies-en-vienna-2022-data-science/git-en/install/static/windows-git-cred-manager.png"><img src="/2022/pyladies-en-vienna-2022-data-science/git-en/install/static/windows-git-cred-manager.png" alt="Git installation credential manager allow"></a></span></p>
 <p>Then set your Git editor.
 If you have a terminal window open, close it, and open a new one.
-(The installation changes system settings which have to be loaded again.)
-In the new command line, enter:</p>
+(The installation changes system settings which have to be loaded again.)</p>
+<p>In the new command line, enter:</p>
 <div class="highlight"><pre><span></span><span class="go">&gt; git config --global core.editor notepad</span>
 <span class="go">&gt; git config --global format.commitMessageColumns 80</span>
 <span class="go">&gt; git config --global gui.encoding utf-8</span>
-</pre></div><p>Now continue with <a href="/2022/pyladies-en-vienna-2022-data-science/git-en/install/">General Settings in Git install</a>.</p>
+</pre></div><p>Now continue with the rest of setup at <a href="/2022/pyladies-en-vienna-2022-data-science/git-en/install/">General Settings in Git install</a>.</p>
 
 
         </div>

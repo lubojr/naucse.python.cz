@@ -53,18 +53,22 @@
     
 
     <h2>Git installation on Ubuntu/Debian</h2>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>git-gui<span class="w"> </span>nano
+<div class="highlight"><pre><span></span><span class="go">sudo apt-get install git nano pass</span>
 </pre></div><p>If you are using some other distribution we expect that you already know
-how to install programs. Go ahead and install <em>git</em>, <em>git gui</em> and <em>nano</em>.</p>
+how to install programs. Go ahead and install <em>git</em>, <em>pass</em> and <em>nano</em>.</p>
 <p>After you have installed git, choose your Git editor.
 If you do not like Vim (or you do not know what it is)
 enter this command to choose a more user-friendly editor called Nano:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span>nano
-</pre></div><p>After this step, please install the <a href="https://github.com/GitCredentialManager/git-credential-manager">Git Credential Manager</a> by downloading gcm-linux.(version).deb package from <a href="https://github.com/GitCredentialManager/git-credential-manager/releases/latest">official releases of gcm</a>.</p>
+<div class="highlight"><pre><span></span><span class="go">git config --global core.editor nano</span>
+</pre></div><p>After this step, please install the <a href="https://github.com/GitCredentialManager/git-credential-manager">Git Credential Manager</a> by downloading <strong>gcm-linux.(version).deb</strong> package from <a href="https://github.com/GitCredentialManager/git-credential-manager/releases/latest">official releases of gcm</a>.</p>
 <p>After that install and configure with commands:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>&lt;path-to-package&gt;
-<span class="gp">$ </span>git-credential-manager-core<span class="w"> </span>configure
-</pre></div><p>Now continue with <a href="/2022/pyladies-en-vienna-2022-data-science/git-en/install/">General Settings in Git install</a>.</p>
+<div class="highlight"><pre><span></span><span class="go">sudo dpkg -i &lt;path-to-package&gt;</span>
+<span class="go">git-credential-manager-core configure</span>
+<span class="go">git config --global credential.credentialStore gpg</span>
+</pre></div><p>Next, we need to generate a secure credentials store. Run following two commands to create and use a new GPG key pair</p>
+<div class="highlight"><pre><span></span><span class="go">gpg --gen-key</span>
+<span class="go">pass init &lt;gpg-id&gt; # where &lt;gpg-id&gt; is the username generated in step 1</span>
+</pre></div><p>Now continue with the rest of setup at <a href="/2022/pyladies-en-vienna-2022-data-science/git-en/install/">General Settings in Git install</a>.</p>
 
 
         </div>

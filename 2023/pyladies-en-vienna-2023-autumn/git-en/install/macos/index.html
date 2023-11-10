@@ -56,17 +56,14 @@
 <p>Try to run <code>git</code> on the command line.
 If it's already installed, it will show you how to use it.
 Otherwise, install it using Homebrew:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>brew<span class="w"> </span>install<span class="w"> </span>git
+<div class="highlight"><pre><span></span><span class="go">brew install git</span>
 </pre></div><p>It is still necessary to set up your Git editor (enter <code>nano</code>,
-even if you installed for example Atom during the installation of the editor).
+even if you installed for example VS Code during the installation of the editor).
 You do that with this command:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span>nano
-</pre></div><p>After that install and configure <a href="https://github.com/GitCredentialManager/git-credential-manager">Git Credential Manager</a> with commands:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>brew<span class="w"> </span>tap<span class="w"> </span>microsoft/git
-<span class="gp">$ </span>brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>git-credential-manager-core
-</pre></div><p>Following should not be necessary anymore with newest versions of the GCM:</p>
-<p>$ git config --global credential.credentialStore secretservice</p>
-<p>Now continue with <a href="/2023/pyladies-en-vienna-2023-autumn/git-en/install/">General Settings in Git install</a>.</p>
+<div class="highlight"><pre><span></span><span class="go">git config --global core.editor nano</span>
+</pre></div><p>After that install and configure <a href="https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md#macos">Git Credential Manager</a> with command:</p>
+<div class="highlight"><pre><span></span><span class="go">brew install --cask git-credential-manager</span>
+</pre></div><p>Now continue with the rest of setup at <a href="/2023/pyladies-en-vienna-2023-autumn/git-en/install/">General Settings in Git install</a>.</p>
 
 
         </div>
@@ -94,7 +91,7 @@ You do that with this command:</p>
             
                 
     <div class="col text-right">
-        <a href="/2023/pyladies-en-vienna-2023-autumn/sessions/git/back/"><span class="d-none d-sm-inline">End of lesson</span> →</a>
+        <a href="/2023/pyladies-en-vienna-2023-autumn/git-en/basics/"><span class="d-none d-sm-inline">Git</span> →</a>
     </div>
 
             
