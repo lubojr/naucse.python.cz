@@ -114,11 +114,11 @@ and you shouldn't be changing anything inside.</p>
 You can see for yourself by invoking <code>git status</code>, a command that shows information
 about the state of the repository:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 
 Initial commit
 
-nothing to commit (create/copy files and use "git add" to track)</code></pre></div><p><em>“On branch master”</em> refers to so-called branches, we'll get back to that later.
+nothing to commit (create/copy files and use "git add" to track)</code></pre></div><p><em>“On branch main”</em> refers to so-called branches, we'll get back to that later.
 <em>“Initial commit”</em> means that there is no commit stored yet.
 And <em>“nothing to commit”</em> says that there are no files to be saved and versioned in the directory.</p>
 <h2>First commit</h2>
@@ -131,7 +131,7 @@ file in the directory and that it isn't managed by Git yet.</p>
 <!-- XXX: Color coding! -->
 
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 
 Initial commit
 
@@ -144,7 +144,7 @@ nothing added to commit but untracked files present (use "git add" to track)</co
 Let's do that for the file with your poem:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git add poem.txt</code></pre></div><p>Then check the state of the repository again:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 
 Initial commit
 
@@ -155,7 +155,7 @@ Changes to be committed:
 will be included in the next batch of changes (a <code>commit</code>) that you will create.
 Let's create our first commit:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git commit
-[master (root-commit) 1a009f4] First commit
+[main (root-commit) 1a009f4] First commit
  1 file changed, 6 insertions(+)
  create mode 100644 poem.txt</code></pre></div><p>After entering this command, an editor opens where you can write a short description 
 of this commit, briefly summarizing what changes have been made.
@@ -183,7 +183,7 @@ and confirm by pressing <kbd>Enter</kbd>.
 Then set up Git correctly and try <code>git commit</code> again.</p>
 </div><p>Try reporting on the repository again:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 nothing to commit, working tree clean</code></pre></div><p>This short report means that nothing has changed since the last commit.
 That is expected since we've just commited all our changes!</p>
 <p>Now let's have a look at what has changed in the last commit.
@@ -226,7 +226,7 @@ It will have to be entered for any new window that you open.</p>
 change punctuation, or add a new verse.
 Then check the status of the Git repository again.</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
@@ -273,7 +273,7 @@ starts at line 1 as well, but it is 9 lines long.</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git add poem.txt</code></pre></div><p>As usual, check the <code>status</code> of the repository; the file in green will be included
 within the next commit.</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 Changes to be committed:
   (use "git reset HEAD &lt;file&gt;..." to unstage)
 
