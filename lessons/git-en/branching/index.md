@@ -4,11 +4,13 @@ So, now you know Git!
 We will dive into something a bit more complex now :)
 
 Programmers sometimes need to work on two or even more projects at the same time.
-Let's imagine that a severe mistake is found and needs to be fixed as soon as possible (meaning now was already late :) )
-So the programmer has to leave what he is currently working on and goes back to
-a "stable" version, fixes the error and ships it to the customers to remove their anger or despair.
+Let's imagine that a severe mistake is found and needs to be fixed as soon as possible.
+
+So the programmer has to leave what she is currently working on and goes back to
+a "stable" version, fixes the error and releases a new version to the customers.
+
 After this, she goes back to the original project. But before that, she should also 
-incorporate the fix of the error into the version she is currrently working on.
+incorporate the fix of the error into the version she is currently working on.
 
 Git has so called *branches* exactly for this purpose.
 On a single "branch" you can work, but you can switch to another (even older) branch,
@@ -26,8 +28,10 @@ For that, we have a command `git branch`:
 ␛[36m$␛[0m git branch
 * ␛[32mmain␛[m
 ```
-We should have only one and it is called `main` or `master`.
+We should have only one and it is called `main`.
+
 – it is a traditionally name of "backbone" branch for the project
+
 - In the last two years there was a commonly accepted default branch name change from *master* to *main*, so in older project you can still find *master* branches, while GitHub by default already creates *main* branch.
 
 To create a new branch, you will again use command `git branch`.
@@ -91,7 +95,7 @@ Leaving work in progress, switch to "stable" version `main` and
 start working in a completely different project part.
 
 You can switch between the versions as you want to,
-but it is always a good habbit to do a new commit:
+but it is always a good habit to do a new commit:
 (`git commit`) and with help of `git status` confirm, 
 that everything is where it is supposed to be.
 
@@ -130,15 +134,18 @@ You can check how it looks using `git log` or `git status`.
 
 And now try to merge the second branch too - 
 `git merge adding-author`.
+
 Here it might be more complicated: It can happen that changes can't be 
 automatically merged together and in the command line we will see output as
 `merge conflict`. The reason for it is that git can not in this case 
 safely know "which way to merge to be 100% correct".
+
 A common example is if two commits in different branches edit the same line of code.
 You will probably know which way is correct but git usually can not, as there can be three options:
 Keep just changes from the first commit, keep just the changes from the second commit or make custom changes (which usually means use both changes but adapt the code a bit).
 
-How to solve it?
+### How to solve merge conflicts?
+
 Open the file in editor and you should see a content of both versions
 marked with signs (">>>" usually) which points to the exact location where conflict happened.
 Change the file to look like it should (also remove the signs), save it and do a commit

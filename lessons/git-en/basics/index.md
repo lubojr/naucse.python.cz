@@ -71,14 +71,14 @@ about the state of the repository:
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 
 Initial commit
 
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-*“On branch master”* refers to so-called branches, we'll get back to that later.
+*“On branch main”* refers to so-called branches, we'll get back to that later.
 *“Initial commit”* means that there is no commit stored yet.
 And *“nothing to commit”* says that there are no files to be saved and versioned in the directory.
 
@@ -99,7 +99,7 @@ file in the directory and that it isn't managed by Git yet.
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 
 Initial commit
 
@@ -122,7 +122,7 @@ Then check the state of the repository again:
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 
 Initial commit
 
@@ -139,7 +139,7 @@ Let's create our first commit:
 
 ```ansi
 ␛[36m$␛[0m git commit
-[master (root-commit) 1a009f4] First commit
+[main (root-commit) 1a009f4] First commit
  1 file changed, 6 insertions(+)
  create mode 100644 poem.txt
 ```
@@ -178,7 +178,7 @@ Try reporting on the repository again:
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 nothing to commit, working tree clean
 ```
 
@@ -242,7 +242,7 @@ Then check the status of the Git repository again.
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -310,7 +310,7 @@ within the next commit.
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
