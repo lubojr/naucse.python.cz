@@ -85,13 +85,13 @@ And *“nothing to commit”* says that there are no files to be saved and versi
 
 ## First commit
 
-Try adding something to Git now!
+We will now switch for a moment to a plain Text Editor (not Microsoft Word but for example Notepad) or optionally Code Editor (VS Code).
 
-Using your code editor create a new file `poem.txt` and write/copy a short poem inside.
+Now create a new text file there, write/copy a short poem text inside and save it in the folder where you originally did `git init` in your command line. Name the file `poem.txt` and do not forget to save it after you made the edits.
 
 As a quick source of totally unbiased texts to work with, you can have a look [here:](https://www.scottishpoetrylibrary.org.uk/best-scottish-poems/best-of-the-best-scottish-poems)
 
-It should span at least five lines so that we have enough to work with.
+The file should span at least five lines so that we have enough to work with.
 Then, try executing `git status` again: Git reports that there is a new
 file in the directory and that it isn't managed by Git yet.
 
@@ -110,6 +110,11 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
+
+> [note] If the state of folder is not looking the same for you
+>
+> Double check that you have created the file in the same folder as where you did run the `git init`
+> You can check by listing the content of the folder (ls or dir) in the terminal.
 
 We need to make Git track each new file explicitly.
 Let's do that for the file with your poem:
@@ -135,23 +140,23 @@ Changes to be committed:
 
 The lines in green (“changes to be committed”)
 will be included in the next batch of changes (a `commit`) that you will create.
-Let's create our first commit:
+Let's create our first commit and add a *commit message* "First commit" via a "-m" suffix:
 
 ```ansi
-␛[36m$␛[0m git commit
+␛[36m$␛[0m git commit -m "First commit"
 [main (root-commit) 1a009f4] First commit
  1 file changed, 6 insertions(+)
  create mode 100644 poem.txt
 ```
 
-After entering this command, an editor opens where you can write a short description 
-of this commit, briefly summarizing what changes have been made.
-This is referred to as a *commit message*. For now, a simple `First commit` will do.
-You can ignore the existing lines starting with `#`, these are just for your information.
-Git will ignore them as well. Finally, save the file and close the editor.
+Congratulations! Your first commit in the repository is finished!
+
+What would happen if you did not add the -m "message" - read the text below. Otherwise you can skip the text block.
 
 > [note] Working with editors
 >
+> Without the -m "message" after entering this command, an editor would open where you can write a short description 
+> of this commit, briefly summarizing what changes have been made.
 > In Windows, if you have
 > [set up your Git correctly]({{ lesson_url('git-en/install') }}),
 > Notepad will be used as the editor; simply write something, save (<kbd>Ctrl</kbd>+<kbd>S</kbd>)
@@ -172,7 +177,8 @@ Git will ignore them as well. Finally, save the file and close the editor.
 > <kbd>Esc</kbd>, then type `:q!` (colon, lower letter Q, exclamation mark)
 > and confirm by pressing <kbd>Enter</kbd>.
 > Then set up Git correctly and try `git commit` again.
-
+> You can ignore the existing lines starting with `#`, these are just for your information.
+> Git will ignore them as well. Finally, save the file and close the editor.
 
 Try reporting on the repository again:
 
