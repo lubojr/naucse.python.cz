@@ -143,9 +143,9 @@ plan:
      type: cheatsheet
    - lesson: beginners-en/tictactoe
      type: homework
-  #  - title: Practice exercises (offline session 5.5.2023)
-  #    url: https://drive.google.com/file/d/15ko5NRf2arHs5DyHqpM1UQcyXodq3ymI
-  #    type: cheatsheet
+   - title: Practice exercises (offline session 16.11.2023)
+     url: https://docs.google.com/document/d/1tLwOKrrbg9KVvCHC08_zBvdjNGmQkD1GQEZEMJNSN4g
+     type: cheatsheet
 
 - title: Lists, Tuples
   slug: list
