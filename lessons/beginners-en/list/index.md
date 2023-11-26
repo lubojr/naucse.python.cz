@@ -297,11 +297,13 @@ Write a function that returns a middle element of a list.
 
 {% filter solution%}
 ```python
-l = [4, 12, 7]
+test_list = [4, 12, 7]
 def middle_element(l):
     # middle = l[ int(len(l) / 2) ]
     middle = l[ len(l) // 2 ]
     return middle
+
+print(middle_element(test_list))
 ```
 {% endfilter%}
 
@@ -309,13 +311,15 @@ Write a function which counts how many entries of a list are larger than 10 and 
 
 {% filter solution%}
 ```python
-l = [1, 3, 11, 13, 19]
+test_list = [1, 3, 11, 13, 19]
 def count_selected(l):
     counter = 0
     for number in l:
         if 10 <= number < 15:
             counter  = counter + 1
     return counter
+
+print(count_selecter(test_list))
 ```
 {% endfilter%}
 
