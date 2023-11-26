@@ -259,11 +259,13 @@ So although our melody contains the elements
         <a href="/course/pyladies-en/beginners-en/list/index/solutions/0/"><span class="link-text">Show solution</span></a>
     </div>
     <div class="solution-body" aria-hidden="true">
-        <div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+        <div class="highlight"><pre><span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 <span class="k">def</span> <span class="nf">middle_element</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
     <span class="c1"># middle = l[ int(len(l) / 2) ]</span>
     <span class="n">middle</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="p">]</span>
     <span class="k">return</span> <span class="n">middle</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">middle_element</span><span class="p">(</span><span class="n">test_list</span><span class="p">))</span>
 </pre></div>
     </div>
 </div><p>Write a function which counts how many entries of a list are larger than 10 and smaller than 15:</p>
@@ -273,13 +275,15 @@ So although our melody contains the elements
         <a href="/course/pyladies-en/beginners-en/list/index/solutions/1/"><span class="link-text">Show solution</span></a>
     </div>
     <div class="solution-body" aria-hidden="true">
-        <div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+        <div class="highlight"><pre><span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
 <span class="k">def</span> <span class="nf">count_selected</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
     <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
         <span class="k">if</span> <span class="mi">10</span> <span class="o">&lt;=</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">:</span>
             <span class="n">counter</span>  <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">counter</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">count_selecter</span><span class="p">(</span><span class="n">test_list</span><span class="p">))</span>
 </pre></div>
     </div>
 </div><h2>A list as a condition</h2>
