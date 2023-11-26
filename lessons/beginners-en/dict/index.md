@@ -16,9 +16,9 @@ types such as numbers and tuples are also used.
 
 The target *values*, as in the case of, e.g., lists, can by anything
 which can be assigned to a variable. The values can repeat and multiple
-keys can point to a same value.
+keys can point to the same value.
 
-![a dicitionary](static/dict.png)
+![a dictionary](static/dict.png)
 
 There is a dictionary with 3 keys, and each one of them has a value:
 
@@ -34,12 +34,12 @@ The key/value pairs are separated by commas `,`.
 > As of [Python 3.7](https://docs.python.org/3/whatsnew/3.7.html)
 > officially (effectively
 > [already from Python 3.6](https://docs.python.org/3/whatsnew/3.6.html#new-dict-implementation))
-> dictionaries are gurateed to preserve order in which their key/values pairs
+> dictionaries are guaranteed to preserve order in which their key/value pairs
 > are inserted. Before, the ordering was not guaranteed, as it can be still
 > found mentioned in older text books.
 
 You can get values from the dictionary similar as
-from lists, but instead of an index, you have to use e key.
+from lists, but instead of an index, you have to use a key.
 
 ```pycon
 >>> me['name']
@@ -92,7 +92,7 @@ when the key exists or return a default value when it does not exist:
 'n/a'
 ```
 
-Other useful method is `pop`, removing key from the dictionary and
+Other useful method is `pop`, removing a key from the dictionary and
 returning its value. `pop` throws an error in case of a missing
 value, unless a default value is provided:
 
@@ -157,7 +157,7 @@ colours = {
 }
 ```
 
-Update Lubo's number to be the same as Fabian's as they now temporarily share phones
+Update Lubo's number to be the same as Fabian's as they now temporarily share phones.
 
 {% filter solution %}
 ```python
@@ -190,7 +190,7 @@ length
 ```
 
 But in most cases, you will need both -- keys and values.
-For this purpose, dictionaries have the method `items`. 
+For this purpose, dictionaries have the method `items`.
 
 ```pycon
 >>> for key, value func_descript.items():
@@ -201,14 +201,14 @@ len: length
 ```
 
 > [note]
-> There is also the method `keys()` which return just keys.
+> There is also the method `keys()` which returns just keys.
 >
 > `keys()`, `values()` and `items()` return special objects
 > which can be used in `for` loops (we say that those objects are "iterable"),
 > and they behave as a set.
 > This is well described in the [documentation](https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects)
 
-In a `for` loop, you can't add keys to dictionary nor delete them:
+In a `for` loop, you can't add keys to a dictionary nor delete them:
 
 ```pycon
 >>> for key, value in func_descript.items():
@@ -224,8 +224,8 @@ Traceback (most recent call last):
 RuntimeError: dictionary changed size during iteration
 ```
 
-... this limitation can be easily overcome by using a list copy
-of the iterator
+This limitation can be easily overcome by using a list copy
+of the iterator:
 
 ```pycon
 >>> for key, value in list(func_descript.items()):
@@ -241,7 +241,7 @@ of the iterator
 
 However, you can change values for already existing keys.
 
-Update the `phones` dictionary so that all numbers contain '+43' prefix
+Update the `phones` dictionary so that all numbers contain a '+43' prefix.
 
 {% filter solution %}
 ```python
@@ -252,13 +252,16 @@ print(phones)
 {% endfilter %}
 
 
-Using a for loop, ensure that following `keys` are deleted from the dictionary `phones`.
+Using a `for` loop, ensure that following `keys_to_delete` are deleted from the dictionary `phones`.
+
+```python
 keys_to_delete = ['Lubo', 'Tyna', 'Oliwia']
+```
 
 {% filter solution %}
 ```python
 for to_delete in keys_to_delete:
-    # need to check if is present - can not delete a key which does not exist in dictionary
+    # need to check if is present - cannot delete a key which does not exist in dictionary
     if to_delete in phones.keys(): # or to_delete in phones:
         del phones[to_delete]
 print(phones)
@@ -271,7 +274,7 @@ print(phones)
 Dictionaries can be created in two ways.
 The first way uses curly brackets `{}`.
 The other way is by using the keyword `dict`.
-This works similar to `strings`, `integer` or `list`, so it will
+This works similar to `str`, `int` or `list`, so it will
 convert some specific objects to a dictionary.
 
 ```pycon
@@ -296,10 +299,10 @@ colours = {
 }
 ```
 
-You can fill a new dictionary from one or more existing ones
+You can fill a new dictionary from one or more existing ones:
 ```python
 new_colours = {
-    **colours,          # ** unpacks dictionary into key value pairs
+    **colours,          # ** unpacks dictionary into key-value pairs
     'celery': 'green',
     'squash': 'yellow',
     'plum': 'purple',
@@ -318,7 +321,7 @@ print(colours['apple'])
 print(colour_riped['apple'])
 ```
 
-WWe can also convert a sequence of *pairs* (e.g., list of tuples)
+We can also convert a sequence of *pairs* (e.g., list of tuples)
 (which work as *key* and *value*) into a dictionary:
 
 ```pycon
@@ -334,15 +337,15 @@ WWe can also convert a sequence of *pairs* (e.g., list of tuples)
 
 ## Dictionaries and function keyword arguments - *args **kwargs
 
-*args and **kwargs allow you to pass multiple arguments or keyword arguments to a function.
+`*args` and `**kwargs` allow you to pass multiple arguments or keyword arguments to a function.
 
-If you do not know how many arguments will be passed into your function, or you do not really care 
+If you do not know how many arguments will be passed into your function, or you do not really care,
 add a `*` before the parameter name in the function definition.
 
-**kwargs allows us to pass a variable number of keyword arguments to a Python function.
+`**kwargs` allows us to pass a variable number of keyword arguments to a Python function.
 In the function, we use the double-asterisk before the parameter name to denote this type of argument.
 
-Args are collected in a function always as tuples, while kwargs are collected as dictionaries.
+`args` are collected in a function always as tuples, while `kwargs` are collected as dictionaries.
 
 
 ```pycon
@@ -355,7 +358,7 @@ args: (1, 2, 3)
 kwargs: {'a': 'Hi Bob!', 'b': True}
 ```
 
-Example of real-life usage of *args could be for example:
+Example of real-life usage of `*args` could be for example:
 
 ```pycon
 >>> def my_sum(*args):
@@ -385,7 +388,7 @@ users = {
     'location': 'paris',
   },
 }
- 
+
 cities = {
   'paris': {
     'country': 'France',
@@ -402,12 +405,12 @@ cities = {
 }
 ```
 Print out following information about each user if they have it:
-His/her 'username', 'full name' (first and last with first letter capitalized), 'email', 'city' they live in and 'country' they live in
+Their `'username'`, `'full name'` (first and last with first letter capitalized), `'email'`, `'city'` they live in and `'country'` they live in.
 
 {% filter solution %}
 ```python
 for username, properties in users.items():
-    fullname = f'{properties["first"][0].upper()}{ properties["first"][1:]} {properties["last"][0].upper()}{ properties["last"][1:]}'
+    fullname = f'{properties["first"][0].upper()}{properties["first"][1:]} {properties["last"][0].upper()}{properties["last"][1:]}'
     # or properties["first"].capitalize()
     if "email" in properties:
         email = properties["email"]
@@ -427,7 +430,6 @@ for username, properties in users.items():
     ''')
 ```
 {% endfilter %}
-
 
 
 ## And that's all for now
