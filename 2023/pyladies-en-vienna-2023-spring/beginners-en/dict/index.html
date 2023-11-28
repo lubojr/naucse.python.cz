@@ -65,8 +65,8 @@ are therefore not allowed). Strings keys are the most common, though other
 types such as numbers and tuples are also used.</p>
 <p>The target <em>values</em>, as in the case of, e.g., lists, can by anything
 which can be assigned to a variable. The values can repeat and multiple
-keys can point to a same value.</p>
-<p><img src="/2023/pyladies-en-vienna-2023-spring/beginners-en/dict/static/dict.png" alt="a dicitionary"></p>
+keys can point to the same value.</p>
+<p><img src="/2023/pyladies-en-vienna-2023-spring/beginners-en/dict/static/dict.png" alt="a dictionary"></p>
 <p>There is a dictionary with 3 keys, and each one of them has a value:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">me</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Marketa'</span><span class="p">,</span> <span class="s1">'city'</span><span class="p">:</span> <span class="s1">'Prague'</span><span class="p">,</span> <span class="s1">'numbers'</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">]}</span>
 </pre></div><p>Note the curly braces <code>{}</code> and the colons <code>:</code> between each key and value.
@@ -75,11 +75,11 @@ The key/value pairs are separated by commas <code>,</code>.</p>
 As of <a href="https://docs.python.org/3/whatsnew/3.7.html">Python 3.7</a>
 officially (effectively
 <a href="https://docs.python.org/3/whatsnew/3.6.html#new-dict-implementation">already from Python 3.6</a>)
-dictionaries are gurateed to preserve order in which their key/values pairs
+dictionaries are guaranteed to preserve order in which their key/value pairs
 are inserted. Before, the ordering was not guaranteed, as it can be still
 found mentioned in older text books.</p>
 </div><p>You can get values from the dictionary similar as
-from lists, but instead of an index, you have to use e key.</p>
+from lists, but instead of an index, you have to use a key.</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">me</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
 <span class="go">'Marketa'</span>
 </pre></div><p>If you try to access a non-existent key, Python won't like it:</p>
@@ -107,7 +107,7 @@ when the key exists or return a default value when it does not exist:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'age'</span><span class="p">)</span> <span class="c1"># key does not exist and None is returned instead</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'age'</span><span class="p">,</span> <span class="s1">'n/a'</span><span class="p">)</span> <span class="c1"># key does not exist and 'n/a' is returned instead</span>
 <span class="go">'n/a'</span>
-</pre></div><p>Other useful method is <code>pop</code>, removing key from the dictionary and
+</pre></div><p>Other useful method is <code>pop</code>, removing a key from the dictionary and
 returning its value. <code>pop</code> throws an error in case of a missing
 value, unless a default value is provided:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">record</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'name'</span><span class="p">)</span> <span class="c1"># 'name' is removed from dictionary</span>
@@ -156,7 +156,7 @@ Other examples are dictionaries with properties of food, or word translations.</
     <span class="s1">'cabbage'</span><span class="p">:</span> <span class="s1">'green'</span><span class="p">,</span>
     <span class="s1">'carrot'</span><span class="p">:</span> <span class="s1">'orange'</span><span class="p">,</span>
 <span class="p">}</span>
-</pre></div><p>Update Lubo's number to be the same as Fabian's as they now temporarily share phones</p>
+</pre></div><p>Update Lubo's number to be the same as Fabian's as they now temporarily share phones.</p>
 <div class="solution" id="solution-0">
     <h3>Solution</h3>
     <div class="solution-cover">
@@ -188,12 +188,12 @@ For this purpose, dictionaries have the method <code>items</code>.</p>
 <span class="go">str: string</span>
 <span class="go">dict: dictionary</span>
 <span class="go">len: length</span>
-</pre></div><div class="admonition note"><p>There is also the method <code>keys()</code> which return just keys.</p>
+</pre></div><div class="admonition note"><p>There is also the method <code>keys()</code> which returns just keys.</p>
 <p><code>keys()</code>, <code>values()</code> and <code>items()</code> return special objects
 which can be used in <code>for</code> loops (we say that those objects are "iterable"),
 and they behave as a set.
 This is well described in the <a href="https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects">documentation</a></p>
-</div><p>In a <code>for</code> loop, you can't add keys to dictionary nor delete them:</p>
+</div><p>In a <code>for</code> loop, you can't add keys to a dictionary nor delete them:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">func_descript</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 <span class="gp">... </span>    <span class="n">func_descript</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">upper</span><span class="p">()]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="gt">Traceback (most recent call last):</span>
@@ -205,8 +205,8 @@ This is well described in the <a href="https://docs.python.org/3/library/stdtyp
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
 <span class="gr">RuntimeError</span>: <span class="n">dictionary changed size during iteration</span>
-</pre></div><p>... this limitation can be easily overcome by using a list copy
-of the iterator</p>
+</pre></div><p>This limitation can be easily overcome by using a list copy
+of the iterator:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">func_descript</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
 <span class="gp">... </span>    <span class="n">func_descript</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">upper</span><span class="p">()]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">func_descript</span>
@@ -217,7 +217,7 @@ of the iterator</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">func_descript</span>
 <span class="go">{}</span>
 </pre></div><p>However, you can change values for already existing keys.</p>
-<p>Update the <code>phones</code> dictionary so that all numbers contain '+43' prefix</p>
+<p>Update the <code>phones</code> dictionary so that all numbers contain a '+43' prefix.</p>
 <div class="solution" id="solution-1">
     <h3>Solution</h3>
     <div class="solution-cover">
@@ -229,16 +229,16 @@ of the iterator</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">phones</span><span class="p">)</span>
 </pre></div>
     </div>
-</div><p>Using a for loop, ensure that following <code>keys</code> are deleted from the dictionary <code>phones</code>.
-keys_to_delete = ['Lubo', 'Tyna', 'Oliwia']</p>
-<div class="solution" id="solution-2">
+</div><p>Using a <code>for</code> loop, ensure that following <code>keys_to_delete</code> are deleted from the dictionary <code>phones</code>.</p>
+<div class="highlight"><pre><span></span><span class="n">keys_to_delete</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Lubo'</span><span class="p">,</span> <span class="s1">'Tyna'</span><span class="p">,</span> <span class="s1">'Oliwia'</span><span class="p">]</span>
+</pre></div><div class="solution" id="solution-2">
     <h3>Solution</h3>
     <div class="solution-cover">
         <a href="/2023/pyladies-en-vienna-2023-spring/beginners-en/dict/index/solutions/2/"><span class="link-text">Show solution</span></a>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">to_delete</span> <span class="ow">in</span> <span class="n">keys_to_delete</span><span class="p">:</span>
-    <span class="c1"># need to check if is present - can not delete a key which does not exist in dictionary</span>
+    <span class="c1"># need to check if is present - cannot delete a key which does not exist in dictionary</span>
     <span class="k">if</span> <span class="n">to_delete</span> <span class="ow">in</span> <span class="n">phones</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="c1"># or to_delete in phones:</span>
         <span class="k">del</span> <span class="n">phones</span><span class="p">[</span><span class="n">to_delete</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">phones</span><span class="p">)</span>
@@ -248,7 +248,7 @@ keys_to_delete = ['Lubo', 'Tyna', 'Oliwia']</p>
 <p>Dictionaries can be created in two ways.
 The first way uses curly brackets <code>{}</code>.
 The other way is by using the keyword <code>dict</code>.
-This works similar to <code>strings</code>, <code>integer</code> or <code>list</code>, so it will
+This works similar to <code>str</code>, <code>int</code> or <code>list</code>, so it will
 convert some specific objects to a dictionary.</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">{}</span>  <span class="c1"># empty dictionary</span>
 <span class="go">{}</span>
@@ -263,9 +263,9 @@ convert some specific objects to a dictionary.</p>
     <span class="s1">'cabbage'</span><span class="p">:</span> <span class="s1">'green'</span><span class="p">,</span>
     <span class="s1">'carrot'</span><span class="p">:</span> <span class="s1">'orange'</span><span class="p">,</span>
 <span class="p">}</span>
-</pre></div><p>You can fill a new dictionary from one or more existing ones</p>
+</pre></div><p>You can fill a new dictionary from one or more existing ones:</p>
 <div class="highlight"><pre><span></span><span class="n">new_colours</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="o">**</span><span class="n">colours</span><span class="p">,</span>          <span class="c1"># ** unpacks dictionary into key value pairs</span>
+    <span class="o">**</span><span class="n">colours</span><span class="p">,</span>          <span class="c1"># ** unpacks dictionary into key-value pairs</span>
     <span class="s1">'celery'</span><span class="p">:</span> <span class="s1">'green'</span><span class="p">,</span>
     <span class="s1">'squash'</span><span class="p">:</span> <span class="s1">'yellow'</span><span class="p">,</span>
     <span class="s1">'plum'</span><span class="p">:</span> <span class="s1">'purple'</span><span class="p">,</span>
@@ -278,7 +278,7 @@ old one.</p>
     <span class="n">colour_riped</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'blackish-brownish-'</span> <span class="o">+</span> <span class="n">colour_riped</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">colours</span><span class="p">[</span><span class="s1">'apple'</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">colour_riped</span><span class="p">[</span><span class="s1">'apple'</span><span class="p">])</span>
-</pre></div><p>WWe can also convert a sequence of <em>pairs</em> (e.g., list of tuples)
+</pre></div><p>We can also convert a sequence of <em>pairs</em> (e.g., list of tuples)
 (which work as <em>key</em> and <em>value</em>) into a dictionary:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'one'</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'three'</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -288,12 +288,12 @@ old one.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="go">{1: 'one', 2: 'two', 3: 'three'}</span>
 </pre></div><h2>Dictionaries and function keyword arguments - *args **kwargs</h2>
-<p>*args and **kwargs allow you to pass multiple arguments or keyword arguments to a function.</p>
-<p>If you do not know how many arguments will be passed into your function, or you do not really care 
+<p><code>*args</code> and <code>**kwargs</code> allow you to pass multiple arguments or keyword arguments to a function.</p>
+<p>If you do not know how many arguments will be passed into your function, or you do not really care,
 add a <code>*</code> before the parameter name in the function definition.</p>
-<p>**kwargs allows us to pass a variable number of keyword arguments to a Python function.
+<p><code>**kwargs</code> allows us to pass a variable number of keyword arguments to a Python function.
 In the function, we use the double-asterisk before the parameter name to denote this type of argument.</p>
-<p>Args are collected in a function always as tuples, while kwargs are collected as dictionaries.</p>
+<p><code>args</code> are collected in a function always as tuples, while <code>kwargs</code> are collected as dictionaries.</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"args:"</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"kwargs:"</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
@@ -301,7 +301,7 @@ In the function, we use the double-asterisk before the parameter name to denote 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="s2">"Hi Bob!"</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">args: (1, 2, 3)</span>
 <span class="go">kwargs: {'a': 'Hi Bob!', 'b': True}</span>
-</pre></div><p>Example of real-life usage of *args could be for example:</p>
+</pre></div><p>Example of real-life usage of <code>*args</code> could be for example:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">my_sum</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="gp">... </span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
@@ -341,7 +341,7 @@ In the function, we use the double-asterisk before the parameter name to denote 
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div><p>Print out following information about each user if they have it:
-His/her 'username', 'full name' (first and last with first letter capitalized), 'email', 'city' they live in and 'country' they live in</p>
+Their <code>'username'</code>, <code>'full name'</code> (first and last with first letter capitalized), <code>'email'</code>, <code>'city'</code> they live in and <code>'country'</code> they live in.</p>
 <div class="solution" id="solution-3">
     <h3>Solution</h3>
     <div class="solution-cover">
@@ -349,7 +349,7 @@ His/her 'username', 'full name' (first and last with first letter capitalized), 
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">username</span><span class="p">,</span> <span class="n">properties</span> <span class="ow">in</span> <span class="n">users</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">fullname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">properties</span><span class="p">[</span><span class="s2">"first"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span><span class="w"> </span><span class="n">properties</span><span class="p">[</span><span class="s2">"first"</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">properties</span><span class="p">[</span><span class="s2">"last"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span><span class="w"> </span><span class="n">properties</span><span class="p">[</span><span class="s2">"last"</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s1">'</span>
+    <span class="n">fullname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">properties</span><span class="p">[</span><span class="s2">"first"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span><span class="n">properties</span><span class="p">[</span><span class="s2">"first"</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">properties</span><span class="p">[</span><span class="s2">"last"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span><span class="n">properties</span><span class="p">[</span><span class="s2">"last"</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s1">'</span>
     <span class="c1"># or properties["first"].capitalize()</span>
     <span class="k">if</span> <span class="s2">"email"</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">:</span>
         <span class="n">email</span> <span class="o">=</span> <span class="n">properties</span><span class="p">[</span><span class="s2">"email"</span><span class="p">]</span>

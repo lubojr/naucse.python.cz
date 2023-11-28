@@ -55,7 +55,7 @@
     
 
     <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">to_delete</span> <span class="ow">in</span> <span class="n">keys_to_delete</span><span class="p">:</span>
-    <span class="c1"># need to check if is present - can not delete a key which does not exist in dictionary</span>
+    <span class="c1"># need to check if is present - cannot delete a key which does not exist in dictionary</span>
     <span class="k">if</span> <span class="n">to_delete</span> <span class="ow">in</span> <span class="n">phones</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="c1"># or to_delete in phones:</span>
         <span class="k">del</span> <span class="n">phones</span><span class="p">[</span><span class="n">to_delete</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">phones</span><span class="p">)</span>
