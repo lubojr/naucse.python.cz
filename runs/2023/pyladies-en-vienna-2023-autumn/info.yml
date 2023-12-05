@@ -176,10 +176,10 @@ plan:
 - title: Recap session
   slug: recap1
   date: 2023-12-05
-  # materials:
-  #  - title: Recap session materials (PDF)
-  #    url: https://drive.google.com/file/d/19QGVdbfyRW3TURQCb6t2w98bva5aySNc/view
-  #    type: homework
+  materials:
+   - title: Recap session materials (PDF)
+     url: https://drive.google.com/file/d/19QGVdbfyRW3TURQCb6t2w98bva5aySNc/view
+     type: homework
   #  - title: Small quiz
   #    url: https://docs.google.com/presentation/d/106vBNe1rKOMxb3GdUnH37EWIeEkKvoPBJQDnh7DzwUA
   #    type: homework
