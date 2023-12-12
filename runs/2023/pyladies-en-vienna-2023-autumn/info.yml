@@ -180,9 +180,9 @@ plan:
    - title: Recap session materials (PDF)
      url: https://drive.google.com/file/d/19QGVdbfyRW3TURQCb6t2w98bva5aySNc/view
      type: homework
-  #  - title: Small quiz
-  #    url: https://docs.google.com/presentation/d/106vBNe1rKOMxb3GdUnH37EWIeEkKvoPBJQDnh7DzwUA
-  #    type: homework
+   - title: Small quiz
+     url: https://docs.google.com/presentation/d/1qvnz7uJuzZipXEqsqq8bufpvtGNLP2sdW6p1MjodRJE
+     type: homework
 
 - title: Classes
   slug: classes
