@@ -196,8 +196,8 @@ plan:
     - title: Homework (PDF)
       url: https://drive.google.com/file/d/1amhY9-pvtN8w6tHnOvR0tIcwOfNVx-Bl/view
       type: homework
-  #   - title: Offline session hackerrank
-  #     url: https://docs.google.com/presentation/d/16lJsaZAEJipIt939sGNMqZbv9ifIeztJkJBv2T0Cfqs
+    - title: Offline session 14.12. hackerrank
+      url: https://docs.google.com/presentation/d/1xC2tAaXvQDnglT6WJLnY8RRGhCnod38zpE1LA-ckvhg
 
 - title: Testing
   slug: testing
