@@ -7,8 +7,7 @@ error messages (aka *exceptions*).
 
 ## Printing errors:
 
-In the beginning we will repeat how Python prints an error which is in a nested function.
-
+Let's repeat how Python prints an error which is in a nested function.
 
 ```python
 def outer_function():
@@ -34,16 +33,13 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 ```
 
-You notice that every function call that led to the error is listed here.
-The actuall error is probably somewhere near that function call.
-In our case it's easy. We shouldn't call `in_func` with argument `0`.
-Or the `in_function` must be written to handle the case that the divisor can be `0`
-and it should do something else than try to divide by zero.
-
 Python can't know where the original error is that needs to be fixed, so it shows
 you everything in the error message.
-This will be very useful in more complex programs.
 
+Either we shouldn't call `in_func` with argument `0`.
+
+Or the `in_function` must be written to handle the case that the divisor can be `0`
+and it should do something else than try to divide by zero.
 
 ## Raising an exception
 
@@ -91,8 +87,6 @@ BaseException
       ╰── ValueError                wrong value, e.g. int('xyz')
 ```
 
-For the full list of built-in exception see the [Python documentation](https://docs.python.org/3/library/exceptions.html).
-
 > [note] What does this hierarchy mean?
 >
 > The hierarchy of exceptions is like a family tree with the most generic type
@@ -110,6 +104,7 @@ For the full list of built-in exception see the [Python documentation](https://d
 > `KeyError` exception. Therefore the `KeyError` has properties
 > of `LookupError` and `Exception` exceptions.
 
+For the full list of built-in exception see the [Python documentation](https://docs.python.org/3/library/exceptions.html).
 
 ## Handling Exceptions
 
@@ -162,7 +157,6 @@ In this case we specifically catch the `ValueError` exception.
 We could achieve the same by catching generic `Exception`, because, as you can
 see in the hierarchy above, `ValueError` is a specific type of `Exception`.
 
-
 ## Don't catch'em all!
 
 Try to be as selective as possible when catching the expected exceptions.
@@ -187,7 +181,6 @@ A typical example would be reading the input from a user. If the user
 enters gibberish, it is better to ask again until the
 user enters something meaningful:
 
-
 ```pycon
 >>> def fetch_number():
 ...     while True:
@@ -203,7 +196,6 @@ Type a number: 42
 42
 ```
 
-
 ## Other clauses
 
 Additionally to `except`, there are two more clauses - blocks that can 
@@ -214,7 +206,7 @@ And `finally` runs every time and is executed even in the case of an uncaught ex
 and may be used even without any `except` clause. It is mostly used for clean-ups.
 
 You can also have several `except` blocks. Only one of them will be triggered. 
-The first one that can handle the raised exception. 
+The first one that can handle the raised exception.
 
 > [note]
 > Always catch more specific exceptions before the generic ones.
@@ -224,10 +216,11 @@ try:
     do_something()
 except ValueError:
     print("This will be printed if there's a ValueError.")
-except NameError:
-    print("This will be printed if there's a NameError.")
-except Exception:
+except NameError, KeyError:
+    print("This will be printed if there's a NameError or KeyError.")
+except Exception as e:
     print("This will be printed if there's some other exception.")
+    print(e)
     # (apart from SystemExit a KeyboardInterrupt, we don't want to catch those)
 except TypeError:
     print("This will never be printed")
@@ -238,12 +231,13 @@ finally:
     print("This will always be printed; even if there's e.g. a 'return' in the 'try' block.")
 ```
 
-
 ## Task
 
 Let's add exception handling and proper input checking to our square size
-calculator from {{ lesson_url('beginners-en/comparisons') }}. Modify the code so that if the user does not enter a non-negative
-number the programs prompts the input again.
+calculator from {{ lesson_url('beginners-en/comparisons') }}.
+
+Modify the code so that until the user enters a non-negative
+number the programs will keep prompting for the input again.
 
 {% filter solution %}
 

@@ -7,8 +7,7 @@ up to the point when it becomes too limiting to hold all our code in a
 single file (e.g., the script becomes too long, parts of code repeat in
 different scripts).
 
-Can we organize our code better than that? The answer is *yes*, with the Python
-*modules*.
+Can we organize our code better than that?
 
 # Modules
 
@@ -74,10 +73,6 @@ if not os.path.exists(directory):
 
 ## Custom modules
 
-Creating a new Python module is easy, just create a new Python file.
-The function and global variables that you create in this file will become
-available for import.
-
 You can also create your own module, simply, by creating a Python file.
 Functions and variables (and other named objects) that you create there will be available
 in programs where you import this module.
@@ -108,9 +103,16 @@ and run:
 $ python3 write.py
 ```
 
-Python searches for the imported modules in the same folder where
-the executed script is located. Please make sure both files are placed
-in the same folder.
+> [note]
+> Python searches for the imported modules in a defined order:
+> 1) `built-in` modules from the Python Standard Library (e.g. sys, math)
+> 2) modules in a directory specified by `sys.path`, which by default is the same folder
+> where the executed script is located (not the current working directory - where Python command was launched)
+> 3) directories in the `PYTHONPATH` environment variable
+> 4) the rest of the modules in Python’s standard library (not built-ins) - (e.g. random, os)
+> That is why in 4th lesson with turtle, we said to NOT name the current script turtle.py
+
+Do not forget to have both files (meadow.py and write.py) in the same directory.
 
 ## Import mechanics and undesired side-effects
 
@@ -159,8 +161,9 @@ From now on, we will work on bigger projects that contain
 more files. We recommend that you create a folder for each
 of them.
 
-
 ## The `import` best practice
+
+Python imports are case-sensitive. `import Spam` is different from `import spam`.
 
 ### Where to put the imports?
 
@@ -169,19 +172,12 @@ own code.
 
 ### Does the order of the imports matter?
 
-Generally, the order of the imports does not matter, though, we often
-order the imports, starting with the modules from the Python system
-library (e.g., `math`), then third-party libraries
-(e.g., `turtle` installed with the `pip` command),
-and last come imports from our own modules.
+Generally, the order of the imports does not matter. though, we often
+order the imports,
 
-
-Do not repeat imports from the same module like, e.g.:
-
-```python
-from math import pi
-from math import sin, cos
-```
+1) modules from the Python system library (e.g., `math`)
+2) third-party libraries (installed with the `pip` command)
+3) imports from our own modules
 
 If you decide to import multiple names from the module do it in one import
 command, e.g.:

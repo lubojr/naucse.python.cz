@@ -1,13 +1,12 @@
 # Testing
 
 Programming is not just about writing code. 
-It is important to verify that the code does what it should 
-(and about fixing it if needed).
+It is important to verify that the code does what it should.
 The process of verification that the program works as expected is called *testing*.
 
 You have probably already tested your programs by executing them.
-When you test your program, you usually enter some input data and look if
-the result is correct.
+When you test your program, you usually enter some input data and print the result if it is correct.
+
 This is okay for a small program, but it gets harder as the program gets bigger.
 Bigger programs have more options what they can do based on the possible
 user input and configuration. Their manual testing becomes time-consuming,
@@ -17,16 +16,6 @@ likely errors slip unnoticed into our code.
 Humans are not very good at performing boring repetitive tasks, that is
 the domain of computers. And, not surprisingly, that is the reason why
 developers write the code that verifies their programs.
-
-*Automated tests* are functions checking, with no manual intervention,
-that all features of the tested program work correctly.
-If made right, the tests should be lean and give quick response whether
-the program has issues or not. The testing does not give us 100% proof that
-the code is without errors but it is still better than no testing at all.
-
-The automated tests make modification of the code easier as you can
-faster find possible bugs in the existing functionality (aka *regressions*).
-
 
 ## Installing the pytest library
 
@@ -43,7 +32,7 @@ Submit the following command. (It is a command-line command,
 just as `cd` or `mkdir`; do not enter it into the Python console.)
 
 ```console
-$ python3 -m pip install pytest
+$ python -m pip install pytest
 ```
 
 > [note] What is pip and why do we use it?
@@ -51,21 +40,20 @@ $ python3 -m pip install pytest
 > Python libraries from the [Python Package Index (PyPI)](https://pypi.org)
 > and other sources (e.g., Git repositories).
 >
-> `python3 -m pip install pytest` makes Python to install `pytest` library from PyPI.
+> `python -m pip install pytest` makes Python to install `pytest` library from PyPI.
 >
-> For help on how to use pip run `python3 -m pip --help`.
+> For help on how to use pip run `python -m pip --help`.
 
-> [note] python3 -m &lt;command&gt; or just &lt;command&gt;
-> `python3 -m <command>` tells Python to execute a script from the
-> Python module named `<command>` (e.g., `python3 -m pip ...`).
+> [note] python -m &lt;command&gt; or just &lt;command&gt;
+> `python -m <command>` tells Python to execute a script from the
+> Python module named `<command>` (e.g., `python -m pip ...`).
 > In a properly configured Python environment, it should be possible to call
 > the `<command>` directly, without the help of the `python` command
 > (e.g., `pip ...`)
 >
 > To save ourselves the trouble of unnecessary complications with a possibly
 > misconfigured Python environment we recommend using the longer
-> `python3 -m <command>` version.
-
+> `python -m <command>` version.
 
 ## Writing tests
 
@@ -96,7 +84,6 @@ def test_add():
 > By default, the names of the test files and the test functions must start with
 > the `test_` prefix in order to be recognized as tests.
 
-
 What does the test function do?
 
 The `assert` statement evaluates the expression that follows it.
@@ -113,7 +100,6 @@ if not (a == b):
 > Do not use `assert` outside of test functions for now.
 > For "regular" code, the  `assert` has functionality that
 > we will not explain now.
-
 
 ## Running tests
 
@@ -192,6 +178,7 @@ rectangle from [custom functions]({{ lesson_url('beginners-en/functions') }})
 def find_perimeter(width, height): 
     "Returns the rectangle's perimeter of the given sides" 
     return  2 * (width  +  height)
+print(find_perimeter(2, 4)) # this is how you'd normally check result without "testing"
 ```
 
 {% filter solution %}
@@ -216,9 +203,19 @@ def test_find_rectangle_perimeter_zero_width():
 
 ## Executable modules
 
+*Automated tests* are functions checking, with no manual intervention,
+that all features of the tested program work correctly.
+The testing does not give us 100% proof that
+the code is without errors but it is still better than no testing at all.
+
+The automated tests make modification of the code easier as you can
+faster find possible bugs in the existing functionality (aka *regressions*).
+
 Automated tests have to be able to run unattended. They are often executed
 automatically and the failures are reported via some sort of notification,
 e.g., by email.
+
+[Example Python Repository with pytest](https://github.com/ungarj/mapchete).
 
 In practical terms, this means that the tests must not depend on live
 interaction with the user, e.g., the `input` function will not work in tests.
@@ -235,7 +232,7 @@ the 1D (one-dimensional) tic-tac-toe.
 > only theoretical.
 >
 > If you study at home, complete the 1D tic-tac-toe lesson before continuing.
-> The task description is at [one-dimensional tic-tac-toe](../tictactoe))..
+> The task description is at [one-dimensional tic-tac-toe]({{ lesson_url('beginners-en/tictactoe') }})
 
 The structure of the 1D tic-tac-toe code looks roughly like this:
 
@@ -254,6 +251,12 @@ def player_move(board):
     input('What is your move? ')
     ...
 
+def computer_move(board):
+    """Places computer mark on random empty position and returns the board
+    with the move played.
+    """
+    ...
+
 def tic_tac_toe_1d():
     """Starts the game
 
@@ -263,13 +266,15 @@ def tic_tac_toe_1d():
     while ...:
         ...
         player_move(...)
+        computer_move(...)
         ...
 
 # Start the game:
 tic_tac_toe_1d()
 ```
 
-If you import this module, Python executes all commands in it, from top to bottom:
+As we described in [modules lesson]({{ lesson_url('beginners-en/modules') }}),
+if you import this module, Python executes all commands in it, from top to bottom:
 
 - The first command, `import`, initializes the variables and functions of the
   `random` module. It is module from the standard Python library it is unlikely
@@ -291,10 +296,12 @@ not get not imported.
 > start the 1D tic-tac-toe game!
 
 The calling of `tic_tac_toe_1d` is a side-effect and we need to remove it.
-Okay, but you cannot start the game without it! What can we do about it?
+Okay, but you cannot start the game without it! There are two ways of fixing it.
 
-We can create a new python file, e.g., `game.py` and we move the
-`tic_tac_toe_1d()` call in it:
+### Splitting a module
+
+We can create a new python file just for running the game, while the functions will stay in the old file.
+E.g., create a new file `game.py` and we move the `tic_tac_toe_1d()` call into it:
 
 ```python
 import tic_tac_toe
@@ -303,11 +310,9 @@ tic_tac_toe.tic_tac_toe_1d()
 ```
 
 You cannot test this module because it calls `input` indirectly.
-But you can execute it if you want to play.
-Since you do not have tests for this module, it should be very simple: 
-one import and one statement.
+But you can execute it if you want to play as `python game.py`
 
-You can import the original module from tests or other modules.
+You can import the original module in test files or other modules without side effects.
 
 A test for the original module could look like this:
 
@@ -321,70 +326,25 @@ def test_move_to_empty_space():
     assert board.count('-') == 19
 ```
 
-## Positive and negative tests
+### Run part of code only if module is executed directly
 
-Tests that verify that a program works correctly
-under correct conditions are called *positive tests*.
-An exception raised during the positive testing lead to failure of the test.
+There is a special way to check if python only imports functions from a file or it directly
+runs it. It is possible by comparing value of a "magic" variable ``__name__``.
 
-Tests that check behaviour in case of invalid inputs are called *negative tests*.
-The purpose of the negative testing is verification of the graceful handling
-of error states. Raising of an exception is often the expected behaviour
-of the tested code.
-
-For example, the `computer_move` function should raise an error
-(e.g., `ValueError`) when the board is full.
-
-> [note]
-> It is much better to raise an exception than doing nothing
-> and silently letting the program get stuck elsewhere.
-> You can use such function in a more complex program
-> and be sure that it will raise an understandable error
-> when it is called under bad conditions.
-> The error helps you to fix the actual problem. The sooner you discover
-> an error the easier is to fix it.
-
-Use the `with` statement and the `raises` function 
-to test that your code raises the expected exception.
-The `raises` function is imported from the `pytest` module.
-
-
-> [note]
-> We have not talked about the `with` statement and context managers yet.
-> But don't worry, you will learn about them later.  Just check how it is used
-> to test whether an exception is raised.
+The ``__name__`` variable is available anytime you run a Python program and if it has value
+``__main__``, it was run from the main script. If not, it was only imported.
 
 ```python
-import pytest
-
-import tic_tac_toe
-
-def test_move_failure():
-    with pytest.raises(ValueError):
-        tic_tac_toe.computer_move('oxoxoxoxoxoxoxoxoxox')
+if __name__ == "__main__":
+    tic_tac_toe_1d()
 ```
 
-Let's now try to edit the function for getting a perimeter of rectangle
-so that it raises a ValueError if any of the sides is smaller or equal to zero.
-Add a test for the new functionality.
+Now you can both import the original module in test files or other modules without
+side effects and run it to play the game.
 
+## Best Practices for Testing
 
-{% filter solution %}
-
-```python
-import pytest
-
-def find_rectangle_perimeter(width, height):
-    """ Calculate perimeter of a rectangle from the given sides.
-    """
-    if width < 0 or height < 0:
-        raise ValueError("Rectangle sides must be non-negative.")
-    return  2 * (width + height)
-
-def test_find_perimeter_exception_negative():
-    """ Tests of negative integer values as input
-    """
-    with pytest.raises(ValueError):
-        find_rectangle_perimeter(-3, 5)
-```
-{% endfilter %}
+1) Write Clear, Concise Test Cases: Each test should focus on a specific aspect of your code.
+2) Use Descriptive Test Names: Test names should be descriptive about what they are testing.
+3) Keep Tests Independent: Tests should not rely on each other.
+4) Run Tests Regularly: Integrate testing into your continuous integration process (every time someone pushes to a repository).

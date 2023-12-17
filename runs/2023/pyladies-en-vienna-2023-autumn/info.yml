@@ -177,8 +177,8 @@ plan:
   slug: recap1
   date: 2023-12-05
   materials:
-   - title: Recap session materials (PDF)
-     url: https://drive.google.com/file/d/19QGVdbfyRW3TURQCb6t2w98bva5aySNc/view
+   - title: Recap session materials
+     url: https://docs.google.com/document/d/1lQuHF1d3mbVzc1awfWmNVa9nYJdfrrvMNvpcX9pz6co
      type: homework
    - title: Small quiz
      url: https://docs.google.com/presentation/d/1qvnz7uJuzZipXEqsqq8bufpvtGNLP2sdW6p1MjodRJE
@@ -199,22 +199,23 @@ plan:
     - title: Offline session 14.12. hackerrank
       url: https://docs.google.com/presentation/d/1xC2tAaXvQDnglT6WJLnY8RRGhCnod38zpE1LA-ckvhg
 
-- title: Testing
+- title: Modules, exceptions, testing
   slug: testing
   date: 2023-12-19
-  # materials:
-  #   - lesson: beginners-en/modules
-  #   - lesson: beginners-en/exceptions
-  #   - lesson: beginners-en/testing
-  #   - title: Exceptions cheatsheet
-  #     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
-  #     type: cheatsheet
-  #   - title: Testing cheatsheet
-  #     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_testing.pdf
-  #     type: cheatsheet
-  #   - title: Homework (PDF)
-  #     url: https://drive.google.com/file/d/1WGv6D-P1Odr8w2UwELKv4SB2TY9pQ2PP/view
-  #     type: homework
+  materials:
+    - lesson: beginners-en/modules
+    - lesson: beginners-en/exceptions
+    - lesson: beginners-en/testing
+    - lesson: beginners-en/testing-continued
+    - title: Exceptions cheatsheet
+      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
+      type: cheatsheet
+    - title: Testing cheatsheet
+      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_testing.pdf
+      type: cheatsheet
+    - title: Homework
+      url: https://docs.google.com/document/d/1xVaSWOmQD3PqCY6czmOaxBlAlT0AHv2z2rsveK5vfxg/edit
+      type: homework
 
 - title: Working with Files and CLI
   slug: files_cli
