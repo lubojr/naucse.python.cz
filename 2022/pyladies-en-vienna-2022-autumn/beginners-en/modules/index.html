@@ -59,8 +59,7 @@ text files with the <code>.py</code> extension.</p>
 up to the point when it becomes too limiting to hold all our code in a
 single file (e.g., the script becomes too long, parts of code repeat in
 different scripts).</p>
-<p>Can we organize our code better than that? The answer is <em>yes</em>, with the Python
-<em>modules</em>.</p>
+<p>Can we organize our code better than that?</p>
 <h1>Modules</h1>
 <p>Python allows us to organize code in <em>modules</em>. A <em>module</em> is something like
 a box containing some ready-to-use code.  We can pull it from a shelf, <em>import</em>
@@ -103,9 +102,6 @@ that, you work with them the same way:</p>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
     <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
 </pre></div><h2>Custom modules</h2>
-<p>Creating a new Python module is easy, just create a new Python file.
-The function and global variables that you create in this file will become
-available for import.</p>
 <p>You can also create your own module, simply, by creating a Python file.
 Functions and variables (and other named objects) that you create there will be available
 in programs where you import this module.</p>
@@ -122,9 +118,14 @@ in programs where you import this module.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">meadow</span><span class="o">.</span><span class="n">description</span><span class="p">())</span>
 </pre></div><p>and run:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>write.py
-</pre></div><p>Python searches for the imported modules in the same folder where
-the executed script is located. Please make sure both files are placed
-in the same folder.</p>
+</pre></div><div class="admonition note"><p>Python searches for the imported modules in a defined order:
+1) <code>built-in</code> modules from the Python Standard Library (e.g. sys, math)
+2) modules in a directory specified by <code>sys.path</code>, which by default is the same folder
+where the executed script is located (not the current working directory - where Python command was launched)
+3) directories in the <code>PYTHONPATH</code> environment variable
+4) the rest of the modules in Python’s standard library (not built-ins) - (e.g. random, os)
+That is why in 4th lesson with turtle, we said to NOT name the current script turtle.py</p>
+</div><p>Do not forget to have both files (meadow.py and write.py) in the same directory.</p>
 <h2>Import mechanics and undesired side-effects</h2>
 <p>What exactly does the command <code>import meadow</code> do?</p>
 <p>First, Python looks for a matching file (<code>meadow.py</code>) and runs all the commands
@@ -156,19 +157,17 @@ only when we write <code>turtle.forward()</code>.</p>
 more files. We recommend that you create a folder for each
 of them.</p>
 <h2>The <code>import</code> best practice</h2>
+<p>Python imports are case-sensitive. <code>import Spam</code> is different from <code>import spam</code>.</p>
 <h3>Where to put the imports?</h3>
 <p>Always keep imports at the top of your script before you the start of your
 own code.</p>
 <h3>Does the order of the imports matter?</h3>
-<p>Generally, the order of the imports does not matter, though, we often
-order the imports, starting with the modules from the Python system
-library (e.g., <code>math</code>), then third-party libraries
-(e.g., <code>turtle</code> installed with the <code>pip</code> command),
-and last come imports from our own modules.</p>
-<p>Do not repeat imports from the same module like, e.g.:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
-</pre></div><p>If you decide to import multiple names from the module do it in one import
+<p>Generally, the order of the imports does not matter. though, we often
+order the imports,</p>
+<p>1) modules from the Python system library (e.g., <code>math</code>)
+2) third-party libraries (installed with the <code>pip</code> command)
+3) imports from our own modules</p>
+<p>If you decide to import multiple names from the module do it in one import
 command, e.g.:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
 </pre></div><h2>Further reading</h2>

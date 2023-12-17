@@ -58,7 +58,7 @@ When an error occurs, Python complains, tells us where the error (line) is,
 and terminates the program.  But there is much more that we can learn about
 error messages (aka <em>exceptions</em>).</p>
 <h2>Printing errors:</h2>
-<p>In the beginning we will repeat how Python prints an error which is in a nested function.</p>
+<p>Let's repeat how Python prints an error which is in a nested function.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">outer_function</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">inner_function</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
@@ -76,14 +76,11 @@ error messages (aka <em>exceptions</em>).</p>
   File <span class="nb">"example.py"</span>, line <span class="m">5</span>, in <span class="n">inner_function</span>
 <span class="w">    </span><span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">divisor</span>
 <span class="gr">ZeroDivisionError</span>: <span class="n">division by zero</span>
-</pre></div><p>You notice that every function call that led to the error is listed here.
-The actuall error is probably somewhere near that function call.
-In our case it's easy. We shouldn't call <code>in_func</code> with argument <code>0</code>.
-Or the <code>in_function</code> must be written to handle the case that the divisor can be <code>0</code>
+</pre></div><p>Python can't know where the original error is that needs to be fixed, so it shows
+you everything in the error message.</p>
+<p>Either we shouldn't call <code>in_func</code> with argument <code>0</code>.</p>
+<p>Or the <code>in_function</code> must be written to handle the case that the divisor can be <code>0</code>
 and it should do something else than try to divide by zero.</p>
-<p>Python can't know where the original error is that needs to be fixed, so it shows
-you everything in the error message.
-This will be very useful in more complex programs.</p>
 <h2>Raising an exception</h2>
 <p>In Python, an <em>exception</em> is raised by the command <code>raise</code>.
 The command is followed by the name of the exception we want to raise and
@@ -120,8 +117,7 @@ is just a subset of them:</p>
       │    ╰── IndentationError     wrong indentation
       │         ╰── TabError        combination of tabs and spaces
       ├── TypeError                 wrong type, e.g. "a" + 1
-      ╰── ValueError                wrong value, e.g. int('xyz')</code></pre></div><p>For the full list of built-in exception see the <a href="https://docs.python.org/3/library/exceptions.html">Python documentation</a>.</p>
-<div class="admonition note"><p class="admonition-title">What does this hierarchy mean?</p>
+      ╰── ValueError                wrong value, e.g. int('xyz')</code></pre></div><div class="admonition note"><p class="admonition-title">What does this hierarchy mean?</p>
 <p>The hierarchy of exceptions is like a family tree with the most generic type
 of exception as the root, every branch becoming more specific.
 E.g., <code>KeyError</code> is also a <code>LookupError</code> and <code>Exception</code> but it is
@@ -134,7 +130,8 @@ of their generic generic <strong>parent</strong>.  Namely, the <code>Exception</
 class of the <code>LookupError</code> and the <code>LookupError</code> is the parent classes of the
 <code>KeyError</code> exception. Therefore the <code>KeyError</code> has properties
 of <code>LookupError</code> and <code>Exception</code> exceptions.</p>
-</div><h2>Handling Exceptions</h2>
+</div><p>For the full list of built-in exception see the <a href="https://docs.python.org/3/library/exceptions.html">Python documentation</a>.</p>
+<h2>Handling Exceptions</h2>
 <p>Why there are so many built-in exceptions? Because this way we can more easily
 <em>catch</em> exceptions of specific error states.</p>
 <p>It is not always desired that an exception kills our program. And we also cannot
@@ -214,10 +211,11 @@ The first one that can handle the raised exception.</p>
     <span class="n">do_something</span><span class="p">()</span>
 <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"This will be printed if there's a ValueError."</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"This will be printed if there's a NameError."</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="k">except</span> <span class="ne">NameError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"This will be printed if there's a NameError or KeyError."</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"This will be printed if there's some other exception."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
     <span class="c1"># (apart from SystemExit a KeyboardInterrupt, we don't want to catch those)</span>
 <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"This will never be printed"</span><span class="p">)</span>
@@ -228,8 +226,9 @@ The first one that can handle the raised exception.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"This will always be printed; even if there's e.g. a 'return' in the 'try' block."</span><span class="p">)</span>
 </pre></div><h2>Task</h2>
 <p>Let's add exception handling and proper input checking to our square size
-calculator from naucse:page?lesson=beginners-en/comparisons. Modify the code so that if the user does not enter a non-negative
-number the programs prompts the input again.</p>
+calculator from naucse:page?lesson=beginners-en/comparisons.</p>
+<p>Modify the code so that until the user enters a non-negative
+number the programs will keep prompting for the input again.</p>
 <div class="solution" id="solution-0">
     <h3>Solution</h3>
     <div class="solution-cover">

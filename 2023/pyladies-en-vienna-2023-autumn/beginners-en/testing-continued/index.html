@@ -1,0 +1,258 @@
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            
+                Beginners course PyLadies Vienna: Testing Continued
+            
+        </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+        
+
+        <link rel="stylesheet" href="/static/css/naucse.css">
+        <link rel="stylesheet" href="/static/css/body.css">
+        <link rel="stylesheet" href="/static/css/pygments-lovelace-style.css">
+        <link rel="stylesheet" href="/static/css/ipython.css">
+
+        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/testing-continued/" />
+
+
+        <style>
+            
+    
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="header">
+            <ul class="container menu">
+                <li><a href="/" class="logo"><h1>PyLadies Vienna</h1></a></li>
+                <li><a href="/mentorship/" class="menu-link"><h2>Mentorship</h2></a></li>
+                <li><a href="/runs/" class="menu-link"><h2>Courses</h2></a></li>
+            </ul>
+        </nav>
+
+        
+
+<div class="page">
+    <div class="container">
+
+        
+  
+
+
+        <div class="lesson-content">
+          
+    
+
+    <h2>Negative tests</h2>
+<p>Tests that verify that a program works correctly
+under correct conditions are called <em>positive tests</em>.
+An exception raised during the positive testing lead to failure of the test.</p>
+<p>Tests which check behaviour for invalid inputs are called <em>negative tests</em>.
+The purpose of the negative testing is verification of the graceful handling
+of error states. Raising of an exception is often the expected behaviour
+of the tested code.</p>
+<p>For example, the <code>computer_move</code> function should raise an error
+(e.g., <code>ValueError</code>) when the board is full.</p>
+<div class="admonition note"><p>It is much better to raise an exception than doing nothing
+and silently letting the program get stuck elsewhere.
+You can use such function in a more complex program
+and be sure that it will raise an understandable error
+when it is called under bad conditions.
+The error helps you to fix the actual problem. The sooner you discover
+an error the easier is to fix it.</p>
+</div><p>Use the <code>with</code> statement and the <code>raises</code> function 
+to test that your code raises the expected exception.
+The <code>raises</code> function is imported from the <code>pytest</code> module.</p>
+<div class="admonition note"><p>We have not talked about the <code>with</code> statement and context managers yet.
+But don't worry, you will learn about them later.  Just check how it is used
+to test whether an exception is raised.</p>
+</div><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="kn">import</span> <span class="nn">tic_tac_toe</span>
+
+<span class="k">def</span> <span class="nf">test_move_failure</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+        <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">computer_move</span><span class="p">(</span><span class="s1">'oxoxoxoxoxoxoxoxoxox'</span><span class="p">)</span>
+</pre></div><p>Let's now try to edit the function for getting a perimeter of rectangle
+so that it raises a ValueError if any of the sides is smaller or equal to zero.
+Add a test for the new functionality.</p>
+<div class="solution" id="solution-0">
+    <h3>Solution</h3>
+    <div class="solution-cover">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/beginners-en/testing-continued/index/solutions/0/"><span class="link-text">Show solution</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="k">def</span> <span class="nf">find_rectangle_perimeter</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">""" Calculate perimeter of a rectangle from the given sides.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">width</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">height</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Rectangle sides must be non-negative."</span><span class="p">)</span>
+    <span class="k">return</span>  <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">width</span> <span class="o">+</span> <span class="n">height</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_find_perimeter_exception_negative</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">""" Tests of negative integer values as input</span>
+<span class="sd">    """</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+        <span class="n">find_rectangle_perimeter</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+    </div>
+</div><h2>Pytest fixtures</h2>
+<p><code>Fixtures</code> in pytest are reusable components that set up specific states (e.g. database connections, test data).</p>
+<h3>Key Features</h3>
+<ul>
+<li>Reusability: Define a fixture once and use it across multiple test functions.</li>
+<li>Scoping: Fixtures can be scoped (available) at different levels like function, class, module, or session.</li>
+<li>Automatic Cleanup: Fixtures can be set up to automatically clean up resources after a test is done.</li>
+<li>Dependency Injection: Test functions can use fixtures by including them as arguments. (It is not possible to add "normal" arguments to test functions, only references to fixtures).</li>
+</ul>
+<p>You can easily create and use a <code>fixture in pytest</code> in a following way:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="k">def</span> <span class="nf">sample_data</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">test_sum</span><span class="p">(</span><span class="n">sample_data</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sample_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span>
+</pre></div><p>By default <code>fixture</code> is called once per a test function - <code>scope=function</code> parameter of a fixture.</p>
+<p>For resource utilization purposes it could be useful to create a fixture only once per whole <code>module</code>:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="c1"># A fixture to provide a configuration dictionary</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">"module"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">config_data</span><span class="p">():</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"api_endpoint"</span><span class="p">:</span> <span class="s2">"http://api.example.com"</span><span class="p">,</span>
+        <span class="s2">"retry_attempts"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">"timeout"</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">config</span>
+<span class="c1"># Example test using the fixture</span>
+<span class="k">def</span> <span class="nf">test_api_endpoint</span><span class="p">(</span><span class="n">config_data</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">config_data</span><span class="p">[</span><span class="s2">"api_endpoint"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"http://api.example.com"</span>
+<span class="c1"># Another test using the same fixture</span>
+<span class="k">def</span> <span class="nf">test_retry_attempts</span><span class="p">(</span><span class="n">config_data</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">config_data</span><span class="p">[</span><span class="s2">"retry_attempts"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div><p>This approach is useful when the setup does not involve external resources that require explicit cleanup after the tests.</p>
+
+
+        </div>
+
+        
+
+
+        
+    <div class="row prev-next">
+        
+            
+                
+    <div class="col text-left">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/beginners-en/testing/">← <span class="d-none d-sm-inline">Testing</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-left">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/sessions/testing/">↑ <span class="d-none d-sm-inline">Lesson: Modules, exceptions, testing</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-right">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/sessions/testing/back/"><span class="d-none d-sm-inline">End of lesson</span> →</a>
+    </div>
+
+            
+        
+    </div>
+
+
+        
+
+    </div>
+</div>
+
+
+
+        <script type="text/javascript" src="/static/js/solutions.js"></script>
+
+        <div class="footer container">
+            <hr>
+            <div class="lesson-attribution">
+                
+    
+        <p>Originally written by Lubomir Dolezal, 2023 for [PyLadies Vienna].</p>
+    
+
+                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
+                
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="global-pyladies">
+                  PyLadies Vienna are a part of <a href="https://pyladies.com">international PyLadies</a>.
+                </div>
+                <ul>
+                    <li>
+                        <a href="mailto:pyladies.vienna@gmail.com">
+                            <img src="/static/img/mail-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/pyladies_vie" target="_blank">
+                            <img src="/static/img/twitter-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/UndeadFairy/pyladies_vienna" target="_blank">
+                            <img src="/static/img/github-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.meetup.com/PyLadies-Vienna/" target="_blank">
+                            <img src="/static/img/meetup.png">
+                        </a>
+                    </li>
+                    <li>
+                      <a href="https://discord.gg/v2qdvbD2dn" target="_blank">
+                          <img src="/static/img/discord-logo.png">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/company/pyladies-vienna" target="_blank">
+                          <img src="/static/img/linkedin-logo.png">
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+          </footer>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+        
+
+    </body>
+</html>

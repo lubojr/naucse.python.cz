@@ -54,13 +54,11 @@
 
     <h1>Testing</h1>
 <p>Programming is not just about writing code. 
-It is important to verify that the code does what it should 
-(and about fixing it if needed).
+It is important to verify that the code does what it should.
 The process of verification that the program works as expected is called <em>testing</em>.</p>
 <p>You have probably already tested your programs by executing them.
-When you test your program, you usually enter some input data and look if
-the result is correct.
-This is okay for a small program, but it gets harder as the program gets bigger.
+When you test your program, you usually enter some input data and print the result if it is correct.</p>
+<p>This is okay for a small program, but it gets harder as the program gets bigger.
 Bigger programs have more options what they can do based on the possible
 user input and configuration. Their manual testing becomes time-consuming,
 especially when it needs to be repeated after every change, and it becomes more
@@ -68,13 +66,6 @@ likely errors slip unnoticed into our code.</p>
 <p>Humans are not very good at performing boring repetitive tasks, that is
 the domain of computers. And, not surprisingly, that is the reason why
 developers write the code that verifies their programs.</p>
-<p><em>Automated tests</em> are functions checking, with no manual intervention,
-that all features of the tested program work correctly.
-If made right, the tests should be lean and give quick response whether
-the program has issues or not. The testing does not give us 100% proof that
-the code is without errors but it is still better than no testing at all.</p>
-<p>The automated tests make modification of the code easier as you can
-faster find possible bugs in the existing functionality (aka <em>regressions</em>).</p>
 <h2>Installing the pytest library</h2>
 <p>Up to now, we have used only the modules that come installed with Python, 
 for example, modules such as <code>math</code> or <code>turtle</code>.
@@ -85,22 +76,22 @@ It is quite difficult to use this library so we will use a better one.
 We will install the library <code>pytest</code> which is faster, easier to use and very popular.</p>
 <p>Submit the following command. (It is a command-line command, 
 just as <code>cd</code> or <code>mkdir</code>; do not enter it into the Python console.)</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pytest
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pytest
 </pre></div><div class="admonition note"><p class="admonition-title">What is pip and why do we use it?</p>
 <p><code>pip</code> is a Python command-line tool for installing 3rd-party
 Python libraries from the <a href="https://pypi.org">Python Package Index (PyPI)</a>
 and other sources (e.g., Git repositories).</p>
-<p><code>python3 -m pip install pytest</code> makes Python to install <code>pytest</code> library from PyPI.</p>
-<p>For help on how to use pip run <code>python3 -m pip --help</code>.</p>
-</div><div class="admonition note"><p class="admonition-title">python3 -m &lt;command&gt; or just &lt;command&gt;</p>
-<p><code>python3 -m &lt;command&gt;</code> tells Python to execute a script from the
-Python module named <code>&lt;command&gt;</code> (e.g., <code>python3 -m pip ...</code>).
+<p><code>python -m pip install pytest</code> makes Python to install <code>pytest</code> library from PyPI.</p>
+<p>For help on how to use pip run <code>python -m pip --help</code>.</p>
+</div><div class="admonition note"><p class="admonition-title">python -m &lt;command&gt; or just &lt;command&gt;</p>
+<p><code>python -m &lt;command&gt;</code> tells Python to execute a script from the
+Python module named <code>&lt;command&gt;</code> (e.g., <code>python -m pip ...</code>).
 In a properly configured Python environment, it should be possible to call
 the <code>&lt;command&gt;</code> directly, without the help of the <code>python</code> command
 (e.g., <code>pip ...</code>)</p>
 <p>To save ourselves the trouble of unnecessary complications with a possibly
 misconfigured Python environment we recommend using the longer
-<code>python3 -m &lt;command&gt;</code> version.</p>
+<code>python -m &lt;command&gt;</code> version.</p>
 </div><h2>Writing tests</h2>
 <p>We will show testing through a very simple example.
 There is a function <code>add</code> that can add two numbers.
@@ -187,6 +178,7 @@ rectangle from <a href="/2021/pyladies-en-vienna-2021/beginners-en/functions/">c
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_perimeter</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span> 
     <span class="s2">"Returns the rectangle's perimeter of the given sides"</span> 
     <span class="k">return</span>  <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">width</span>  <span class="o">+</span>  <span class="n">height</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">find_perimeter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="c1"># this is how you'd normally check result without "testing"</span>
 </pre></div><div class="solution" id="solution-0">
     <h3>Solution</h3>
     <div class="solution-cover">
@@ -208,9 +200,16 @@ rectangle from <a href="/2021/pyladies-en-vienna-2021/beginners-en/functions/">c
 </pre></div>
     </div>
 </div><h2>Executable modules</h2>
+<p><em>Automated tests</em> are functions checking, with no manual intervention,
+that all features of the tested program work correctly.
+The testing does not give us 100% proof that
+the code is without errors but it is still better than no testing at all.</p>
+<p>The automated tests make modification of the code easier as you can
+faster find possible bugs in the existing functionality (aka <em>regressions</em>).</p>
 <p>Automated tests have to be able to run unattended. They are often executed
 automatically and the failures are reported via some sort of notification,
 e.g., by email.</p>
+<p><a href="https://github.com/ungarj/mapchete">Example Python Repository with pytest</a>.</p>
 <p>In practical terms, this means that the tests must not depend on live
 interaction with the user, e.g., the <code>input</code> function will not work in tests.</p>
 <div class="admonition note"><p class="admonition-title">Can we test user interaction in automated tests?</p>
@@ -221,7 +220,7 @@ the 1D (one-dimensional) tic-tac-toe.</p>
 <div class="admonition note"><p>If you do not have the 1D tic-tac-toe program, the following sections are
 only theoretical.</p>
 <p>If you study at home, complete the 1D tic-tac-toe lesson before continuing.
-The task description is at <a href="/2021/pyladies-en-vienna-2021/beginners-en/tictactoe/">one-dimensional tic-tac-toe</a>)..</p>
+The task description is at <a href="/2021/pyladies-en-vienna-2021/beginners-en/tictactoe/">one-dimensional tic-tac-toe</a></p>
 </div><p>The structure of the 1D tic-tac-toe code looks roughly like this:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>  <span class="c1"># (and possibly other import statements that are needed)</span>
 
@@ -237,6 +236,12 @@ The task description is at <a href="/2021/pyladies-en-vienna-2021/beginners-en/t
     <span class="nb">input</span><span class="p">(</span><span class="s1">'What is your move? '</span><span class="p">)</span>
     <span class="o">...</span>
 
+<span class="k">def</span> <span class="nf">computer_move</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Places computer mark on random empty position and returns the board</span>
+<span class="sd">    with the move played.</span>
+<span class="sd">    """</span>
+    <span class="o">...</span>
+
 <span class="k">def</span> <span class="nf">tic_tac_toe_1d</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">"""Starts the game</span>
 
@@ -246,11 +251,13 @@ The task description is at <a href="/2021/pyladies-en-vienna-2021/beginners-en/t
     <span class="k">while</span> <span class="o">...</span><span class="p">:</span>
         <span class="o">...</span>
         <span class="n">player_move</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+        <span class="n">computer_move</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
         <span class="o">...</span>
 
 <span class="c1"># Start the game:</span>
 <span class="n">tic_tac_toe_1d</span><span class="p">()</span>
-</pre></div><p>If you import this module, Python executes all commands in it, from top to bottom:</p>
+</pre></div><p>As we described in <a href="/2021/pyladies-en-vienna-2021/beginners-en/modules/">modules lesson</a>,
+if you import this module, Python executes all commands in it, from top to bottom:</p>
 <ul>
 <li><p>The first command, <code>import</code>, initializes the variables and functions of the
 <code>random</code> module. It is module from the standard Python library it is unlikely
@@ -270,17 +277,16 @@ not get not imported.</p>
 to use <code>move()</code> in a different game, the import of the module itself will
 start the 1D tic-tac-toe game!</p>
 </div><p>The calling of <code>tic_tac_toe_1d</code> is a side-effect and we need to remove it.
-Okay, but you cannot start the game without it! What can we do about it?</p>
-<p>We can create a new python file, e.g., <code>game.py</code> and we move the
-<code>tic_tac_toe_1d()</code> call in it:</p>
+Okay, but you cannot start the game without it! There are two ways of fixing it.</p>
+<h3>Splitting a module</h3>
+<p>We can create a new python file just for running the game, while the functions will stay in the old file.
+E.g., create a new file <code>game.py</code> and we move the <code>tic_tac_toe_1d()</code> call into it:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tic_tac_toe</span>
 
 <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">tic_tac_toe_1d</span><span class="p">()</span>
 </pre></div><p>You cannot test this module because it calls <code>input</code> indirectly.
-But you can execute it if you want to play.
-Since you do not have tests for this module, it should be very simple: 
-one import and one statement.</p>
-<p>You can import the original module from tests or other modules.</p>
+But you can execute it if you want to play as <code>python game.py</code></p>
+<p>You can import the original module in test files or other modules without side effects.</p>
 <p>A test for the original module could look like this:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tic_tac_toe</span>
 
@@ -289,62 +295,20 @@ one import and one statement.</p>
     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">)</span> <span class="o">==</span> <span class="mi">20</span>
     <span class="k">assert</span> <span class="n">board</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
     <span class="k">assert</span> <span class="n">board</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'-'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">19</span>
-</pre></div><h2>Positive and negative tests</h2>
-<p>Tests that verify that a program works correctly
-under correct conditions are called <em>positive tests</em>.
-An exception raised during the positive testing lead to failure of the test.</p>
-<p>Tests that check behaviour in case of invalid inputs are called <em>negative tests</em>.
-The purpose of the negative testing is verification of the graceful handling
-of error states. Raising of an exception is often the expected behaviour
-of the tested code.</p>
-<p>For example, the <code>computer_move</code> function should raise an error
-(e.g., <code>ValueError</code>) when the board is full.</p>
-<div class="admonition note"><p>It is much better to raise an exception than doing nothing
-and silently letting the program get stuck elsewhere.
-You can use such function in a more complex program
-and be sure that it will raise an understandable error
-when it is called under bad conditions.
-The error helps you to fix the actual problem. The sooner you discover
-an error the easier is to fix it.</p>
-</div><p>Use the <code>with</code> statement and the <code>raises</code> function 
-to test that your code raises the expected exception.
-The <code>raises</code> function is imported from the <code>pytest</code> module.</p>
-<div class="admonition note"><p>We have not talked about the <code>with</code> statement and context managers yet.
-But don't worry, you will learn about them later.  Just check how it is used
-to test whether an exception is raised.</p>
-</div><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-
-<span class="kn">import</span> <span class="nn">tic_tac_toe</span>
-
-<span class="k">def</span> <span class="nf">test_move_failure</span><span class="p">():</span>
-    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-        <span class="n">tic_tac_toe</span><span class="o">.</span><span class="n">computer_move</span><span class="p">(</span><span class="s1">'oxoxoxoxoxoxoxoxoxox'</span><span class="p">)</span>
-</pre></div><p>Let's now try to edit the function for getting a perimeter of rectangle
-so that it raises a ValueError if any of the sides is smaller or equal to zero.
-Add a test for the new functionality.</p>
-<div class="solution" id="solution-1">
-    <h3>Solution</h3>
-    <div class="solution-cover">
-        <a href="/2021/pyladies-en-vienna-2021/beginners-en/testing/index/solutions/1/"><span class="link-text">Show solution</span></a>
-    </div>
-    <div class="solution-body" aria-hidden="true">
-        <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-
-<span class="k">def</span> <span class="nf">find_rectangle_perimeter</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">""" Calculate perimeter of a rectangle from the given sides.</span>
-<span class="sd">    """</span>
-    <span class="k">if</span> <span class="n">width</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">height</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Rectangle sides must be non-negative."</span><span class="p">)</span>
-    <span class="k">return</span>  <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">width</span> <span class="o">+</span> <span class="n">height</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">test_find_perimeter_exception_negative</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">""" Tests of negative integer values as input</span>
-<span class="sd">    """</span>
-    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-        <span class="n">find_rectangle_perimeter</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
-    </div>
-</div>
+</pre></div><h3>Run part of code only if module is executed directly</h3>
+<p>There is a special way to check if python only imports functions from a file or it directly
+runs it. It is possible by comparing value of a "magic" variable <code>__name__</code>.</p>
+<p>The <code>__name__</code> variable is available anytime you run a Python program and if it has value
+<code>__main__</code>, it was run from the main script. If not, it was only imported.</p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">tic_tac_toe_1d</span><span class="p">()</span>
+</pre></div><p>Now you can both import the original module in test files or other modules without
+side effects and run it to play the game.</p>
+<h2>Best Practices for Testing</h2>
+<p>1) Write Clear, Concise Test Cases: Each test should focus on a specific aspect of your code.
+2) Use Descriptive Test Names: Test names should be descriptive about what they are testing.
+3) Keep Tests Independent: Tests should not rely on each other.
+4) Run Tests Regularly: Integrate testing into your continuous integration process (every time someone pushes to a repository).</p>
 
 
         </div>
