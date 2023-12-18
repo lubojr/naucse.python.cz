@@ -193,7 +193,7 @@ But in most cases, you will need both -- keys and values.
 For this purpose, dictionaries have the method `items`.
 
 ```pycon
->>> for key, value func_descript.items():
+>>> for key, value in func_descript.items():
 ...     print('{}: {}'.format(key, value))
 str: string
 dict: dictionary
