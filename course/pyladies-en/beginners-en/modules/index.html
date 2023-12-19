@@ -118,13 +118,14 @@ in programs where you import this module.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">meadow</span><span class="o">.</span><span class="n">description</span><span class="p">())</span>
 </pre></div><p>and run:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>write.py
-</pre></div><div class="admonition note"><p>Python searches for the imported modules in a defined order:
-1) <code>built-in</code> modules from the Python Standard Library (e.g. sys, math)
-2) modules in a directory specified by <code>sys.path</code>, which by default is the same folder
-where the executed script is located (not the current working directory - where Python command was launched)
-3) directories in the <code>PYTHONPATH</code> environment variable
-4) the rest of the modules in Python’s standard library (not built-ins) - (e.g. random, os)
-That is why in 4th lesson with turtle, we said to NOT name the current script turtle.py</p>
+</pre></div><div class="admonition note"><p>Python searches for the imported modules in a defined following order:</p>
+<ul>
+<li><code>built-in</code> modules from the Python Standard Library (e.g. sys, math)</li>
+<li>modules in a directory specified by <code>sys.path</code>, which by default is the same folder where the executed script is located (not the current working directory - where Python command was launched)</li>
+<li>directories in the <code>PYTHONPATH</code> environment variable</li>
+<li>the rest of the modules in Python’s standard library (not built-ins) - (e.g. random, os)
+That is why in 4th lesson with turtle, we said to NOT name the current script turtle.py</li>
+</ul>
 </div><p>Do not forget to have both files (meadow.py and write.py) in the same directory.</p>
 <h2>Import mechanics and undesired side-effects</h2>
 <p>What exactly does the command <code>import meadow</code> do?</p>
