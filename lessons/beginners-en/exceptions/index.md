@@ -234,7 +234,7 @@ finally:
 ## Task
 
 Let's add exception handling and proper input checking to our square size
-calculator from {{ lesson_url('beginners-en/comparisons') }}.
+calculator from [comparisons lesson]({{ lesson_url('beginners-en/comparisons') }}).
 
 Modify the code so that until the user enters a non-negative
 number the programs will keep prompting for the input again.
