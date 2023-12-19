@@ -63,7 +63,7 @@ regular top-level module. The sub-modules are separated by dots, but apart from
 that, you work with them the same way:
 
 ```python
-import os       # os is a module
+import os       # os is a package
 import os.path  # path is submodule of os package, os.path is a full module name
 
 directory = "./test"
