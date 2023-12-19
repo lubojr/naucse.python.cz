@@ -344,7 +344,7 @@ side effects and run it to play the game.
 
 ## Best Practices for Testing
 
-1) Write Clear, Concise Test Cases: Each test should focus on a specific aspect of your code.
-2) Use Descriptive Test Names: Test names should be descriptive about what they are testing.
-3) Keep Tests Independent: Tests should not rely on each other.
-4) Run Tests Regularly: Integrate testing into your continuous integration process (every time someone pushes to a repository).
+- Write Clear, Concise Test Cases: Each test should focus on a specific aspect of your code.
+- Use Descriptive Test Names: Test names should be descriptive about what they are testing.
+- Keep Tests Independent: Tests should not rely on each other.
+- Run Tests Regularly: Integrate testing into your continuous integration process (every time someone pushes to a repository).

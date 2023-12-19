@@ -104,12 +104,11 @@ $ python3 write.py
 ```
 
 > [note]
-> Python searches for the imported modules in a defined order:
-> 1) `built-in` modules from the Python Standard Library (e.g. sys, math)
-> 2) modules in a directory specified by `sys.path`, which by default is the same folder
-> where the executed script is located (not the current working directory - where Python command was launched)
-> 3) directories in the `PYTHONPATH` environment variable
-> 4) the rest of the modules in Python’s standard library (not built-ins) - (e.g. random, os)
+> Python searches for the imported modules in a defined following order:
+> - `built-in` modules from the Python Standard Library (e.g. sys, math)
+> - modules in a directory specified by `sys.path`, which by default is the same folder where the executed script is located (not the current working directory - where Python command was launched)
+> - directories in the `PYTHONPATH` environment variable
+> - the rest of the modules in Python’s standard library (not built-ins) - (e.g. random, os)
 > That is why in 4th lesson with turtle, we said to NOT name the current script turtle.py
 
 Do not forget to have both files (meadow.py and write.py) in the same directory.
