@@ -141,7 +141,7 @@ The elements to be added here are in the form of a list:
 ```python
 more_prime_nr = [23, 29, 31]
 prime_numbers.extend(more_prime_nr)
-print(primary)
+print(prime_numbers)
 ```
 
 The `extend` method can work with other
