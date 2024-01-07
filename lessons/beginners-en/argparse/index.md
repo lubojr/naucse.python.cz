@@ -10,8 +10,7 @@ That user can be you as a creator of code and someone else you give access to it
 
 ### Motivation
 
-In the <link to testing lesson> we have shown that sometimes you need to call a Python program 
-independently with different arguments in order to run computations with different values.
+In the [testing lesson]({{ lesson_url('beginners-en/testing') }}) we have shown that sometimes you need to call a Python program independently with different arguments in order to run computations with different values.
 
 Letting the tester or user pass these **arguments** from command line (which means not manually editing them inside the Python script) is a great option.
 
