@@ -1,0 +1,259 @@
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            
+                Beginners course PyLadies Vienna for Ukraine: Modules
+            
+        </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+        
+
+        <link rel="stylesheet" href="/static/css/naucse.css">
+        <link rel="stylesheet" href="/static/css/body.css">
+        <link rel="stylesheet" href="/static/css/pygments-lovelace-style.css">
+        <link rel="stylesheet" href="/static/css/ipython.css">
+
+        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/modules/" />
+
+
+        <style>
+            
+    
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="header">
+            <ul class="container menu">
+                <li><a href="/" class="logo"><h1>PyLadies Vienna</h1></a></li>
+                <li><a href="/mentorship/" class="menu-link"><h2>Mentorship</h2></a></li>
+                <li><a href="/runs/" class="menu-link"><h2>Courses</h2></a></li>
+            </ul>
+        </nav>
+
+        
+
+<div class="page">
+    <div class="container">
+
+        
+  
+
+
+        <div class="lesson-content">
+          
+    
+
+    <p>You've already learned that it is not convenient write longer programs in the
+Python interpreter and you've been writing your Python <em>scripts</em> as
+text files with the <code>.py</code> extension.</p>
+<p>The scripts can be easily edited and executed repeatedly. This works nicely
+up to the point when it becomes too limiting to hold all our code in a
+single file (e.g., the script becomes too long, parts of code repeat in
+different scripts).</p>
+<p>Can we organize our code better than that?</p>
+<h1>Modules</h1>
+<p>Python allows us to organize code in <em>modules</em>. A <em>module</em> is something like
+a box containing some ready-to-use code.  We can pull it from a shelf, <em>import</em>
+it, and then use it in our script.</p>
+<p>For example, you can import the function <code>sqrt</code> from
+the module <code>math</code>:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div><p>In this case, the module <code>math</code> (Python standard library)
+contains a set of various mathematical functions and constants.
+With the <code>from &lt;module&gt; import &lt;names&gt;</code> command we pulled from the
+<code>math</code> modules one function <code>sqrt</code>, which refers
+to the function calculating <a href="https://en.wikipedia.org/wiki/Square_root">square root</a>,
+and made it available in our program.</p>
+<p>Alternatively, you can import a whole module and access its names through
+the module name and period <code>.</code>. For example:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div><p>... or:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">'red'</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div><h2>Packages</h2>
+<p>Python allows a special kind of module which itself contains sub-modules.
+A module which is a collection of modules is called a <em>package</em> in the Python
+jargon. A package can have sub-packages and, in more complex projects, it is
+common to have several levels of sub-modules.</p>
+<p>Do not fear! Import of a sub-module from a <em>package</em> does not differ from the
+regular top-level module. The sub-modules are separated by dots, but apart from
+that, you work with them the same way:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>       <span class="c1"># os is a package</span>
+<span class="kn">import</span> <span class="nn">os.path</span>  <span class="c1"># path is submodule of os package, os.path is a full module name</span>
+
+<span class="n">directory</span> <span class="o">=</span> <span class="s2">"./test"</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+</pre></div><h2>Custom modules</h2>
+<p>You can also create your own module, simply, by creating a Python file.
+Functions and variables (and other named objects) that you create there will be available
+in programs where you import this module.</p>
+<p>Let's try it. First, create a new Python file <code>meadow.py</code> and write:</p>
+<div class="highlight"><pre><span></span><span class="n">meadow_colour</span> <span class="o">=</span> <span class="s1">'green'</span>
+<span class="n">number_of_kitties</span> <span class="o">=</span> <span class="mi">28</span>
+
+<span class="k">def</span> <span class="nf">description</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s1">'The meadow is </span><span class="si">{colour}</span><span class="s1">. There are </span><span class="si">{number}</span><span class="s1"> kitties.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">colour</span><span class="o">=</span><span class="n">meadow_colour</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="n">number_of_kitties</span><span class="p">)</span>
+</pre></div><p>And then write in another file <code>write.py</code> with the following content:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">meadow</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">meadow</span><span class="o">.</span><span class="n">description</span><span class="p">())</span>
+</pre></div><p>and run:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>write.py
+</pre></div><div class="admonition note"><p>Python searches for the imported modules in a defined following order:</p>
+<ul>
+<li><code>built-in</code> modules from the Python Standard Library (e.g. sys, math)</li>
+<li>modules in a directory specified by <code>sys.path</code>, which by default is the same folder where the executed script is located (not the current working directory - where Python command was launched)</li>
+<li>directories in the <code>PYTHONPATH</code> environment variable</li>
+<li>the rest of the modules in Python’s standard library (not built-ins) - (e.g. random, os)
+That is why in 4th lesson with turtle, we said to NOT name the current script turtle.py</li>
+</ul>
+</div><p>Do not forget to have both files (meadow.py and write.py) in the same directory.</p>
+<h2>Import mechanics and undesired side-effects</h2>
+<p>What exactly does the command <code>import meadow</code> do?</p>
+<p>First, Python looks for a matching file (<code>meadow.py</code>) and runs all the commands
+in the file, from top to bottom, like it was a regular script.
+Once it is done, all the names in the global scope (variables, functions,
+etc.) are remembered and made available for use outside of the module.</p>
+<p>When you try to import the same module again, the commands in the module
+are not executed and Python re-uses the already initialized module.</p>
+<p>Try it! Write in the end of <code>meadow.py</code>:</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'The meadow is green!'</span><span class="p">)</span>
+</pre></div><p>And then run <code>python</code> in the command line (if you already have an interactive
+Python open, close it, and run again) and enter:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">meadow</span>
+<span class="go">The meadow is green!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">meadow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">meadow</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div><p>The message we print at the end of the module appears only once.</p>
+<p>When the module is "doing something" (it prints something, asks the user,
+writes something into a file) we say that it has a <em>side effect</em>.
+We generally try to avoid writing modules with side effects.
+The purpose of a module is to give us <em>functions</em>, that we
+will use to do something, not to do it instead of us.
+E.g., when we write <code>import turtle</code>, no window opens. It opens
+only when we write <code>turtle.forward()</code>.</p>
+<p>So you had better delete the <code>print</code> from our module.</p>
+<h2>One directory for every project</h2>
+<p>From now on, we will work on bigger projects that contain
+more files. We recommend that you create a folder for each
+of them.</p>
+<h2>The <code>import</code> best practice</h2>
+<p>Python imports are case-sensitive. <code>import Spam</code> is different from <code>import spam</code>.</p>
+<h3>Where to put the imports?</h3>
+<p>Always keep imports at the top of your script before you the start of your
+own code.</p>
+<h3>Does the order of the imports matter?</h3>
+<p>Generally, the order of the imports does not matter. though, we often
+order the imports,</p>
+<p>1) modules from the Python system library (e.g., <code>math</code>)
+2) third-party libraries (installed with the <code>pip</code> command)
+3) imports from our own modules</p>
+<p>If you decide to import multiple names from the module do it in one import
+command, e.g.:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
+</pre></div><h2>Further reading</h2>
+<p>You can find more info about <a href="https://chrisyeh96.github.io/2017/08/08/definitive-guide-python-imports.html#basics-of-the-python-import-and-syspath">import and modules here</a>.</p>
+
+
+        </div>
+
+        
+
+    </div>
+</div>
+
+
+
+        <script type="text/javascript" src="/static/js/solutions.js"></script>
+
+        <div class="footer container">
+            <hr>
+            <div class="lesson-attribution">
+                
+    
+        <p>Translated by Marketa Muzikova</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/beginners/modules/">PyLadies CZ</a>.</p>
+    
+
+                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
+                
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="global-pyladies">
+                  PyLadies Vienna are a part of <a href="https://pyladies.com">international PyLadies</a>.
+                </div>
+                <ul>
+                    <li>
+                        <a href="mailto:pyladies.vienna@gmail.com">
+                            <img src="/static/img/mail-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/pyladies_vie" target="_blank">
+                            <img src="/static/img/twitter-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/UndeadFairy/pyladies_vienna" target="_blank">
+                            <img src="/static/img/github-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.meetup.com/PyLadies-Vienna/" target="_blank">
+                            <img src="/static/img/meetup.png">
+                        </a>
+                    </li>
+                    <li>
+                      <a href="https://discord.gg/v2qdvbD2dn" target="_blank">
+                          <img src="/static/img/discord-logo.png">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/company/pyladies-vienna" target="_blank">
+                          <img src="/static/img/linkedin-logo.png">
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+          </footer>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+        
+
+    </body>
+</html>

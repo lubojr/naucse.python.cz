@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             
-                List of offline Python courses
+                Beginners course PyLadies Vienna for Ukraine: Testing
             
         </title>
 
@@ -20,11 +20,13 @@
         <link rel="stylesheet" href="/static/css/ipython.css">
 
         
-        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/testing/" />
+
 
         <style>
             
-            
+    
+
         </style>
     </head>
 
@@ -38,91 +40,40 @@
         </nav>
 
         
+
 <div class="page">
-    <section class="container">
+    <div class="container">
 
         
-
-    <p>Here you can find a list of materials for lectures taught by mentors.
-        <!--span>  List of materials for self-study courses can be found <a href="/courses/">in the courses.</a></span-->
-    </p>
+  
 
 
-
-        <div class="row">
-            <div class="sections col-xs-12 col-sm-12 col-md-8 col-lg-8">
-
-                
-
+        <div class="lesson-content">
+          
     
-        <h1>Current courses</h1>
-        
-            
-                
-    <div>
-        <h4>
-            <a href="/2023/pyladies-en-vienna-2023-autumn/">Beginners course PyLadies Vienna</a>
-            
-                <small>– Online - autumn 2023 - Tuesdays</small>
-            
-        </h4>
-        
-            10. 10. 2023 – 23. 1. 2024
-        
-        <p>Learn Python from the beginning. No previous knowledge required!
-</p>
-    </div>
-
-            
-        
-
-        
+        <h1>Testing – Solution [0]</h1>
     
 
-    
-    <div>
-        <ul class="paginate">
-            <li class="paginate-prev">
-                <a class="disabled"
-                   href="/runs/">&lt;</a>
-            </li>
-            <li class="paginate-link current">
-                 <a href="/runs/">Current</a>
-            </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2024/">2024</a>
-                </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2023/">2023</a>
-                </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2022/">2022</a>
-                </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2021/">2021</a>
-                </li>
-            
-            <li class="paginate-link ">
-                 <a href="/runs/all/">All</a>
-            </li>
-            <li class="paginate-next">
-                <a 
-                   href="/2024/">&gt;</a>
-            </li>
-        </ul>
-    </div>
+    <p>Possible tests examples:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_find_perimeter_1</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">""" Tests if the function can handle two positive integer values as input.</span>
+<span class="sd">    """</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">find_perimeter</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">18</span>
+
+<span class="k">def</span> <span class="nf">test_find_rectangle_perimeter_zero_width</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">""" Tests if the function can handle width set to 0.</span>
+<span class="sd">    """</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">find_perimeter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
 
 
-
-
-            </div>
         </div>
 
-    </section>
+        
+
+    </div>
 </div>
 
 
@@ -133,11 +84,21 @@
             <hr>
             <div class="lesson-attribution">
                 
+    
+        <p>Translated by Petr Plavjanik</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/beginners/testing/">PyLadies CZ</a>.</p>
+    
+
                 
-                    <p>
-                        Licence: <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>
-                    </p>
-                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
                 
             </div>
         </div>

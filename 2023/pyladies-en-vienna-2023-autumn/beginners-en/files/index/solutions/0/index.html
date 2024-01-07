@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             
-                List of offline Python courses
+                Beginners course PyLadies Vienna: Files
             
         </title>
 
@@ -20,11 +20,13 @@
         <link rel="stylesheet" href="/static/css/ipython.css">
 
         
-        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/files/" />
+
 
         <style>
             
-            
+    
+
         </style>
     </head>
 
@@ -38,91 +40,71 @@
         </nav>
 
         
+
 <div class="page">
-    <section class="container">
+    <div class="container">
 
         
-
-    <p>Here you can find a list of materials for lectures taught by mentors.
-        <!--span>  List of materials for self-study courses can be found <a href="/courses/">in the courses.</a></span-->
-    </p>
+  
 
 
-
-        <div class="row">
-            <div class="sections col-xs-12 col-sm-12 col-md-8 col-lg-8">
-
-                
-
+        <div class="lesson-content">
+          
     
-        <h1>Current courses</h1>
-        
-            
-                
-    <div>
-        <h4>
-            <a href="/2023/pyladies-en-vienna-2023-autumn/">Beginners course PyLadies Vienna</a>
-            
-                <small>– Online - autumn 2023 - Tuesdays</small>
-            
-        </h4>
-        
-            10. 10. 2023 – 23. 1. 2024
-        
-        <p>Learn Python from the beginning. No previous knowledge required!
-</p>
-    </div>
-
-            
-        
-
-        
+        <h1>Files – Solution [0]</h1>
     
 
-    
-    <div>
-        <ul class="paginate">
-            <li class="paginate-prev">
-                <a class="disabled"
-                   href="/runs/">&lt;</a>
-            </li>
-            <li class="paginate-link current">
-                 <a href="/runs/">Current</a>
-            </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2024/">2024</a>
-                </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2023/">2023</a>
-                </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2022/">2022</a>
-                </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2021/">2021</a>
-                </li>
-            
-            <li class="paginate-link ">
-                 <a href="/runs/all/">All</a>
-            </li>
-            <li class="paginate-next">
-                <a 
-                   href="/2024/">&gt;</a>
-            </li>
-        </ul>
-    </div>
+    <p>Each row ends with a newline character (<code>'\n'</code>).
+When iterating over a Python file, 
+this character remains at the end of the string <code>line</code> ¹.
+The <code>print()</code> function then adds another newline character. 
+This function always ends the line. 
+You can suppress it using the argument <code>end=''</code>).
+That is one way how to "fix" this extra spacing. 
+The other is to use the method <code>rstrip()</code> for each line. 
+This method removes all spaces and newline characters 
+that are the end of the string.</p>
+<hr>
+<p>¹  Why does Python keep the newline character? If the <code>'\n'</code> at the end of line was removed, 
+it would not be possible to know if the last line ended with <code>'\n'</code> or not.</p>
 
 
-
-
-            </div>
         </div>
 
-    </section>
+        
+
+
+        
+    <div class="row prev-next">
+        
+            
+                
+    <div class="col text-left">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/beginners-en/json/">← <span class="d-none d-sm-inline">JSON</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-left">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/sessions/files_cli/">↑ <span class="d-none d-sm-inline">Lesson: Working with Files and CLI</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-right">
+        <a href="/2023/pyladies-en-vienna-2023-autumn/beginners-en/argparse/"><span class="d-none d-sm-inline">Argparse – Command line interface</span> →</a>
+    </div>
+
+            
+        
+    </div>
+
+
+        
+
+    </div>
 </div>
 
 
@@ -133,11 +115,23 @@
             <hr>
             <div class="lesson-attribution">
                 
+    
+        <p>Translated by Petr Plavjanik</p>
+    
+        <p>Modified by Tyna Dolezalova</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/beginners/files/">PyLadies CZ</a>.</p>
+    
+
                 
-                    <p>
-                        Licence: <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>
-                    </p>
-                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
                 
             </div>
         </div>

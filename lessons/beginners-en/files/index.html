@@ -63,17 +63,10 @@ and how to write to them.</p>
 </ul>
 <p>Create a <code>poem.txt</code> file in the editor and write any poem into it.
 Save the file.</p>
-<div class="admonition note"><p>I recommend to use the same editor that you use for your 
-Python program to edit the file with the poem.</p>
-<p>If you use a different editor than Atom, be sure to keep in mind when coding:</p>
-<ul>
-<li>If the editor offers you a choice of encoding, choose <code>UTF-8</code>.</li>
-<li>If <code>UTF-8 without BOM</code> is available, use it.</li>
-<li>If you have to use Notepad then use the non-standard <code>utf-8-sig</code> instead.</li>
-</ul>
-<p><a href="https://en.wikipedia.org/wiki/UTF-8"><code>utf-8</code></a> is the name of the standard encoding.
-You can store any emoji or accented characters to files with this encoding.
-🎉</p>
+<div class="admonition note"><p>In the following example, we are using encoding <code>utf-8</code>, which 
+covers majority of european characters.</p>
+<p>There are other encodings covering different character sets.
+If you want to learn more about encodings, you can read this nicely readable <a href="https://tonsky.me/blog/unicode">Encoding article</a></p>
 </div><p>Let's create a following code:</p>
 <div class="highlight"><pre><span></span><span class="n">poem_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'poem.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
 <span class="n">content</span> <span class="o">=</span> <span class="n">poem_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -226,7 +219,9 @@ line ending, conversion to strings, and printing multiple arguments at a time.</
     <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</pre></div><p>In order to read or write <code>csv</code> you can use the inbuilt <code>csv</code> library.</p>
+</pre></div><p>In previous lesson <a href="/lessons/beginners-en/json/">json</a> we have shown also loading JSON from a string and writing to a string, which used methods <code>loads</code> and <code>dumps</code>. The ending <code>s</code> represents <code>string</code>. You can remember the difference between <code>load</code> and <code>loads</code> like that.</p>
+<h2>Other common data formats</h2>
+<p>In order to read or write <code>csv</code> you can use the built-in <code>csv</code> library.</p>
 <p>For other data formats like <code>Excel</code> files, you need to install external libraries.</p>
 <p>For working with tabular data it is the easiest to use <code>pandas</code> library - which also needs to be installed extra.</p>
 
