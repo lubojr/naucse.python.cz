@@ -81,7 +81,7 @@ which, for its simplicity, has expanded the most:
 ## JSON in Python
 
 Object encoding in JSON is simple: there is a `json` module,
-whose `load` method retrieves data from the string:
+whose `loads` method retrieves data from the string:
 
 ```python
 import json

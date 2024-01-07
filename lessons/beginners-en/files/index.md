@@ -12,19 +12,11 @@ Create a `poem.txt` file in the editor and write any poem into it.
 Save the file.
 
 > [note]
-> I recommend to use the same editor that you use for your 
-> Python program to edit the file with the poem.
->
-> If you use a different editor than Atom, be sure to keep in mind when coding:
-> * If the editor offers you a choice of encoding, choose `UTF-8`.
-> * If `UTF-8 without BOM` is available, use it.
-> * If you have to use Notepad then use the non-standard `utf-8-sig` instead.
->
-> [`utf-8`] is the name of the standard encoding.
-> You can store any emoji or accented characters to files with this encoding.
-> 🎉
-
-[`utf-8`]: https://en.wikipedia.org/wiki/UTF-8
+> In the following example, we are using encoding `utf-8`, which 
+> covers majority of european characters.
+> [`utf-8`]: https://en.wikipedia.org/wiki/UTF-8
+> There are other encodings covering different character sets.
+> If you want to learn more about encodings, you can read this nicely readable [Encoding article](https://tonsky.me/blog/unicode)
 
 Let's create a following code:
 
@@ -235,7 +227,11 @@ with open('json_data.txt') as json_file:
 print(data)
 ```
 
-In order to read or write `csv` you can use the inbuilt `csv` library.
+In previous lesson [json]({{ lesson_url('beginners-en/json') }}) we have shown also loading JSON from a string and writing to a string, which used methods `loads` and `dumps`. The ending `s` represents `string`. You can remember the difference between `load` and `loads` like that.
+
+## Other common data formats
+
+In order to read or write `csv` you can use the built-in `csv` library.
 
 For other data formats like `Excel` files, you need to install external libraries.
 
