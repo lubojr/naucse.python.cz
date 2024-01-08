@@ -54,6 +54,30 @@ find . -type f -name "*.txt" -empty
 
 Which searches current directory for empty files with .txt suffix.
 
+### Reading command line arguments
+
+In order to read the command line arguments, we can use the `sys.argv` variable, which gives us a list of strings, one for each passed argument:
+
+```python
+# arguments.py
+import sys
+
+for arg in sys.argv:
+    print(arg)
+```
+
+When we execute this program with the passed in arguments, we can see them printed out:
+
+```console
+python3 arguments.py some test arguments "multi word argument"
+some
+test
+arguments
+multi word argument
+```
+
+However, this is not very convenient when we want to build actual CLI programs with options and arguments. But there are good tools we can use instead!
+
 ### Argparse
 
 How can we create a CLI in Python? Today, we will show usage of a `argparse` tool.
