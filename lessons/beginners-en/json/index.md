@@ -179,11 +179,11 @@ sampleJson = """{
 content = json.loads(sampleJson)
 employees = content.get("company", {}).get("employees", [])
 for employee in employees:
-    if employee.get("name", "") == "emma":
-        break
-payable = employee.get("payable", {})
-total = payable.get("salary", 0) + payable.get("bonus", 0)
-print(f"Anna has a total salary with bonus: {total}")
+    name = employee.get('name')
+    if name == "emma":
+      payable = employee.get("payable", {})
+      total = payable.get("salary", 0) + payable.get("bonus", 0)
+      print(f"{name} has a total salary with bonus: {total}")
 ```
 {% endfilter %}
 
