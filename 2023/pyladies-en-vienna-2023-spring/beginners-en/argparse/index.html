@@ -63,7 +63,6 @@ That user can be you as a creator of code and someone else you give access to it
 <p>The behavior of a program usually is varying - it depends on the instructions 
 you give to it as <strong>arguments</strong>.</p>
 <h3>Example</h3>
-<p>An example of a tool which is usually installed on both Windows and Unix is <code>curl</code>. It allows you to send HTTP requests to the internet and receive responses.</p>
 <p>If you want to know what arguments does existing program allow, the argument to use is <strong>help</strong>. This works for most of programs on your computer (if their author created a help page). Also usually there is a <code>-help</code> or <code>--help</code> command line argument which also shows the expected usage of a tool to any user.</p>
 <h4>git</h4>
 <p>As an example of a tool which works on both Linux and Windows mostly the same way, you can take our beloved <a href="/2023/pyladies-en-vienna-2023-spring/git-en/basics/">git</a>.</p>
@@ -74,16 +73,18 @@ you give to it as <strong>arguments</strong>.</p>
 </pre></div><p>Now that you know that programs usually accept arguments and they are documented in <code>help</code>, you can start using <code>git</code> in many ways.
 For example you can heavily customize output of <code>git log</code> in some existing git repository:</p>
 <div class="highlight"><pre><span></span><span class="go">git log --oneline --graph --decorate --cherry-mark --boundary</span>
-</pre></div><p>Another example of a command line tool with arguments is <strong>find</strong> but does different things on Windows and Linux. This example is valid for Linux:</p>
-<div class="highlight"><pre><span></span><span class="go">find . -type f -name "*.txt" -empty</span>
-</pre></div><p>Which searches current directory for empty files with .txt suffix.</p>
-<h3>Argparse</h3>
-<p>How can we create a CLI in Python? Today, we will show usage of a <code>argparse</code> tool.</p>
-<p>It is a part of the standard library, so you do not need to install anything extra.</p>
-<p>You can find the official documentation on:</p>
-<ul>
-<li><a href="https://docs.python.org/3/library/argparse.html">argparse</a></li>
-</ul>
+</pre></div><div class="admonition note"><p><strong>Note about "raw" command line argument handling</strong></p>
+<p>In order to read the command line arguments, we can use the <code>sys.argv</code> variable, which gives us a list of strings, one for each passed argument:</p>
+<div class="highlight"><pre><span></span><span class="c1"># arguments.py</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</pre></div><p>When we execute this program with the passed in arguments, we can see them printed out.
+However, this is not very convenient when we want to build actual CLI programs with options and arguments. But there are good tools we can use instead!</p>
+</div><h3>Argparse</h3>
+<p>How can we create a CLI in Python? Today, we will show usage of a <code>argparse</code> tool. It is a part of the standard library, so you do not need to install anything extra.</p>
+<p>You can find the official documentation here: <a href="https://docs.python.org/3/library/argparse.html">argparse</a></p>
 <p>And a quite handy tutorial going through most of functionalities, you could ever encounter:
 <a href="https://docs.python.org/3/howto/argparse.html">argparse-tutorial</a></p>
 <p>Additionally there is quite commonly used <code>click</code> library, which you would need to install via pip
