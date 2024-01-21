@@ -135,6 +135,9 @@ plan:
    - lesson: git-en/basics
    - lesson: git-en/github
    - lesson: git-en/branching
+   - title: Basic Git Cheatsheet
+     url: https://raw.githubusercontent.com/lubojr/naucse.python.cz/117a205e1c98f007e0a97877e87493fef411a768/lessons/git-en/basics/static/git_commands_cheat_sheet.png
+     type: cheatsheet
    - title: Extensive Git cheatsheet
      url: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
      type: cheatsheet
