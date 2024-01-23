@@ -247,9 +247,9 @@ plan:
     - title: Requests and getting data via APIs
       url: https://docs.google.com/presentation/d/1d3wat2pogHBUtSr_NhcJnQFs27HOeB_MsAGwrBwxd3w/edit
 
-- title: Final Project II.
+- title: What Next?
   date: 2024-01-23
   slug: final_project2
-  # materials:
-  #   - title: What next?
-  #     url: https://drive.google.com/file/d/1_JM-BB2bIwSWsUlbnS_OKcS5xgQgCMT3/view
+  materials:
+    - title: What next?
+      url: https://docs.google.com/presentation/d/1HOkkEQNhLX0aViNrTpCE8JuLn1GDPYtU7tTdQcJa0nE
