@@ -46,3 +46,44 @@ nav.header * {
     background-color: #296e62;
     outline-color: #E63D40;
 }
+
+.carousel-control-prev,.carousel-control-next {
+    opacity: 1;
+    transition: none;
+}
+
+.carousel-prev-icon,
+.carousel-next-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.carousel-next-icon:after
+{
+  content: '>';
+  font-size: 40px;
+  color: #E63D40;
+}
+
+.carousel-prev-icon:after {
+  content: '<';
+  font-size: 40px;
+  color: #E63D40;
+}
+
+.carousel-indicators li {
+  background-color: #E63D40;
+}
+.carousel-indicators {
+  bottom: -40px;
+}
+@media (max-width: 600px){
+    .carousel-inner {
+        min-height: 300px;
+    }
+}
+@media (min-width: 601px){
+    .carousel-inner {
+        min-height: 200px;
+    }
+}
