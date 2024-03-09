@@ -41,7 +41,7 @@ h2:first-child {
 .header {
     font-family: sans-serif;
     font-size: 18px;
-    background-color: #E63D40;
+    background-color: #ee274d;
     padding: 5px 20px 15px 20px;
 }
 
@@ -87,7 +87,7 @@ a {
 }
 
 a:hover {
-    color: #E63D40;
+    color: #ee274d;
     text-decoration: none;
 }
 

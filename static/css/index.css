@@ -1,5 +1,5 @@
 nav.header {
-    background-color: #E63D40;
+    background-color: #ee274d;
 }
 nav.header * {
     color: rgba(255,255,255);
@@ -34,17 +34,17 @@ nav.header * {
 }
 
 .btn-primary, .btn-primary:active, .btn-primary:focus {
-    background-color: #E63D40;
+    background-color: #ee274d;
     outline-color: white;
     border-color: #296e62;
     color: white;
 }
 .btn-primary:active, .btn-primary:focus {
-    outline-color: #E63D40;
+    outline-color: #ee274d;
 }
 .btn-primary:hover {
     background-color: #296e62;
-    outline-color: #E63D40;
+    outline-color: #ee274d;
 }
 
 .carousel-control-prev,.carousel-control-next {
@@ -62,17 +62,17 @@ nav.header * {
 {
   content: '>';
   font-size: 40px;
-  color: #E63D40;
+  color: #ee274d;
 }
 
 .carousel-prev-icon:after {
   content: '<';
   font-size: 40px;
-  color: #E63D40;
+  color: #ee274d;
 }
 
 .carousel-indicators li {
-  background-color: #E63D40;
+  background-color: #ee274d;
 }
 .carousel-indicators {
   bottom: -40px;
@@ -86,4 +86,20 @@ nav.header * {
     .carousel-inner {
         min-height: 200px;
     }
+}
+.discord-join {
+    background-color: #ee274d;
+    outline-color: white;
+    border-color: #ee274d;
+    color: white;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.row {
+    margin-bottom: 16px;
+}
+
+.content-section {
+    margin-top: 20px;
 }
