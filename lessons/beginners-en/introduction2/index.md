@@ -34,16 +34,6 @@ We are here to help you with problems. The important thing to note is that coach
 
 If you have any questions about the course, if you have comments, suggestions, hard feelings or you just want to share something - feel free to contact us at pyladies.vienna@gmail.com or via discord.
 
-## Google Meet features
-
-During lessons, we will use Google Meet for our online classes.
-
-For easier course flow, we will use some features of it:
-
-- Breakout rooms
-- Raised hand to ask questions
-- Emoji reactions
-
 ### Trouble?
 
 When you have troubles, there are two ways how to proceed.
