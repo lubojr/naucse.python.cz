@@ -72,24 +72,24 @@ plan:
 - title: First Program, Print
   slug: hello
   date: 2024-03-26
-  # materials:
-  # - lesson: beginners-en/hello-world
-  # - lesson: beginners-en/print
-  # - lesson: beginners-en/variables
-  # - title: Basics cheatsheet
-  #   url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
-  #   type: cheatsheet
-  # - title: VS Code Tips and tricks
-  #   url: https://www.youtube.com/watch?v=fj2tuTIcUys
-  #   type: cheatsheet
-  # - lesson: beginners-en/lesson-2-homework
-  #   type: homework
+  materials:
+  - lesson: beginners-en/hello-world
+  - lesson: beginners-en/print
+  - lesson: beginners-en/variables
+  - title: Basics cheatsheet
+    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
+    type: cheatsheet
+  - title: VS Code Tips and tricks
+    url: https://www.youtube.com/watch?v=fj2tuTIcUys
+    type: cheatsheet
+  - lesson: beginners-en/lesson-2-homework
+    type: homework
   
 - title: Conditions, modules and functions
   slug: loops
   date: 2024-04-02
-  # materials:
-  #  - lesson: beginners-en/comparisons
+  materials:
+  - lesson: beginners-en/comparisons
   #  - lesson: beginners-en/and-or
   #  - lesson: beginners-en/functions
   #  - title: Basics cheatsheet
