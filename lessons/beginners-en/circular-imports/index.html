@@ -1,0 +1,241 @@
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            
+                Circular imports
+            
+        </title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+        
+
+        <link rel="stylesheet" href="/static/css/naucse.css">
+        <link rel="stylesheet" href="/static/css/body.css">
+        <link rel="stylesheet" href="/static/css/pygments-lovelace-style.css">
+        <link rel="stylesheet" href="/static/css/ipython.css">
+
+        
+    
+
+
+        <style>
+            
+    
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="header">
+            <ul class="container menu">
+                <li><a href="/" class="logo"><h1>PyLadies Vienna</h1></a></li>
+                <li><a href="/sponsorship/" class="menu-link"><h2>Support Us</h2></a></li>
+                <li><a href="/mentorship/" class="menu-link"><h2>Mentorship</h2></a></li>
+                <li><a href="/runs/" class="menu-link"><h2>Courses</h2></a></li>
+            </ul>
+        </nav>
+
+        
+
+<div class="page">
+    <div class="container">
+
+        
+  
+
+
+        <div class="lesson-content">
+          
+    
+
+    <h2>Circular imports</h2>
+<p>In the 1D tic-tac-toe game for your homework, you will probably write several modules.
+It will look like this:
+(Arrows between modules are showing the imports.)</p>
+<div class="highlight"><pre><code>┌──────────────────╮ ┌───────────────╮  ┌──────────────────╮ 
+│      ai.py       │  │ tictactoe.py  │   │    game.py       │
+├──────────────────┤  ├───────────────┤   ├──────────────────┤
+│                  │◀-│ import ai     │◀-│import tictactoe  │
+├──────────────────┤  ├───────────────┤   ├──────────────────┤
+│ def ai_move      │  │ def evaluate  │   │                  │
+│                  │  │ def move      │   │                  │
+└──────────────────┘  │def player_move│   └──────────────────┘
+                      │               │
+                      └───────────────┘
+                          ▲
+                          │
+                          │ ┌───────────────────╮
+                          │ │ test_ticktactoe.py│
+                          │ ├───────────────────┤
+                          └─│ import tictactoe  │
+                            ├───────────────────┤
+                            │ def test_...      │
+                            │                   │
+                            └───────────────────┘</code></pre></div><p>But function <code>ai_move</code> needs to call function <code>move</code>.<br>
+What can we do?<br>
+Could you import <code>ai</code> from <code>tictactoe</code> while you are importing <code>tictactoe</code> from <code>ai</code>?</p>
+<div class="highlight"><pre><code>┌──────────────────╮ ┌───────────────╮
+│      ai.py       │  │ tictactoe.py  │
+├──────────────────┤  ├───────────────┤
+│                  │◀-│ import ai     │
+│import ticktaktoe │-▶│               │
+│                  │  │               │
+│   def ai_move    │  │ def evaluate  │
+│                  │  │ def move      │
+└──────────────────┘  │def player_move│
+                      │               │
+                      └───────────────┘</code></pre></div><p>We can look at it from the point of view of Python,
+which is executing the commands.
+When it has to import <code>tictactoe.py</code>, it process the file line by line.
+And it almost at the begging see command <code>import ai</code>.
+So it opens file <code>ai.py</code> and it start to process it line by line.
+And of course it will soon get to <code>import tictactoe</code>. What next?</p>
+<p>To avoid an infinite loop - one file would import another one and this one would import
+the first one over and over again - 
+Python will make some workaround when we run <code>tictactoe</code>:
+when it notices that <code>tictactoe</code> is already being imported in <code>ai.py</code>,
+it will import the part of <code>tictactoe</code> that it's just before <code>import ai</code> into <code>ai</code> module
+and this will replace line <code>import tictactoe</code> so it's no longer there. And then it can continue the
+import of <code>ai</code> in <code>tictactoe.py</code>.
+When it finishes this import it will continue in <code>tictactoe</code> and all its functions and commands.</p>
+<p>This could be useful but in most of the times it behaves very unpredictable therefore it's dangerous.</p>
+<p>In other words: when two modules are trying to import the other one
+the program doesn't have to work as expected.</p>
+<p>We want to prevent this kind of situation.</p>
+<p>How will we do it? We have two options.</p>
+<h2>Organise modules by dependency</h2>
+<p>First option is to move function <code>move</code> to module <code>ai</code> and we can use it from there.
+That's easy but that's not what we wont from <code>ai</code> module, because it should contain
+the logic how our "AI" is choosing where to move only.
+It definitely shouldn't contain other functions which might be useful somewhere else.</p>
+<div class="highlight"><pre><code>┌──────────────────╮ ┌───────────────╮
+│      ai.py       │  │ tictactoe.py  │
+├──────────────────┤  ├───────────────┤
+│                  │◀-│ import ai     │
+│                  │  │               │
+│ def ai_move      │  │ def evaluate  │
+│ def move         │  │def player_move│
+│                  │  │               │
+└──────────────────┘  └───────────────┘</code></pre></div><h2>Support module</h2>
+<p>Second option is to define new module which will be used in
+<code>tictactoe.py</code> and in <code>ai.py</code>.</p>
+<p>This module is usually as <code>util.py</code> (=utility).</p>
+<div class="highlight"><pre><code>              ┌──────────────────╮
+              │ util.py          │
+              ├──────────────────┤
+              │ def move         │
+              └──────────────────┘
+                      ▲  ▲
+                      │  │
+┌──────────────────╮ │  │  ┌───────────────╮
+│      ai.py       │  │  │  │ tictactoe.py  │
+├──────────────────┤  │  │  ├───────────────┤
+│ import util      │──┘  └──│ import util   │
+│                  │◀───────│ import ai     │
+│                  │        │               │
+│ def ai.move      │        │ def evaluate  │
+│                  │        │def player_move│
+│                  │        │               │
+└──────────────────┘        └───────────────┘</code></pre></div><p>Disadvantage of support module is that it can easily 
+become non-maintained storage of your code, which you used on so
+many places that you have no idea where exactly you used it and whether 
+you can modify or delete it.</p>
+<p>What you should choose always depends on the current situation.</p>
+
+
+        </div>
+
+        
+
+    </div>
+</div>
+
+
+
+        <script type="text/javascript" src="/static/js/solutions.js"></script>
+
+        <div class="footer container">
+            <hr>
+            <div class="lesson-attribution">
+                
+    
+        <p>Translated by Marketa Muzikova</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/beginners/circular-imports/">PyLadies CZ</a>.</p>
+    
+
+                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
+                
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="global-pyladies">
+                  © 2024 PyLadies Vienna. All rights reserved.
+                  <br>
+                  <a href="/agb/">Impressum, AGB</a>
+                  <br>
+                  We are a part of <a href="https://pyladies.com">international PyLadies</a>.
+                </div>
+                <ul>
+                    <li>
+                        <a href="https://discord.gg/v2qdvbD2dn" target="_blank">
+                            <img src="/static/img/discord-logo.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:pyladies.vienna@gmail.com" >
+                            <img src="/static/img/mail-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/pyladies_vie" target="_blank">
+                            <img src="/static/img/twitter-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/pyladies_vienna" target="_blank">
+                            <img src="/static/img/instagram-logo.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/UndeadFairy/pyladies_vienna" target="_blank">
+                            <img src="/static/img/github-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.meetup.com/PyLadies-Vienna/" target="_blank">
+                            <img src="/static/img/meetup.png">
+                        </a>
+                    </li>
+                    <li data-toggle="tooltip" title="Linkedin">
+                      <a href="https://www.linkedin.com/company/pyladies-vienna" target="_blank">
+                          <img src="/static/img/linkedin-logo.png">
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+          </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+        
+
+    </body>
+</html>
