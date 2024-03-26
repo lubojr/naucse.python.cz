@@ -39,9 +39,6 @@ mentors:
     - mail: mailto:fabian.schindler.strauss@gmail.com
     - linkedin: https://www.linkedin.com/in/fabian-schindler-311030b9/
     - twitter: https://twitter.com/__fschindler__
-  - name: Martina Červená
-    img: img/team/cervenam.jpg
-    role: "Backend developer, data processing, fitness enthusiast"
 plan:
 - title: Installations
   slug: install_home
