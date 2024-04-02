@@ -204,11 +204,11 @@ else :
 
 ## Winter clothing
 
-The following piece of code is a bit advanced and we won't fully discuss it right now. In order to work with it, you only need to understand that it will load the current temperature in the city of Vienna from the internet into a variable:
+The following piece of code is a bit advanced and we won't fully discuss it right now. In order to work with it, you only need to understand that it will load the current temperature in the city of Vienna (written in German as Wien to not confuse with the city Vienna present in the USA) from the internet into a variable:
 
 ```python
 from urllib.request import urlopen
-url = "https://wttr.in/Vienna?format=%t"
+url = "https://wttr.in/Wien?format=%t"
 temperature = int(urlopen(url).read().decode().strip("°C"))
 ```
 
@@ -218,7 +218,7 @@ Write a program using `if`, `elif` and `else` which prints whether you will need
 
     ```python
     from urllib.request import urlopen
-    url = "https://wttr.in/Vienna?format=%t"
+    url = "https://wttr.in/Wien?format=%t"
     temperature = int(urlopen(url).read().decode().strip("°C"))
 
     if temperature >= 20:
