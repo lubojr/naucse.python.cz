@@ -56,7 +56,7 @@
     
 
     <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://wttr.in/Vienna?format=%t"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://wttr.in/Wien?format=%t"</span>
 <span class="n">temperature</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"°C"</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="n">temperature</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>

@@ -205,9 +205,9 @@ where the conditions are met (they are <code>true</code>).</p>
     <span class="c1"># If no condition is met from above, the age had to be negative.</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'Visitors from the future are not welcomed here!'</span><span class="p">)</span>
 </pre></div><h2>Winter clothing</h2>
-<p>The following piece of code is a bit advanced and we won't fully discuss it right now. In order to work with it, you only need to understand that it will load the current temperature in the city of Vienna from the internet into a variable:</p>
+<p>The following piece of code is a bit advanced and we won't fully discuss it right now. In order to work with it, you only need to understand that it will load the current temperature in the city of Vienna (written in German as Wien to not confuse with the city Vienna present in the USA) from the internet into a variable:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://wttr.in/Vienna?format=%t"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://wttr.in/Wien?format=%t"</span>
 <span class="n">temperature</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"°C"</span><span class="p">))</span>
 </pre></div><p>Write a program using <code>if</code>, <code>elif</code> and <code>else</code> which prints whether you will need no jacket, a light jacket or a winter coat depending on the current temperature:</p>
 <div class="solution" id="solution-1">
@@ -217,7 +217,7 @@ where the conditions are met (they are <code>true</code>).</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://wttr.in/Vienna?format=%t"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://wttr.in/Wien?format=%t"</span>
 <span class="n">temperature</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"°C"</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="n">temperature</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>
