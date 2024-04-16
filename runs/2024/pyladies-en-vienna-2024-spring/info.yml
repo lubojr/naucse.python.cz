@@ -136,25 +136,22 @@ plan:
 - title: GIT
   slug: git
   date: 2024-04-23
-  # materials:
-  #  - lesson: git-en/install
-  #  - lesson: git-en/basics
-  #  - lesson: git-en/github
-  #  - lesson: git-en/branching
-  #  - title: Basic Git Cheatsheet
-  #    url: https://raw.githubusercontent.com/lubojr/naucse.python.cz/117a205e1c98f007e0a97877e87493fef411a768/lessons/git-en/basics/static/git_commands_cheat_sheet.png
-  #    type: cheatsheet
-  #  - title: Extensive Git cheatsheet
-  #    url: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
-  #    type: cheatsheet
-  #  - title: Have you just made a git mess?
-  #    url: http://justinhileman.info/article/git-pretty/git-pretty.png
-  #    type: cheatsheet
+  materials:
+    - lesson: git-en/install
+    - lesson: git-en/basics
+    - lesson: git-en/github
+    - lesson: git-en/branching
+    - title: Basic Git Cheatsheet
+      url: https://raw.githubusercontent.com/lubojr/naucse.python.cz/117a205e1c98f007e0a97877e87493fef411a768/lessons/git-en/basics/static/git_commands_cheat_sheet.png
+      type: cheatsheet
+    - title: Extensive Git cheatsheet
+      url: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
+      type: cheatsheet
+    # - title: Have you just made a git mess?
+    #   url: http://justinhileman.info/article/git-pretty/git-pretty.png
+    #   type: cheatsheet
   #  - lesson: beginners-en/tictactoe
   #    type: homework
-  #  - title: Practice exercises (offline session 16.11.2023)
-  #    url: https://docs.google.com/document/d/1tLwOKrrbg9KVvCHC08_zBvdjNGmQkD1GQEZEMJNSN4g
-  #    type: cheatsheet
 
 - title: Lists, Tuples
   slug: list
