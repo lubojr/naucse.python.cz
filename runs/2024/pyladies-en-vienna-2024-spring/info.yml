@@ -132,7 +132,9 @@ plan:
     - title: Homework
       url: https://docs.google.com/document/d/1SPL6yMD3XOm9ZFDMDX_U4zSP-ltWd7QKvie5iCS8mno/edit
       type: homework
-
+    - type: cheatsheet
+      title: Depth exploration colored example for function recursion
+      url: https://docs.google.com/document/d/1QWr8yzBfYtNaKLgRKoSL5tV5MGp46BOcD9Q3Q9ouOV8/edit
 - title: GIT
   slug: git
   date: 2024-04-23

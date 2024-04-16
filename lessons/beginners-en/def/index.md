@@ -422,7 +422,7 @@ explore(0)
 ```
 
 ```
-* Python defines the function ``survey''
+* Python defines the function ``explore''
 * Calls the `explore` function with a depth of 0:
    * Prints `I'm looking around at a depth of 0 m'
    * Checks that `0 ≥ 30` (which is not true)
