@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             
-                PyLadies Vienna Python course
+                Beginners course PyLadies Vienna: Git installation - Linux
             
         </title>
 
@@ -20,11 +20,13 @@
         <link rel="stylesheet" href="/static/css/ipython.css">
 
         
-        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/git-en/install/" />
+
 
         <style>
             
-            
+    
+
         </style>
     </head>
 
@@ -44,183 +46,64 @@
     <div class="container">
 
         
-        
+  
+
 
         <div class="lesson-content">
           
-  <h1>
-    
-        Lecture: GIT (2024-04-23)
-    
-</h1>
-
-
-    <div class="details">Online
-,
-        18:00–20:00</div>
-
-
-
-
-<h2>Materials</h2>
-
-    <ul class="material-list">
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="/2024/pyladies-en-vienna-2024-spring/git-en/install/">
-        <svg class="icon icon-chevron-right" viewbox="0 0 32 32">
-<path d="M12 30 L24 16 12 2"></path>
-</svg>Git installation
-        </a>
-        
-    </li>
-            
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="/2024/pyladies-en-vienna-2024-spring/git-en/basics/">
-        <svg class="icon icon-chevron-right" viewbox="0 0 32 32">
-<path d="M12 30 L24 16 12 2"></path>
-</svg>Git
-        </a>
-        
-    </li>
-            
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="/2024/pyladies-en-vienna-2024-spring/git-en/github/">
-        <svg class="icon icon-chevron-right" viewbox="0 0 32 32">
-<path d="M12 30 L24 16 12 2"></path>
-</svg>GitHub
-        </a>
-        
-    </li>
-            
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="/2024/pyladies-en-vienna-2024-spring/git-en/branching/">
-        <svg class="icon icon-chevron-right" viewbox="0 0 32 32">
-<path d="M12 30 L24 16 12 2"></path>
-</svg>Branches in Git
-        </a>
-        
-    </li>
-            
-        
-            
-        
-            
-        
-    </ul>
-
-
-    <h2>Cheatsheets</h2>
-    
-    <ul class="material-list">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="https://raw.githubusercontent.com/lubojr/naucse.python.cz/117a205e1c98f007e0a97877e87493fef411a768/lessons/git-en/basics/static/git_commands_cheat_sheet.png">
-        <svg class="icon icon-eye" viewbox="0 0 32 32">
-<circle cx="17" cy="15" r="1"></circle>
-<circle cx="16" cy="16" r="6"></circle>
-<path d="M2 16 C2 16 7 6 16 6 25 6 30 16 30 16 30 16 25 26 16 26 7 26 2 16 2 16 Z"></path>
-</svg>Basic Git Cheatsheet
-        </a>
-        
-    </li>
-            
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="https://about.gitlab.com/images/press/git-cheat-sheet.pdf">
-        <svg class="icon icon-eye" viewbox="0 0 32 32">
-<circle cx="17" cy="15" r="1"></circle>
-<circle cx="16" cy="16" r="6"></circle>
-<path d="M2 16 C2 16 7 6 16 6 25 6 30 16 30 16 30 16 25 26 16 26 7 26 2 16 2 16 Z"></path>
-</svg>Extensive Git cheatsheet
-        </a>
-        
-    </li>
-            
-        
-    </ul>
-
-
-
-
-
     
 
-
-<hr class="lesson-end">
-
-
-    <div class="row prev-next">
-        
-    
-        
-    <div class="col text-left">
-        <a href="/2024/pyladies-en-vienna-2024-spring/sessions/git/">← <span class="d-none d-sm-inline">GIT</span></a>
-    </div>
-
-    
-    
-    <div class="col text-left">
-        <a href="/2024/pyladies-en-vienna-2024-spring/">↑ <span class="d-none d-sm-inline">Beginners course PyLadies Vienna</span></a>
-    </div>
-
-    
-    <div class="col text-right">
-        <a href="/2024/pyladies-en-vienna-2024-spring/sessions/git/back/"><span class="d-none d-sm-inline">End of lecture</span> →</a>
-    </div>
-
-
-    </div>
+    <h2>Git installation on Ubuntu/Debian</h2>
+<div class="highlight"><pre><span></span><span class="go">sudo apt-get install git nano pass</span>
+</pre></div><p>If you are using some other distribution we expect that you already know
+how to install programs. Go ahead and install <em>git</em>, <em>pass</em> and <em>nano</em>.</p>
+<p>After you have installed git, choose your Git editor.
+If you do not like Vim (or you do not know what it is)
+enter this command to choose a more user-friendly editor called Nano:</p>
+<div class="highlight"><pre><span></span><span class="go">git config --global core.editor nano</span>
+</pre></div><p>After this step, please install the <a href="https://github.com/GitCredentialManager/git-credential-manager">Git Credential Manager</a> by downloading <strong>gcm-linux.(version).deb</strong> package from <a href="https://github.com/GitCredentialManager/git-credential-manager/releases/latest">official releases of gcm</a>.</p>
+<p>After that install and configure with commands:</p>
+<div class="highlight"><pre><span></span><span class="go">sudo dpkg -i &lt;path-to-package&gt;</span>
+<span class="go">git-credential-manager-core configure</span>
+<span class="go">git config --global credential.credentialStore gpg</span>
+</pre></div><p>Next, we need to generate a secure credentials store. Run following two commands to create and use a new GPG key pair</p>
+<div class="highlight"><pre><span></span><span class="go">gpg --gen-key</span>
+<span class="go">pass init &lt;gpg-id&gt; # where &lt;gpg-id&gt; is the username generated in step 1</span>
+</pre></div><p>Now continue with the rest of setup at <a href="/2024/pyladies-en-vienna-2024-spring/git-en/install/">General Settings in Git install</a>.</p>
 
 
         </div>
+
+        
+
+
+        
+    <div class="row prev-next">
+        
+            
+                
+    <div class="col text-left">
+        <a href="/2024/pyladies-en-vienna-2024-spring/git-en/install/">← <span class="d-none d-sm-inline">Git installation</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-left">
+        <a href="/2024/pyladies-en-vienna-2024-spring/sessions/git/">↑ <span class="d-none d-sm-inline">Lesson: GIT</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-right">
+        <a href="/2024/pyladies-en-vienna-2024-spring/git-en/basics/"><span class="d-none d-sm-inline">Git</span> →</a>
+    </div>
+
+            
+        
+    </div>
+
 
         
 
@@ -235,11 +118,21 @@
             <hr>
             <div class="lesson-attribution">
                 
+    
+        <p>Translated by Marketa Muzikova</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/git/install/">PyLadies CZ</a>.</p>
+    
+
                 
-                    <p>
-                        Licence: <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>
-                    </p>
-                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
                 
             </div>
         </div>

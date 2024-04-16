@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             
-                PyLadies Vienna Python course
+                Beginners course PyLadies Vienna: Git installation
             
         </title>
 
@@ -20,11 +20,13 @@
         <link rel="stylesheet" href="/static/css/ipython.css">
 
         
-        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/git-en/install/" />
+
 
         <style>
             
-            
+    
+
         </style>
     </head>
 
@@ -44,183 +46,81 @@
     <div class="container">
 
         
-        
+  
+
 
         <div class="lesson-content">
           
-  <h1>
-    
-        Lecture: GIT (2024-04-23)
-    
-</h1>
-
-
-    <div class="details">Online
-,
-        18:00–20:00</div>
-
-
-
-
-<h2>Materials</h2>
-
-    <ul class="material-list">
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="/2024/pyladies-en-vienna-2024-spring/git-en/install/">
-        <svg class="icon icon-chevron-right" viewbox="0 0 32 32">
-<path d="M12 30 L24 16 12 2"></path>
-</svg>Git installation
-        </a>
-        
-    </li>
-            
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="/2024/pyladies-en-vienna-2024-spring/git-en/basics/">
-        <svg class="icon icon-chevron-right" viewbox="0 0 32 32">
-<path d="M12 30 L24 16 12 2"></path>
-</svg>Git
-        </a>
-        
-    </li>
-            
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="/2024/pyladies-en-vienna-2024-spring/git-en/github/">
-        <svg class="icon icon-chevron-right" viewbox="0 0 32 32">
-<path d="M12 30 L24 16 12 2"></path>
-</svg>GitHub
-        </a>
-        
-    </li>
-            
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="/2024/pyladies-en-vienna-2024-spring/git-en/branching/">
-        <svg class="icon icon-chevron-right" viewbox="0 0 32 32">
-<path d="M12 30 L24 16 12 2"></path>
-</svg>Branches in Git
-        </a>
-        
-    </li>
-            
-        
-            
-        
-            
-        
-    </ul>
-
-
-    <h2>Cheatsheets</h2>
-    
-    <ul class="material-list">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="https://raw.githubusercontent.com/lubojr/naucse.python.cz/117a205e1c98f007e0a97877e87493fef411a768/lessons/git-en/basics/static/git_commands_cheat_sheet.png">
-        <svg class="icon icon-eye" viewbox="0 0 32 32">
-<circle cx="17" cy="15" r="1"></circle>
-<circle cx="16" cy="16" r="6"></circle>
-<path d="M2 16 C2 16 7 6 16 6 25 6 30 16 30 16 30 16 25 26 16 26 7 26 2 16 2 16 Z"></path>
-</svg>Basic Git Cheatsheet
-        </a>
-        
-    </li>
-            
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="https://about.gitlab.com/images/press/git-cheat-sheet.pdf">
-        <svg class="icon icon-eye" viewbox="0 0 32 32">
-<circle cx="17" cy="15" r="1"></circle>
-<circle cx="16" cy="16" r="6"></circle>
-<path d="M2 16 C2 16 7 6 16 6 25 6 30 16 30 16 30 16 25 26 16 26 7 26 2 16 2 16 Z"></path>
-</svg>Extensive Git cheatsheet
-        </a>
-        
-    </li>
-            
-        
-    </ul>
-
-
-
-
-
     
 
-
-<hr class="lesson-end">
-
-
-    <div class="row prev-next">
-        
-    
-        
-    <div class="col text-left">
-        <a href="/2024/pyladies-en-vienna-2024-spring/sessions/git/">← <span class="d-none d-sm-inline">GIT</span></a>
-    </div>
-
-    
-    
-    <div class="col text-left">
-        <a href="/2024/pyladies-en-vienna-2024-spring/">↑ <span class="d-none d-sm-inline">Beginners course PyLadies Vienna</span></a>
-    </div>
-
-    
-    <div class="col text-right">
-        <a href="/2024/pyladies-en-vienna-2024-spring/sessions/git/back/"><span class="d-none d-sm-inline">End of lecture</span> →</a>
-    </div>
-
-
-    </div>
+    <h1>Git</h1>
+<p>There is another program that we will install and that will later let us cooperate
+and develop programs together with other people. It's called <a href="https://git-scm.com/">Git</a>.
+Let's install it and set it up.</p>
+<p>On some operating systems, for convenience, we shall also install <a href="https://github.com/GitCredentialManager/git-credential-manager">Git Credential Manager</a></p>
+<p>Choose a page depending on your operating system:</p>
+<ul>
+<li><a href="/2024/pyladies-en-vienna-2024-spring/git-en/install/linux/">Linux</a></li>
+<li><a href="/2024/pyladies-en-vienna-2024-spring/git-en/install/windows/">Windows</a></li>
+<li><a href="/2024/pyladies-en-vienna-2024-spring/git-en/install/macos/">macOS</a></li>
+</ul>
+<p>After you finish installation of <code>git</code> return back here to finish the next part <strong>Settings</strong>.</p>
+<h2>Settings</h2>
+<p>Several people can collaborate in one project in Git.
+To track who make a specific change, we need to
+tell Git our name and e-mail.
+At the command prompt, enter the following commands, but change the
+name and address to yours:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Jane Berry"</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span>jane.berry@example.com
+</pre></div><p>You can of course use a nickname or even
+fake email, but then it will be more complicated to
+engage in team projects.
+Anyway, your name and email can be changed at any time
+by typing the configuration commands again.</p>
+<div class="admonition note"><p>If you are afraid of spam, do not worry.
+Your e-mail address can be viewed only by people who download the project
+to which you contributed.
+Spammers mostly focus on less technically capable people than Git users. :)</p>
+</div><p>You can also set up color listings - if you don't think
+(like some Git authors) that the command line should be black and white:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>color.ui<span class="w"> </span><span class="nb">true</span>
+</pre></div><div class="admonition note"><p>Running <code>git config</code> does not print any message that the operation was successful.
+This is normal; many other commands behave like that, for example <code>cd</code>.</p>
+<p>You can check your current git configuration with the command:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--list
+<span class="go">user.name=Jane Berry</span>
+<span class="go">user.email=jane.berry@example.com</span>
+</pre></div></div><p>And that's all! You have installed and configured <code>Git</code>.</p>
+<p><strong>Congratulations!</strong></p>
 
 
         </div>
+
+        
+
+
+        
+    <div class="row prev-next">
+        
+            
+            
+                
+    <div class="col text-left">
+        <a href="/2024/pyladies-en-vienna-2024-spring/sessions/git/">↑ <span class="d-none d-sm-inline">Lesson: GIT</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-right">
+        <a href="/2024/pyladies-en-vienna-2024-spring/git-en/basics/"><span class="d-none d-sm-inline">Git</span> →</a>
+    </div>
+
+            
+        
+    </div>
+
 
         
 
@@ -235,11 +135,21 @@
             <hr>
             <div class="lesson-attribution">
                 
+    
+        <p>Translated by Marketa Muzikova</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/git/install/">PyLadies CZ</a>.</p>
+    
+
                 
-                    <p>
-                        Licence: <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>
-                    </p>
-                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
                 
             </div>
         </div>
