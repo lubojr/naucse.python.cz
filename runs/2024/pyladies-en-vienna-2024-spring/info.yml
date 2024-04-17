@@ -135,6 +135,9 @@ plan:
     - type: cheatsheet
       title: Depth exploration colored example for function recursion
       url: https://docs.google.com/document/d/1QWr8yzBfYtNaKLgRKoSL5tV5MGp46BOcD9Q3Q9ouOV8/edit
+    - title: Practice exercises (offline session 17.04.2024)
+      url: https://docs.google.com/document/d/17kX5w9eEn-Ed1gcONAaU5kSKANBI24bjL_7-3XZi0Dg/edit
+      type: cheatsheet
 - title: GIT
   slug: git
   date: 2024-04-23
@@ -149,9 +152,9 @@ plan:
     - title: Extensive Git cheatsheet
       url: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
       type: cheatsheet
-    # - title: Have you just made a git mess?
-    #   url: http://justinhileman.info/article/git-pretty/git-pretty.png
-    #   type: cheatsheet
+    - title: Have you just made a git mess?
+      url: https://raw.githubusercontent.com/lubojr/naucse.python.cz/6307e5867765be0dd1a1e551901e4b4aca150d6c/lessons/git-en/basics/static/git-pretty.png
+      type: cheatsheet
   #  - lesson: beginners-en/tictactoe
   #    type: homework
 
