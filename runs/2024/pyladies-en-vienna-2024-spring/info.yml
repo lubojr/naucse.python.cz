@@ -155,8 +155,8 @@ plan:
     - title: Have you just made a git mess?
       url: https://raw.githubusercontent.com/lubojr/naucse.python.cz/6307e5867765be0dd1a1e551901e4b4aca150d6c/lessons/git-en/basics/static/git-pretty.png
       type: cheatsheet
-  #  - lesson: beginners-en/tictactoe
-  #    type: homework
+    - lesson: beginners-en/tictactoe
+      type: homework
 
 - title: Lists, Tuples
   slug: list

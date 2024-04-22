@@ -17,9 +17,20 @@ On a single "branch" you can work, but you can switch to another (even older) br
 do some changes and then change back to new branch and continue,
 or *merge* the changes.
 
+{{ figure(
+    img=static('git_branch.png'),
+    alt="Diagram showing the usual branching way of work"
+) }}
+
 Branching comes handy also when more people are working on a same project - 
 everyone is working on his/her own branch and when the time comes,
 all changes are combined (merged) together.
+
+
+> [note]
+> Instead of copying files from directory to directory.
+> Git stores a branch as a reference to a commit.
+> In this sense, a branch represents the tip of a series of commits—it's not a container for commits.
 
 You can check what branches you have in your repository.
 For that, we have a command `git branch`:
@@ -28,6 +39,7 @@ For that, we have a command `git branch`:
 ␛[36m$␛[0m git branch
 * ␛[32mmain␛[m
 ```
+
 We should have only one and it is called `main`.
 
 – it is a traditionally name of "backbone" branch for the project
@@ -61,11 +73,10 @@ Switched to branch 'adding-author'
   main␛[m
 ```
 
-So, now you are "in" branch `adding-author`
-Add some author name into your file `poem.txt`.
-And with the help of `git add` and `git commit` perform new commit.
-Perfect!
-You can check how it looks using `git show`, `git status` or `git log`.
+So, now you are "on" branch `adding-author`. It also means that your **HEAD** is there - **HEAD** refers to the currently checked-out branch's latest commit.
+
+Now add some author name into your file `poem.txt`. And with the help of `git add` and `git commit` perform new commit.
+Perfect! You can check how it looks using `git show`, `git status` or `git log`.
 
 Let's leave the adding the author of the poem for a moment.
 Go back to branch `main` and create a branch called
