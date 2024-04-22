@@ -66,10 +66,14 @@ incorporate the fix of the error into the version she is currently working on.</
 On a single "branch" you can work, but you can switch to another (even older) branch,
 do some changes and then change back to new branch and continue,
 or <em>merge</em> the changes.</p>
+<p><span class="figure"><a href="/2022/pyladies-en-vienna-2022-spring/git-en/branching/static/git_branch.png"><img src="/2022/pyladies-en-vienna-2022-spring/git-en/branching/static/git_branch.png" alt="Diagram showing the usual branching way of work"></a></span></p>
 <p>Branching comes handy also when more people are working on a same project - 
 everyone is working on his/her own branch and when the time comes,
 all changes are combined (merged) together.</p>
-<p>You can check what branches you have in your repository.
+<div class="admonition note"><p>Instead of copying files from directory to directory.
+Git stores a branch as a reference to a commit.
+In this sense, a branch represents the tip of a series of commits—it's not a container for commits.</p>
+</div><p>You can check what branches you have in your repository.
 For that, we have a command <code>git branch</code>:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git branch
 * <span style="color: #00aa00">main</span></code></pre></div><p>We should have only one and it is called <code>main</code>.</p>
@@ -92,11 +96,9 @@ To switch between branches, you need another command:</p>
 Switched to branch 'adding-author'
 <span style="color: #00aaaa">$</span> git branch
 * <span style="color: #00aa00">adding-author</span>
-  main</code></pre></div><p>So, now you are "in" branch <code>adding-author</code>
-Add some author name into your file <code>poem.txt</code>.
-And with the help of <code>git add</code> and <code>git commit</code> perform new commit.
-Perfect!
-You can check how it looks using <code>git show</code>, <code>git status</code> or <code>git log</code>.</p>
+  main</code></pre></div><p>So, now you are "on" branch <code>adding-author</code>. It also means that your <strong>HEAD</strong> is there - <strong>HEAD</strong> refers to the currently checked-out branch's latest commit.</p>
+<p>Now add some author name into your file <code>poem.txt</code>. And with the help of <code>git add</code> and <code>git commit</code> perform new commit.
+Perfect! You can check how it looks using <code>git show</code>, <code>git status</code> or <code>git log</code>.</p>
 <p>Let's leave the adding the author of the poem for a moment.
 Go back to branch <code>main</code> and create a branch called
 <code>adding-name</code> from it.
