@@ -187,10 +187,10 @@ plan:
 - title: Recap session
   slug: recap1
   date: 2024-05-14
-  # materials:
-  #  - title: Recap session materials
-  #    url: https://docs.google.com/document/d/1lQuHF1d3mbVzc1awfWmNVa9nYJdfrrvMNvpcX9pz6co
-  #    type: homework
+  materials:
+   - title: Recap session materials
+     url: https://docs.google.com/document/d/1lQuHF1d3mbVzc1awfWmNVa9nYJdfrrvMNvpcX9pz6co
+     type: homework
   #  - title: Small quiz
   #    url: https://docs.google.com/presentation/d/1qvnz7uJuzZipXEqsqq8bufpvtGNLP2sdW6p1MjodRJE
   #    type: homework
