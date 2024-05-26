@@ -207,8 +207,6 @@ plan:
     - title: Homework (PDF)
       url: https://drive.google.com/file/d/1amhY9-pvtN8w6tHnOvR0tIcwOfNVx-Bl/view
       type: homework
-  #   - title: Offline session 14.12. hackerrank
-  #     url: https://docs.google.com/presentation/d/1xC2tAaXvQDnglT6WJLnY8RRGhCnod38zpE1LA-ckvhg
 
 - title: Modules, exceptions, testing
   slug: testing
@@ -224,9 +222,11 @@ plan:
     - title: Testing cheatsheet
       url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_testing.pdf
       type: cheatsheet
-  #   - title: Homework
-  #     url: https://docs.google.com/document/d/1xVaSWOmQD3PqCY6czmOaxBlAlT0AHv2z2rsveK5vfxg/edit
-  #     type: homework
+    - title: Homework
+      url: https://docs.google.com/document/d/1xVaSWOmQD3PqCY6czmOaxBlAlT0AHv2z2rsveK5vfxg/edit
+      type: homework
+    - title: Coding session at Sentry - Hackerrank 27.5.
+      url: https://docs.google.com/presentation/d/1urPWPVNHW-j2BvY-TK2jsHXEUnzbRyVo37L2g4rpRH0
 
 - title: Working with Files and CLI
   slug: files_cli
