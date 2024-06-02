@@ -1,0 +1,331 @@
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            
+                Beginners course PyLadies Vienna: JSON
+            
+        </title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+        
+        <link rel="icon" type="image/x-icon" href= "/static/img/who_96px.png">
+        <link rel="stylesheet" href="/static/css/naucse.css">
+        <link rel="stylesheet" href="/static/css/body.css">
+        <link rel="stylesheet" href="/static/css/pygments-lovelace-style.css">
+        <link rel="stylesheet" href="/static/css/ipython.css">
+
+        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/json/" />
+
+
+        <style>
+            
+    
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="header">
+            <ul class="container menu">
+                <li><a href="/" class="logo"><h1>PyLadies Vienna</h1></a></li>
+                <li><a href="/sponsorship/" class="menu-link"><h2>Support Us</h2></a></li>
+                <li><a href="/mentorship/" class="menu-link"><h2>Mentorship</h2></a></li>
+                <li><a href="/runs/" class="menu-link"><h2>Courses</h2></a></li>
+            </ul>
+        </nav>
+
+        
+
+<div class="page">
+    <div class="container">
+
+        
+  
+
+
+        <div class="lesson-content">
+          
+    
+
+    <h1>JSON</h1>
+<p>There are also other programming languages ​​than Python.</p>
+<p>Other languages ​​can not work with Python code.
+If you would like to "talk" with such programs -
+pass them some processing information
+or to get results from them -
+you have to pass the information in a simplified form.</p>
+<h2>Types</h2>
+<p>Most programming languages ​​have some numbers, some sort of lists,
+a variety of strings and some variation of dictionaries
+(or several ways to create dictionaries).
+And they have a way how to write <code>True</code>, <code>False</code> and <code>None</code>.</p>
+<p>These basic types are usually sufficient for information handover
+in a legible form, although there are not the exact equivalents in all languages
+(Python has two basic types of numbers - <code>int</code> and<code>float</code>).
+So we will focus on them.</p>
+<h2>Data encoding</h2>
+<p>Another problem is data transfer:
+so for you to be able to write data on disk or transfer
+via the Internet, it has to be converted to a sequence of <em>bytes</em> (numbers from 0 to 255).
+Simplified: you have to convert it to a string.</p>
+<p>There are plenty of ways to encode data into text.
+Each way is trying to find the right balance between
+legibility for people/computers, length of record,
+security, options and extensibility.
+We already know the syntax for Python:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Anna'</span><span class="p">,</span>
+    <span class="s1">'city'</span><span class="p">:</span> <span class="s1">'Prague'</span><span class="p">,</span>
+    <span class="s1">'languages'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Czech'</span><span class="p">,</span> <span class="s1">'English'</span><span class="p">,</span> <span class="s1">'Python'</span><span class="p">],</span>
+    <span class="s1">'age'</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div><p>Another way to write data is <a href="http://www.yaml.org/">YAML</a>:</p>
+<div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Anna</span>
+<span class="nt">city</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prague</span>
+<span class="nt">languages</span><span class="p">:</span>
+<span class="err">  </span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Czech</span>
+<span class="err">  </span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">English</span>
+<span class="err">  </span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Python</span>
+<span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">26</span>
+</pre></div><p>Finally, there is also <a href="http://json.org/">JSON</a>
+(<em>Javascript Object Notation</em>),
+which, for its simplicity, has expanded the most:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="err">  </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anna"</span><span class="p">,</span>
+<span class="err">  </span><span class="nt">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prague"</span><span class="p">,</span>
+<span class="err">  </span><span class="nt">"Languages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Czech"</span><span class="p">,</span><span class="w"> </span><span class="s2">"English"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Python"</span><span class="p">],</span>
+<span class="err">  </span><span class="nt">"Age"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span>
+<span class="p">}</span>
+</pre></div><div class="admonition note"><p>Keep in mind that although JSON looks similar to code
+in Python, it's another format with its own rules.
+Do not confuse them!</p>
+<p>At first I do not recommend writing JSON manually;
+let computer decide where to write
+commas and quotation marks.</p>
+</div><h2>JSON in Python</h2>
+<p>Object encoding in JSON is simple: there is a <code>json</code> module,
+whose <code>loads</code> method retrieves data from the string:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">json_string</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">    {</span>
+<span class="s2">      "name": "Anna",</span>
+<span class="s2">      "city": "Brno",</span>
+<span class="s2">      "languages": ["Czech", "English", "Python"],</span>
+<span class="s2">      "age": 26</span>
+<span class="s2">    }</span>
+<span class="s2">"""</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'city'</span><span class="p">])</span>
+</pre></div><p>And then there is the <code>dumps</code> method, which decodes the given data
+and returns a string.</p>
+<p>The string that <code>dumps(data)</code> returns is suitable for computer
+treatment.
+If you want to read it, it is better to set <code>ensure_ascii = False</code> 
+(so that accented letters are not encoded with<code>\</code>)
+and <code>indent = 2</code> (indent with two spaces).</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ensure_ascii</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">indent</span> <span class="o">=</span> <span class="mi">2</span><span class="p">))</span>
+<span class="go">{</span>
+<span class="go">  "name": "Anna",</span>
+<span class="go">  "city": "Brno",</span>
+<span class="go">  "languages": [</span>
+<span class="go">    "Czech",</span>
+<span class="go">    "English",</span>
+<span class="go">    "Python"</span>
+<span class="go">  ],</span>
+<span class="go">  "age": 26</span>
+<span class="go">}</span>
+</pre></div><h2>Exercise</h2>
+<p>Write code to print the value of salary of Emma from following JSON string.</p>
+<p>Try not to depend on the fact that her entry is first in the list)</p>
+<div class="highlight"><pre><span></span><span class="n">sampleJson</span> <span class="o">=</span> <span class="s2">"""{</span>
+<span class="s2">  "company":{</span>
+<span class="s2">    "employees":[</span>
+<span class="s2">      {</span>
+<span class="s2">        "name":"emma",</span>
+<span class="s2">        "payable":{</span>
+<span class="s2">          "salary":7000,</span>
+<span class="s2">          "bonus":800</span>
+<span class="s2">        }</span>
+<span class="s2">      },</span>
+<span class="s2">      {</span>
+<span class="s2">        "name":"anna",</span>
+<span class="s2">        "payable":{</span>
+<span class="s2">          "salary":5500,</span>
+<span class="s2">          "bonus":1000</span>
+<span class="s2">        }</span>
+<span class="s2">      }</span>
+<span class="s2">    ]</span>
+<span class="s2">  }</span>
+<span class="s2">}"""</span>
+</pre></div><div class="solution" id="solution-0">
+    <h3>Solution</h3>
+    <div class="solution-cover">
+        <a href="/2024/pyladies-en-vienna-2024-spring/beginners-en/json/index/solutions/0/"><span class="link-text">Show solution</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">sampleJson</span> <span class="o">=</span> <span class="s2">"""{</span>
+<span class="s2">  "company":{</span>
+<span class="s2">    "employees":[</span>
+<span class="s2">      {</span>
+<span class="s2">        "name":"emma",</span>
+<span class="s2">        "payable":{</span>
+<span class="s2">          "salary":7000,</span>
+<span class="s2">          "bonus":800</span>
+<span class="s2">        }</span>
+<span class="s2">      },</span>
+<span class="s2">      {</span>
+<span class="s2">        "name":"anna",</span>
+<span class="s2">        "payable":{</span>
+<span class="s2">          "salary":5500,</span>
+<span class="s2">          "bonus":1000</span>
+<span class="s2">        }</span>
+<span class="s2">      }</span>
+<span class="s2">    ]</span>
+<span class="s2">  }</span>
+<span class="s2">}"""</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">sampleJson</span><span class="p">)</span>
+<span class="n">employees</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"company"</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"employees"</span><span class="p">,</span> <span class="p">[])</span>
+<span class="k">for</span> <span class="n">employee</span> <span class="ow">in</span> <span class="n">employees</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">employee</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'name'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">"emma"</span><span class="p">:</span>
+      <span class="n">payable</span> <span class="o">=</span> <span class="n">employee</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"payable"</span><span class="p">,</span> <span class="p">{})</span>
+      <span class="n">total</span> <span class="o">=</span> <span class="n">payable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"salary"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">payable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"bonus"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> has a total salary with bonus: </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+    </div>
+</div><p>A complete description of <code>json</code> module -
+including write/read functions directly to/from files -
+is in the <a href="https://docs.python.org/3/library/json.html">documentation</a>.</p>
+
+
+        </div>
+
+        
+
+
+        
+    <div class="row prev-next">
+        
+            
+                
+    <div class="col text-left">
+        <a href="/2024/pyladies-en-vienna-2024-spring/beginners-en/files/">← <span class="d-none d-sm-inline">Files</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-left">
+        <a href="/2024/pyladies-en-vienna-2024-spring/sessions/files_cli/">↑ <span class="d-none d-sm-inline">Lesson: Working with Files and Debugging</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-right">
+        <a href="/2024/pyladies-en-vienna-2024-spring/beginners-en/argparse/"><span class="d-none d-sm-inline">Argparse – Command line interface</span> →</a>
+    </div>
+
+            
+        
+    </div>
+
+
+        
+
+    </div>
+</div>
+
+
+
+        <script type="text/javascript" src="/static/js/solutions.js"></script>
+
+        <div class="footer container">
+            <hr>
+            <div class="lesson-attribution">
+                
+    
+        <p>Pro PyLadies Brno napsal Petr Viktorin, 2015-2017.</p>
+    
+
+                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
+                
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="global-pyladies">
+                  © 2024 PyLadies Vienna. All rights reserved.
+                  <br>
+                  <a href="/agb/">Impressum, AGB</a>
+                  <br>
+                  We are a part of <a href="https://pyladies.com">international PyLadies</a>.
+                </div>
+                <ul>
+                    <li>
+                        <a href="https://discord.gg/v2qdvbD2dn" target="_blank">
+                            <img src="/static/img/discord-logo.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:pyladies.vienna@gmail.com" >
+                            <img src="/static/img/mail-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/pyladies_vie" target="_blank">
+                            <img src="/static/img/twitter-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/pyladies_vienna" target="_blank">
+                            <img src="/static/img/instagram-logo.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/UndeadFairy/pyladies_vienna" target="_blank">
+                            <img src="/static/img/github-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.meetup.com/PyLadies-Vienna/" target="_blank">
+                            <img src="/static/img/meetup.png">
+                        </a>
+                    </li>
+                    <li data-toggle="tooltip" title="Linkedin">
+                      <a href="https://www.linkedin.com/company/pyladies-vienna" target="_blank">
+                          <img src="/static/img/linkedin-logo.png">
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+          </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+        
+
+    </body>
+</html>
