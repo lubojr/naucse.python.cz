@@ -204,16 +204,16 @@ is text-based and is meant to be used from the command line.</p>
 </pre></div><p>When we run it normally we get this result:</p>
 <div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>test.py
 Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
-<span class="w">  </span>File<span class="w"> </span><span class="s2">"/home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">10</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
+<span class="w">  </span>File<span class="w"> </span><span class="s2">"test.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">10</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
 <span class="w">    </span>myfunc<span class="o">(</span><span class="m">1</span><span class="o">)</span>
-<span class="w">  </span>File<span class="w"> </span><span class="s2">"/home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>myfunc
+<span class="w">  </span>File<span class="w"> </span><span class="s2">"test.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>myfunc
 <span class="w">    </span>myinnerfunc<span class="o">(</span>myarg<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="o">)</span>
-<span class="w">  </span>File<span class="w"> </span><span class="s2">"/home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">7</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>myinnerfunc
+<span class="w">  </span>File<span class="w"> </span><span class="s2">"test.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">7</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>myinnerfunc
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>innerarg
 ZeroDivisionError:<span class="w"> </span>division<span class="w"> </span>by<span class="w"> </span>zero
 </pre></div><p>We now want to debug the file by using PDB:</p>
 <div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pdb<span class="w"> </span>test.py
-&gt;<span class="w"> </span>/home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py<span class="o">(</span><span class="m">1</span><span class="o">)</span>&lt;module&gt;<span class="o">()</span>
+&gt;<span class="w"> </span>test.py<span class="o">(</span><span class="m">1</span><span class="o">)</span>&lt;module&gt;<span class="o">()</span>
 -&gt;<span class="w"> </span>def<span class="w"> </span>myfunc<span class="o">(</span>myarg<span class="o">)</span>:
 <span class="o">(</span>Pdb<span class="o">)</span>
 </pre></div><p>You can now see that the program has not yet started, but you get the <code>(pdb)</code>
@@ -266,25 +266,25 @@ returned. The debugging is continued afterwards.</li>
 </ul>
 <p>We now want to debug our function, so we set a breakpoint in our inner function:</p>
 <div class="highlight"><pre><code>(Pdb) b myinnerfunc
-Breakpoint 1 at /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py:6</code></pre></div><p>We can now start the program, it will stop at our <code>myinnerfunc</code>:</p>
+Breakpoint 1 at test.py:6</code></pre></div><p>We can now start the program, it will stop at our <code>myinnerfunc</code>:</p>
 <div class="highlight"><pre><code>(Pdb) c
-&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()
+&gt; test.py(7)myinnerfunc()
 -&gt; return 1 / innerarg</code></pre></div><p>We can now check where we currently are in our programs call stack:</p>
 <div class="highlight"><pre><code>(Pdb) w
   /usr/lib/python3.10/bdb.py(598)run()
 -&gt; exec(cmd, globals, locals)
   &lt;string&gt;(1)&lt;module&gt;()
-  /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(10)&lt;module&gt;()
+  test.py(10)&lt;module&gt;()
 -&gt; myfunc(1)
-  /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(2)myfunc()
+  test.py(2)myfunc()
 -&gt; myinnerfunc(myarg)
-&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()
+&gt; test.py(7)myinnerfunc()
 -&gt; return 1 / innerarg</code></pre></div><p>And we can print our variables:</p>
 <div class="highlight"><pre><code>(Pdb) innerarg
 1</code></pre></div><p>We can now move up the call stack, to inspect the variables in the calling
 function:</p>
 <div class="highlight"><pre><code>(Pdb) up
-&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(2)myfunc()
+&gt; test.py(2)myfunc()
 -&gt; myinnerfunc(myarg)</code></pre></div><p>In order to see our context, we can list (print) the source code at that
 location and print the local variable <code>myarg</code>:</p>
 <div class="highlight"><pre><code>(Pdb) l
@@ -302,14 +302,14 @@ location and print the local variable <code>myarg</code>:</p>
 (Pdb) myarg
 1</code></pre></div><p>We can then move <em>down</em> the call stack again:</p>
 <div class="highlight"><pre><code>(Pdb) d
-&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()
+&gt; test.py(7)myinnerfunc()
 -&gt; return 1 / innerarg</code></pre></div><p>We can now make the <em>next</em> execution step in the program, which calculates the
 result and returns it. We can see that with the <code>--Return--</code> and the result
 returned (<code>-&gt;1.0</code>), and we can also see that we returned to the upper function
 <code>myfunc</code>:</p>
 <div class="highlight"><pre><code>(Pdb) n
 --Return--
-&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()-&gt;1.0
+&gt; test.py(7)myinnerfunc()-&gt;1.0
 -&gt; return 1 / innerarg
 (Pdb) l
   1     def myfunc(myarg):
@@ -327,7 +327,7 @@ the function <code>myinnerfunc</code>, we can use the <code>continue</code> comm
 same breakpoint but in the second time we call it. We can then also print out
 the variables again:</p>
 <div class="highlight"><pre><code>(Pdb) c
-&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()
+&gt; test.py(7)myinnerfunc()
 -&gt; return 1 / innerarg
 (Pdb) innerarg
 0</code></pre></div><p>If we would now execute the next line, we would raise the initial error, the
@@ -337,7 +337,7 @@ with some other value</p>
 returned:</p>
 <div class="highlight"><pre><code>(Pdb) n
 --Return--
-&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()-&gt;0.1
+&gt; test.py(7)myinnerfunc()-&gt;0.1
 -&gt; return 1 / innerarg</code></pre></div><h3>Using a graphical debugger</h3>
 <p>Various IDEs (such as Visual Studio Code) allow for a more convenient debugging
 approach, directly incorporated into the IDE. The concepts remain very much the
@@ -369,7 +369,7 @@ uncaught exceptions, which can help as well.</p>
 <p>When debugging, this small window for controls is available to allow navigating
 the code:</p>
 <p><span class="figure"><a href="/2024/pyladies-en-vienna-2024-spring/beginners-en/debugging/static/controls.png"><img src="/2024/pyladies-en-vienna-2024-spring/beginners-en/debugging/static/controls.png" alt="The debugging controls"></a></span></p>
-<p>The blue riangle allows to continue to the next breakpoint (same as
+<p>The blue triangle allows to continue to the next breakpoint (same as
 <code>c(continue)</code> in PDB). The arrow above the point executes the next line, but
 does not step into a function (same as <code>n(ext)</code>). The arrow down to the point
 makes the next step, but also steps into a function (same as <code>s(tep)</code>), whereas
@@ -393,7 +393,7 @@ understand problems and their specific contexts they appear in.</p>
             
                 
     <div class="col text-left">
-        <a href="/2024/pyladies-en-vienna-2024-spring/beginners-en/json/">← <span class="d-none d-sm-inline">JSON</span></a>
+        <a href="/2024/pyladies-en-vienna-2024-spring/beginners-en/files/">← <span class="d-none d-sm-inline">Files</span></a>
     </div>
 
             
