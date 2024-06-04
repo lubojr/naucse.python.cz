@@ -234,11 +234,14 @@ plan:
   materials:
     - lesson: beginners-en/files
     - lesson: beginners-en/json
+    - lesson: beginners-en/debugging
+    - title: PDB cheatsheet
+      url: https://github.com/nblock/pdb-cheatsheet/releases/download/v1.2/pdb-cheatsheet.png
+      type: cheatsheet
     - title: Files/Exceptions cheatsheet
       url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
       type: cheatsheet
     - lesson: beginners-en/argparse
-    - lesson: beginners-en/debugging
   #   - title: Homework
   #     url: https://docs.google.com/document/d/1Tjy0uSqdVMmQI2tbHWBmDtrnwMl-Px3J7-N6_xRh12o
   #     type: homework
