@@ -1,0 +1,473 @@
+
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            
+                Debugging Python
+            
+        </title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+        
+        <link rel="icon" type="image/x-icon" href= "/static/img/who_96px.png">
+        <link rel="stylesheet" href="/static/css/naucse.css">
+        <link rel="stylesheet" href="/static/css/body.css">
+        <link rel="stylesheet" href="/static/css/pygments-lovelace-style.css">
+        <link rel="stylesheet" href="/static/css/ipython.css">
+
+        
+    
+
+
+        <style>
+            
+    
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="header">
+            <ul class="container menu">
+                <li><a href="/" class="logo"><h1>PyLadies Vienna</h1></a></li>
+                <li><a href="/sponsorship/" class="menu-link"><h2>Support Us</h2></a></li>
+                <li><a href="/mentorship/" class="menu-link"><h2>Mentorship</h2></a></li>
+                <li><a href="/runs/" class="menu-link"><h2>Courses</h2></a></li>
+            </ul>
+        </nav>
+
+        
+
+<div class="page">
+    <div class="container">
+
+        
+  
+
+
+        <div class="lesson-content">
+          
+    
+
+    <h1>What are Bugs?</h1>
+<p>A software bug is any error that causes unwanted behavior and
+produces incorrect or unexpected results.</p>
+<p>The term most likely originates from mechanical engineering, where actual bugs
+(insects) might crawl into machines and cause mechanical failures. Edison
+mentioned those in 1870. The term stuck and was migrated to software
+engineering.</p>
+<h1>What is Debugging?</h1>
+<p>The term debugging means to <em>find</em> and <em>eliminate</em> bugs in software systems.
+For this purpose, a wide range of tools are at our disposal, which helps us in
+finding bugs and the context in which they are occurring.</p>
+<h1>Types of bugs</h1>
+<h2>Syntax Errors</h2>
+<p>This kind of bugs originates from syntactically incorrect source code. Usually
+such bugs are quite obvious, when the source code is executed and can thus be
+quite easily fixed.</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="ow">in</span> <span class="n">z</span><span class="p">:</span>
+  <span class="n">File</span> <span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="ow">in</span> <span class="n">z</span><span class="p">:</span>
+             <span class="o">^^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
+</pre></div><h2>Arithmetic</h2>
+<p>Floating point numbers are inherently inexact, and can sometimes give
+unexpected results. This needs to be taken into account, when dealing with
+fractions like in the next example:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">==</span> <span class="mf">1.0</span>
+<span class="kc">False</span>
+</pre></div><h2>Wrong design</h2>
+<p>In some cases, the implementation (the code) is correct, but the underlying
+design is flawed.</p>
+<h2>Memory leaks</h2>
+<p>Memory leaks are cases of bugs where more and more memory is consumed by
+creating objects which are never destroyed, thus requiring memory that is never
+freed up. At one point there will be no memory left and the program will crash.</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="o">...</span>     <span class="n">mylist</span> <span class="o">=</span> <span class="n">mylist</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">))</span>
+<span class="o">...</span>
+<span class="mi">2000000</span>
+<span class="mi">4000000</span>
+<span class="mi">8000000</span>
+<span class="mi">16000000</span>
+<span class="mi">32000000</span>
+<span class="mi">64000000</span>
+<span class="mi">128000000</span>
+<span class="mi">256000000</span>
+<span class="mi">512000000</span>
+<span class="mi">1024000000</span>
+<span class="n">Killed</span>
+</pre></div><p>Memory leaks can be quite subtle and sometimes hard to notice and may only show
+up under specific circumstances like very long running times.</p>
+<h1>Finding bugs</h1>
+<p>As previously stated, bugs typically show themselves with unexpected behavior
+and wrong results. The process of debugging is to locate the bugs in their
+specific context, so it is very helpful to see this context. The context is
+comprised of:</p>
+<ul>
+<li>variables (local variables and global ones)</li>
+<li>the "call stack": the stack of function calls at a specific location</li>
+</ul>
+<p>In order to show the context and interact with it, we can use certain tools:</p>
+<h2>"Print-style" debugging</h2>
+<p>This style of debugging is common, as it is easily implemented by peppering the
+code with <code>print</code> and similar statements in order to show the current state of
+the program. Thus, it is easy to do and has a very low barrier.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">traceback</span>
+
+<span class="n">GLOBAL_VAR</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">a_arg</span><span class="p">):</span>
+    <span class="n">b</span><span class="p">(</span><span class="n">a_arg</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">b_arg</span><span class="p">):</span>
+    <span class="n">my_variable</span> <span class="o">=</span> <span class="n">b_arg</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="c1"># we print out all our function arguments, local and global variables</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">b_arg</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">my_variable</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">GLOBAL_VAR</span><span class="p">)</span>
+    <span class="c1"># our call stack is -&gt;</span>
+    <span class="n">traceback</span><span class="o">.</span><span class="n">print_stack</span><span class="p">()</span>
+
+<span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div><p>However, this style of programming comes with significant drawbacks:</p>
+<ul>
+<li>you have to modify the source code in order to debug it. Often these print
+statements are forgotten and linger in the source code for quite some time.</li>
+<li>it is not possible to interact with the context during the debugging, the
+program needs to be stopped, changed, and started again.</li>
+<li>Tracing your variables can become quite messy, as both the variables name
+and value need to be printed, often before and after a certain location</li>
+</ul>
+<h2>Testing</h2>
+<p>Writing and regularly running tests can be quite helpful in locating bugs.
+Especially "unit" tests (i.e: tests that involve single classes or functions)
+can reduce the context of a class or function in order to see if it works as
+intended and is bug free.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_rectangle</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Expected a number"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Invalid side length"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Invalid side length"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+
+<span class="c1"># we test the normal use of the function</span>
+<span class="k">def</span> <span class="nf">test_area_rectangle_normal</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">area_rectangle</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span>
+
+<span class="c1"># we test some invalid arguments</span>
+<span class="k">def</span> <span class="nf">test_area_rectangle_types</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e_info</span><span class="p">:</span>
+        <span class="n">area_rectangle</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">"str"</span><span class="p">)</span>
+
+<span class="c1"># we test some edge cases</span>
+<span class="k">def</span> <span class="nf">test_area_rectangle_negative</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e_info</span><span class="p">:</span>
+        <span class="n">area_rectangle</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+</pre></div><h2>Using a debugger</h2>
+<p>Debuggers are tools that enable us to interact with a <em>running</em> program without
+the need to modify it. We can pause the program at specific <strong>break points</strong>
+where we can investigate and even modify the context, as well as moving <em>up</em> or
+<em>down</em> the current call stack.</p>
+<p>There exist many different types of debuggers, some are built into the Python
+itself, some are built into the code editor, some are even available as a
+webpage.</p>
+<p>We will now discuss the most common ones:</p>
+<h3>PDB - the Python De-Bugger</h3>
+<p>The PDB is part of the python standard library, thus it is always available. It
+is text-based and is meant to be used from the command line.</p>
+<p>It can be invoked in several ways:</p>
+<ul>
+<li>either by using <code>breakpoint()</code> calls in your code</li>
+<li>or by starting your python script in a slightly different manner:
+<code>python -m pdb yourscript.py</code></li>
+</ul>
+<p>Let us use the following script to debug, and save it as <code>test.py</code>:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">myarg</span><span class="p">):</span>
+    <span class="n">myinnerfunc</span><span class="p">(</span><span class="n">myarg</span><span class="p">)</span>
+    <span class="n">myinnerfunc</span><span class="p">(</span><span class="n">myarg</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">myinnerfunc</span><span class="p">(</span><span class="n">innerarg</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">innerarg</span>
+
+
+<span class="n">myfunc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div><p>When we run it normally we get this result:</p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>test.py
+Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">"/home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">10</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
+<span class="w">    </span>myfunc<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">"/home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>myfunc
+<span class="w">    </span>myinnerfunc<span class="o">(</span>myarg<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">"/home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">7</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>myinnerfunc
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>innerarg
+ZeroDivisionError:<span class="w"> </span>division<span class="w"> </span>by<span class="w"> </span>zero
+</pre></div><p>We now want to debug the file by using PDB:</p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pdb<span class="w"> </span>test.py
+&gt;<span class="w"> </span>/home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py<span class="o">(</span><span class="m">1</span><span class="o">)</span>&lt;module&gt;<span class="o">()</span>
+-&gt;<span class="w"> </span>def<span class="w"> </span>myfunc<span class="o">(</span>myarg<span class="o">)</span>:
+<span class="o">(</span>Pdb<span class="o">)</span>
+</pre></div><p>You can now see that the program has not yet started, but you get the <code>(pdb)</code>
+prompt that allows you to set up pre-conditions and breakpoints in your code by
+using the commands. You can get a list of commands by typing <code>help</code>:</p>
+<div class="highlight"><pre><code>(Pdb) help
+
+Documented commands (type help &lt;topic&gt;):
+========================================
+EOF    c          d        h         list      q        rv       undisplay
+a      cl         debug    help      ll        quit     s        unt
+alias  clear      disable  ignore    longlist  r        source   until
+args   commands   display  interact  n         restart  step     up
+b      condition  down     j         next      return   tbreak   w
+break  cont       enable   jump      p         retval   u        whatis
+bt     continue   exit     l         pp        run      unalias  where
+
+Miscellaneous help topics:
+==========================
+exec  pdb</code></pre></div><p>You can get the description of a specific command by using <code>help &lt;cmd&gt;</code>:</p>
+<div class="highlight"><pre><code>(Pdb) help b
+b(reak) [ ([filename:]lineno | function) [, condition] ]
+        Without argument, list all breaks.
+
+        With a line number argument, set a break at this line in the
+        current file.  With a function name, set a break at the first
+        executable line of that function.  If a second argument is
+        present, it is a string specifying an expression which must
+        evaluate to true before the breakpoint is honored.
+
+        The line number may be prefixed with a filename and a colon,
+        to specify a breakpoint in another file (probably one that
+        hasn't been loaded yet).  The file is searched for on
+        sys.path; the .py suffix may be omitted.</code></pre></div><p>The following commands are important for us in the beginning:</p>
+<ul>
+<li><code>b(reak)</code>: allows us to set a breakpoint, a point in your program where we
+want to stop to investigate. We can use a function name or a linenumber
+here. Optionally, we can add a condition, which will tell whether to a
+breakpoint shall trigger or not.</li>
+<li><code>c(ontinue)</code>: we want to continue the normal program execution until we
+reach the next breakpoint.</li>
+<li><code>s(tep)</code>: while paused, execute the next line in your program. If it is a
+function, step into that function and continue execution there</li>
+<li><code>n(ext)</code>: also execute the next line in your program, but don't step into a
+function. Instead, the function is run in its entirety and the results
+returned. The debugging is continued afterwards.</li>
+<li><code>w(here)</code>: show the current call stack and where we are currently debugging</li>
+<li><code>u(p)</code>: move up the call stack (i.e: the calling function)</li>
+<li><code>d(own)</code>: move down the call stack. Only works when we used <code>up</code> before</li>
+</ul>
+<p>We now want to debug our function, so we set a breakpoint in our inner function:</p>
+<div class="highlight"><pre><code>(Pdb) b myinnerfunc
+Breakpoint 1 at /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py:6</code></pre></div><p>We can now start the program, it will stop at our <code>myinnerfunc</code>:</p>
+<div class="highlight"><pre><code>(Pdb) c
+&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()
+-&gt; return 1 / innerarg</code></pre></div><p>We can now check where we currently are in our programs call stack:</p>
+<div class="highlight"><pre><code>(Pdb) w
+  /usr/lib/python3.10/bdb.py(598)run()
+-&gt; exec(cmd, globals, locals)
+  &lt;string&gt;(1)&lt;module&gt;()
+  /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(10)&lt;module&gt;()
+-&gt; myfunc(1)
+  /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(2)myfunc()
+-&gt; myinnerfunc(myarg)
+&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()
+-&gt; return 1 / innerarg</code></pre></div><p>And we can print our variables:</p>
+<div class="highlight"><pre><code>(Pdb) innerarg
+1</code></pre></div><p>We can now move up the call stack, to inspect the variables in the calling
+function:</p>
+<div class="highlight"><pre><code>(Pdb) up
+&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(2)myfunc()
+-&gt; myinnerfunc(myarg)</code></pre></div><p>In order to see our context, we can list (print) the source code at that
+location and print the local variable <code>myarg</code>:</p>
+<div class="highlight"><pre><code>(Pdb) l
+  1     def myfunc(myarg):
+  2  -&gt;     myinnerfunc(myarg)
+  3         myinnerfunc(myarg - 1)
+  4
+  5
+  6 B   def myinnerfunc(innerarg):
+  7         return 1 / innerarg
+  8
+  9
+ 10     myfunc(1)
+[EOF]
+(Pdb) myarg
+1</code></pre></div><p>We can then move <em>down</em> the call stack again:</p>
+<div class="highlight"><pre><code>(Pdb) d
+&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()
+-&gt; return 1 / innerarg</code></pre></div><p>We can now make the <em>next</em> execution step in the program, which calculates the
+result and returns it. We can see that with the <code>--Return--</code> and the result
+returned (<code>-&gt;1.0</code>), and we can also see that we returned to the upper function
+<code>myfunc</code>:</p>
+<div class="highlight"><pre><code>(Pdb) n
+--Return--
+&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()-&gt;1.0
+-&gt; return 1 / innerarg
+(Pdb) l
+  1     def myfunc(myarg):
+  2         myinnerfunc(myarg)
+  3  -&gt;     myinnerfunc(myarg - 1)
+  4
+  5
+  6 B   def myinnerfunc(innerarg):
+  7         return 1 / innerarg
+  8
+  9
+ 10     myfunc(1)
+[EOF]</code></pre></div><p>Since we know, that the error only happens when we are in the second call of
+the function <code>myinnerfunc</code>, we can use the <code>continue</code> command to continue the
+same breakpoint but in the second time we call it. We can then also print out
+the variables again:</p>
+<div class="highlight"><pre><code>(Pdb) c
+&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()
+-&gt; return 1 / innerarg
+(Pdb) innerarg
+0</code></pre></div><p>If we would now execute the next line, we would raise the initial error, the
+<code>ZeroDivisionError</code>. We can however simple override the variable <code>innerarg</code>
+with some other value</p>
+<div class="highlight"><pre><code>(Pdb) innerarg = 10</code></pre></div><p>When we now execute the next line, the value can be computed and the result is
+returned:</p>
+<div class="highlight"><pre><code>(Pdb) n
+--Return--
+&gt; /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()-&gt;0.1
+-&gt; return 1 / innerarg</code></pre></div><h3>Using a graphical debugger</h3>
+<p>Various IDEs (such as Visual Studio Code) allow for a more convenient debugging
+approach, directly incorporated into the IDE. The concepts remain very much the
+same, but can be used in a way more convenient manner, directly where we are
+writing the code.</p>
+<p>The following examples will deal with the setup and debugging in Visual Studio
+Code.</p>
+<p>In order to debug a Python file, it needs to be opened in the editor. Then the
+debugging view needs to be opened (the triangle symbol with the small bug).</p>
+<p><span class="figure"><a href="/lessons/beginners-en/debugging/static/debugging-view.png"><img src="/lessons/beginners-en/debugging/static/debugging-view.png" alt="The Debugging view"></a></span></p>
+<p>Next select "Python Debugger" and then "Python File".</p>
+<p><span class="figure"><a href="/lessons/beginners-en/debugging/static/setup-1.png"><img src="/lessons/beginners-en/debugging/static/setup-1.png" alt="Setup 1"></a></span>
+<span class="figure"><a href="/lessons/beginners-en/debugging/static/setup-2.png"><img src="/lessons/beginners-en/debugging/static/setup-2.png" alt="Setup 2"></a></span></p>
+<p>Now the debugging can actually start. Conveniently, breakpoints can directly be
+set in the text editor by clicking next to the line number where you want the
+breakpoint to be. An active breakpoint can be seen as a red dot. Clicking on it
+will remove it again, with a right click we can add a condition for the
+breakpoint to trigger.</p>
+<p><span class="figure"><a href="/lessons/beginners-en/debugging/static/breakpoint.png"><img src="/lessons/beginners-en/debugging/static/breakpoint.png" alt="Setting a breakpoint"></a></span>
+<span class="figure"><a href="/lessons/beginners-en/debugging/static/breakpoint-stop.png"><img src="/lessons/beginners-en/debugging/static/breakpoint-stop.png" alt="Stopping at a breakpoint"></a></span></p>
+<p>When we are running our code we can conveniently inspect the context of our
+running program, showing us the variables and their values (where we can also
+modify them):</p>
+<p><span class="figure"><a href="/lessons/beginners-en/debugging/static/context.png"><img src="/lessons/beginners-en/debugging/static/context.png" alt="The debugging context"></a></span></p>
+<p>Conveniently, we can see the call stack (we can simply move up/down by clicking
+on the item in the stack) and we can also see a list of all breakpoints, which
+can then also en-/disable. There are also breakpoints for all raised or
+uncaught exceptions, which can help as well.</p>
+<p>When debugging, this small window for controls is available to allow navigating
+the code:</p>
+<p><span class="figure"><a href="/lessons/beginners-en/debugging/static/controls.png"><img src="/lessons/beginners-en/debugging/static/controls.png" alt="The debugging controls"></a></span></p>
+<p>The blue riangle allows to continue to the next breakpoint (same as
+<code>c(continue)</code> in PDB). The arrow above the point executes the next line, but
+does not step into a function (same as <code>n(ext)</code>). The arrow down to the point
+makes the next step, but also steps into a function (same as <code>s(tep)</code>), whereas
+the arrow up runs the function to its end until it returns. The green rewind
+error restarts the programming and the red square stops the program.</p>
+<h1>Conclusion</h1>
+<p>Debugging is a necessary activity to get rid of bugs in our software, whether
+we use <code>print()</code>-style debugging or use a dedicated tool.</p>
+<p>Dedicated tools are more complex, but far more powerful in helping us
+understand problems and their specific contexts they appear in.</p>
+
+
+        </div>
+
+        
+
+    </div>
+</div>
+
+
+
+        <script type="text/javascript" src="/static/js/solutions.js"></script>
+
+        <div class="footer container">
+            <hr>
+            <div class="lesson-attribution">
+                
+    
+        <p>Fabian Schindler</p>
+    
+
+                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
+                
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="global-pyladies">
+                  © 2024 PyLadies Vienna. All rights reserved.
+                  <br>
+                  <a href="/agb/">Impressum, AGB</a>
+                  <br>
+                  We are a part of <a href="https://pyladies.com">international PyLadies</a>.
+                </div>
+                <ul>
+                    <li>
+                        <a href="https://discord.gg/v2qdvbD2dn" target="_blank">
+                            <img src="/static/img/discord-logo.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:pyladies.vienna@gmail.com" >
+                            <img src="/static/img/mail-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/pyladies_vie" target="_blank">
+                            <img src="/static/img/twitter-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/pyladies_vienna" target="_blank">
+                            <img src="/static/img/instagram-logo.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/UndeadFairy/pyladies_vienna" target="_blank">
+                            <img src="/static/img/github-white.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.meetup.com/PyLadies-Vienna/" target="_blank">
+                            <img src="/static/img/meetup.png">
+                        </a>
+                    </li>
+                    <li data-toggle="tooltip" title="Linkedin">
+                      <a href="https://www.linkedin.com/company/pyladies-vienna" target="_blank">
+                          <img src="/static/img/linkedin-logo.png">
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+          </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+        
+
+    </body>
+</html>
