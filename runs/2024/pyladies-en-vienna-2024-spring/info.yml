@@ -232,8 +232,8 @@ plan:
   slug: files_cli
   date: 2024-06-04
   materials:
-    - lesson: beginners-en/files
     - lesson: beginners-en/json
+    - lesson: beginners-en/files
     - lesson: beginners-en/debugging
     - title: PDB cheatsheet
       url: https://github.com/nblock/pdb-cheatsheet/releases/download/v1.2/pdb-cheatsheet.png
@@ -242,9 +242,9 @@ plan:
       url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
       type: cheatsheet
     - lesson: beginners-en/argparse
-  #   - title: Homework
-  #     url: https://docs.google.com/document/d/1Tjy0uSqdVMmQI2tbHWBmDtrnwMl-Px3J7-N6_xRh12o
-  #     type: homework
+    - title: Homework
+      url: https://docs.google.com/document/d/1ylF7Yc49LcQ4E1c6lMUM8L1YVAJva-bJhWx1Ynv1-t0
+      type: homework
 - title: Final Project
   slug: final_project
   date: 2024-06-11

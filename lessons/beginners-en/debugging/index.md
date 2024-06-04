@@ -197,11 +197,11 @@ When we run it normally we get this result:
 ```bash
 $ python test.py
 Traceback (most recent call last):
-  File "/home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py", line 10, in <module>
+  File "test.py", line 10, in <module>
     myfunc(1)
-  File "/home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py", line 3, in myfunc
+  File "test.py", line 3, in myfunc
     myinnerfunc(myarg - 1)
-  File "/home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py", line 7, in myinnerfunc
+  File "test.py", line 7, in myinnerfunc
     return 1 / innerarg
 ZeroDivisionError: division by zero
 ```
@@ -210,7 +210,7 @@ We now want to debug the file by using PDB:
 
 ```bash
 $ python -m pdb test.py
-> /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(1)<module>()
+> test.py(1)<module>()
 -> def myfunc(myarg):
 (Pdb)
 ```
@@ -277,13 +277,13 @@ The following commands are important for us in the beginning:
 We now want to debug our function, so we set a breakpoint in our inner function:
 ```
 (Pdb) b myinnerfunc
-Breakpoint 1 at /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py:6
+Breakpoint 1 at test.py:6
 ```
 
 We can now start the program, it will stop at our `myinnerfunc`:
 ```
 (Pdb) c
-> /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()
+> test.py(7)myinnerfunc()
 -> return 1 / innerarg
 ```
 
@@ -294,11 +294,11 @@ We can now check where we currently are in our programs call stack:
   /usr/lib/python3.10/bdb.py(598)run()
 -> exec(cmd, globals, locals)
   <string>(1)<module>()
-  /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(10)<module>()
+  test.py(10)<module>()
 -> myfunc(1)
-  /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(2)myfunc()
+  test.py(2)myfunc()
 -> myinnerfunc(myarg)
-> /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()
+> test.py(7)myinnerfunc()
 -> return 1 / innerarg
 ```
 
@@ -314,7 +314,7 @@ function:
 
 ```
 (Pdb) up
-> /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(2)myfunc()
+> test.py(2)myfunc()
 -> myinnerfunc(myarg)
 ```
 
@@ -342,7 +342,7 @@ We can then move _down_ the call stack again:
 
 ```
 (Pdb) d
-> /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()
+> test.py(7)myinnerfunc()
 -> return 1 / innerarg
 ```
 
@@ -354,7 +354,7 @@ returned (`->1.0`), and we can also see that we returned to the upper function
 ```
 (Pdb) n
 --Return--
-> /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()->1.0
+> test.py(7)myinnerfunc()->1.0
 -> return 1 / innerarg
 (Pdb) l
   1     def myfunc(myarg):
@@ -377,7 +377,7 @@ the variables again:
 
 ```
 (Pdb) c
-> /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()
+> test.py(7)myinnerfunc()
 -> return 1 / innerarg
 (Pdb) innerarg
 0
@@ -397,7 +397,7 @@ returned:
 ```
 (Pdb) n
 --Return--
-> /home/fabian/pyladies/naucse.python.cz/lessons/beginners-en/debugging/test.py(7)myinnerfunc()->0.1
+> test.py(7)myinnerfunc()->0.1
 -> return 1 / innerarg
 ```
 
@@ -447,7 +447,7 @@ the code:
 
 {{ figure( img=static('controls.png'), alt='The debugging controls', ) }}
 
-The blue riangle allows to continue to the next breakpoint (same as
+The blue triangle allows to continue to the next breakpoint (same as
 `c(continue)` in PDB). The arrow above the point executes the next line, but
 does not step into a function (same as `n(ext)`). The arrow down to the point
 makes the next step, but also steps into a function (same as `s(tep)`), whereas
