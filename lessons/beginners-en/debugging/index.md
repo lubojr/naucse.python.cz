@@ -32,7 +32,9 @@ SyntaxError: invalid syntax
 
 ## Arithmetic
 
-loss of precision through rounding
+Floating point numbers are inherently inexact, and can sometimes give
+unexpected results. This needs to be taken into account, when dealing with
+fractions like in the next example:
 
 ```python
 >>> 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 == 1.0
@@ -41,8 +43,8 @@ False
 
 ## Wrong design
 
-
-
+In some cases, the implementation (the code) is correct, but the underlying
+design is flawed.
 
 ## Memory leaks
 
@@ -80,7 +82,6 @@ comprised of:
 
 * variables (local variables and global ones)
 * the "call stack": the stack of function calls at a specific location
-
 
 In order to show the context and interact with it, we can use certain tools:
 
@@ -160,10 +161,16 @@ the need to modify it. We can pause the program at specific __break points__
 where we can investigate and even modify the context, as well as moving _up_ or
 _down_ the current call stack.
 
+There exist many different types of debuggers, some are built into the Python
+itself, some are built into the code editor, some are even available as a
+webpage.
+
+We will now discuss the most common ones:
+
 ### PDB - the Python De-Bugger
 
 The PDB is part of the python standard library, thus it is always available. It
-is text-based, so it can be used from the command line.
+is text-based and is meant to be used from the command line.
 
 It can be invoked in several ways:
   * either by using `breakpoint()` calls in your code
@@ -185,7 +192,7 @@ def myinnerfunc(innerarg):
 myfunc(1)
 ```
 
-When we run it normally we get something like this:
+When we run it normally we get this result:
 
 ```bash
 $ python test.py
@@ -253,7 +260,8 @@ The following commands are important for us in the beginning:
 
   * `b(reak)`: allows us to set a breakpoint, a point in your program where we
     want to stop to investigate. We can use a function name or a linenumber
-    here.
+    here. Optionally, we can add a condition, which will tell whether to a
+    breakpoint shall trigger or not.
   * `c(ontinue)`: we want to continue the normal program execution until we
     reach the next breakpoint.
   * `s(tep)`: while paused, execute the next line in your program. If it is a
@@ -416,7 +424,8 @@ Next select "Python Debugger" and then "Python File".
 Now the debugging can actually start. Conveniently, breakpoints can directly be
 set in the text editor by clicking next to the line number where you want the
 breakpoint to be. An active breakpoint can be seen as a red dot. Clicking on it
-will remove it again.
+will remove it again, with a right click we can add a condition for the
+breakpoint to trigger.
 
 {{ figure( img=static('breakpoint.png'), alt='Setting a breakpoint', ) }}
 {{ figure( img=static('breakpoint-stop.png'), alt='Stopping at a breakpoint', ) }}
@@ -433,7 +442,6 @@ on the item in the stack) and we can also see a list of all breakpoints, which
 can then also en-/disable. There are also breakpoints for all raised or
 uncaught exceptions, which can help as well.
 
-
 When debugging, this small window for controls is available to allow navigating
 the code:
 
@@ -445,3 +453,11 @@ does not step into a function (same as `n(ext)`). The arrow down to the point
 makes the next step, but also steps into a function (same as `s(tep)`), whereas
 the arrow up runs the function to its end until it returns. The green rewind
 error restarts the programming and the red square stops the program.
+
+# Conclusion
+
+Debugging is a necessary activity to get rid of bugs in our software, whether
+we use `print()`-style debugging or use a dedicated tool.
+
+Dedicated tools are more complex, but far more powerful in helping us
+understand problems and their specific contexts they appear in.
