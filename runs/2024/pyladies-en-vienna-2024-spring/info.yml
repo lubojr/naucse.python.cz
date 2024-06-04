@@ -1,6 +1,6 @@
 title: Beginners course PyLadies Vienna
 subtitle: Online - spring 2024 - Tuesdays
-place: | 
+place: |
   Online
 timezone: Europe/Vienna
 default_time:
@@ -92,7 +92,7 @@ plan:
     type: cheatsheet
   - lesson: beginners-en/lesson-2-homework
     type: homework
-  
+
 - title: Conditions, modules and functions
   slug: loops
   date: 2024-04-02
@@ -238,6 +238,7 @@ plan:
       url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
       type: cheatsheet
     - lesson: beginners-en/argparse
+    - lesson: beginners-en/debugging
   #   - title: Homework
   #     url: https://docs.google.com/document/d/1Tjy0uSqdVMmQI2tbHWBmDtrnwMl-Px3J7-N6_xRh12o
   #     type: homework
