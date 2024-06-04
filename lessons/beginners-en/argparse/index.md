@@ -19,8 +19,6 @@ you give to it as **arguments**.
 
 ### Example
 
-An example of a tool which is usually installed on both Windows and Unix is ``curl``. It allows you to send HTTP requests to the internet and receive responses.
-
 If you want to know what arguments does existing program allow, the argument to use is **help**. This works for most of programs on your computer (if their author created a help page). Also usually there is a `-help` or `--help` command line argument which also shows the expected usage of a tool to any user.
 
 #### git
@@ -46,23 +44,25 @@ For example you can heavily customize output of `git log` in some existing git r
 git log --oneline --graph --decorate --cherry-mark --boundary
 ```
 
-Another example of a command line tool with arguments is **find** but does different things on Windows and Linux. This example is valid for Linux:
-
-```console
-find . -type f -name "*.txt" -empty
-```
-
-Which searches current directory for empty files with .txt suffix.
+> [note]
+> **Note about "raw" command line argument handling**
+> 
+> In order to read the command line arguments, we can use the `sys.argv` variable, which gives us a list of strings, one for each passed argument:
+> ```python
+> # arguments.py
+> import sys
+> 
+> for arg in sys.argv:
+>     print(arg)
+> ```
+> When we execute this program with the passed in arguments, we can see them printed out.
+> However, this is not very convenient when we want to build actual CLI programs with options and arguments. But there are good tools we can use instead!
 
 ### Argparse
 
-How can we create a CLI in Python? Today, we will show usage of a `argparse` tool.
+How can we create a CLI in Python? Today, we will show usage of a `argparse` tool. It is a part of the standard library, so you do not need to install anything extra.
 
-It is a part of the standard library, so you do not need to install anything extra.
-
-You can find the official documentation on:
-
-- [argparse](https://docs.python.org/3/library/argparse.html)
+You can find the official documentation here: [argparse](https://docs.python.org/3/library/argparse.html)
 
 And a quite handy tutorial going through most of functionalities, you could ever encounter:
 [argparse-tutorial](https://docs.python.org/3/howto/argparse.html)

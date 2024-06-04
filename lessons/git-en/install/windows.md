@@ -1,6 +1,6 @@
 ## Windows installation of git
 
-Go to [git-scm.org](https://git-scm.com/download/win), download **Git Standalone Installer** and install it.
+Go to [git-scm.org](https://git-scm.com/download/win), download **Git Standalone Installer 64-bit Git for Windows Setup** and install it.
 When installing, go through the wizard and select these options:
 
 * Run Git from the Windows Command Prompt

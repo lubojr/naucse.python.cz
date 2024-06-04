@@ -2,7 +2,7 @@
 
 Go to [the Python website](https://www.python.org/downloads/) and
 download the `latest stable version of Python`. At the moment of writing
-the materials it is `Python 3.10.7`.
+the materials it is `Python 3.12.3`.
 
 How to know which installer is the right one?
 If your computer has 64bit Windows then download *Windows installer (64-bit)*.
@@ -19,7 +19,7 @@ If your Windows is only 32bit download *Windows installer (32-bit)*.
 ) }}
 
 Then you can run the installer.
-> [warning]  In the beginning check **Install launcher for all Users** and also very important: **Add Python 3.10 to PATH**.
+> [warning]  In the beginning check **Install launcher for all Users** and also very important: **Add Python 3.12 to PATH**.
 
 
 (If you don't have admin rights don't check *Install launcher for all Users*.)

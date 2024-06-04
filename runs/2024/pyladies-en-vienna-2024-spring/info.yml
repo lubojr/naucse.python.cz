@@ -1,8 +1,7 @@
 title: Beginners course PyLadies Vienna
-subtitle: Online - autumn 2023 - Tuesdays
+subtitle: Online - spring 2024 - Tuesdays
 place: | 
   Online
-time: 18:00 - 20:00
 timezone: Europe/Vienna
 default_time:
   start: '18:00'
@@ -40,8 +39,15 @@ mentors:
     - mail: mailto:fabian.schindler.strauss@gmail.com
     - linkedin: https://www.linkedin.com/in/fabian-schindler-311030b9/
     - twitter: https://twitter.com/__fschindler__
+  - name: Martina Červená
+    img: img/team/cervenam.jpg
+    role: "Backend developer, data processing, fitness enthusiast"
+    links: []
+  - name: Bernhard Mallinger
+    img: img/team/mallingerb.jpg
+    role: "Aspiring to keep accidental complexity low. Likes to stare at the screen until code distills to elegant solutions. Open Source for a free and open society. Coffee, pizza, music."
+    links: []
 plan:
-
 - title: Installations
   slug: install_home
   serial: 0
@@ -57,7 +63,7 @@ plan:
 
 - title: Introduction, installation check
   slug: install
-  date: 2023-10-10
+  date: 2024-03-19
   materials:
   - title: Keyboard layout cheat sheet
     url: https://drive.google.com/file/d/1Bvnb52oirQDiZ7WI5t4Q8UeCd10-_gpT
@@ -73,7 +79,7 @@ plan:
 
 - title: First Program, Print
   slug: hello
-  date: 2023-10-17
+  date: 2024-03-26
   materials:
   - lesson: beginners-en/hello-world
   - lesson: beginners-en/print
@@ -89,83 +95,85 @@ plan:
   
 - title: Conditions, modules and functions
   slug: loops
-  date: 2023-10-24
+  date: 2024-04-02
   materials:
-   - lesson: beginners-en/comparisons
-   - lesson: beginners-en/and-or
-   - lesson: beginners-en/functions
-   - title: Basics cheatsheet
-     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
-     type: cheatsheet
-   - title: Homework
-     url: https://docs.google.com/document/d/1HsKbAt6DAH8uQYJUR8UB8sOFvzgUUr_WeZwB6cb9lcA
-     type: homework
+  - lesson: beginners-en/comparisons
+  - lesson: beginners-en/and-or
+  - lesson: beginners-en/functions
+  - title: Basics cheatsheet
+    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
+    type: cheatsheet
+  - title: Homework
+    url: https://docs.google.com/document/d/1HsKbAt6DAH8uQYJUR8UB8sOFvzgUUr_WeZwB6cb9lcA
+    type: homework
 
 - title: Loops, for and while
-  date: 2023-10-31
+  date: 2024-04-09
   slug: strings
   materials:
-   - lesson: beginners-en/turtle
-   - lesson: beginners-en/while
-   - title: If/While cheatsheet
-     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_if_while.pdf
-     type: cheatsheet
-   - title: Homework
-     url: https://docs.google.com/document/d/1t76R6vXagNsjPJvZz5JoQracXVq_0YLHNYDymwKOlPU/edit
-     type: homework
+  - lesson: beginners-en/colabturtle
+  - lesson: beginners-en/while
+  - title: If/While cheatsheet
+    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_if_while.pdf
+    type: cheatsheet
+  - title: Homework
+    url: https://docs.google.com/document/d/1FO4J7l2oKN_vdrXVgvbrKOpJEx1Vu3f6gLnZe-tKIM4/edit
+    type: homework
 
 - title: Strings, Custom functions
-  date: 2023-11-07
+  date: 2024-04-16
   slug: custom_func
   materials:
-   - lesson: beginners-en/str
-   - lesson: beginners-en/def
-   - title: Functions cheatsheet
-     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_functions.pdf
-     type: cheatsheet
-   - title: Homework
-     url: https://docs.google.com/document/d/1SPL6yMD3XOm9ZFDMDX_U4zSP-ltWd7QKvie5iCS8mno/edit
-     type: homework
-
+    - lesson: beginners-en/str
+    - lesson: beginners-en/def
+    - title: Functions cheatsheet
+      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_functions.pdf
+      type: cheatsheet
+    - title: Homework
+      url: https://docs.google.com/document/d/1SPL6yMD3XOm9ZFDMDX_U4zSP-ltWd7QKvie5iCS8mno/edit
+      type: homework
+    - type: cheatsheet
+      title: Depth exploration colored example for function recursion
+      url: https://docs.google.com/document/d/1QWr8yzBfYtNaKLgRKoSL5tV5MGp46BOcD9Q3Q9ouOV8/edit
+    - title: Practice exercises (offline session 17.04.2024)
+      url: https://docs.google.com/document/d/17kX5w9eEn-Ed1gcONAaU5kSKANBI24bjL_7-3XZi0Dg/edit
+      type: cheatsheet
 - title: GIT
   slug: git
-  date: 2023-11-14
+  date: 2024-04-23
   materials:
-   - lesson: git-en/install
-   - lesson: git-en/basics
-   - lesson: git-en/github
-   - lesson: git-en/branching
-   - title: Basic Git Cheatsheet
-     url: https://raw.githubusercontent.com/lubojr/naucse.python.cz/117a205e1c98f007e0a97877e87493fef411a768/lessons/git-en/basics/static/git_commands_cheat_sheet.png
-     type: cheatsheet
-   - title: Extensive Git cheatsheet
-     url: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
-     type: cheatsheet
-   - title: Have you just made a git mess?
-     url: http://justinhileman.info/article/git-pretty/git-pretty.png
-     type: cheatsheet
-   - lesson: beginners-en/tictactoe
-     type: homework
-   - title: Practice exercises (offline session 16.11.2023)
-     url: https://docs.google.com/document/d/1tLwOKrrbg9KVvCHC08_zBvdjNGmQkD1GQEZEMJNSN4g
-     type: cheatsheet
+    - lesson: git-en/install
+    - lesson: git-en/basics
+    - lesson: git-en/github
+    - lesson: git-en/branching
+    - title: Basic Git Cheatsheet
+      url: https://raw.githubusercontent.com/lubojr/naucse.python.cz/117a205e1c98f007e0a97877e87493fef411a768/lessons/git-en/basics/static/git_commands_cheat_sheet.png
+      type: cheatsheet
+    - title: Extensive Git cheatsheet
+      url: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
+      type: cheatsheet
+    - title: Have you just made a git mess?
+      url: https://raw.githubusercontent.com/lubojr/naucse.python.cz/6307e5867765be0dd1a1e551901e4b4aca150d6c/lessons/git-en/basics/static/git-pretty.png
+      type: cheatsheet
+    - lesson: beginners-en/tictactoe
+      type: homework
 
 - title: Lists, Tuples
   slug: list
-  date: 2023-11-21
+  date: 2024-04-30
   materials:
    - lesson: beginners-en/list
-#   - lesson: beginners-en/tuple
-   - title: Homework (PDF)
-     url: https://drive.google.com/file/d/1fF0nl90GcCoaog0vgz4nmKGyspfGsQvS/view
-     type: homework
+   - lesson: beginners-en/tuple
    - title: Lists cheatsheet
      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_lists.pdf
      type: cheatsheet
+   - title: Homework (PDF)
+     url: https://drive.google.com/file/d/1fF0nl90GcCoaog0vgz4nmKGyspfGsQvS/view
+     type: homework
 
 - title: Dictionaries
   slug: dict
-  date: 2023-11-28
+  date: 2024-05-07
   materials:
    - lesson: beginners-en/dict
    - lesson: beginners-en/tuple
@@ -178,18 +186,18 @@ plan:
 
 - title: Recap session
   slug: recap1
-  date: 2023-12-05
+  date: 2024-05-14
   materials:
    - title: Recap session materials
      url: https://docs.google.com/document/d/1lQuHF1d3mbVzc1awfWmNVa9nYJdfrrvMNvpcX9pz6co
      type: homework
-   - title: Small quiz
-     url: https://docs.google.com/presentation/d/1qvnz7uJuzZipXEqsqq8bufpvtGNLP2sdW6p1MjodRJE
-     type: homework
+  #  - title: Small quiz
+  #    url: https://docs.google.com/presentation/d/1qvnz7uJuzZipXEqsqq8bufpvtGNLP2sdW6p1MjodRJE
+  #    type: homework
 
 - title: Classes
   slug: classes
-  date: 2023-12-12
+  date: 2024-05-21
   materials:
     - lesson: beginners-en/class
     - lesson: beginners-en/inheritance
@@ -199,12 +207,10 @@ plan:
     - title: Homework (PDF)
       url: https://drive.google.com/file/d/1amhY9-pvtN8w6tHnOvR0tIcwOfNVx-Bl/view
       type: homework
-    - title: Offline session 14.12. hackerrank
-      url: https://docs.google.com/presentation/d/1xC2tAaXvQDnglT6WJLnY8RRGhCnod38zpE1LA-ckvhg
 
 - title: Modules, exceptions, testing
   slug: testing
-  date: 2023-12-19
+  date: 2024-05-28
   materials:
     - lesson: beginners-en/modules
     - lesson: beginners-en/exceptions
@@ -219,37 +225,38 @@ plan:
     - title: Homework
       url: https://docs.google.com/document/d/1xVaSWOmQD3PqCY6czmOaxBlAlT0AHv2z2rsveK5vfxg/edit
       type: homework
+    - title: Coding session at Sentry - Hackerrank 27.5.
+      url: https://docs.google.com/presentation/d/1urPWPVNHW-j2BvY-TK2jsHXEUnzbRyVo37L2g4rpRH0
 
-- title: Working with Files and CLI
+- title: Working with Files and Debugging
   slug: files_cli
-  date: 2024-01-09
+  date: 2024-06-04
   materials:
-    - lesson: beginners-en/json
     - lesson: beginners-en/files
-    - lesson: beginners-en/argparse
+    - lesson: beginners-en/json
     - title: Files/Exceptions cheatsheet
       url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
       type: cheatsheet
-    - title: Homework
-      url: https://docs.google.com/document/d/1Tjy0uSqdVMmQI2tbHWBmDtrnwMl-Px3J7-N6_xRh12o
-      type: homework
-
+    - lesson: beginners-en/argparse
+  #   - title: Homework
+  #     url: https://docs.google.com/document/d/1Tjy0uSqdVMmQI2tbHWBmDtrnwMl-Px3J7-N6_xRh12o
+  #     type: homework
 - title: Final Project
   slug: final_project
-  date: 2024-01-16
-  materials:
-    - title: Final project option 1 - Snake
-      url: https://drive.google.com/file/d/1gJ4FdvmMwKSRr5D5k-idkvYoIs588HU-/view
-      type: homework
-    - title: Final project option 2 - Battleship
-      url: https://drive.google.com/file/d/1X3IQG_FUiDinmLhx_ZStuEkMf4AzLdwQ/view
-      type: homework
-    - title: Requests and getting data via APIs
-      url: https://docs.google.com/presentation/d/1d3wat2pogHBUtSr_NhcJnQFs27HOeB_MsAGwrBwxd3w/edit
+  date: 2024-06-11
+  # materials:
+  #   - title: Final project option 1 - Snake
+  #     url: https://drive.google.com/file/d/1gJ4FdvmMwKSRr5D5k-idkvYoIs588HU-/view
+  #     type: homework
+  #   - title: Final project option 2 - Battleship
+  #     url: https://drive.google.com/file/d/1X3IQG_FUiDinmLhx_ZStuEkMf4AzLdwQ/view
+  #     type: homework
+  #   - title: Requests and getting data via APIs
+  #     url: https://docs.google.com/presentation/d/1d3wat2pogHBUtSr_NhcJnQFs27HOeB_MsAGwrBwxd3w/edit
 
 - title: What Next?
-  date: 2024-01-23
+  date: 2024-06-18
   slug: final_project2
-  materials:
-    - title: What next?
-      url: https://docs.google.com/presentation/d/1HOkkEQNhLX0aViNrTpCE8JuLn1GDPYtU7tTdQcJa0nE
+  # materials:
+  #   - title: What next?
+  #     url: https://docs.google.com/presentation/d/1HOkkEQNhLX0aViNrTpCE8JuLn1GDPYtU7tTdQcJa0nE

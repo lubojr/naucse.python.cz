@@ -54,6 +54,8 @@ Create a new directory now and navigate inside (use the command `cd`).
 Then, create a new Git <em>repository</em> using the command `git init`:
 
 ```ansi
+␛[36m$␛[0m mkdir lessongit
+␛[36m$␛[0m cd lessongit
 ␛[36m$␛[0m git init
 Initialized empty Git repository in ./.git/
 ```
