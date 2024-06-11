@@ -245,19 +245,20 @@ plan:
     - title: Homework
       url: https://docs.google.com/document/d/1ylF7Yc49LcQ4E1c6lMUM8L1YVAJva-bJhWx1Ynv1-t0
       type: homework
-- title: Final Project
+- title: Final Project and bonus topic
   slug: final_project
   date: 2024-06-11
-  # materials:
-  #   - title: Final project option 1 - Snake
-  #     url: https://drive.google.com/file/d/1gJ4FdvmMwKSRr5D5k-idkvYoIs588HU-/view
-  #     type: homework
-  #   - title: Final project option 2 - Battleship
-  #     url: https://drive.google.com/file/d/1X3IQG_FUiDinmLhx_ZStuEkMf4AzLdwQ/view
-  #     type: homework
-  #   - title: Requests and getting data via APIs
-  #     url: https://docs.google.com/presentation/d/1d3wat2pogHBUtSr_NhcJnQFs27HOeB_MsAGwrBwxd3w/edit
-
+  materials:
+    - title: Final project option 1 - Snake
+      url: https://drive.google.com/file/d/1gJ4FdvmMwKSRr5D5k-idkvYoIs588HU-/view
+      type: homework
+    - title: Final project option 2 - Battleship
+      url: https://drive.google.com/file/d/1X3IQG_FUiDinmLhx_ZStuEkMf4AzLdwQ/view
+      type: homework
+    - title: Requests and getting data via APIs Slides
+      url: https://docs.google.com/presentation/d/1iD2ei88OnwH5ggfrOK1anCpa5tuf7G1LZ9C_THZBQ6M/edit
+    - title: Requests and getting data via APIs Colab
+      url: https://colab.research.google.com/drive/11zFpt19H6FtFr8kTaI2XmPqzi6ERNOcv
 - title: What Next?
   date: 2024-06-18
   slug: final_project2
