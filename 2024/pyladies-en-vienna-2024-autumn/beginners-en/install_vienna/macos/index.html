@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             
-                List of offline Python courses
+                Beginners course PyLadies Vienna: Python installation - macOS
             
         </title>
 
@@ -20,11 +20,13 @@
         <link rel="stylesheet" href="/static/css/ipython.css">
 
         
-        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/beginners-en/install_vienna/" />
+
 
         <style>
             
-            
+    
+
         </style>
     </head>
 
@@ -39,161 +41,77 @@
         </nav>
 
         
+
 <div class="page">
-    <section class="container">
+    <div class="container">
 
         
-
-    <p>Here you can find a list of materials for lectures taught by mentors.
-        <!--span>  List of materials for self-study courses can be found <a href="/courses/">in the courses.</a></span-->
-    </p>
+  
 
 
-
-        <div class="row">
-            <div class="sections col-xs-12 col-sm-12 col-md-8 col-lg-8">
-
-                
-
-    
-        
-    <div>
-        <ul class="paginate">
-            <li class="paginate-prev">
-                <a 
-                   href="/runs/">&lt;</a>
-            </li>
-            <li class="paginate-link ">
-                 <a href="/runs/">Current</a>
-            </li>
-            
-                <li class="paginate-link current">
-                     <a href="/2024/">2024</a>
-                </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2023/">2023</a>
-                </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2022/">2022</a>
-                </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2021/">2021</a>
-                </li>
-            
-            <li class="paginate-link ">
-                 <a href="/runs/all/">All</a>
-            </li>
-            <li class="paginate-next">
-                <a 
-                   href="/2023/">&gt;</a>
-            </li>
-        </ul>
-    </div>
-
-        
-            <h1>2024</h1>
-        
-        
-            
-            
-                
-    <div>
-        <h4>
-            <a href="/2024/pyladies-en-vienna-2024-autumn/">Beginners course PyLadies Vienna</a>
-            
-                <small>– Online - autumn 2024 - Tuesdays</small>
-            
-        </h4>
-        
-            24. 9. 2024 – 7. 1. 2025
-        
-        <p>Learn Python from the beginning. No previous knowledge required!
-</p>
-    </div>
-
-            
-                
-    <div>
-        <h4>
-            <a href="/2024/pyladies-en-vienna-2024-spring/">Beginners course PyLadies Vienna</a>
-            
-                <small>– Online - spring 2024 - Tuesdays</small>
-            
-        </h4>
-        
-            19. 3. – 18. 6. 2024
-        
-        <p>Learn Python from the beginning. No previous knowledge required!
-</p>
-    </div>
-
-            
-                
-    <div>
-        <h4>
-            <a href="/2023/pyladies-en-vienna-2023-autumn/">Beginners course PyLadies Vienna</a>
-            
-                <small>– Online - autumn 2023 - Tuesdays</small>
-            
-        </h4>
-        
-            10. 10. 2023 – 23. 1. 2024
-        
-        <p>Learn Python from the beginning. No previous knowledge required!
-</p>
-    </div>
-
-            
-        
+        <div class="lesson-content">
+          
     
 
-    
-    <div>
-        <ul class="paginate">
-            <li class="paginate-prev">
-                <a 
-                   href="/runs/">&lt;</a>
-            </li>
-            <li class="paginate-link ">
-                 <a href="/runs/">Current</a>
-            </li>
-            
-                <li class="paginate-link current">
-                     <a href="/2024/">2024</a>
-                </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2023/">2023</a>
-                </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2022/">2022</a>
-                </li>
-            
-                <li class="paginate-link ">
-                     <a href="/2021/">2021</a>
-                </li>
-            
-            <li class="paginate-link ">
-                 <a href="/runs/all/">All</a>
-            </li>
-            <li class="paginate-next">
-                <a 
-                   href="/2023/">&gt;</a>
-            </li>
-        </ul>
-    </div>
+    <h1>Python install for macOS</h1>
+<p>First check in your command line/terminal
+if you don't already have python3 installed.
+Open the terminal and type into it:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>--version
+</pre></div><p>If "Python" and version number (e. g. <code>Python 3.8.2</code>) will appear
+and the version is higher than or equal to 3.8 then everything is fine and please continue with
+further section.</p>
+<p>If not, then please install <a href="http://brew.sh">Homebrew</a> which makes app and modules installation
+much easier.</p>
+<p>First check if brew is already installed by:</p>
+<div class="highlight"><pre><span></span><span class="go">brew -v</span>
+</pre></div><p>If previous command did not return a installed brew version, install it by entering this command in the command line/terminal:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">"</span>
+</pre></div><p>And then you can just enter this command:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>brew<span class="w"> </span>install<span class="w"> </span>python3
+</pre></div><p>Typing <em>python3 --version</em> again should already return you a used version of Python.</p>
+<p><strong>Note</strong> - If you have an older versions of Mac OS X - for example 10.10.x, the newest versions of Python and VSCode will not work for you.</p>
+<p>You will need to install an older version of both manually.</p>
+<p><code>Python</code>: <a href="https://legacy.python.org/download/mac/">https://legacy.python.org/download/mac/</a> will definitely lead you to a solution.</p>
+<p><code>VS Code</code>: For example January 2021 version of VS Code could solve it - refer to <a href="https://stackoverflow.com/a/67763370/7875133">https://stackoverflow.com/a/67763370/7875133</a> for more details.</p>
 
 
-
-
-            </div>
         </div>
 
-    </section>
+        
+
+
+        
+    <div class="row prev-next">
+        
+            
+                
+    <div class="col text-left">
+        <a href="/2024/pyladies-en-vienna-2024-autumn/beginners-en/install_vienna/">← <span class="d-none d-sm-inline">Python installation</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-left">
+        <a href="/2024/pyladies-en-vienna-2024-autumn/sessions/install_home/">↑ <span class="d-none d-sm-inline">Lesson: Installations</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-right">
+        <a href="/2024/pyladies-en-vienna-2024-autumn/beginners-en/install-editor/"><span class="d-none d-sm-inline">Editor installation</span> →</a>
+    </div>
+
+            
+        
+    </div>
+
+
+        
+
+    </div>
 </div>
 
 
@@ -204,11 +122,21 @@
             <hr>
             <div class="lesson-attribution">
                 
+    
+        <p>Edited by Tyna Dolezalova</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/beginners/install">PyLadies CZ</a>.</p>
+    
+
                 
-                    <p>
-                        Licence: <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>
-                    </p>
-                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
                 
             </div>
         </div>
