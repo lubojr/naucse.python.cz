@@ -59,6 +59,8 @@ It is preferred by us that all homeworks are done via Google Collab, an online P
 You can find our tutorial here: [Google Colab Tutorial](//drive.google.com/file/d/1KPlvbwGpIe8HQVkancKk6wuTwhV5VkRc/view).
 This tool will allow the mentors to provide a better feedback.
 
+The homeworks should be submitted in our [homework submission tool](https://pyladiesvienna.pythonanywhere.com/submtool) created by our past PyLadies Beginners Course participants Dani and Yana. To make our lives easier, please use your `name` in the same "spelling" every time you submit the homeworks (we group your submissions by name later).
+
 ## What to do after this course?
 
 * You will need to practice a lot so you don't forget everything.
@@ -74,5 +76,5 @@ not really hard, they will give you a foundation) - e.g. [Coding game](https://w
 <hr>
 And now, the mentors will introduce themselves.
 
-Once they finish, it will be your turn, so  think about what you want to say -
-your name, why you want to learn python, where are you located and tell us something surprising about yourself!)
+Once they finish, it will be your turn, so think about what you want to say -
+your name, why you want to learn python, where are you located and tell us something surprising about yourself!
