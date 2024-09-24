@@ -68,8 +68,8 @@ plan:
   - lesson: beginners-en/introduction2
   - lesson: beginners-en/cmdline
   - lesson: beginners-en/first-steps
-#  - lesson: beginners-en/lesson-1-homework
-#    type: homework
+  - lesson: beginners-en/lesson-1-homework
+    type: homework
   - title: Google colab tutorial
     url: https://drive.google.com/file/d/1KPlvbwGpIe8HQVkancKk6wuTwhV5VkRc
     type: cheatsheet
