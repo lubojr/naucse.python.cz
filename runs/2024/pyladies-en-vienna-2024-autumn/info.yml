@@ -110,15 +110,15 @@ plan:
 - title: Loops, for and while
   date: 2024-10-15
   slug: strings
-  # materials:
-  # - lesson: beginners-en/colabturtle
-  # - lesson: beginners-en/while
-  # - title: If/While cheatsheet
-  #   url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_if_while.pdf
-  #   type: cheatsheet
-  # - title: Homework
-  #   url: https://docs.google.com/document/d/1FO4J7l2oKN_vdrXVgvbrKOpJEx1Vu3f6gLnZe-tKIM4/edit
-  #   type: homework
+  materials:
+  - lesson: beginners-en/colabturtle
+  - lesson: beginners-en/while
+  - title: If/While cheatsheet
+    url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_if_while.pdf
+    type: cheatsheet
+  - title: Homework
+    url: https://docs.google.com/document/d/1FO4J7l2oKN_vdrXVgvbrKOpJEx1Vu3f6gLnZe-tKIM4/edit
+    type: homework
 
 - title: Strings, Custom functions
   date: 2024-10-22
