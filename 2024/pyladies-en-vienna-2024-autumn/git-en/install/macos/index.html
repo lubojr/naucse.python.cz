@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             
-                PyLadies Vienna Python course
+                Beginners course PyLadies Vienna: Git installation - macOS
             
         </title>
 
@@ -20,11 +20,13 @@
         <link rel="stylesheet" href="/static/css/ipython.css">
 
         
-        
+    <link rel="canonical" href="https://naucse.python.cz/lessons/git-en/install/" />
+
 
         <style>
             
-            
+    
+
         </style>
     </head>
 
@@ -44,85 +46,59 @@
     <div class="container">
 
         
-        
+  
+
 
         <div class="lesson-content">
           
-  <h1>
-    End of lecture: GIT
-</h1>
-
-
-    <h2>Homeworks</h2>
-    
-    <ul class="material-list">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                
-    <li>
-        
-            
-        
-        
-        <a href="/2024/pyladies-en-vienna-2024-autumn/beginners-en/tictactoe/">
-        <svg class="icon icon-edit" viewbox="0 0 32 32">
-<path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"></path>
-</svg>Project 1 - 1D tic-tac-toe
-        </a>
-        
-    </li>
-            
-        
-    </ul>
-
-
-
-
-
     
 
-
-<hr class="lesson-end">
-
-
-    <div class="row prev-next">
-        
-    
-    <div class="col text-left">
-        <a href="/2024/pyladies-en-vienna-2024-autumn/sessions/git/">← <span class="d-none d-sm-inline">GIT</span></a>
-    </div>
-
-    
-    <div class="col text-left">
-        <a href="/2024/pyladies-en-vienna-2024-autumn/">↑ <span class="d-none d-sm-inline">Beginners course PyLadies Vienna</span></a>
-    </div>
-
-    
-        
-    <div class="col text-right">
-        <a href="/2024/pyladies-en-vienna-2024-autumn/sessions/list/"><span class="d-none d-sm-inline">Lists, Tuples</span> →</a>
-    </div>
-
-    
-
-    </div>
+    <h2>macOS installation of git</h2>
+<p>Try to run <code>git</code> on the command line.
+If it's already installed, it will show you how to use it.
+Otherwise, install it using Homebrew:</p>
+<div class="highlight"><pre><span></span><span class="go">brew install git</span>
+</pre></div><p>It is still necessary to set up your Git editor (enter <code>nano</code>,
+even if you installed for example VS Code during the installation of the editor).
+You do that with this command:</p>
+<div class="highlight"><pre><span></span><span class="go">git config --global core.editor nano</span>
+</pre></div><p>After that install and configure <a href="https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md#macos">Git Credential Manager</a> with command:</p>
+<div class="highlight"><pre><span></span><span class="go">brew install --cask git-credential-manager</span>
+</pre></div><p>Now continue with the rest of setup at <a href="/2024/pyladies-en-vienna-2024-autumn/git-en/install/">General Settings in Git install</a>.</p>
 
 
         </div>
+
+        
+
+
+        
+    <div class="row prev-next">
+        
+            
+                
+    <div class="col text-left">
+        <a href="/2024/pyladies-en-vienna-2024-autumn/git-en/install/">← <span class="d-none d-sm-inline">Git installation</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-left">
+        <a href="/2024/pyladies-en-vienna-2024-autumn/sessions/git/">↑ <span class="d-none d-sm-inline">Lesson: GIT</span></a>
+    </div>
+
+            
+            
+                
+    <div class="col text-right">
+        <a href="/2024/pyladies-en-vienna-2024-autumn/git-en/basics/"><span class="d-none d-sm-inline">Git</span> →</a>
+    </div>
+
+            
+        
+    </div>
+
 
         
 
@@ -137,11 +113,21 @@
             <hr>
             <div class="lesson-attribution">
                 
+    
+        <p>Translated by Marketa Muzikova</p>
+    
+        <p>Originally written by Petr Viktorin, 2014-2017 for <a href="https://naucse.python.cz/course/pyladies/git/install/">PyLadies CZ</a>.</p>
+    
+
                 
-                    <p>
-                        Licence: <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>
-                    </p>
-                
+    <p>
+        Licence:
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International
+        </a>
+    </p>
+    
+
                 
             </div>
         </div>
