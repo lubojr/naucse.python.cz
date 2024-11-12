@@ -182,7 +182,7 @@ plan:
       url: https://drive.google.com/file/d/1sJhOmCTC1wspG6um4KRNJvtpUib3L2x7/view
       type: homework
     - title: Dictionaries cheatsheet
-      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/ beginners_python_cheat_sheet_pcc_dictionaries.pdf
+      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_dictionaries.pdf
       type: cheatsheet
 
 - title: Recap session
