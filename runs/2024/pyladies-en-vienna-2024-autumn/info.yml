@@ -177,7 +177,6 @@ plan:
   date: 2024-11-12
   materials:
     - lesson: beginners-en/dict
-    - lesson: beginners-en/tuple
     - title: Homework (PDF)
       url: https://drive.google.com/file/d/1sJhOmCTC1wspG6um4KRNJvtpUib3L2x7/view
       type: homework
