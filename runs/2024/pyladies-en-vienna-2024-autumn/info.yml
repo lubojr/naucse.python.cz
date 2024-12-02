@@ -211,22 +211,22 @@ plan:
 - title: Modules, exceptions, testing
   slug: testing
   date: 2024-12-03
-  # materials:
-  #   - lesson: beginners-en/modules
-  #   - lesson: beginners-en/exceptions
-  #   - lesson: beginners-en/testing
-  #   - lesson: beginners-en/testing-continued
-  #   - title: Exceptions cheatsheet
-  #     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
-  #     type: cheatsheet
-  #   - title: Testing cheatsheet
-  #     url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_testing.pdf
-  #     type: cheatsheet
-  #   - title: Homework
-  #     url: https://docs.google.com/document/d/1xVaSWOmQD3PqCY6czmOaxBlAlT0AHv2z2rsveK5vfxg/edit
-  #     type: homework
-  #   - title: Coding session at Sentry - Hackerrank 27.5.
-  #     url: https://docs.google.com/presentation/d/1urPWPVNHW-j2BvY-TK2jsHXEUnzbRyVo37L2g4rpRH0
+  materials:
+    - lesson: beginners-en/modules
+    - lesson: beginners-en/exceptions
+    - lesson: beginners-en/testing
+    - lesson: beginners-en/testing-continued
+    - title: Exceptions cheatsheet
+      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_files_exceptions.pdf
+      type: cheatsheet
+    - title: Testing cheatsheet
+      url: https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_testing.pdf
+      type: cheatsheet
+    - title: Homework
+      url: https://docs.google.com/document/d/1xVaSWOmQD3PqCY6czmOaxBlAlT0AHv2z2rsveK5vfxg/edit
+      type: homework
+    - title: Coding session at Sentry - Hackerrank 27.5.
+      url: https://docs.google.com/presentation/d/1urPWPVNHW-j2BvY-TK2jsHXEUnzbRyVo37L2g4rpRH0
 
 - title: Working with Files and Debugging
   slug: files_cli
