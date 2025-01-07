@@ -264,6 +264,6 @@ plan:
 - title: What Next?
   date: 2025-01-07
   slug: final_project2
-  # materials:
-  #   - title: What next?
-  #     url: https://docs.google.com/presentation/d/10Zz8OMuwYJYAsLbyeCK4ud7r4NmCfso7xGQ4wxtbGMU/edit
+  materials:
+    - title: What next?
+      url: https://docs.google.com/presentation/d/10Zz8OMuwYJYAsLbyeCK4ud7r4NmCfso7xGQ4wxtbGMU/edit
