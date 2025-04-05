@@ -10,7 +10,7 @@ Dostupné na [naucse.python.cz](https://naucse.python.cz).
 
 Chceš-li server spustit na svém počítači, např. proto, že se chceš zapojit
 do vývoje, je potřeba ho nejdřív nainstalovat:
-
+ 
 * (nepovinné) Vytvoř a aktivuj si [virtuální prostředí](https://naucse.python.cz/lessons/beginners/install/) v Pythonu 3.6.
 * Přepni se do adresáře s kódem projektu.
 * Nainstaluj závislosti:
