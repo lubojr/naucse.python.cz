@@ -14,7 +14,7 @@ do vývoje, je potřeba ho nejdřív nainstalovat:
 * (nepovinné) Vytvoř a aktivuj si [virtuální prostředí](https://naucse.python.cz/lessons/beginners/install/) v Pythonu 3.6.
 * Přepni se do adresáře s kódem projektu.
 * Nainstaluj závislosti:
-
+ 
   * Linux/Mac:
 
     ```console
