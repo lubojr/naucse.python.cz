@@ -1,7 +1,7 @@
 # Nauč se Python
 
 Otevřené materiály pro výuku Pythonu – jak na organizovaných kurzech,
-tak pro samouky.
+tak pro samouky. 
 
 Dostupné na [naucse.python.cz](https://naucse.python.cz).
 
